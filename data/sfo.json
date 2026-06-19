@@ -1,0 +1,249 @@
+{
+  "name": "San Francisco International",
+  "city": "San Francisco, CA",
+  "landmarks": {
+    "airport": {
+      "name": "SFO Control Tower",
+      "svg": "<svg viewBox='0 0 100 60' xmlns='http://www.w3.org/2000/svg'><path d='M 45 60 L 45 30 Q 30 25 50 10 Q 70 25 55 30 L 55 60 Z' fill='#d4d4d8'/><path d='M 45 30 Q 30 25 50 10 Q 70 25 55 30' fill='none' stroke='#a1a1aa' stroke-width='2'/><rect x='48' y='18' width='4' height='42' fill='#a1a1aa'/><polygon points='40,25 60,25 55,18 45,18' fill='#71717a'/></svg>"
+    },
+    "city": {
+      "name": "Golden Gate Bridge",
+      "svg": "<svg viewBox='0 0 100 60' xmlns='http://www.w3.org/2000/svg'><rect x='20' y='15' width='6' height='45' fill='#f43f5e'/><rect x='74' y='15' width='6' height='45' fill='#f43f5e'/><path d='M 0 35 Q 23 45 23 15 M 23 15 Q 50 55 77 15 M 77 15 Q 77 45 100 35' fill='none' stroke='#e4e4e7' stroke-width='2'/><line x1='0' y1='50' x2='100' y2='50' stroke='#a1a1aa' stroke-width='4'/></svg>"
+    }
+  },
+  "activities": [
+    {
+      "rank": 1,
+      "title": "International Outdoor Terrace",
+      "category": "Plane Spotting",
+      "type": ["aviation", "explore"],
+      "terminal": "International Terminal G",
+      "security": "post",
+      "description": "An absolute must-visit. This stunning outdoor observation deck gets you out of the indoor air and puts you right on top of the heavy international jets. Grab a drink, enjoy the California sunshine, and watch the world fly by.",
+      "duration_text": "1 Hour",
+      "duration_mins": 60,
+      "image_path": "images/sfo_outdoor_terrace.jpg",
+      "action_link": "https://www.flysfo.com/passengers/shop-dine-relax/outdoor-terrace",
+      "action_text": "View Details ↗",
+      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=72810",
+      "hours": "Daily 7:00 AM - 11:30 PM"
+    },
+    {
+      "rank": 2,
+      "title": "Louis A. Turpen Aviation Museum",
+      "category": "Museum & History",
+      "type": ["aviation", "art"],
+      "terminal": "International Terminal",
+      "security": "pre",
+      "description": "<strong>Location:</strong> Departures Level (Pre-Security)<br><br>Located in a space modeled after the original 1930s passenger lobby, this incredible free museum is filled with commercial aviation artifacts and historical airline memorabilia. It’s the perfect place to geek out over the golden age of flying.",
+      "duration_text": "45 Mins",
+      "duration_mins": 45,
+      "image_path": "images/sfo_aviationmuseum.jpg",
+      "action_link": "https://www.sfomuseum.org/aviation-museum-library",
+      "action_text": "Explore Exhibits ↗",
+      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=1807",
+      "hours": "Daily 10:00 AM - 4:30 PM"
+    },
+    {
+      "rank": 3,
+      "title": "SFO Yoga Rooms",
+      "category": "Wellness & Relaxation",
+      "type": ["explore"],
+      "terminal": "Terminal 1, Terminal 2, Terminal 3",
+      "security": "post",
+      "description": "<strong>Locations:</strong><br>• Terminal 1: Near Gate C2 (Open 24/7)<br>• Terminal 2: Between C and D Gates (Open 24/7)<br>• Terminal 3: Near Vending Machine Nook by Gate E6 (7:30 AM - 10:30 PM)<br><br>Find your zen in these quiet, dedicated spaces designed specifically for self-reflection and stretching between long flights. Complimentary to use and completely silent.",
+      "duration_text": "30 Mins",
+      "duration_mins": 30,
+      "image_path": "images/sfo_yogaroom.jpg",
+      "action_link": "https://www.flysfo.com/passengers/shop-dine-relax/yoga-room-1",
+      "action_text": "Yoga Room Terminal 1 + 2 + 3"
+    },
+    {
+      "title": "SFO Premium Lounge Directory",
+      "category": "Premium Lounges",
+      "type": ["explore"],
+      "terminal": "All Terminals",
+      "security": "post",
+      "description": "Select a lounge below to view exact locations, hours, access requirements, and booking options.",
+      "duration_text": "2 Hours",
+      "duration_mins": 120,
+      "specialty": "dropdown",
+      "dropdown_options": [
+        {
+          "name": "Air Canada Maple Leaf Lounge",
+          "brand_color": "#E21836",
+          "details": "<strong>Alliance:</strong> Star Alliance<br><strong>Location:</strong> Terminal 2, Post-Security<br><strong>Hours:</strong> Sun-Sat 5:30 am - 7:15 pm",
+          "action_link": "https://www.aircanada.com/ca/en/aco/home/fly/premium-services/maple-leaf-lounges.html",
+          "action_text": "Official Details ↗",
+          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=452089"
+        },
+        {
+          "name": "Air France - KLM Lounge",
+          "brand_color": "#002157",
+          "details": "<strong>Alliance:</strong> SkyTeam<br><strong>Airlines:</strong> Air France, KLM, EVA AIR, Korean Air<br><strong>Location:</strong> Int'l Terminal A, Level 3 (Post-Security, turn left)<br><strong>Hours:</strong> Sun-Sat 9:30 am - 12:45 am",
+          "action_link": "https://wwws.airfrance.us/information/prepare/salons/sfo",
+          "action_text": "Official Details ↗",
+          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=2108"
+        },
+        {
+          "name": "Air India Maharaja Lounge",
+          "brand_color": "#F47920",
+          "details": "<strong>Alliance:</strong> Star Alliance<br><strong>Airlines:</strong> Air India, LOT Polish Airlines<br><strong>Location:</strong> Int'l Terminal A, Level 4 (Post-Security, turn left)<br><strong>Hours:</strong> Sun-Sat 6:00 am - 11:55 pm",
+          "action_link": "https://www.airindia.com/in/en/newsroom/customer-experience/the-maharaja-lounge.html",
+          "action_text": "Official Details ↗",
+          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=681122"
+        },
+        {
+          "name": "Alaska Lounge",
+          "brand_color": "#01426A",
+          "details": "<strong>Alliance:</strong> oneworld<br><strong>Airlines:</strong> Alaska, Hawaiian, STARLUX<br><strong>Location:</strong> Harvey Milk Terminal 1, Level 2, Post-Security<br><strong>Hours:</strong> Sun-Sat 5:00 am - 12:00 am",
+          "action_link": "https://www.alaskaair.com/content/airport-lounge/location-and-hours?srsltid=AfmBOorrJcXVbR_ZtzVHg1hSa-lEi3Nw9lLJ1rO5AIJ8nKLK5ZlQCFX9",
+          "action_text": "Official Details ↗",
+          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=264035"
+        },
+        {
+          "name": "American Airlines Admirals Club",
+          "brand_color": "#0078D2",
+          "details": "<strong>Alliance:</strong> oneworld<br><strong>Location:</strong> Harvey Milk Terminal 1, Near Gate B13, Level 2<br><strong>Hours:</strong> Sun-Sat 4:30 am - 11:30 pm",
+          "action_link": "https://www.aa.com/i18n/travelInformation/airportAmenities/sfo-club.jsp",
+          "action_text": "Official Details ↗",
+          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=2109"
+        },
+        {
+          "name": "American Express Centurion Lounge",
+          "brand_color": "#006FCF",
+          "details": "<strong>Location:</strong> Terminal 2, Level 2, Post-Security<br><strong>Access:</strong> Amex Platinum or Centurion cardholders only.<br><strong>Hours:</strong> Sun-Sat 5:00 am - 11:00 pm",
+          "action_link": "https://www.thecenturionlounge.com/locations/sfo/",
+          "action_text": "Official Details ↗",
+          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=2110"
+        },
+        {
+          "name": "British Airways Lounge",
+          "brand_color": "#01295C",
+          "details": "<strong>Alliance:</strong> oneworld<br><strong>Location:</strong> Int'l Terminal A, between Gates A5 and A9<br><strong>Hours:</strong> Sun-Sat 5:00 am - 11:30 am, 1:30 pm - 6:45 pm",
+          "action_link": "https://www.flysfo.com/passengers/flight-info/airlines-sfo/british-airways",
+          "action_text": "Official Details ↗",
+          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=2111"
+        },
+        {
+          "name": "Cathay Pacific Lounge",
+          "brand_color": "#006564",
+          "details": "<strong>Alliance:</strong> oneworld<br><strong>Location:</strong> Int'l Terminal A, Level 4 (Post-Security, turn left)<br><strong>Hours:</strong> Sun-Sat 9:00 am - 12:45 pm, 8:20 pm - 12:05 am",
+          "action_link": "https://www.cathaypacific.com/cx/en_US/destinations/lounges/san-francisco-sfo/cathay-pacific-lounge.html",
+          "action_text": "Official Details ↗",
+          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=2112"
+        },
+        {
+          "name": "China Airlines Lounge",
+          "brand_color": "#8B8992",
+          "details": "<strong>Alliance:</strong> SkyTeam<br><strong>Airlines:</strong> China Airlines, Vietnam Airlines, China Eastern, Condor<br><strong>Location:</strong> Int'l Terminal A, Level 4 (Post-Security)<br><strong>Access:</strong> Priority Pass members welcome 8:30 am - 6:00 pm.<br><strong>Hours:</strong> Sun-Sat 9:30 am - 12:30 pm",
+          "action_link": "https://www.americanexpress.com/en-us/travel/lounges/the-platinum-card/SFO/china-airlines-dynasty-lounge-international-terminal-a-PSqSB42915/",
+          "action_text": "Official Details ↗",
+          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=2113"
+        },
+        {
+          "name": "Delta Sky Club",
+          "brand_color": "#E51420",
+          "details": "<strong>Alliance:</strong> SkyTeam<br><strong>Location:</strong> Harvey Milk Terminal 1, near Gate C3, Level 2<br><strong>Hours:</strong> Sun-Mon 4:30 am-10:30 pm | Tue-Fri 4:30 am-12:00 am | Sat 4:30 am-10:30 pm",
+          "action_link": "https://www.delta.com/us/en/airports/united-states/san-francisco-sky-club-airport-map",
+          "action_text": "Official Details ↗",
+          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=2114"
+        },
+        {
+          "name": "Emirates Lounge",
+          "brand_color": "#D71A21",
+          "details": "<strong>Location:</strong> Int'l Terminal A, between Gates A2 and A6, Level 3<br><strong>Hours:</strong> Sun-Sat 12:45 pm - 4:45 pm",
+          "action_link": "https://www.emirates.com/us/english/experience/our-lounges/worldwide/",
+          "action_text": "Official Details ↗",
+          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=2115"
+        },
+        {
+          "name": "Golden Gate Lounge",
+          "brand_color": "#4B5563",
+          "details": "<strong>Alliance:</strong> SkyTeam<br><strong>Airlines:</strong> Air France, KLM, AeroMexico, Philippine Airlines, Qatar Airways, SAS<br><strong>Location:</strong> Int'l Terminal A, Level 4, Post-Security<br><strong>Hours:</strong> Sun-Sat 7:00 am - 12:45 am",
+          "action_link": "https://www.prioritypass.com/en-GB/lounges/united-states-of-america/san-francisco-international/sfo11-golden-gate-lounge",
+          "action_text": "Website",
+          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=2108"
+        },
+        {
+          "name": "The Club SFO",
+          "brand_color": "#18181B",
+          "details": "<strong>Location:</strong> Harvey Milk Terminal 1, Level 3, Post-Security<br><strong>Access:</strong> Accepts Priority Pass and Lounge Key.<br><strong>Hours:</strong> Sun-Sat 4:30 am - 11:30 pm",
+          "action_link": "https://theclubairportlounges.com/lounges/sfo-the-club-terminal-1",
+          "action_text": "Book Day Pass ↗",
+          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=544090"
+        },
+        {
+          "name": "United Club (Int'l Terminal G)",
+          "brand_color": "#005DA6",
+          "details": "<strong>Alliance:</strong> Star Alliance<br><strong>Location:</strong> Int'l Terminal G, between Gates G6 and G9, Level 3<br><strong>Hours:</strong> Sun-Sat 7:00 am - 1:15 am",
+          "action_link": "https://www.united.com/en/us/fly/travel/airport/lounge-access.html",
+          "action_text": "Official Details ↗",
+          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=2123"
+        },
+        {
+          "name": "United Club (Terminal 3, F Gates)",
+          "brand_color": "#005DA6",
+          "details": "<strong>Alliance:</strong> Star Alliance<br><strong>Location:</strong> Terminal 3, Rotunda of the F Gates, Level 3<br><strong>Hours:</strong> Sun-Sat 5:00 am - 12:00 am",
+          "action_link": "https://www.united.com/en/us/fly/travel/airport/lounge-access.html",
+          "action_text": "Official Details ↗",
+          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=2121"
+        },
+        {
+          "name": "United Club (Terminal 3, E Gates)",
+          "brand_color": "#005DA6",
+          "details": "<strong>Alliance:</strong> Star Alliance<br><strong>Location:</strong> Terminal 3, near Gate E4, Level 3<br><strong>Hours:</strong> Sun-Sat 5:00 am - 11:00 pm",
+          "action_link": "https://www.united.com/en/us/fly/travel/airport/lounge-access.html",
+          "action_text": "Official Details ↗",
+          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=2120"
+        },
+        {
+          "name": "United Polaris Lounge",
+          "brand_color": "#002244",
+          "details": "<strong>Alliance:</strong> Star Alliance<br><strong>Location:</strong> Int'l Terminal G, near Gate G1, Level 2<br><strong>Access:</strong> Polaris business class and outbound long-haul Star Alliance first/business class.<br><strong>Hours:</strong> Sun-Sat 5:00 am - 12:00 am",
+          "action_link": "https://www.united.com/en/us/fly/travel/airport/lounge-access.html",
+          "action_text": "Official Details ↗",
+          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=2120"
+        },
+        {
+          "name": "Virgin Atlantic Club House",
+          "brand_color": "#E20020",
+          "details": "<strong>Location:</strong> Int'l Terminal A, near Gate A1, Level 5<br><strong>Hours:</strong> Sun-Sat 9:00 am - 11:00 pm<br><strong>Priority Pass:</strong> Accepted daily 9:00am - 1:30pm & 5:30pm - 7:15pm",
+          "action_link": "https://www.virginatlantic.com/experience/upper-class/clubhouse-airport-lounges/san-francisco-clubhouse",
+          "action_text": "Official Details ↗",
+          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=2124"
+        }
+      ]
+    },
+    {
+      "title": "SkyTerrace Observation Deck",
+      "category": "Plane Spotting",
+      "type": ["aviation"],
+      "terminal": "Terminal 2",
+      "security": "pre",
+      "description": "Head to the top of Terminal 2 to enjoy stunning 180-degree views of the busiest runways. It’s an incredible vantage point to watch heavies rotate and land. Note: This is pre-security.",
+      "duration_text": "1 Hour",
+      "duration_mins": 60,
+      "image_path": "images/sfo_skyterrace.jpg",
+      "action_link": "https://www.flysfo.com/skyterrace",
+      "action_text": "View Details ↗",
+      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=586185",
+      "hours": "Fri-Mon 10:00 AM - 6:00 PM"
+    },
+    {
+      "title": "Video Arts Room",
+      "category": "Visuals & Theater",
+      "type": ["art"],
+      "terminal": "International Terminal",
+      "security": "pre",
+      "description": "<strong>Location:</strong> Pre-Security, Departures Level<br><br>Sit back, relax, and watch a rotating selection of short films and documentaries curated by the SFO Museum. It's a great way to kill time and learn something new before heading through the TSA checkpoints.",
+      "duration_text": "45 Mins",
+      "duration_mins": 45,
+      "image_path": "images/sfo_videoarts.jpg",
+      "action_link": "https://www.flysfo.com/passengers/shop-dine-relax/video-arts",
+      "action_text": "View Details ↗",
+      "map_link": "https://www.flysfo.com/maps",
+      "hours": "Daily 24/7"
+    }
+  ]
+}

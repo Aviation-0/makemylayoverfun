@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let allActivities = [];
     let activeTypes = new Set();
     let activeTerminal = "All";
+    let activeSecurity = "All"; 
 
     const params = new URLSearchParams(window.location.search);
     const airportCode = params.get("code")?.toLowerCase();
@@ -21,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return response.json();
         })
         .then(airport => {
-            // Header Population
             document.title = `${airportCode.toUpperCase()} | Make My Layover Fun`;
             document.getElementById("airport-name").innerText = airport.name;
             document.getElementById("airport-city").innerText = airport.city;
@@ -30,13 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.getElementById("landmarks-container").style.display = "flex";
                 document.getElementById("landmark-airport-text").innerText = airport.landmarks.airport.name;
                 document.getElementById("landmark-city-text").innerText = airport.landmarks.city.name;
-                
-                // INJECTING ART DIRECTLY FROM JSON
                 document.getElementById("art-airport").innerHTML = airport.landmarks.airport.svg || "";
                 document.getElementById("art-city").innerHTML = airport.landmarks.city.svg || "";
             }
 
-            // Filter out events that fall outside the user's selected layover duration
             allActivities = airport.activities.filter(activity => activity.duration_mins <= timeLimit);
 
             if (allActivities.length === 0) {
@@ -44,24 +41,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            // --- SMART TERMINAL PARSING ---
+            // --- SMARTER TERMINAL PARSING ---
             const terminalDropdown = document.getElementById("terminal-filter");
+            const securityDropdown = document.getElementById("security-filter");
             let allLocationTags = [];
             
             allActivities.forEach(a => {
                 if (a.terminal) {
-                    const tags = a.terminal.split(',').map(s => s.trim());
-                    
-                    // Only keep tags that start with "Terminal" or "T" (like T1, T2)
-                    tags.forEach(tag => {
-                        if (/^(Terminal|T\d|T[A-Z])/i.test(tag)) {
-                            allLocationTags.push(tag);
-                        }
-                    });
+                    const primaryTerminal = a.terminal.split(',')[0].trim();
+                    if (primaryTerminal.toLowerCase() !== "all terminals" && primaryTerminal.length < 35) {
+                        allLocationTags.push(primaryTerminal);
+                    }
                 }
             });
             
-            // Remove duplicates and sort alphabetically
             const uniqueTerminals = [...new Set(allLocationTags)].sort();
             
             uniqueTerminals.forEach(term => {
@@ -70,7 +63,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 opt.innerText = term.toUpperCase(); 
                 terminalDropdown.appendChild(opt);
             });
+            
             terminalDropdown.style.display = "block";
+            securityDropdown.style.display = "block";
 
             renderGrid();
         })
@@ -86,25 +81,36 @@ document.addEventListener("DOMContentLoaded", () => {
         const grid = document.getElementById("activities-grid");
         grid.innerHTML = ""; 
 
-        // Define your exact hex colors here to power the multi-color tags
         const typeColors = {
             "art": "#8b5cf6",
             "aviation": "#0ea5e9",
             "food": "#f43f5e",
             "explore": "#10b981"
         };
+        
+        const typeLabels = {
+            "art": "VISUALS",
+            "aviation": "AVIATION",
+            "food": "FOOD",
+            "explore": "EXPLORING"
+        };
 
-        const filtered = allActivities.filter(activity => {
-            // Force the type into an array to support multi-category events
+        // 1. FILTERING
+        let filtered = allActivities.filter(activity => {
             const activityTypes = Array.isArray(activity.type) ? activity.type : [activity.type];
             
-            // Check if the active filters intersect with the activity's types
             const matchesType = activeTypes.size === 0 || activityTypes.some(t => activeTypes.has(t));
-            
-            // Check the terminal location
             const matchesTerminal = activeTerminal === "All" || (activity.terminal && activity.terminal.includes(activeTerminal));
+            const matchesSecurity = activeSecurity === "All" || activity.security === activeSecurity || activity.security === "both";
             
-            return matchesType && matchesTerminal;
+            return matchesType && matchesTerminal && matchesSecurity;
+        });
+
+        // 2. SORTING BY RANK
+        filtered.sort((a, b) => {
+            const rankA = a.rank || 999;
+            const rankB = b.rank || 999;
+            return rankA - rankB;
         });
 
         if (filtered.length === 0) {
@@ -112,37 +118,57 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
+        // 3. HTML GENERATION
         filtered.forEach(activity => {
             const card = document.createElement("div");
-            card.className = "card";
             
-            // --- NEW: DYNAMIC MULTI-COLOR TAG LOGIC ---
+            card.className = activity.specialty === "dropdown" ? "card specialty-card" : "card";
+            
             const activityTypes = Array.isArray(activity.type) ? activity.type : [activity.type];
             let tagHTML = "";
+            
+            const displayTagText = activityTypes.map(t => typeLabels[t]).join(" & ");
 
             if (activityTypes.length === 1) {
-                // Standard single color
-                tagHTML = `<div class="card-tag bg-${activityTypes[0]}">${activity.category}</div>`;
+                tagHTML = `<div class="card-tag" style="background-color: ${typeColors[activityTypes[0]]};">${displayTagText}</div>`;
             } else {
-                // It has multiple categories! Build a seamless CSS gradient
                 const color1 = typeColors[activityTypes[0]] || "#111111";
                 const color2 = typeColors[activityTypes[1]] || "#111111";
                 const gradientStyle = `background: linear-gradient(135deg, ${color1}, ${color2});`;
-                
-                tagHTML = `<div class="card-tag" style="${gradientStyle}">${activity.category}</div>`;
+                tagHTML = `<div class="card-tag" style="${gradientStyle}">${displayTagText}</div>`;
             }
-            // ------------------------------------------
             
+            // LOUNGE / SPECIALTY DROPDOWN HTML
+            let specialtyHTML = "";
+            if (activity.specialty === "dropdown" && activity.dropdown_options) {
+                specialtyHTML = `
+                    <p style="color: inherit;">${activity.description}</p>
+                    <select class="specialty-dropdown">
+                        <option value="" disabled selected>Choose a Lounge to view details...</option>
+                        ${activity.dropdown_options.map((opt, i) => `<option value="${i}">${opt.name}</option>`).join('')}
+                    </select>
+                    <div class="specialty-details"></div>
+                `;
+            } else {
+                specialtyHTML = `<p>${activity.description}</p>`;
+            }
+
+            let secLabel = "";
+            if (activity.security === "pre") secLabel = " • PRE-SECURITY";
+            if (activity.security === "post") secLabel = " • POST-SECURITY";
+
             card.innerHTML = `
+                ${activity.rank ? `<div class="rank-badge">#${activity.rank}</div>` : ''}
                 ${tagHTML}
 
                 ${activity.image_path ? `
                     <img class="card-image" src="${activity.image_path}" alt="${activity.title}" loading="lazy" onerror="this.style.display='none'; this.classList.add('broken-image')">
                 ` : ''}
 
-                <div class="terminal-loc">${activity.terminal}</div>
+                <div class="terminal-loc">${activity.terminal}${secLabel}</div>
                 <h3>${activity.title}</h3>
-                <p>${activity.description}</p>
+                
+                ${specialtyHTML}
                 
                 ${activity.hours ? `
                     <div class="card-hours">🕒 ${activity.hours}</div>
@@ -157,6 +183,53 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                 </div>
             `;
+
+            // --- DYNAMIC CARD COLOR & BUTTON INJECTION LOGIC ---
+            if (activity.specialty === "dropdown" && activity.dropdown_options) {
+                const selectElement = card.querySelector(".specialty-dropdown");
+                const detailsElement = card.querySelector(".specialty-details");
+                
+                selectElement.addEventListener("change", (e) => {
+                    const selectedIndex = e.target.value;
+                    const optionData = activity.dropdown_options[selectedIndex];
+                    
+                    // Injecting details and custom lounge-specific buttons
+                    let injectedHTML = `<div style="margin-bottom: 16px;">${optionData.details}</div>`;
+                    injectedHTML += `<div class="button-group">`;
+                    if (optionData.map_link) {
+                        injectedHTML += `<a href="${optionData.map_link}" target="_blank" class="map-btn" style="color:#111; background:#fff; border:none;">Map 📍</a>`;
+                    }
+                    if (optionData.action_link) {
+                        injectedHTML += `<a href="${optionData.action_link}" target="_blank" class="action-btn" style="background:rgba(255,255,255,0.25); color:#fff; border:1px solid rgba(255,255,255,0.4);">${optionData.action_text || 'View ↗'}</a>`;
+                    }
+                    injectedHTML += `</div>`;
+                    
+                    detailsElement.innerHTML = injectedHTML;
+                    
+                    // Repaint the entire card to match the Airline's brand
+                    if (optionData.brand_color) {
+                        card.style.backgroundColor = optionData.brand_color;
+                        card.style.borderColor = optionData.brand_color;
+                        card.style.color = "#ffffff";
+                        card.querySelector("h3").style.color = "#ffffff";
+                        
+                        const termLoc = card.querySelector(".terminal-loc");
+                        if(termLoc) termLoc.style.color = "rgba(255, 255, 255, 0.8)";
+                        
+                        const dur = card.querySelector(".duration");
+                        if(dur) {
+                            dur.style.backgroundColor = "rgba(0, 0, 0, 0.2)";
+                            dur.style.color = "#ffffff";
+                            dur.style.borderColor = "rgba(255, 255, 255, 0.1)";
+                        }
+                        
+                        selectElement.style.backgroundColor = "rgba(0, 0, 0, 0.25)";
+                        selectElement.style.color = "#ffffff";
+                        selectElement.style.borderColor = "rgba(255, 255, 255, 0.3)";
+                    }
+                });
+            }
+
             grid.appendChild(card);
         });
     }
@@ -183,6 +256,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("terminal-filter").addEventListener("change", (e) => {
         activeTerminal = e.target.value;
+        renderGrid();
+    });
+
+    document.getElementById("security-filter").addEventListener("change", (e) => {
+        activeSecurity = e.target.value;
         renderGrid();
     });
 });
