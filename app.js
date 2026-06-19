@@ -1,15 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Get the 3-letter code from the URL
     const params = new URLSearchParams(window.location.search);
     const airportCode = params.get("code")?.toUpperCase();
+    const timeLimit = parseInt(params.get("time")) || 999; // Defaults to high number if missing
 
-    // Kick them back to the home page if there's no code
     if (!airportCode) {
         window.location.href = "index.html";
         return;
     }
 
-    // 2. Fetch the JSON database
     fetch("airports.json")
         .then(response => {
             if (!response.ok) throw new Error("Failed to load database.");
@@ -18,40 +16,51 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(data => {
             const airport = data[airportCode];
             const grid = document.getElementById("activities-grid");
-            const errorState = document.getElementById("error-state");
             
-            // If the user searches an airport you haven't added yet
             if (!airport) {
                 document.getElementById("airport-name").innerText = airportCode;
                 document.getElementById("airport-city").innerText = "Module Unavailable";
-                errorState.style.display = "block";
+                document.getElementById("error-state").style.display = "block";
                 return;
             }
 
-            // 3. Inject the header data
+            // Populate Header & Landmarks
             document.title = `${airportCode} | Make My Layover Fun`;
             document.getElementById("airport-name").innerText = airport.name;
             document.getElementById("airport-city").innerText = airport.city;
+            
+            if (airport.landmarks) {
+                document.getElementById("landmark-airport").innerText = airport.landmarks.airport;
+                document.getElementById("landmark-city").innerText = airport.landmarks.city;
+            }
 
-            // 4. Build and inject the cards
-            if (airport.activities.length === 0) {
-                grid.innerHTML = "<p>Guides for this hub are currently in development.</p>";
+            // Filter activities based on user's time limit
+            const validActivities = airport.activities.filter(activity => activity.duration_mins <= timeLimit);
+
+            if (validActivities.length === 0) {
+                grid.innerHTML = "<p>No guides fit within your selected time limit. Try extending your layover duration.</p>";
                 return;
             }
 
-            airport.activities.forEach(activity => {
+            // Generate Cards
+            validActivities.forEach(activity => {
                 const card = document.createElement("div");
                 card.className = "card";
                 
+                // Map the JSON "type" to the CSS background color class (e.g., "bg-art")
+                const colorClass = `bg-${activity.type}`;
+                
                 card.innerHTML = `
-                    <div class="card-meta">
-                        <span>${activity.category}</span>
-                        <span>${activity.terminal}</span>
-                    </div>
+                    <div class="card-tag ${colorClass}">${activity.category}</div>
+                    <div class="terminal-loc">${activity.terminal}</div>
                     <h3>${activity.title}</h3>
                     <p>${activity.description}</p>
+                    
+                    <!-- Space reserved for future image tag -->
+                    <!-- <img src="${activity.image}" alt="" style="width:100%; margin-bottom:15px;"> -->
+
                     <div>
-                        <span class="duration">${activity.duration}</span>
+                        <span class="duration">⏱️ ${activity.duration_text}</span>
                     </div>
                 `;
                 
