@@ -1,0 +1,56 @@
+{
+  "name": "New York LaGuardia",
+  "city": "New York, NY",
+  "landmarks": {
+    "airport": {
+      "name": "Terminal B Pedestrian Bridge",
+      "id": "lga-bridge"
+    },
+    "city": {
+      "name": "Empire State Building",
+      "id": "nyc-empire"
+    }
+  },
+  "activities": [
+    {
+      "title": "The Water Feature Laser Show",
+      "category": "Visuals",
+      "type": "art",
+      "terminal": "Terminal B, Arrivals & Departures Hall",
+      "description": "Watch the 4,000-gallon indoor water fountain perform a choreographed show with lasers, lights, and music. It runs continuously and projects NYC themes into the falling water.",
+      "duration_text": "15 Mins",
+      "duration_mins": 15,
+      "image_path": "images/lga_water.jpg"
+    },
+    {
+      "title": "Tarmac Views from the Skybridge",
+      "category": "Aviation",
+      "type": "aviation",
+      "terminal": "Terminal B",
+      "description": "Walk across the elevated pedestrian skybridges connecting the concourses. Because they are built directly over active taxiways, you get an incredible top-down view of aircraft passing right beneath your feet.",
+      "duration_text": "20 Mins",
+      "duration_mins": 20,
+      "image_path": "images/lga_bridge.jpg"
+    },
+    {
+      "title": "Junior's Cheesecake & Deli",
+      "category": "Food",
+      "type": "food",
+      "terminal": "Terminal B, Concourse",
+      "description": "Skip the generic fast food and grab a slice of authentic Brooklyn cheesecake or a towering pastrami sandwich from this iconic NYC staple without leaving the airport.",
+      "duration_text": "30 Mins",
+      "duration_mins": 30,
+      "image_path": "images/lga_juniors.jpg"
+    },
+    {
+      "title": "The Bowery Bay Shops",
+      "category": "Shopping",
+      "type": "explore",
+      "terminal": "Terminal B",
+      "description": "Browse a 17,000-square-foot retail space modeled after a classic Manhattan shopping street, featuring local NYC brands like Strand Bookstore.",
+      "duration_text": "30 Mins",
+      "duration_mins": 30,
+      "image_path": "images/lga_bowery.jpg"
+    }
+  ]
+}

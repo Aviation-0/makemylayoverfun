@@ -1,140 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-93NPFQ6VTE"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-93NPFQ6VTE');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Make My Layover Fun</title>
-    <style>
-        /* Maintaining the sleek, brutalist aerospace theme */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            background-color: #f4f4f5;
-            color: #111111;
-        }
-        header {
-            padding: 40px 20px;
-            border-bottom: 1px solid #d4d4d8;
-            text-align: center;
-            background-color: #ffffff;
-        }
-        .back-btn {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: #71717a;
-            text-decoration: none;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            transition: color 0.2s;
-        }
-        .back-btn:hover {
-            color: #111111;
-        }
-        h1 {
-            font-weight: 400;
-            font-size: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin: 0 0 8px 0;
-        }
-        .city-label {
-            font-size: 0.9rem;
-            color: #71717a;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        /* Sharp, square cards */
-        .card {
-            background-color: #ffffff;
-            border: 1px solid #d4d4d8;
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            border-radius: 0;
-        }
-        .card-meta {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: #71717a;
-            margin-bottom: 16px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid #f4f4f5;
-        }
-        .card h3 {
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin: 0 0 12px 0;
-            line-height: 1.3;
-        }
-        .card p {
-            font-size: 0.95rem;
-            color: #3f3f46;
-            line-height: 1.5;
-            margin: 0 0 24px 0;
-            flex-grow: 1;
-        }
-        .duration {
-            font-size: 0.8rem;
-            font-weight: 600;
-            background-color: #f4f4f5;
-            padding: 8px 12px;
-            display: inline-block;
-            border: 1px solid #e4e4e7;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        #error-state {
-            text-align: center;
-            padding: 60px 20px;
-            display: none;
-        }
-    </style>
+<style>
+    body { margin: 0; padding: 0; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; background-color: #f4f4f5; color: #111111; }
+    
+    header { background-color: #ffffff; border-bottom: 1px solid #d4d4d8; padding: 20px 40px 30px 40px; }
+    .header-top { display: flex; justify-content: flex-start; margin-bottom: 10px; }
+    .back-btn { color: #71717a; text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; transition: color 0.2s; }
+    .back-btn:hover { color: #111111; }
+    
+    .title-block { text-align: center; margin-bottom: 30px; }
+    h1 { font-weight: 400; font-size: 2rem; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 8px 0; }
+    .city-label { font-size: 0.85rem; color: #71717a; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* The Detailed Landmark Grid */
+    .landmarks-block { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; }
+    .landmark-card { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    
+    /* Canvas where the SVG geometric art lives */
+    .landmark-art { width: 140px; height: 70px; display: flex; justify-content: center; align-items: flex-end; }
+    .landmark-art svg { width: 100%; height: 100%; overflow: visible; }
+    
+    .landmark-title { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: #71717a; font-weight: 600; text-align: center; }
+    .landmark-title span { color: #111111; display: block; margin-top: 4px; font-size: 0.85rem;}
+
+    /* Legend */
+    .legend-bar { background-color: #fafafa; border-bottom: 1px solid #e4e4e7; padding: 12px 20px; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+    .legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; color: #52525b; }
+    .legend-color { width: 12px; height: 12px; }
+    .bg-art { background-color: #8b5cf6; }       
+    .bg-aviation { background-color: #0ea5e9; }  
+    .bg-food { background-color: #f43f5e; }      
+    .bg-explore { background-color: #10b981; }
+    
+    /* --- NEW CORRECTED IMAGE CSS --- */
+    .card-image {
+        width: 100%;
+        height: 180px; 
+        object-fit: cover; 
+        object-position: center;
+        margin-bottom: 8px;
+        border: 1px solid #e4e4e7;
+        transition: transform 0.3s ease;
+        display: block; 
+    }
+
+    /* Prevents missing images from leaving a gray gap in the grid */
+    .card-image.broken-image {
+        display: none !important;
+    }
+
+    /* Subtle modern interactive feel on hover */
+    .card:hover .card-image {
+        transform: scale(1.02);
+    }
+    /* ------------------------------- */
+
+    .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+    .card { background-color: #ffffff; border: 1px solid #d4d4d8; padding: 24px; display: flex; flex-direction: column; position: relative; }
+    .card-tag { display: inline-block; color: #ffffff; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; padding: 4px 8px; margin-bottom: 16px; align-self: flex-start; }
+    .terminal-loc { font-size: 0.75rem; color: #71717a; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+    .card h3 { font-weight: 600; font-size: 1.1rem; margin: 0 0 12px 0; line-height: 1.3; }
+    .card p { font-size: 0.95rem; color: #3f3f46; line-height: 1.5; margin: 0 0 24px 0; flex-grow: 1; }
+    .duration { font-size: 0.75rem; font-weight: 600; background-color: #f4f4f5; padding: 6px 10px; display: inline-block; border: 1px solid #e4e4e7; text-transform: uppercase; letter-spacing: 0.05em; }
+    #error-state { display: none; text-align: center; padding: 60px 20px; }
+</style>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-93NPFQ6VTE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-93NPFQ6VTE');
+    </script>
 </head>
 <body>
 
-    <header>
+<header>
+    <div class="header-top">
         <a href="index.html" class="back-btn">← New Search</a>
-        <h1 id="airport-name">Initializing...</h1>
+    </div>
+
+    <div class="title-block">
+        <h1 id="airport-name">Loading...</h1>
         <div id="airport-city" class="city-label">Standby for data</div>
-    </header>
+    </div>
+
+    <div class="landmarks-block" id="landmarks-container" style="display: none;">
+        <div class="landmark-card">
+            <div class="landmark-art" id="art-airport"></div>
+            <div class="landmark-title">Airport Landmark <span id="landmark-airport-text"></span></div>
+        </div>
+        <div class="landmark-card">
+            <div class="landmark-art" id="art-city"></div>
+            <div class="landmark-title">City Landmark <span id="landmark-city-text"></span></div>
+        </div>
+    </div>
+</header>
+
+    <div class="legend-bar">
+        <div class="legend-item"><div class="legend-color bg-art"></div> Visuals & Art</div>
+        <div class="legend-item"><div class="legend-color bg-aviation"></div> Aviation</div>
+        <div class="legend-item"><div class="legend-color bg-food"></div> Food</div>
+        <div class="legend-item"><div class="legend-color bg-explore"></div> Exploring</div>
+    </div>
     
     <div class="container">
-        <div id="activities-grid" class="grid">
-            <!-- JavaScript will inject the sharp cards here -->
-        </div>
+        <div id="activities-grid" class="grid"></div>
         
         <div id="error-state">
             <h2>Data Not Found</h2>
-            <p>We do not have layover modules compiled for this airport yet.</p>
+            <p>We do not have layover modules compiled for this hub yet.</p>
         </div>
     </div>
 
-    <!-- Connects the engine -->
     <script src="app.js"></script>
-
 </body>
 </html>

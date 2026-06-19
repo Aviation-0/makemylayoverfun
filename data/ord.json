@@ -1,0 +1,56 @@
+{
+  "name": "Chicago O'Hare",
+  "city": "Chicago, IL",
+  "landmarks": {
+    "airport": {
+      "name": "Neon Tunnel",
+      "id": "ord-tunnel"
+    },
+    "city": {
+      "name": "The Bean",
+      "id": "ord-bean"
+    }
+  },
+  "activities": [
+    {
+      "title": "The Sky's the Limit Neon Tunnel",
+      "category": "Visuals",
+      "type": "art",
+      "terminal": "T1, Concourse B/C",
+      "description": "Walk through Michael Hayden's iconic 745-foot kinetic neon light installation set to a stylized version of Rhapsody in Blue.",
+      "duration_text": "10 Mins",
+      "duration_mins": 10,
+      "image_path": "images/ord_neon.jpg"
+    },
+    {
+      "title": "Restored WWII F4F-3 Wildcat",
+      "category": "Aviation",
+      "type": "aviation",
+      "terminal": "T2, Main Hall",
+      "description": "See an authentic, beautifully restored World War II fighter plane identical to the one flown by the airport's namesake, Butch O'Hare.",
+      "duration_text": "15 Mins",
+      "duration_mins": 15,
+      "image_path": "images/ord_wildcat.jpg"
+    },
+    {
+      "title": "Tortas Frontera",
+      "category": "Food",
+      "type": "food",
+      "terminal": "T1, T3, T5",
+      "description": "Consistently rated one of the best airport restaurants in America. Grab an incredible griddle-baked Mexican sandwich by Chef Rick Bayless.",
+      "duration_text": "45 Mins",
+      "duration_mins": 45,
+      "image_path": "images/ord_food.jpg"
+    },
+    {
+      "title": "Field Museum Store Brachiosaurus",
+      "category": "Museum",
+      "type": "explore",
+      "terminal": "T1, Concourse B",
+      "description": "Check out the massive, 72-foot-long Brachiosaurus skeleton model towering over the terminal concourse.",
+      "duration_text": "10 Mins",
+      "duration_mins": 10,
+      "image_path": "images/ord_dino.jpg"
+    }
+  ]
+}
