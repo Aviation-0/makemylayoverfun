@@ -23,14 +23,13 @@
       "image_path": "images/HNL_plumeria_lounge.JPG",
       "action_link": "https://www.hawaiianairlines.com/content/our-services/products-and-programs/lounges/the-plumeria-lounge",
       "action_text": "Explore",
-      "map_link": "https://airports.hawaii.gov/hnl/flights/airport-lounges/",
       "hours": "Daily 6:30 AM - 10:00 PM"
     },
     {
       "title": "Lahaina Chicken Company",
       "category": "Dining",
       "type": "food",
-      "terminal": "Terminal 2",
+      "terminal": "Terminal 2, between gates E2 and E4",
       "description": "<strong>Location:</strong> Main Concourse<br><br>Award-Winning Fried Chicken. It specializes in homestyle rotisserie roast chicken, fried chicken, carved-to-order prime rib, and baby back ribs, which are served with a variety of classic and local Hawaiian side dishes.",
       "duration_text": "45 Mins",
       "duration_mins": 45,
@@ -70,7 +69,8 @@
       "duration_text": "45 Mins",
       "duration_mins": 45,
       "image_path": "images/HNL_cultural_gardens.JPG",
-      "map_link": "https://airports.hawaii.gov/hnl/shop-dine/cultural-gardens/",
+      "action_text": "History",
+      "action_link": "https://airports.hawaii.gov/hnl/shop-dine/cultural-gardens/",
       "hours": "Open 24/7"
     }
   ]
