@@ -1,0 +1,49 @@
+{
+  "ORD": {
+    "name": "Chicago O'Hare",
+    "city": "Chicago, IL",
+    "activities": [
+      {
+        "title": "The Sky's the Limit Neon Tunnel",
+        "category": "Visuals",
+        "terminal": "T1, Concourse B/C",
+        "description": "Walk through Michael Hayden's iconic 745-foot kinetic neon light installation set to a stylized version of Rhapsody in Blue.",
+        "duration": "10 Mins"
+      },
+      {
+        "title": "Restored WWII F4F-3 Wildcat",
+        "category": "Aviation",
+        "terminal": "T2, Main Hall",
+        "description": "See an authentic, beautifully restored World War II fighter plane identical to the one flown by the airport's namesake, Butch O'Hare.",
+        "duration": "15 Mins"
+      },
+      {
+        "title": "Tortas Frontera",
+        "category": "Food",
+        "terminal": "T1, T3, T5",
+        "description": "Consistently rated one of the best airport restaurants in America. Grab an incredible griddle-baked Mexican sandwich by Chef Rick Bayless.",
+        "duration": "30 Mins"
+      }
+    ]
+  },
+  "ATL": {
+    "name": "Atlanta Hartsfield-Jackson",
+    "city": "Atlanta, GA",
+    "activities": [
+      {
+        "title": "Flight Paths Art Forest",
+        "category": "Walkway",
+        "terminal": "Concourse A/B Connector",
+        "description": "Skip the Plane Train and walk through the underground tunnel. It features a massive, immersive simulated rainforest canopy with light and sound design.",
+        "duration": "15 Mins"
+      },
+      {
+        "title": "Porsche Experience Center View",
+        "category": "Aviation",
+        "terminal": "Concourse F, Sky Club",
+        "description": "If you have Delta Sky Club access in Concourse F, head to the outdoor Sky Deck. You get unobstructed views of planes taking off and the Porsche test track next door.",
+        "duration": "45 Mins"
+      }
+    ]
+  }
+}
