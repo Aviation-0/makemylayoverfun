@@ -3,60 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Make My Layover Fun | Coming Soon</title>
+    <title>Make My Layover Fun</title>
+    
     <style>
+        /* Sleek, light industrial theme inspired by aerospace UI */
         body {
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #0f172a;
-            color: #f8fafc;
+            /* Native stark sans-serif stack for hard, clean letters */
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #cfcfcf; /* Light gray background */
+            color: #111111; /* Stark black */
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             text-align: center;
         }
+
         .container {
-            max-width: 500px;
+            width: 100%;
+            max-width: 550px;
             padding: 20px;
         }
+
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            letter-spacing: -0.05em;
-            background: linear-gradient(to right, #38bdf8, #818cf8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        p {
-            font-size: 1.1rem;
-            color: #94a3b8;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-        .badge {
-            display: inline-block;
-            background-color: #1e293b;
-            color: #38bdf8;
-            padding: 6px 12px;
-            border-radius: 9999px;
-            font-size: 0.85rem;
-            font-weight: 600;
+            font-weight: 400; /* Lighter weight, much sleeker */
+            font-size: 1.75rem; /* Smaller, less intrusive */
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            border: 1px solid #334155;
-            margin-bottom: 20px;
+            letter-spacing: 0.15em; /* Wide spacing for a premium/tech feel */
+            margin-bottom: 40px;
+            color: #111111;
+        }
+
+        .search-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* Sharp, brutalist input field */
+        input[type="text"] {
+            width: 100%;
+            padding: 16px 20px;
+            font-size: 1.1rem;
+            font-family: inherit;
+            background-color: #ffffff;
+            color: #111111;
+            border: 1px solid #d4d4d8;
+            border-radius: 0; /* Sharp corners */
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        input[type="text"]::placeholder {
+            color: #a1a1aa;
+            font-weight: 400;
+        }
+
+        input[type="text"]:focus {
+            border: 1px solid #111111; /* Sharp black border on focus */
+        }
+
+        /* High-contrast action button */
+        button {
+            padding: 16px;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: inherit;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background-color: #111111;
+            color: #ffffff;
+            border: none;
+            border-radius: 0; /* Sharp corners */
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #3f3f46;
+        }
+
+        /* Hide datalist arrow for absolute minimalism in supported browsers */
+        input::-webkit-calendar-picker-indicator {
+            opacity: 0;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="badge">Cleared for Takeoff</div>
-        <h1>makemylayoverfun.com</h1>
-        <p>Turning boring airport transits into mini-adventures. The ultimate utility guide for your next major US hub connection is currently boarding.</p>
+        <h1>Make My Layover Fun</h1>
+        
+        <form id="hub-form" class="search-wrapper">
+            <input 
+                type="text" 
+                id="airport-input" 
+                list="airports" 
+                placeholder="Search airport or code (e.g., ORD)" 
+                required 
+                autocomplete="off"
+            >
+            
+            <!-- Top 50 Busiest US Airports - Alphabetized by Code -->
+            <datalist id="airports">
+                <option value="ATL - Atlanta Hartsfield-Jackson">
+                <option value="AUS - Austin-Bergstrom">
+                <option value="BNA - Nashville">
+                <option value="BOS - Boston Logan">
+                <option value="BWI - Baltimore/Washington">
+                <option value="CLE - Cleveland Hopkins">
+                <option value="CLT - Charlotte Douglas">
+                <option value="CMH - John Glenn Columbus">
+                <option value="CVG - Cincinnati/Northern Kentucky">
+                <option value="DCA - Washington Reagan National">
+                <option value="DEN - Denver International">
+                <option value="DFW - Dallas/Fort Worth">
+                <option value="DTW - Detroit Metropolitan">
+                <option value="EWR - Newark Liberty">
+                <option value="FLL - Fort Lauderdale-Hollywood">
+                <option value="HNL - Honolulu">
+                <option value="IAD - Washington Dulles">
+                <option value="IAH - Houston George Bush">
+                <option value="IND - Indianapolis">
+                <option value="JAX - Jacksonville">
+                <option value="JFK - New York John F. Kennedy">
+                <option value="LAS - Las Vegas Harry Reid">
+                <option value="LAX - Los Angeles">
+                <option value="LGA - New York LaGuardia">
+                <option value="MCI - Kansas City">
+                <option value="MCO - Orlando">
+                <option value="MDW - Chicago Midway">
+                <option value="MIA - Miami">
+                <option value="MKE - Milwaukee Mitchell">
+                <option value="MSP - Minneapolis-St. Paul">
+                <option value="MSY - New Orleans Louis Armstrong">
+                <option value="OAK - Oakland">
+                <option value="ORD - Chicago O'Hare">
+                <option value="PBI - Palm Beach">
+                <option value="PDX - Portland">
+                <option value="PHL - Philadelphia">
+                <option value="PHX - Phoenix Sky Harbor">
+                <option value="PIT - Pittsburgh">
+                <option value="RDU - Raleigh-Durham">
+                <option value="RSW - Southwest Florida (Fort Myers)">
+                <option value="SAN - San Diego">
+                <option value="SAT - San Antonio">
+                <option value="SEA - Seattle-Tacoma">
+                <option value="SFO - San Francisco">
+                <option value="SJU - San Juan Luis Muñoz Marín">
+                <option value="SLC - Salt Lake City">
+                <option value="SMF - Sacramento">
+                <option value="SNA - John Wayne (Orange County)">
+                <option value="STL - St. Louis Lambert">
+                <option value="TPA - Tampa">
+            </datalist>
+
+            <button type="submit">Explore</button>
+        </form>
     </div>
+
+    <script>
+        document.getElementById('hub-form').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            
+            const inputValue = document.getElementById('airport-input').value;
+            const code = inputValue.substring(0, 3).toUpperCase();
+            
+            if(code.length === 3) {
+                window.location.href = `airport.html?code=${code}`;
+            } else {
+                alert("Please select a valid airport from the list.");
+            }
+        });
+    </script>
 
 </body>
 </html>
