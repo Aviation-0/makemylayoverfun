@@ -1,0 +1,77 @@
+{
+  "name": "Honolulu International",
+  "city": "Honolulu, HI",
+  "landmarks": {
+    "airport": {
+      "name": "HNL Air Traffic Control Tower",
+      "svg": "<svg viewBox='0 0 100 60' xmlns='http://www.w3.org/2000/svg'><rect x='45' y='20' width='10' height='40' fill='#d4d4d8'/><line x1='47' y1='20' x2='47' y2='60' stroke='#a1a1aa' stroke-width='1'/><line x1='53' y1='20' x2='53' y2='60' stroke='#a1a1aa' stroke-width='1'/><polygon points='40,20 60,20 55,8 45,8' fill='#a1a1aa'/><rect x='42' y='14' width='16' height='4' fill='#f4f4f5'/><line x1='50' y1='8' x2='50' y2='2' stroke='#71717a' stroke-width='1.5'/><line x1='48' y1='4' x2='52' y2='4' stroke='#71717a' stroke-width='1'/></svg>"
+    },
+    "city": {
+      "name": "Diamond Head",
+      "svg": "<svg viewBox='0 0 100 60' xmlns='http://www.w3.org/2000/svg'><path d='M 5 55 Q 25 25 40 30 Q 55 35 75 15 Q 90 40 95 55 Z' fill='#d4d4d8'/><path d='M 35 55 L 45 40 L 55 55 Z' fill='#a1a1aa'/><path d='M 60 55 L 70 35 L 80 55 Z' fill='#a1a1aa'/><path d='M 5 55 Q 25 25 40 30 Q 55 35 75 15 Q 90 40 95 55' fill='none' stroke='#71717a' stroke-width='1.5'/></svg>"
+    }
+  },
+  "activities": [
+    {
+      "title": "Plumeria Lounge",
+      "category": "Premium Lounge",
+      "type": "explore",
+      "terminal": "Terminal 1",
+      "description": "<strong>Location:</strong> 3rd Floor (Near Wiki Wiki Shuttle)<br><br>Escape the crowds in Hawaiian Airlines' premium lounge offering Pau Hana snacks, craft coffee, and a quiet oasis away from the busy concourse. You can purchase a day pass for $40 at the lounge through an agent even if you're flying economy. However, you must be flying on Alaska or Hawaiian Airlines, a fellow oneworld member airline, or one of their additional global airline partners.",
+      "duration_text": "2 Hours",
+      "duration_mins": 120,
+      "image_path": "images/HNL_plumeria_lounge.JPG",
+      "action_link": "https://www.hawaiianairlines.com/content/our-services/products-and-programs/lounges/the-plumeria-lounge",
+      "action_text": "Explore",
+      "map_link": "https://airports.hawaii.gov/hnl/flights/airport-lounges/",
+      "hours": "Daily 6:30 AM - 10:00 PM"
+    },
+    {
+      "title": "Lahaina Chicken Company",
+      "category": "Dining",
+      "type": "food",
+      "terminal": "Terminal 2",
+      "description": "<strong>Location:</strong> Main Concourse<br><br>Award-Winning Fried Chicken. It specializes in homestyle rotisserie roast chicken, fried chicken, carved-to-order prime rib, and baby back ribs, which are served with a variety of classic and local Hawaiian side dishes.",
+      "duration_text": "45 Mins",
+      "duration_mins": 45,
+      "image_path": "images/HNL_lahaina_chicken.jpg",
+      "action_link": "https://www.honolulumagazine.com/our-top-5-things-to-order-at-lahaina-chicken-co/",
+      "action_text": "What to order? ↗",
+      "hours": "Daily 7:30 AM - 8:00 PM"
+    },
+    {
+      "title": "Kona Brewing Co.",
+      "category": "Dining",
+      "type": "food",
+      "terminal": "Terminal 1, Terminal 2",
+      "description": "<strong>Locations:</strong><br>• Terminal 1: Between Gates A1 and A13<br>• Terminal 1: By the entrance to the B Gates<br>• Terminal 2: By Gates E4 and E5<br><br>Unwind with a flight of locally crafted Hawaiian ales, like the Big Wave Golden Ale or Longboard Island Lager. Pair your cold pint with hearty pub fare and take in the tropical airport atmosphere before boarding your transpacific flight.",
+      "duration_text": "1 Hour",
+      "duration_mins": 60,
+      "image_path": "images/HNL_kona_brewing.jpg",
+      "hours": "Daily 11:00 AM - 10:00 PM"
+    },
+    {
+      "title": "E Gates Tarmac Views",
+      "category": "Aviation & Visuals",
+      "type": ["aviation", "art"],
+      "terminal": "Terminal 2",
+      "description": "<strong>Location:</strong> Walkway to Gates E<br><br>Thanks to HNL's unique open-air layout, the walkways near the E Gates double as excellent, glass-free observation decks. Grab a coffee, feel the tropical breeze, and watch heavy jets rumble out toward the Reef Runway.",
+      "duration_text": "30 Mins",
+      "duration_mins": 30,
+      "image_path": "images/HNL_plane_spotting.jpg",
+      "hours": "Open 24/7"
+    },
+    {
+      "title": "Cultural Gardens (Chinese, Japanese & Hawaiian)",
+      "category": "Gardens",
+      "type": "explore",
+      "terminal": "Terminal 2",
+      "description": "<strong>Location:</strong> Central Concourse<br><br>Step outside into this beautiful open-air retreat built in the 1960s. Wander among koi ponds, a Japanese stone pagoda, and lush Hawaiian flora to completely escape the terminal noise and get some fresh air.",
+      "duration_text": "45 Mins",
+      "duration_mins": 45,
+      "image_path": "images/HNL_cultural_gardens.jpg",
+      "map_link": "https://airports.hawaii.gov/hnl/shop-dine/cultural-gardens/",
+      "hours": "Open 24/7"
+    }
+  ]
+}

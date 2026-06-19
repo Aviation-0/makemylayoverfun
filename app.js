@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+    
     // --- GLOBAL STATE ---
     let allActivities = [];
     let activeTypes = new Set();
@@ -43,14 +44,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            // Parse Terminals by Comma to build the Dropdown
+            // --- SMART TERMINAL PARSING ---
             const terminalDropdown = document.getElementById("terminal-filter");
             let allLocationTags = [];
             
             allActivities.forEach(a => {
                 if (a.terminal) {
                     const tags = a.terminal.split(',').map(s => s.trim());
-                    allLocationTags.push(...tags);
+                    
+                    // Only keep tags that start with "Terminal" or "T" (like T1, T2)
+                    tags.forEach(tag => {
+                        if (/^(Terminal|T\d|T[A-Z])/i.test(tag)) {
+                            allLocationTags.push(tag);
+                        }
+                    });
                 }
             });
             
@@ -79,9 +86,24 @@ document.addEventListener("DOMContentLoaded", () => {
         const grid = document.getElementById("activities-grid");
         grid.innerHTML = ""; 
 
+        // Define your exact hex colors here to power the multi-color tags
+        const typeColors = {
+            "art": "#8b5cf6",
+            "aviation": "#0ea5e9",
+            "food": "#f43f5e",
+            "explore": "#10b981"
+        };
+
         const filtered = allActivities.filter(activity => {
-            const matchesType = activeTypes.size === 0 || activeTypes.has(activity.type);
+            // Force the type into an array to support multi-category events
+            const activityTypes = Array.isArray(activity.type) ? activity.type : [activity.type];
+            
+            // Check if the active filters intersect with the activity's types
+            const matchesType = activeTypes.size === 0 || activityTypes.some(t => activeTypes.has(t));
+            
+            // Check the terminal location
             const matchesTerminal = activeTerminal === "All" || (activity.terminal && activity.terminal.includes(activeTerminal));
+            
             return matchesType && matchesTerminal;
         });
 
@@ -93,10 +115,26 @@ document.addEventListener("DOMContentLoaded", () => {
         filtered.forEach(activity => {
             const card = document.createElement("div");
             card.className = "card";
-            const colorClass = `bg-${activity.type}`;
+            
+            // --- NEW: DYNAMIC MULTI-COLOR TAG LOGIC ---
+            const activityTypes = Array.isArray(activity.type) ? activity.type : [activity.type];
+            let tagHTML = "";
+
+            if (activityTypes.length === 1) {
+                // Standard single color
+                tagHTML = `<div class="card-tag bg-${activityTypes[0]}">${activity.category}</div>`;
+            } else {
+                // It has multiple categories! Build a seamless CSS gradient
+                const color1 = typeColors[activityTypes[0]] || "#111111";
+                const color2 = typeColors[activityTypes[1]] || "#111111";
+                const gradientStyle = `background: linear-gradient(135deg, ${color1}, ${color2});`;
+                
+                tagHTML = `<div class="card-tag" style="${gradientStyle}">${activity.category}</div>`;
+            }
+            // ------------------------------------------
             
             card.innerHTML = `
-                <div class="card-tag ${colorClass}">${activity.category}</div>
+                ${tagHTML}
 
                 ${activity.image_path ? `
                     <img class="card-image" src="${activity.image_path}" alt="${activity.title}" loading="lazy" onerror="this.style.display='none'; this.classList.add('broken-image')">
@@ -112,7 +150,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 
                 <div class="card-footer">
                     <span class="duration">⏱️ ${activity.duration_text}</span>
-                    ${activity.action_link ? `<a href="${activity.action_link}" target="_blank" class="action-btn">${activity.action_text || 'View ↗'}</a>` : ''}
+                    
+                    <div class="button-group">
+                        ${activity.map_link ? `<a href="${activity.map_link}" target="_blank" class="map-btn">Map 📍</a>` : ''}
+                        ${activity.action_link ? `<a href="${activity.action_link}" target="_blank" class="action-btn">${activity.action_text || 'View ↗'}</a>` : ''}
+                    </div>
                 </div>
             `;
             grid.appendChild(card);

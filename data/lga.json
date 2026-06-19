@@ -16,11 +16,12 @@
       "title": "The Water Feature Laser Show",
       "category": "Visuals",
       "type": "art",
-      "terminal": "Terminal B, Arrivals & Departures Hall",
+      "terminal": "Terminal B, Arrivals & Departures Hall, Food & Shops • Level 4",
       "description": "Watch the 4,000-gallon indoor water fountain perform a choreographed show with lasers, lights, and music. It runs continuously and projects NYC themes into the falling water.",
       "duration_text": "15 Mins",
       "duration_mins": 15,
-      "image_path": "images/lga_water.jpg"
+      "image_path": "images/lga_water.jpg",
+      "map_link": "https://maps.laguardiaairport.com/?lang=en&s=eyJvbmxpbmUvcG9pVmlldyI6eyJwb2lJZCI6IjI5ODEifSwibWFwUmVuZGVyZXIiOnsidnAiOnsibGF0Ijo0MC43NzM1NTcsImxuZyI6LTczLjg3MjI0OCwiem9vbSI6MjAuNzM0MTAyLCJiZWFyaW5nIjowLCJwaXRjaCI6MH0sIm9yZCI6NX19"
     },
     {
       "title": "Tarmac Views from the Skybridge",
@@ -30,30 +31,43 @@
       "description": "Walk across the elevated pedestrian skybridges connecting the concourses. Because they are built directly over active taxiways, you get an incredible top-down view of aircraft passing right beneath your feet.",
       "duration_text": "20 Mins",
       "duration_mins": 20,
-      "image_path": "images/lga_bridge.JPG"
+      "image_path": "images/lga_bridge.jpg"
     },
     {
       "title": "Junior's Cheesecake & Deli",
       "category": "Food",
       "type": "food",
-      "terminal": "Terminal B, Concourse",
+      "terminal": "Terminal B, Food & Shops • Level 4",
       "description": "Skip the generic fast food and grab a slice of authentic Brooklyn cheesecake or a towering pastrami sandwich from this iconic NYC staple without leaving the airport.",
       "duration_text": "30 Mins",
       "duration_mins": 30,
       "image_path": "images/lga_juniors.jpg",
       "action_link": "https://marketplace.laguardiab.com/34199",
       "action_text": "Order Now",
+      "map_link": "https://maps.laguardiaairport.com/?lang=en&s=eyJvbmxpbmUvcG9pVmlldyI6eyJwb2lJZCI6IjI0ODYifSwibWFwUmVuZGVyZXIiOnsidnAiOnsibGF0Ijo0MC43NzM3OTYsImxuZyI6LTczLjg3MjIyNywiem9vbSI6MjAuNzM0MTAyLCJiZWFyaW5nIjowLCJwaXRjaCI6MH0sIm9yZCI6NX19",
       "hours": "Daily 5:00 AM - 7:30 PM"
     },
     {
       "title": "The Bowery Bay Shops",
       "category": "Shopping",
       "type": "explore",
-      "terminal": "Terminal B",
+      "terminal": "Terminal B, Food & Shops • Level 4",
       "description": "Browse a 17,000-square-foot retail space modeled after a classic Manhattan shopping street, featuring local NYC brands like Strand Bookstore.",
       "duration_text": "30 Mins",
       "duration_mins": 30,
-      "image_path": "images/lga_bowery.jpg"
+      "image_path": "images/lga_bowery.jpg",
+      "map_link": "https://maps.laguardiaairport.com/?lang=en&s=eyJvbmxpbmUvcG9pVmlldyI6eyJwb2lJZCI6IjI0ODEifSwibWFwUmVuZGVyZXIiOnsidnAiOnsibGF0Ijo0MC43NzM2MzYsImxuZyI6LTczLjg3Mjc5NCwiem9vbSI6MjAuNTMyNDY4LCJiZWFyaW5nIjowLCJwaXRjaCI6MH0sIm9yZCI6NX19"
+    },
+    {
+      "title": "The Outdoor Terrace",
+      "category": "Exploring",
+      "type": "explore",
+      "terminal": "Terminal C, Departures Near Gate 61 • Level 2",
+      "description": "The Outdoor Terrace provides an open-air space with runway views, allowing travelers to relax outside before boarding. This unique feature offers fresh air and a break from the indoor terminal environment.",
+      "duration_text": "45 Mins",
+      "duration_mins": 45,
+      "image_path": "images/lga_terrace.jpg",
+      "map_link": "https://maps.laguardiaairport.com/?lang=en&s=eyJvbmxpbmUvcG9pVmlldyI6eyJwb2lJZCI6IjQwMDE4NzUifSwibWFwUmVuZGVyZXIiOnsidnAiOnsibGF0Ijo0MC43NzExODUsImxuZyI6LTczLjg2NTU5OCwiem9vbSI6MjAuNzM0MTAyLCJiZWFyaW5nIjowLCJwaXRjaCI6MH0sIm9yZCI6Mn19"
     }
   ]
 }
