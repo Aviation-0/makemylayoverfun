@@ -7,76 +7,82 @@
 <style>
     body { margin: 0; padding: 0; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; background-color: #f4f4f5; color: #111111; }
     
-    header { background-color: #ffffff; border-bottom: 1px solid #d4d4d8; padding: 20px 40px 30px 40px; }
+    header { background-color: #ffffff; border-bottom: 1px solid #d4d4d8; padding: 20px 20px 30px 20px; }
     .header-top { display: flex; justify-content: flex-start; margin-bottom: 10px; }
     .back-btn { color: #71717a; text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; transition: color 0.2s; }
     .back-btn:hover { color: #111111; }
     
-    .title-block { text-align: center; margin-bottom: 30px; }
-    h1 { font-weight: 400; font-size: 2rem; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 8px 0; }
+    .title-block { text-align: center; margin-bottom: 20px; }
+    h1 { font-weight: 400; font-size: 2rem; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 4px 0; }
     .city-label { font-size: 0.85rem; color: #71717a; text-transform: uppercase; letter-spacing: 0.05em; }
 
-    /* The Detailed Landmark Grid */
-    .landmarks-block { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; }
-    .landmark-card { display: flex; flex-direction: column; align-items: center; gap: 12px; }
-    
-    /* Canvas where the SVG geometric art lives */
-    .landmark-art { width: 140px; height: 70px; display: flex; justify-content: center; align-items: flex-end; }
+    /* Landmark Grid */
+    .landmarks-block { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+    .landmark-card { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .landmark-art { width: 140px; height: 60px; display: flex; justify-content: center; align-items: flex-end; }
     .landmark-art svg { width: 100%; height: 100%; overflow: visible; }
-    
-    .landmark-title { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: #71717a; font-weight: 600; text-align: center; }
-    .landmark-title span { color: #111111; display: block; margin-top: 4px; font-size: 0.85rem;}
+    .landmark-title { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: #71717a; font-weight: 600; text-align: center; }
+    .landmark-title span { color: #111111; display: block; margin-top: 4px; font-size: 0.8rem;}
 
-    /* Legend */
-    .legend-bar { background-color: #fafafa; border-bottom: 1px solid #e4e4e7; padding: 12px 20px; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
-    .legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; color: #52525b; }
-    .legend-color { width: 12px; height: 12px; }
+    /* Interactive Filter Bar */
+    .filter-bar { background-color: #fafafa; border-bottom: 1px solid #e4e4e7; padding: 12px 20px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .filter-btn { 
+        display: flex; align-items: center; gap: 8px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; color: #71717a; 
+        background: #ffffff; border: 1px solid #d4d4d8; padding: 8px 16px; cursor: pointer; transition: all 0.2s;
+    }
+    .filter-btn:hover { border-color: #a1a1aa; color: #111111; }
+    .filter-btn.active { background: #111111; color: #ffffff; border-color: #111111; }
+    .filter-color { width: 10px; height: 10px; }
+    
     .bg-art { background-color: #8b5cf6; }       
     .bg-aviation { background-color: #0ea5e9; }  
     .bg-food { background-color: #f43f5e; }      
     .bg-explore { background-color: #10b981; }
     
-    /* --- NEW CORRECTED IMAGE CSS --- */
-    .card-image {
-        width: 100%;
-        height: 180px; 
-        object-fit: cover; 
-        object-position: center;
-        margin-bottom: 8px;
-        border: 1px solid #e4e4e7;
-        transition: transform 0.3s ease;
-        display: block; 
+    /* Terminal Dropdown Container */
+    .utility-bar { max-width: 1100px; margin: 20px auto 0; padding: 0 20px; display: flex; justify-content: flex-end; }
+    select.terminal-select { 
+        padding: 8px 12px; font-family: inherit; font-size: 0.8rem; text-transform: uppercase; font-weight: 600;
+        border: 1px solid #d4d4d8; background: #ffffff; outline: none; cursor: pointer; color: #111111;
     }
 
-    /* Prevents missing images from leaving a gray gap in the grid */
-    .card-image.broken-image {
-        display: none !important;
-    }
+    .card-hours { font-size: 0.8rem; color: #52525b; margin-bottom: 16px; font-weight: 500; letter-spacing: 0.02em; }
 
-    /* Subtle modern interactive feel on hover */
-    .card:hover .card-image {
-        transform: scale(1.02);
-    }
-    /* ------------------------------- */
+    /* Grid & Cards */
+    .container { max-width: 1100px; margin: 20px auto 40px; padding: 0 20px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+    .card { background-color: #ffffff; border: 1px solid #d4d4d8; padding: 24px; display: flex; flex-direction: column; }
+    .card-tag { display: inline-block; color: #ffffff; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; padding: 4px 8px; margin-bottom: 12px; align-self: flex-start; }
+    
+    .card-image { width: 100%; height: 180px; object-fit: cover; object-position: center; margin-bottom: 12px; border: 1px solid #e4e4e7; display: block; }
+    .card-image.broken-image { display: none !important; }
+    
+    .terminal-loc { font-size: 0.75rem; color: #71717a; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
+    .card h3 { font-weight: 600; font-size: 1.1rem; margin: 0 0 8px 0; line-height: 1.3; }
+    .card p { font-size: 0.9rem; color: #3f3f46; line-height: 1.5; margin: 0 0 20px 0; flex-grow: 1; }
+    
+    .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto;}
+    .duration { font-size: 0.75rem; font-weight: 600; background-color: #f4f4f5; padding: 6px 10px; border: 1px solid #e4e4e7; text-transform: uppercase; letter-spacing: 0.05em; }
+    
+    /* New Action Button styling */
+    .action-btn { font-size: 0.75rem; font-weight: 600; color: #ffffff; background-color: #111111; padding: 6px 12px; text-decoration: none; text-transform: uppercase; letter-spacing: 0.05em; transition: background 0.2s;}
+    .action-btn:hover { background-color: #3f3f46; }
 
-    .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
-    .card { background-color: #ffffff; border: 1px solid #d4d4d8; padding: 24px; display: flex; flex-direction: column; position: relative; }
-    .card-tag { display: inline-block; color: #ffffff; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; padding: 4px 8px; margin-bottom: 16px; align-self: flex-start; }
-    .terminal-loc { font-size: 0.75rem; color: #71717a; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
-    .card h3 { font-weight: 600; font-size: 1.1rem; margin: 0 0 12px 0; line-height: 1.3; }
-    .card p { font-size: 0.95rem; color: #3f3f46; line-height: 1.5; margin: 0 0 24px 0; flex-grow: 1; }
-    .duration { font-size: 0.75rem; font-weight: 600; background-color: #f4f4f5; padding: 6px 10px; display: inline-block; border: 1px solid #e4e4e7; text-transform: uppercase; letter-spacing: 0.05em; }
     #error-state { display: none; text-align: center; padding: 60px 20px; }
-</style>
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-93NPFQ6VTE"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-93NPFQ6VTE');
-    </script>
+    /* --- MOBILE OPTIMIZATION --- */
+    @media (max-width: 600px) {
+        h1 { font-size: 1.5rem; }
+        .landmarks-block { gap: 20px; }
+        /* Make filter buttons scroll horizontally on small screens to save space */
+        .filter-bar { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; padding: 12px; -webkit-overflow-scrolling: touch; }
+        .filter-btn { flex-shrink: 0; }
+        .grid { grid-template-columns: 1fr; gap: 16px; }
+        /* Shrink internal card padding to save screen real estate */
+        .card { padding: 16px; }
+        .card-image { height: 140px; }
+    }
+</style>
 </head>
 <body>
 
@@ -102,19 +108,24 @@
     </div>
 </header>
 
-    <div class="legend-bar">
-        <div class="legend-item"><div class="legend-color bg-art"></div> Visuals & Art</div>
-        <div class="legend-item"><div class="legend-color bg-aviation"></div> Aviation</div>
-        <div class="legend-item"><div class="legend-color bg-food"></div> Food</div>
-        <div class="legend-item"><div class="legend-color bg-explore"></div> Exploring</div>
+    <div class="filter-bar">
+        <button class="filter-btn" data-type="art"><div class="filter-color bg-art"></div> Visuals</button>
+        <button class="filter-btn" data-type="aviation"><div class="filter-color bg-aviation"></div> Aviation</button>
+        <button class="filter-btn" data-type="food"><div class="filter-color bg-food"></div> Food</button>
+        <button class="filter-btn" data-type="explore"><div class="filter-color bg-explore"></div> Exploring</button>
     </div>
     
+    <div class="utility-bar">
+        <select id="terminal-filter" class="terminal-select" style="display: none;">
+            <option value="All">All Locations</option>
+        </select>
+    </div>
+
     <div class="container">
         <div id="activities-grid" class="grid"></div>
-        
         <div id="error-state">
             <h2>Data Not Found</h2>
-            <p>We do not have layover modules compiled for this hub yet.</p>
+            <p id="error-msg">We do not have layover modules compiled for this hub yet.</p>
         </div>
     </div>
 

@@ -40,7 +40,10 @@
       "description": "Skip the generic fast food and grab a slice of authentic Brooklyn cheesecake or a towering pastrami sandwich from this iconic NYC staple without leaving the airport.",
       "duration_text": "30 Mins",
       "duration_mins": 30,
-      "image_path": "images/lga_juniors.jpg"
+      "image_path": "images/lga_juniors.jpg",
+      "action_link": "https://marketplace.laguardiab.com/34199",
+      "action_text": "Order Now",
+      "hours": "Daily 5:00 AM - 7:30 PM"
     },
     {
       "title": "The Bowery Bay Shops",
