@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    // --- GLOBAL STATE ---
     let allActivities = [];
     let activeTypes = new Set();
     let activeTerminal = "All";
@@ -15,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    // --- DATA FETCHING ---
     fetch(`data/${airportCode}.json`)
         .then(response => {
             if (!response.ok) throw new Error("Data file not found.");
@@ -34,6 +32,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.getElementById("art-city").innerHTML = airport.landmarks.city.svg || "";
             }
 
+            // Render Site Footer if citation exists in JSON
+            if (airport.footer_citation) {
+                const footer = document.getElementById("site-footer");
+                footer.innerHTML = airport.footer_citation;
+                footer.style.display = "block";
+            }
+
             allActivities = airport.activities.filter(activity => activity.duration_mins <= timeLimit);
 
             if (allActivities.length === 0) {
@@ -41,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            // --- SMARTER TERMINAL PARSING ---
             const terminalDropdown = document.getElementById("terminal-filter");
             const securityDropdown = document.getElementById("security-filter");
             let allLocationTags = [];
@@ -76,37 +80,21 @@ document.addEventListener("DOMContentLoaded", () => {
             showError("We do not have layover modules compiled for this hub yet.");
         });
 
-    // --- RENDERING & FILTER LOGIC ---
     function renderGrid() {
         const grid = document.getElementById("activities-grid");
         grid.innerHTML = ""; 
 
-        const typeColors = {
-            "art": "#8b5cf6",
-            "aviation": "#0ea5e9",
-            "food": "#f43f5e",
-            "explore": "#10b981"
-        };
-        
-        const typeLabels = {
-            "art": "VISUALS",
-            "aviation": "AVIATION",
-            "food": "FOOD",
-            "explore": "EXPLORING"
-        };
+        const typeColors = { "art": "#8b5cf6", "aviation": "#0ea5e9", "food": "#f43f5e", "explore": "#10b981" };
+        const typeLabels = { "art": "VISUALS", "aviation": "AVIATION", "food": "FOOD", "explore": "EXPLORING" };
 
-        // 1. FILTERING
         let filtered = allActivities.filter(activity => {
             const activityTypes = Array.isArray(activity.type) ? activity.type : [activity.type];
-            
             const matchesType = activeTypes.size === 0 || activityTypes.some(t => activeTypes.has(t));
             const matchesTerminal = activeTerminal === "All" || (activity.terminal && activity.terminal.includes(activeTerminal));
             const matchesSecurity = activeSecurity === "All" || activity.security === activeSecurity || activity.security === "both";
-            
             return matchesType && matchesTerminal && matchesSecurity;
         });
 
-        // 2. SORTING BY RANK
         filtered.sort((a, b) => {
             const rankA = a.rank || 999;
             const rankB = b.rank || 999;
@@ -118,15 +106,12 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // 3. HTML GENERATION
         filtered.forEach(activity => {
             const card = document.createElement("div");
-            
             card.className = activity.specialty === "dropdown" ? "card specialty-card" : "card";
             
             const activityTypes = Array.isArray(activity.type) ? activity.type : [activity.type];
             let tagHTML = "";
-            
             const displayTagText = activityTypes.map(t => typeLabels[t]).join(" & ");
 
             if (activityTypes.length === 1) {
@@ -138,7 +123,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 tagHTML = `<div class="card-tag" style="${gradientStyle}">${displayTagText}</div>`;
             }
             
-            // LOUNGE / SPECIALTY DROPDOWN HTML
             let specialtyHTML = "";
             if (activity.specialty === "dropdown" && activity.dropdown_options) {
                 specialtyHTML = `
@@ -162,7 +146,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 ${tagHTML}
 
                 ${activity.image_path ? `
-                    <img class="card-image" src="${activity.image_path}" alt="${activity.title}" loading="lazy" onerror="this.style.display='none'; this.classList.add('broken-image')">
+                    <img class="card-image" style="margin-bottom: ${activity.image_attribution ? '4px' : '12px'};" src="${activity.image_path}" alt="${activity.title}" loading="lazy" onerror="this.style.display='none'; this.classList.add('broken-image')">
+                    ${activity.image_attribution ? `<div class="image-attribution">${activity.image_attribution}</div>` : ''}
                 ` : ''}
 
                 <div class="terminal-loc">${activity.terminal}${secLabel}</div>
@@ -184,7 +169,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             `;
 
-            // --- DYNAMIC CARD COLOR & BUTTON INJECTION LOGIC ---
             if (activity.specialty === "dropdown" && activity.dropdown_options) {
                 const selectElement = card.querySelector(".specialty-dropdown");
                 const detailsElement = card.querySelector(".specialty-details");
@@ -193,7 +177,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     const selectedIndex = e.target.value;
                     const optionData = activity.dropdown_options[selectedIndex];
                     
-                    // Injecting details and custom lounge-specific buttons
                     let injectedHTML = `<div style="margin-bottom: 16px;">${optionData.details}</div>`;
                     injectedHTML += `<div class="button-group">`;
                     if (optionData.map_link) {
@@ -206,7 +189,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     
                     detailsElement.innerHTML = injectedHTML;
                     
-                    // Repaint the entire card to match the Airline's brand
                     if (optionData.brand_color) {
                         card.style.backgroundColor = optionData.brand_color;
                         card.style.borderColor = optionData.brand_color;
@@ -239,7 +221,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("error-state").style.display = "block";
     }
 
-    // --- EVENT LISTENERS ---
     document.querySelectorAll(".filter-btn").forEach(btn => {
         btn.addEventListener("click", (e) => {
             const type = e.currentTarget.dataset.type;

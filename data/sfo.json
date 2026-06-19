@@ -1,6 +1,7 @@
 {
   "name": "San Francisco International",
   "city": "San Francisco, CA",
+  "footer_citation": "This work is a derivative of <a href='https://commons.wikimedia.org/wiki/File:Outdoor_terrace_at_SFO_Airport_01.jpg' target='_blank' style='color: inherit;'>\"Outdoor terrace at SFO Airport 01\"</a> by Phoebe, used under CC BY-SA 4.0. The original image was cropped and resized by Zhibang Pan for makemylayoverfun. This derivative is licensed under CC BY-SA 4.0 by Zhibang Pan.",
   "landmarks": {
     "airport": {
       "name": "SFO Control Tower",
@@ -16,13 +17,17 @@
       "rank": 1,
       "title": "International Outdoor Terrace",
       "category": "Plane Spotting",
-      "type": ["aviation", "explore"],
+      "type": [
+        "aviation",
+        "explore"
+      ],
       "terminal": "International Terminal G",
       "security": "post",
       "description": "An absolute must-visit. This stunning outdoor observation deck gets you out of the indoor air and puts you right on top of the heavy international jets. Grab a drink, enjoy the California sunshine, and watch the world fly by.",
       "duration_text": "1 Hour",
       "duration_mins": 60,
       "image_path": "images/sfo_outdoor_terrace.jpg",
+      "image_attribution": "Derivative of <a href='https://commons.wikimedia.org/wiki/File:Outdoor_terrace_at_SFO_Airport_01.jpg' target='_blank' style='color: inherit;'>\"Outdoor terrace at SFO Airport 01\"</a> by Phoebe (CC BY-SA 4.0)",
       "action_link": "https://www.flysfo.com/passengers/shop-dine-relax/outdoor-terrace",
       "action_text": "View Details ↗",
       "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=72810",
@@ -32,7 +37,10 @@
       "rank": 2,
       "title": "Louis A. Turpen Aviation Museum",
       "category": "Museum & History",
-      "type": ["aviation", "art"],
+      "type": [
+        "aviation",
+        "art"
+      ],
       "terminal": "International Terminal",
       "security": "pre",
       "description": "<strong>Location:</strong> Departures Level (Pre-Security)<br><br>Located in a space modeled after the original 1930s passenger lobby, this incredible free museum is filled with commercial aviation artifacts and historical airline memorabilia. It’s the perfect place to geek out over the golden age of flying.",
@@ -48,7 +56,9 @@
       "rank": 3,
       "title": "SFO Yoga Rooms",
       "category": "Wellness & Relaxation",
-      "type": ["explore"],
+      "type": [
+        "explore"
+      ],
       "terminal": "Terminal 1, Terminal 2, Terminal 3",
       "security": "post",
       "description": "<strong>Locations:</strong><br>• Terminal 1: Near Gate C2 (Open 24/7)<br>• Terminal 2: Between C and D Gates (Open 24/7)<br>• Terminal 3: Near Vending Machine Nook by Gate E6 (7:30 AM - 10:30 PM)<br><br>Find your zen in these quiet, dedicated spaces designed specifically for self-reflection and stretching between long flights. Complimentary to use and completely silent.",
@@ -61,7 +71,9 @@
     {
       "title": "SFO Premium Lounge Directory",
       "category": "Premium Lounges",
-      "type": ["explore"],
+      "type": [
+        "explore"
+      ],
       "terminal": "All Terminals",
       "security": "post",
       "description": "Select a lounge below to view exact locations, hours, access requirements, and booking options.",
@@ -218,7 +230,9 @@
     {
       "title": "SkyTerrace Observation Deck",
       "category": "Plane Spotting",
-      "type": ["aviation"],
+      "type": [
+        "aviation"
+      ],
       "terminal": "Terminal 2",
       "security": "pre",
       "description": "Head to the top of Terminal 2 to enjoy stunning 180-degree views of the busiest runways. It’s an incredible vantage point to watch heavies rotate and land. Note: This is pre-security.",
@@ -233,7 +247,9 @@
     {
       "title": "Video Arts Room",
       "category": "Visuals & Theater",
-      "type": ["art"],
+      "type": [
+        "art"
+      ],
       "terminal": "International Terminal",
       "security": "pre",
       "description": "<strong>Location:</strong> Pre-Security, Departures Level<br><br>Sit back, relax, and watch a rotating selection of short films and documentaries curated by the SFO Museum. It's a great way to kill time and learn something new before heading through the TSA checkpoints.",
