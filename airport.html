@@ -40,7 +40,6 @@
     .landmark-title { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: #71717a; font-weight: 600; text-align: center; }
     .landmark-title span { color: #111111; display: block; margin-top: 4px; font-size: 0.8rem;}
 
-    /* CHECKBOX UI UPDATE - ENHANCED NATIVE LOOK */
     .filter-bar { background-color: #fafafa; border-bottom: 1px solid #e4e4e7; padding: 16px 20px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
     
     .filter-btn { 
@@ -67,7 +66,7 @@
     .filter-btn.active .bg-explore { background-color: #10b981; }
 
     .utility-bar { max-width: 1100px; margin: 20px auto 0; padding: 0 20px; display: flex; justify-content: flex-end; gap: 12px; flex-wrap: wrap; }
-    select.utility-select { padding: 8px 12px; font-family: inherit; font-size: 0.8rem; text-transform: uppercase; font-weight: 600; border: 1px solid #d4d4d8; background: #ffffff; outline: none; cursor: pointer; color: #111111; transition: all 0.3s ease; }
+    select.utility-select, input.utility-select { padding: 8px 12px; font-family: inherit; font-size: 0.8rem; text-transform: uppercase; font-weight: 600; border: 1px solid #d4d4d8; background: #ffffff; outline: none; cursor: pointer; color: #111111; transition: all 0.3s ease; border-radius: 4px;}
 
     .container { max-width: 1100px; margin: 20px auto 40px; padding: 0 20px; flex: 1; width: 100%; box-sizing: border-box; }
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
@@ -159,6 +158,18 @@
         <select id="food-type-filter" class="utility-select" style="display: none; border-color: #f43f5e; color: #f43f5e;">
             <option value="All">All Cuisines</option>
         </select>
+
+        <select id="day-filter" class="utility-select" style="display: none; border-color: #0ea5e9; color: #0ea5e9;">
+            <option value="All">Any Day</option>
+            <option value="0">Sunday</option>
+            <option value="1">Monday</option>
+            <option value="2">Tuesday</option>
+            <option value="3">Wednesday</option>
+            <option value="4">Thursday</option>
+            <option value="5">Friday</option>
+            <option value="6">Saturday</option>
+        </select>
+        <input type="time" id="time-filter" class="utility-select" style="display: none; border-color: #0ea5e9; color: #0ea5e9;">
     </div>
 
     <div class="container">

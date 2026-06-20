@@ -29,7 +29,7 @@
       "image_path": "images/sfo_outdoor_terrace.jpg",
       "image_attribution": "Derivative of <a href='https://commons.wikimedia.org/wiki/File:Outdoor_terrace_at_SFO_Airport_01.jpg' target='_blank' style='color: inherit;'>\"Outdoor terrace at SFO Airport 01\"</a> by Phoebe (CC BY-SA 4.0)",
       "action_link": "https://www.flysfo.com/passengers/shop-dine-relax/outdoor-terrace",
-      "action_text": "View Details ↗",
+      "action_text": "Explore More ↗",
       "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=72810",
       "hours": "Daily: 7:00 AM - 11:30 PM"
     },
@@ -241,7 +241,7 @@
       "duration_mins": 60,
       "image_path": "images/sfo_skyterrace.jpg",
       "action_link": "https://www.flysfo.com/skyterrace",
-      "action_text": "View Details ↗",
+      "action_text": "Explore More ↗",
       "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=586185",
       "hours": "Fri-Mon 10:00 AM - 6:00 PM"
     },
@@ -258,7 +258,7 @@
       "duration_mins": 45,
       "image_path": "images/sfo_videoarts.jpg",
       "action_link": "https://www.flysfo.com/passengers/shop-dine-relax/video-arts",
-      "action_text": "View Details ↗",
+      "action_text": "Explore More ↗",
       "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=4897",
       "hours": "Daily: 7:00 AM - 10:00 PM"
     },

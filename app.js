@@ -4,7 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let activeTypes = new Set();
     let activeTerminal = "All";
     let activeSecurity = "All"; 
-    let activeFoodType = "All"; // NEW STATE
+    let activeFoodType = "All"; 
+    let activeDay = "All";   // NEW STATE
+    let activeTime = "All";  // NEW STATE
 
     const params = new URLSearchParams(window.location.search);
     const airportCode = params.get("code")?.toLowerCase();
@@ -49,8 +51,10 @@ document.addEventListener("DOMContentLoaded", () => {
             // POPULATE TERMINAL DROPDOWN
             const terminalDropdown = document.getElementById("terminal-filter");
             const securityDropdown = document.getElementById("security-filter");
-            let allLocationTags = [];
+            const dayDropdown = document.getElementById("day-filter");
+            const timeDropdown = document.getElementById("time-filter");
             
+            let allLocationTags = [];
             allActivities.forEach(a => {
                 if (a.terminal) {
                     const primaryTerminal = a.terminal.split(',')[0].trim();
@@ -70,8 +74,10 @@ document.addEventListener("DOMContentLoaded", () => {
             
             terminalDropdown.style.display = "block";
             securityDropdown.style.display = "block";
+            dayDropdown.style.display = "block";
+            timeDropdown.style.display = "block";
 
-            // POPULATE NEW FOOD CUISINE DROPDOWN
+            // POPULATE FOOD CUISINE DROPDOWN
             const foodTypeDropdown = document.getElementById("food-type-filter");
             let allFoodTypes = [];
             
@@ -98,6 +104,61 @@ document.addEventListener("DOMContentLoaded", () => {
             showError("We do not have layover modules compiled for this hub yet.");
         });
 
+    // --- NEW: THE MAGIC REGEX TIME PARSER ---
+    // Reads strings like "Fri-Mon 10:00 AM - 6:00 PM" and calculates if it is open right now
+    function isActivityOpen(hoursString, selectedDayIdx, selectedTimeMins) {
+        if (!hoursString) return true; 
+
+        let str = hoursString.toLowerCase();
+        if (str.includes('24/7') || str.includes('24 hours')) return true;
+
+        // Determine Operating Days
+        let daysOpen = [0,1,2,3,4,5,6];
+        if (str.includes('fri-mon') || str.includes('fri - mon')) {
+            daysOpen = [5,6,0,1];
+        } else if (str.includes('mon-fri') || str.includes('mon - fri')) {
+            daysOpen = [1,2,3,4,5];
+        }
+
+        if (selectedDayIdx !== -1 && !daysOpen.includes(selectedDayIdx)) return false;
+        if (selectedTimeMins === -1) return true; // Day matches, no specific time requested
+
+        // Extract Times and Compare
+        const timeRegex = /(\d{1,2}):?(\d{2})?\s*(am|pm)\s*-\s*(\d{1,2}):?(\d{2})?\s*(am|pm)/g;
+        let match;
+        let isOpen = false;
+        let foundTimes = false;
+
+        while ((match = timeRegex.exec(str)) !== null) {
+            foundTimes = true;
+            let openHour = parseInt(match[1]);
+            let openMin = match[2] ? parseInt(match[2]) : 0;
+            if (match[3] === 'pm' && openHour !== 12) openHour += 12;
+            if (match[3] === 'am' && openHour === 12) openHour = 0;
+            let openMins = openHour * 60 + openMin;
+
+            let closeHour = parseInt(match[4]);
+            let closeMin = match[5] ? parseInt(match[5]) : 0;
+            if (match[6] === 'pm' && closeHour !== 12) closeHour += 12;
+            if (match[6] === 'am' && closeHour === 12) closeHour = 0;
+            let closeMins = closeHour * 60 + closeMin;
+
+            // Handle Overnight scenarios
+            if (closeMins <= openMins) {
+                if (selectedTimeMins >= openMins || selectedTimeMins <= closeMins) isOpen = true;
+            } else {
+                if (selectedTimeMins >= openMins && selectedTimeMins <= closeMins) isOpen = true;
+            }
+        }
+        return foundTimes ? isOpen : true; 
+    }
+
+    const timeToMinutes = (timeStr) => {
+        if (!timeStr) return -1;
+        const [hours, mins] = timeStr.split(':').map(Number);
+        return hours * 60 + mins;
+    };
+
     function renderGrid() {
         const grid = document.getElementById("activities-grid");
         grid.innerHTML = ""; 
@@ -105,19 +166,34 @@ document.addEventListener("DOMContentLoaded", () => {
         const typeColors = { "art": "#8b5cf6", "aviation": "#0ea5e9", "food": "#f43f5e", "explore": "#10b981" };
         const typeLabels = { "art": "VISUALS", "aviation": "AVIATION", "food": "FOOD", "explore": "EXPLORING" };
 
+        const selectedDay = activeDay !== "All" ? parseInt(activeDay) : -1;
+        const selectedTime = activeTime !== "All" && activeTime !== "" ? timeToMinutes(activeTime) : -1;
+
         let filtered = allActivities.filter(activity => {
             const activityTypes = Array.isArray(activity.type) ? activity.type : [activity.type];
             
             const matchesType = activeTypes.size === 0 || activityTypes.some(t => activeTypes.has(t));
             const matchesTerminal = activeTerminal === "All" || (activity.terminal && activity.terminal.includes(activeTerminal));
             const matchesSecurity = activeSecurity === "All" || activity.security === activeSecurity || activity.security === "both";
-            
-            // NEW: FOOD TYPE LOGIC (Only applies if it's a food card and a specific sub-filter is selected)
             const matchesFoodType = activeFoodType === "All" || 
                                     (!activityTypes.includes("food")) || 
                                     (activityTypes.includes("food") && activity.food_type && activity.food_type.includes(activeFoodType));
 
-            return matchesType && matchesTerminal && matchesSecurity && matchesFoodType;
+            // TIME & DAY FILTERING (Also seamlessly checks inside the Lounge Directory dropdowns!)
+            let matchesSchedule = true;
+            if (selectedDay !== -1 || selectedTime !== -1) {
+                if (activity.specialty === "dropdown" && activity.dropdown_options) {
+                    const anyOptionOpen = activity.dropdown_options.some(opt => {
+                        const hoursMatch = opt.details.match(/<strong>Hours:<\/strong>([^<]+)/i);
+                        return isActivityOpen(hoursMatch ? hoursMatch[1] : "", selectedDay, selectedTime);
+                    });
+                    matchesSchedule = anyOptionOpen;
+                } else {
+                    matchesSchedule = isActivityOpen(activity.hours, selectedDay, selectedTime);
+                }
+            }
+
+            return matchesType && matchesTerminal && matchesSecurity && matchesFoodType && matchesSchedule;
         });
 
         filtered.sort((a, b) => {
@@ -150,11 +226,21 @@ document.addEventListener("DOMContentLoaded", () => {
             
             let specialtyHTML = "";
             if (activity.specialty === "dropdown" && activity.dropdown_options) {
+                
+                // If filtering by time, instantly hide the closed lounges from the dropdown entirely!
+                let validOptions = activity.dropdown_options;
+                if (selectedDay !== -1 || selectedTime !== -1) {
+                    validOptions = validOptions.filter(opt => {
+                        const hoursMatch = opt.details.match(/<strong>Hours:<\/strong>([^<]+)/i);
+                        return isActivityOpen(hoursMatch ? hoursMatch[1] : "", selectedDay, selectedTime);
+                    });
+                }
+
                 specialtyHTML = `
                     <p style="color: inherit;">${activity.description}</p>
                     <select class="specialty-dropdown">
-                        <option value="" disabled selected>Choose a Lounge to view details...</option>
-                        ${activity.dropdown_options.map((opt, i) => `<option value="${i}">${opt.name}</option>`).join('')}
+                        <option value="" disabled selected>Choose an Open Lounge to view details...</option>
+                        ${validOptions.map(opt => `<option value="${activity.dropdown_options.indexOf(opt)}">${opt.name}</option>`).join('')}
                     </select>
                     <div class="specialty-details"></div>
                 `;
@@ -257,33 +343,24 @@ document.addEventListener("DOMContentLoaded", () => {
                 e.currentTarget.classList.add("active");
             }
             
-            // SHOW OR HIDE THE FOOD DROPDOWN
             const foodTypeDropdown = document.getElementById("food-type-filter");
             if (activeTypes.has("food")) {
                 foodTypeDropdown.style.display = "inline-block";
             } else {
                 foodTypeDropdown.style.display = "none";
-                activeFoodType = "All"; // Reset state
-                foodTypeDropdown.value = "All"; // Reset UI
+                activeFoodType = "All"; 
+                foodTypeDropdown.value = "All"; 
             }
             
             renderGrid();
         });
     });
 
-    document.getElementById("terminal-filter").addEventListener("change", (e) => {
-        activeTerminal = e.target.value;
-        renderGrid();
-    });
-
-    document.getElementById("security-filter").addEventListener("change", (e) => {
-        activeSecurity = e.target.value;
-        renderGrid();
-    });
-
-    // NEW EVENT LISTENER FOR FOOD DROPDOWN
-    document.getElementById("food-type-filter").addEventListener("change", (e) => {
-        activeFoodType = e.target.value;
-        renderGrid();
-    });
+    document.getElementById("terminal-filter").addEventListener("change", (e) => { activeTerminal = e.target.value; renderGrid(); });
+    document.getElementById("security-filter").addEventListener("change", (e) => { activeSecurity = e.target.value; renderGrid(); });
+    document.getElementById("food-type-filter").addEventListener("change", (e) => { activeFoodType = e.target.value; renderGrid(); });
+    
+    // Day and Time Listeners
+    document.getElementById("day-filter").addEventListener("change", (e) => { activeDay = e.target.value; renderGrid(); });
+    document.getElementById("time-filter").addEventListener("change", (e) => { activeTime = e.target.value; renderGrid(); });
 });
