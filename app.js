@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let activeTerminal = "All";
     let activeSecurity = "All"; 
     let activeFoodType = "All"; 
-    let activeDay = "All";   // NEW STATE
-    let activeTime = "All";  // NEW STATE
+    let activeDay = "All"; 
+    let activeTime = "All"; 
 
     const params = new URLSearchParams(window.location.search);
     const airportCode = params.get("code")?.toLowerCase();
@@ -48,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            // POPULATE TERMINAL DROPDOWN
             const terminalDropdown = document.getElementById("terminal-filter");
             const securityDropdown = document.getElementById("security-filter");
             const dayDropdown = document.getElementById("day-filter");
@@ -77,7 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
             dayDropdown.style.display = "block";
             timeDropdown.style.display = "block";
 
-            // POPULATE FOOD CUISINE DROPDOWN
             const foodTypeDropdown = document.getElementById("food-type-filter");
             let allFoodTypes = [];
             
@@ -104,15 +102,12 @@ document.addEventListener("DOMContentLoaded", () => {
             showError("We do not have layover modules compiled for this hub yet.");
         });
 
-    // --- NEW: THE MAGIC REGEX TIME PARSER ---
-    // Reads strings like "Fri-Mon 10:00 AM - 6:00 PM" and calculates if it is open right now
     function isActivityOpen(hoursString, selectedDayIdx, selectedTimeMins) {
         if (!hoursString) return true; 
 
         let str = hoursString.toLowerCase();
-        if (str.includes('24/7') || str.includes('24 hours')) return true;
+        if (str.includes('24/7') || str.includes('24 hours') || str.includes('continuous')) return true;
 
-        // Determine Operating Days
         let daysOpen = [0,1,2,3,4,5,6];
         if (str.includes('fri-mon') || str.includes('fri - mon')) {
             daysOpen = [5,6,0,1];
@@ -121,9 +116,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         if (selectedDayIdx !== -1 && !daysOpen.includes(selectedDayIdx)) return false;
-        if (selectedTimeMins === -1) return true; // Day matches, no specific time requested
+        if (selectedTimeMins === -1) return true; 
 
-        // Extract Times and Compare
         const timeRegex = /(\d{1,2}):?(\d{2})?\s*(am|pm)\s*-\s*(\d{1,2}):?(\d{2})?\s*(am|pm)/g;
         let match;
         let isOpen = false;
@@ -143,7 +137,6 @@ document.addEventListener("DOMContentLoaded", () => {
             if (match[6] === 'am' && closeHour === 12) closeHour = 0;
             let closeMins = closeHour * 60 + closeMin;
 
-            // Handle Overnight scenarios
             if (closeMins <= openMins) {
                 if (selectedTimeMins >= openMins || selectedTimeMins <= closeMins) isOpen = true;
             } else {
@@ -163,8 +156,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const grid = document.getElementById("activities-grid");
         grid.innerHTML = ""; 
 
-        const typeColors = { "art": "#8b5cf6", "aviation": "#0ea5e9", "food": "#f43f5e", "explore": "#10b981" };
-        const typeLabels = { "art": "VISUALS", "aviation": "AVIATION", "food": "FOOD", "explore": "EXPLORING" };
+        // UPDATED: Now supports the new "SHOPPING" tag
+        const typeColors = { "art": "#8b5cf6", "aviation": "#0ea5e9", "food": "#f43f5e", "shop": "#f59e0b", "explore": "#10b981" };
+        const typeLabels = { "art": "VISUALS", "aviation": "AVIATION", "food": "FOOD", "shop": "SHOPPING", "explore": "EXPLORING" };
 
         const selectedDay = activeDay !== "All" ? parseInt(activeDay) : -1;
         const selectedTime = activeTime !== "All" && activeTime !== "" ? timeToMinutes(activeTime) : -1;
@@ -179,13 +173,12 @@ document.addEventListener("DOMContentLoaded", () => {
                                     (!activityTypes.includes("food")) || 
                                     (activityTypes.includes("food") && activity.food_type && activity.food_type.includes(activeFoodType));
 
-            // TIME & DAY FILTERING (Also seamlessly checks inside the Lounge Directory dropdowns!)
             let matchesSchedule = true;
             if (selectedDay !== -1 || selectedTime !== -1) {
                 if (activity.specialty === "dropdown" && activity.dropdown_options) {
                     const anyOptionOpen = activity.dropdown_options.some(opt => {
-                        const hoursMatch = opt.details.match(/<strong>Hours:<\/strong>([^<]+)/i);
-                        return isActivityOpen(hoursMatch ? hoursMatch[1] : "", selectedDay, selectedTime);
+                        const hoursMatch = opt.details.match(/<strong>(Hours|Dates):<\/strong>([^<]+)/i);
+                        return isActivityOpen(hoursMatch ? hoursMatch[2] : "", selectedDay, selectedTime);
                     });
                     matchesSchedule = anyOptionOpen;
                 } else {
@@ -227,19 +220,18 @@ document.addEventListener("DOMContentLoaded", () => {
             let specialtyHTML = "";
             if (activity.specialty === "dropdown" && activity.dropdown_options) {
                 
-                // If filtering by time, instantly hide the closed lounges from the dropdown entirely!
                 let validOptions = activity.dropdown_options;
                 if (selectedDay !== -1 || selectedTime !== -1) {
                     validOptions = validOptions.filter(opt => {
-                        const hoursMatch = opt.details.match(/<strong>Hours:<\/strong>([^<]+)/i);
-                        return isActivityOpen(hoursMatch ? hoursMatch[1] : "", selectedDay, selectedTime);
+                        const hoursMatch = opt.details.match(/<strong>(Hours|Dates):<\/strong>([^<]+)/i);
+                        return isActivityOpen(hoursMatch ? hoursMatch[2] : "", selectedDay, selectedTime);
                     });
                 }
 
                 specialtyHTML = `
                     <p style="color: inherit;">${activity.description}</p>
                     <select class="specialty-dropdown">
-                        <option value="" disabled selected>Choose an Open Lounge to view details...</option>
+                        <option value="" disabled selected>Choose an Option to view details...</option>
                         ${validOptions.map(opt => `<option value="${activity.dropdown_options.indexOf(opt)}">${opt.name}</option>`).join('')}
                     </select>
                     <div class="specialty-details"></div>
@@ -359,8 +351,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("terminal-filter").addEventListener("change", (e) => { activeTerminal = e.target.value; renderGrid(); });
     document.getElementById("security-filter").addEventListener("change", (e) => { activeSecurity = e.target.value; renderGrid(); });
     document.getElementById("food-type-filter").addEventListener("change", (e) => { activeFoodType = e.target.value; renderGrid(); });
-    
-    // Day and Time Listeners
     document.getElementById("day-filter").addEventListener("change", (e) => { activeDay = e.target.value; renderGrid(); });
     document.getElementById("time-filter").addEventListener("change", (e) => { activeTime = e.target.value; renderGrid(); });
 });
