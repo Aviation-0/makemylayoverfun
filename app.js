@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let activeTypes = new Set();
     let activeTerminal = "All";
     let activeSecurity = "All"; 
+    let activeFoodType = "All"; // NEW STATE
 
     const params = new URLSearchParams(window.location.search);
     const airportCode = params.get("code")?.toLowerCase();
@@ -32,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.getElementById("art-city").innerHTML = airport.landmarks.city.svg || "";
             }
 
-            // Render Site Footer if citation exists in JSON
             if (airport.footer_citation) {
                 const footer = document.getElementById("site-footer");
                 footer.innerHTML = airport.footer_citation;
@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
+            // POPULATE TERMINAL DROPDOWN
             const terminalDropdown = document.getElementById("terminal-filter");
             const securityDropdown = document.getElementById("security-filter");
             let allLocationTags = [];
@@ -60,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
             
             const uniqueTerminals = [...new Set(allLocationTags)].sort();
-            
             uniqueTerminals.forEach(term => {
                 const opt = document.createElement("option");
                 opt.value = term;
@@ -70,6 +70,24 @@ document.addEventListener("DOMContentLoaded", () => {
             
             terminalDropdown.style.display = "block";
             securityDropdown.style.display = "block";
+
+            // POPULATE NEW FOOD CUISINE DROPDOWN
+            const foodTypeDropdown = document.getElementById("food-type-filter");
+            let allFoodTypes = [];
+            
+            allActivities.forEach(a => {
+                if (a.food_type && Array.isArray(a.food_type)) {
+                    a.food_type.forEach(ft => allFoodTypes.push(ft));
+                }
+            });
+            
+            const uniqueFoodTypes = [...new Set(allFoodTypes)].sort();
+            uniqueFoodTypes.forEach(ft => {
+                const opt = document.createElement("option");
+                opt.value = ft;
+                opt.innerText = ft.toUpperCase();
+                foodTypeDropdown.appendChild(opt);
+            });
 
             renderGrid();
         })
@@ -89,10 +107,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let filtered = allActivities.filter(activity => {
             const activityTypes = Array.isArray(activity.type) ? activity.type : [activity.type];
+            
             const matchesType = activeTypes.size === 0 || activityTypes.some(t => activeTypes.has(t));
             const matchesTerminal = activeTerminal === "All" || (activity.terminal && activity.terminal.includes(activeTerminal));
             const matchesSecurity = activeSecurity === "All" || activity.security === activeSecurity || activity.security === "both";
-            return matchesType && matchesTerminal && matchesSecurity;
+            
+            // NEW: FOOD TYPE LOGIC (Only applies if it's a food card and a specific sub-filter is selected)
+            const matchesFoodType = activeFoodType === "All" || 
+                                    (!activityTypes.includes("food")) || 
+                                    (activityTypes.includes("food") && activity.food_type && activity.food_type.includes(activeFoodType));
+
+            return matchesType && matchesTerminal && matchesSecurity && matchesFoodType;
         });
 
         filtered.sort((a, b) => {
@@ -231,6 +256,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 activeTypes.add(type);
                 e.currentTarget.classList.add("active");
             }
+            
+            // SHOW OR HIDE THE FOOD DROPDOWN
+            const foodTypeDropdown = document.getElementById("food-type-filter");
+            if (activeTypes.has("food")) {
+                foodTypeDropdown.style.display = "inline-block";
+            } else {
+                foodTypeDropdown.style.display = "none";
+                activeFoodType = "All"; // Reset state
+                foodTypeDropdown.value = "All"; // Reset UI
+            }
+            
             renderGrid();
         });
     });
@@ -242,6 +278,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("security-filter").addEventListener("change", (e) => {
         activeSecurity = e.target.value;
+        renderGrid();
+    });
+
+    // NEW EVENT LISTENER FOR FOOD DROPDOWN
+    document.getElementById("food-type-filter").addEventListener("change", (e) => {
+        activeFoodType = e.target.value;
         renderGrid();
     });
 });

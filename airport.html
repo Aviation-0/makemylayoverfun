@@ -4,12 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Make My Layover Fun</title>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-93NPFQ6VTE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-93NPFQ6VTE');
+    </script>
+
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+    <meta name="apple-mobile-web-app-title" content="Make My Layover Fun" />
     <link rel="manifest" href="/site.webmanifest" />
+
 <style>
     body { margin: 0; padding: 0; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; background-color: #f4f4f5; color: #111111; display: flex; flex-direction: column; min-height: 100vh; }
     
@@ -56,7 +67,7 @@
     .filter-btn.active .bg-explore { background-color: #10b981; }
 
     .utility-bar { max-width: 1100px; margin: 20px auto 0; padding: 0 20px; display: flex; justify-content: flex-end; gap: 12px; flex-wrap: wrap; }
-    select.utility-select { padding: 8px 12px; font-family: inherit; font-size: 0.8rem; text-transform: uppercase; font-weight: 600; border: 1px solid #d4d4d8; background: #ffffff; outline: none; cursor: pointer; color: #111111; }
+    select.utility-select { padding: 8px 12px; font-family: inherit; font-size: 0.8rem; text-transform: uppercase; font-weight: 600; border: 1px solid #d4d4d8; background: #ffffff; outline: none; cursor: pointer; color: #111111; transition: all 0.3s ease; }
 
     .container { max-width: 1100px; margin: 20px auto 40px; padding: 0 20px; flex: 1; width: 100%; box-sizing: border-box; }
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
@@ -143,6 +154,10 @@
             <option value="All">Any Security</option>
             <option value="pre">Pre-Security Only</option>
             <option value="post">Post-Security Only</option>
+        </select>
+        
+        <select id="food-type-filter" class="utility-select" style="display: none; border-color: #f43f5e; color: #f43f5e;">
+            <option value="All">All Cuisines</option>
         </select>
     </div>
 
