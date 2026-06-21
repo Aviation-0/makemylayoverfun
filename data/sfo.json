@@ -53,7 +53,7 @@
       "type": ["explore"],
       "terminal": "Terminal 1, Terminal 2, Terminal 3",
       "security": "post",
-      "description": "<strong>Locations:</strong><br>• Terminal 1: Near Gate C2 <br>• Terminal 2: Between C and D Gates <br>• Terminal 3: Near Vending Machine Nook by Gate E6 <br><br>Find your zen in these quiet, dedicated spaces designed specifically for self-reflection and stretching between long flights. Complimentary to use and completely silent.",
+      "description": "<strong>Locations:</strong><br>• Harvey Milk Terminal 1: Near Gate C2 <br>• Terminal 2: Between C and D Gates <br>• Terminal 3: Near Vending Machine Nook by Gate E6 <br><br>Find your zen in these quiet, dedicated spaces designed specifically for self-reflection and stretching between long flights. Complimentary to use and completely silent.",
       "duration_text": "30 Mins",
       "duration_mins": 30,
       "image_path": "images/sfo_yogaroom.jpg",
@@ -139,7 +139,7 @@
         {
           "name": "China Airlines Lounge",
           "brand_color": "#8B8992",
-          "details": "<strong>Alliance:</strong> SkyTeam<br><strong>Airlines:</strong> China Airlines, Vietnam Airlines, China Eastern, Condor<br><strong>Location:</strong> Int'l Terminal A, Level 4 (Post-Security)<br><strong>Access:</strong> Priority Pass members welcome 8:30 am - 6:00 pm.<br><strong>Hours:</strong> Sun-Sat 9:30 am - 12:30 pm",
+          "details": "<strong>Alliance:</strong> SkyTeam<br><strong>Airlines:</strong> China Airlines, Vietnam Airlines, China Eastern, Condor<br><strong>Location:</strong> Int'l Terminal A, Level 4 <br><strong>Access:</strong> Priority Pass members welcome 8:30 am - 6:00 pm.<br><strong>Hours:</strong> Sun-Sat 9:30 am - 12:30 pm",
           "action_link": "https://www.americanexpress.com/en-us/travel/lounges/the-platinum-card/SFO/china-airlines-dynasty-lounge-international-terminal-a-PSqSB42915/",
           "action_text": "Official Details ↗",
           "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=2113"
@@ -165,7 +165,7 @@
           "brand_color": "#4B5563",
           "details": "<strong>Alliance:</strong> SkyTeam<br><strong>Airlines:</strong> Air France, KLM, AeroMexico, Philippine Airlines, Qatar Airways, SAS<br><strong>Location:</strong> Int'l Terminal A, Level 4, Post-Security<br><strong>Hours:</strong> Sun-Sat 7:00 am - 12:45 am",
           "action_link": "https://www.prioritypass.com/en-GB/lounges/united-states-of-america/san-francisco-international/sfo11-golden-gate-lounge",
-          "action_text": "Website",
+          "action_text": "Website ↗",
           "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=2108"
         },
         {
@@ -232,94 +232,116 @@
         {
           "name": "Lowrider Bikes",
           "brand_color": "#8b5cf6",
-          "details": "<strong>Location:</strong> Int'l Terminal, Galleries 4B & 4C (Pre-Security)<br><strong>Dates:</strong> Apr 18, 2026 - Jul 11, 2027"
+          "details": "<strong>Location:</strong> Int'l Terminal, Galleries 4B & 4C <br><strong>Dates:</strong> Apr 18, 2026 - Jul 11, 2027"
         },
         {
           "name": "Indoor Eden",
           "brand_color": "#8b5cf6",
-          "details": "<strong>Location:</strong> Int'l Terminal, Gallery 4D (Pre-Security)<br><strong>Dates:</strong> Feb 21, 2026 - Jan 09, 2028"
+          "details": "<strong>Location:</strong> Int'l Terminal, Gallery 4D <br><strong>Dates:</strong> Feb 21, 2026 - Jan 09, 2028"
         },
         {
           "name": "Nut Tree Aircraft Models",
           "brand_color": "#0ea5e9",
-          "details": "<strong>Location:</strong> Int'l Terminal, Aviation Museum (Pre-Security)<br><strong>Dates:</strong> Oct 25, 2025 - Mar 28, 2027"
+          "details": "<strong>Location:</strong> Int'l Terminal, Aviation Museum <br><strong>Dates:</strong> Oct 25, 2025 - Mar 28, 2027"
         },
         {
           "name": "A Telephone Retrospective",
           "brand_color": "#8b5cf6",
-          "details": "<strong>Location:</strong> Terminal 2, Gallery 2A (Post-Security)<br><strong>Dates:</strong> Aug 30, 2025 - Aug 30, 2026"
+          "details": "<strong>Location:</strong> Terminal 2, Gallery 2A <br><strong>Dates:</strong> Aug 30, 2025 - Aug 30, 2026"
         },
         {
           "name": "Preston Singletary",
           "brand_color": "#8b5cf6",
-          "details": "<strong>Location:</strong> Int'l Terminal, Gallery 4A (Pre-Security)<br><strong>Dates:</strong> Jun 21, 2025 - Jan 30, 2028"
+          "details": "<strong>Location:</strong> Int'l Terminal, Gallery 4A <br><strong>Dates:</strong> Jun 21, 2025 - Jan 30, 2028"
         },
         {
           "name": "Women of Afrofuturism",
           "brand_color": "#8b5cf6",
-          "details": "<strong>Location:</strong> Harvey Milk Terminal 1, Gallery 1D (Post-Security)<br><strong>Dates:</strong> May 17, 2025 - Oct 18, 2026"
+          "details": "<strong>Location:</strong> Harvey Milk Terminal 1, Gallery 1D <br><strong>Dates:</strong> May 17, 2025 - Oct 18, 2026"
         },
         {
           "name": "Portable Craft",
           "brand_color": "#8b5cf6",
-          "details": "<strong>Location:</strong> Harvey Milk Terminal 1, Gallery 1E (Post-Security)<br><strong>Dates:</strong> Apr 19, 2025 - Jun 21, 2026"
+          "details": "<strong>Location:</strong> Harvey Milk Terminal 1, Gallery 1E <br><strong>Dates:</strong> Apr 19, 2025 - Jun 21, 2026"
         },
         {
           "name": "Destination: S.F.",
           "brand_color": "#8b5cf6",
-          "details": "<strong>Location:</strong> Int'l Terminal, Aviation Museum (Pre-Security)<br><strong>Dates:</strong> May 09, 2026 - Jan 10, 2027"
+          "details": "<strong>Location:</strong> Int'l Terminal, Aviation Museum <br><strong>Dates:</strong> May 09, 2026 - Jan 10, 2027"
         },
         {
           "name": "Eric Ruby",
           "brand_color": "#8b5cf6",
-          "details": "<strong>Location:</strong> Terminal 3, Gallery 3A (Pre-Security)<br><strong>Dates:</strong> May 23, 2026 - Dec 06, 2026"
+          "details": "<strong>Location:</strong> Terminal 3, Gallery 3A <br><strong>Dates:</strong> May 23, 2026 - Dec 06, 2026"
         },
         {
           "name": "Airline Travel Posters",
           "brand_color": "#0ea5e9",
-          "details": "<strong>Location:</strong> Int'l Terminal, Aviation Museum (Pre-Security)<br><strong>Dates:</strong> Apr 06, 2024 - Feb 07, 2027"
+          "details": "<strong>Location:</strong> Int'l Terminal, Aviation Museum <br><strong>Dates:</strong> Apr 06, 2024 - Feb 07, 2027"
         },
         {
           "name": "Wendel A. White",
           "brand_color": "#8b5cf6",
-          "details": "<strong>Location:</strong> Terminal 2, Gallery 2E (Post-Security)<br><strong>Dates:</strong> Nov 12, 2024 - Jul 26, 2026"
+          "details": "<strong>Location:</strong> Terminal 2, Gallery 2E <br><strong>Dates:</strong> Nov 12, 2024 - Jul 26, 2026"
         },
         {
           "name": "Flying on Display",
           "brand_color": "#0ea5e9",
-          "details": "<strong>Location:</strong> Harvey Milk Terminal 1, Gallery 1G (Post-Security)<br><strong>Dates:</strong> Jun 17, 2024 - Jul 26, 2026"
+          "details": "<strong>Location:</strong> Harvey Milk Terminal 1, Gallery 1G <br><strong>Dates:</strong> Jun 17, 2024 - Jul 26, 2026"
         },
         {
           "name": "Going the Distance",
           "brand_color": "#0ea5e9",
-          "details": "<strong>Location:</strong> Int'l Terminal, Aviation Museum (Pre-Security)<br><strong>Dates:</strong> May 21, 2022 - Apr 11, 2027"
+          "details": "<strong>Location:</strong> Int'l Terminal, Aviation Museum <br><strong>Dates:</strong> May 21, 2022 - Apr 11, 2027"
         },
         {
           "name": "Laney College Printmaking",
           "brand_color": "#8b5cf6",
-          "details": "<strong>Location:</strong> Harvey Milk Terminal 1, Gallery 1A (Pre-Security)<br><strong>Dates:</strong> Apr 22, 2026 - Apr 25, 2027"
+          "details": "<strong>Location:</strong> Harvey Milk Terminal 1, Gallery 1A <br><strong>Dates:</strong> Apr 22, 2026 - Apr 25, 2027"
         },
         {
           "name": "California College of the Arts Photography",
           "brand_color": "#8b5cf6",
-          "details": "<strong>Location:</strong> Harvey Milk Terminal 1, Gallery 1H (Pre-Security)<br><strong>Dates:</strong> Apr 22, 2026 - Apr 25, 2027"
+          "details": "<strong>Location:</strong> Harvey Milk Terminal 1, Gallery 1H <br><strong>Dates:</strong> Apr 22, 2026 - Apr 25, 2027"
         },
         {
           "name": "San Francisco Airport (History)",
           "brand_color": "#8b5cf6",
-          "details": "<strong>Location:</strong> Terminal 2, Sky Terrace Gallery 2D (Pre-Security)<br><strong>Dates:</strong> Continuous"
+          "details": "<strong>Location:</strong> Terminal 2, Sky Terrace Gallery 2D <br><strong>Dates:</strong> Continuous"
         },
         {
           "name": "Harvey Milk",
           "brand_color": "#8b5cf6",
-          "details": "<strong>Location:</strong> Harvey Milk Terminal 1, Gallery HM1 (Pre-Security)<br><strong>Dates:</strong> Continuous"
+          "details": "<strong>Location:</strong> Harvey Milk Terminal 1, Gallery HM1 <br><strong>Dates:</strong> Continuous"
         },
         {
           "name": "The 1954 SFO Terminal",
           "brand_color": "#8b5cf6",
-          "details": "<strong>Location:</strong> Terminal 2, Sky Terrace Gallery 2D (Pre-Security)<br><strong>Dates:</strong> Continuous"
+          "details": "<strong>Location:</strong> Terminal 2, Sky Terrace Gallery 2D <br><strong>Dates:</strong> Continuous"
         }
       ]
+    },
+    {
+      "title": "Cafe X Robotic Coffee Bar",
+      "category": "Dining & Tech",
+      "type": ["food", "explore"],
+      "food_type": ["Coffee/Cafe", "Quick Bite"],
+      "terminal": "Terminal 1, Terminal 3",
+      "security": "post",
+      "description": "<strong>Locations:</strong> <br>• Harvey Milk Terminal 1, near Gate B2 <br>• Terminal 3 East, Departures <br>• Terminal 3 East, Arrivals <br><br>Watch a high-speed robotic arm precision-brew your latte! It is a fun, futuristic, and incredibly fast way to grab excellent coffee while you walk to your gate.",
+      "duration_text": "15 Mins",
+      "duration_mins": 15,
+      "action_link": "https://order.cafexapp.com/#/locations",
+      "action_text": "Order Now ↗",
+      "maps": [
+        {"text": "Terminal 1 Map 📍",
+         "link": "https://www.flysfo.com/maps/interactive-maps?destination=308505"},
+        {"text": "Terminal 3, Level 1 Arrival Map 📍",
+         "link": "https://www.flysfo.com/maps/interactive-maps?destination=664681"},
+        {"text": "Terminal 3, Level 2 Departure Map 📍",
+         "link": "https://www.flysfo.com/maps/interactive-maps?destination=652007"}
+      ],
+      "hours": "24:7"
     },
     {
       "title": "Permanent Public Art Trail",
@@ -327,9 +349,12 @@
       "type": ["art", "explore"],
       "terminal": "All Terminals",
       "security": "both",
-      "description": "<strong>Location:</strong> Throughout the airport<br><br>Stretch your legs and take a self-guided walking tour of SFO's world-class permanent public art collection, featuring massive murals, sculptures, and kinetic light installations scattered across every terminal.",
-      "duration_text": "45 Mins",
-      "duration_mins": 45
+      "description": "<strong>Location:</strong> Throughout the airport<br><br>Stretch your legs and take a self-guided walking tour of SFO's world-class permanent public art collection, featuring massive murals, sculptures, and kinetic light installations scattered across every terminal. See if you can find all 165 pieces!",
+      "duration_text": "1 Hour",
+      "duration_mins": 60,
+      "action_link": "https://www.sfomuseum.org/public-art",
+      "action_text": "Learn More ↗",
+      "map_link": "https://www.sfomuseum.org/sites/default/files/sfo-maps/public-art-sfo-map-0526.pdf"
     },
     {
       "title": "Kids' Play Areas",
@@ -337,20 +362,11 @@
       "type": ["explore"],
       "terminal": "Terminal 1, Terminal 2",
       "security": "post",
-      "description": "<strong>Locations:</strong><br>• Tree Town: Terminal 1, Level 2 (Post-Security)<br>• Bird Encounters: Terminal 2, Level 2 (Post-Security)<br><br>Traveling with kids? Let them burn off some energy before the flight at these beautifully designed, continuous interactive play structures.",
-      "duration_text": "30 Mins",
-      "duration_mins": 30
-    },
-    {
-      "title": "Sensory Room",
-      "category": "Wellness & Relaxation",
-      "type": ["explore"],
-      "terminal": "Terminal 1",
-      "security": "post",
-      "description": "<strong>Location:</strong> Harvey Milk Terminal 1 (Post-Security)<br><br>Designed specifically for travelers who may feel overwhelmed by the bustling airport environment. This quiet, secure room offers a calming escape with specialized sensory features to decompress before boarding.",
+      "description": "<strong>Locations:</strong><br>• Tree Town: Harvey Milk Terminal 1, Near Gate B18 <br>• Kids' Spot: Harvey Milk Terminal 1, Near Gate B2  <br>• Butterfly Wall: Terminal 2, Near Gate D15 <br>• San Francisco Bay Area Bird Encounters: Terminal 2, Near Gate D7 <br>• Kids' Spot: Terminal 3, Near Gate F17 <br>• Spirogyrate: Terminal 3, Near Gate E7 <br>• Kids' Spot: Terminal 3, Near Food Court <br><br>Traveling with kids? Let them burn off some energy before the flight at these beautifully designed, continuous interactive play structures.",
       "duration_text": "30 Mins",
       "duration_mins": 30,
-      "hours": "Daily 24/7"
+      "action_link": "https://www.flysfo.com/kids-spots",
+      "action_text": "Learn More ↗"
     },
     {
       "title": "Freshen Up! (Nap Rooms & Showers)",
@@ -358,21 +374,13 @@
       "type": ["explore"],
       "terminal": "International Terminal",
       "security": "pre",
-      "description": "<strong>Location:</strong> International Terminal, G Gates Ticket Aisle (Pre-Security)<br><br>Need to recharge? Freshen Up! offers private nap rooms, hot showers, ironing facilities, and travel necessities. It's the perfect sanctuary during an ultra-long layover.",
+      "description": "<strong>Location:</strong> International Terminal, near the entrance to Gates G1 to G14 <br><br>Need to recharge? For a fee, Freshen Up! offers private nap rooms ($150 minimum), hot showers ($30), ironing facilities ($5), and travel necessities. It's the perfect sanctuary during an ultra-long layover.",
       "duration_text": "1 Hour",
       "duration_mins": 60,
-      "hours": "Daily: 6:00 AM - 11:00 PM"
-    },
-    {
-      "title": "Christian Science Reading Room",
-      "category": "Quiet Space",
-      "type": ["explore"],
-      "terminal": "Terminal 1",
-      "security": "pre",
-      "description": "<strong>Location:</strong> Terminal 1 (Pre-Security)<br><br>A peaceful, quiet place open to the public for contemplation, meditation, and reading before your flight.",
-      "duration_text": "30 Mins",
-      "duration_mins": 30,
-      "hours": "Daily: 8:00 AM - 10:00 PM"
+      "hours": "24:7",
+      "action_link": "https://www.airporttravelagency.org/freshen-up/",
+      "action_text": "Learn More ↗",
+      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=1998"
     },
     {
       "title": "SkyTerrace Observation Deck",
@@ -390,6 +398,29 @@
       "hours": "Fri-Mon 10:00 AM - 6:00 PM"
     },
     {
+      "title": "Compass Books",
+      "category": "Shopping",
+      "type": ["shop"],
+      "terminal": "Terminal 2, Terminal 3",
+      "security": "post",
+      "description": "<strong>Locations:</strong> <br>• Terminal 2 <br>• Terminal 3, near F1 Security Checkpoint <br><br>A highly celebrated, cozy staple of SFO. As the first independent bookstore in a major US airport, it feels like a neighborhood bookshop right at your gate. Browse a fantastic curation of bestsellers, deep-cut non-fiction, and local Bay Area authors instead of the typical, generic magazine racks.",
+      "duration_text": "20 Mins",
+      "duration_mins": 20,
+      "action_link": "https://www.booksinc.net/",
+      "action_text": "Website ↗",
+      "maps": [
+        {
+            "text": "Terminal 2 Map 📍",
+            "link": "https://www.flysfo.com/maps/interactive-maps?destination=2003"
+        },
+        {
+            "text": "Terminal 3 Map 📍",
+            "link": "https://www.flysfo.com/maps/interactive-maps?destination=1946"
+        }
+              ],
+      "hours": "Daily: 6:00 AM - 10:00 PM"
+    },
+    {
       "title": "Video Arts Room",
       "category": "Visuals & Theater",
       "type": ["art"],
@@ -405,58 +436,62 @@
       "hours": "Daily: 7:00 AM - 10:00 PM"
     },
     {
-      "title": "San Franpsycho",
-      "category": "Apparel",
-      "type": ["shop"],
-      "terminal": "Terminal 3",
-      "security": "post",
-      "description": "<strong>Location:</strong> Terminal 3 (Post-Security)<br><br>Grab iconic, surf-inspired San Francisco streetwear and locally designed apparel. Perfect if you need a comfortable hoodie for the flight or a genuinely cool souvenir.",
-      "duration_text": "15 Mins",
-      "duration_mins": 15
-    },
-    {
       "title": "Socola Chocolatier",
       "category": "Sweets & Gifts",
       "type": ["shop", "food"],
       "food_type": ["Dessert"],
-      "terminal": "Terminal 1",
+      "terminal": "Terminal 3",
       "security": "post",
-      "description": "<strong>Location:</strong> Harvey Milk Terminal 1 (Post-Security)<br><br>Pick up artisanal, handcrafted chocolates infused with unique, local flavors. An excellent stop to treat yourself or grab a premium gift.",
+      "description": "<strong>Location:</strong> Terminal 3, near Gate E6 <br><br>Pick up artisanal, handcrafted chocolates infused with unique, local flavors. An excellent stop to treat yourself or grab a premium gift.",
       "duration_text": "15 Mins",
-      "duration_mins": 15
+      "duration_mins": 15,
+      "action_link": "https://www.socolachocolates.com/",
+      "action_text": "Website ↗",
+      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=563503",
+      "hours": "Daily: 7:00 AM - 11:00 PM"
     },
     {
-      "title": "Cafe X Robotic Coffee Bar",
-      "category": "Dining & Tech",
-      "type": ["food", "explore"],
-      "food_type": ["Coffee/Cafe", "Quick Bite"],
-      "terminal": "Terminal 1, Terminal 3",
+      "title": "Sensory Room",
+      "category": "Wellness & Relaxation",
+      "type": ["explore"],
+      "terminal": "Terminal 1",
       "security": "post",
-      "description": "<strong>Locations:</strong> Terminal 1 & Terminal 3 (Post-Security)<br><br>Watch a high-speed robotic arm precision-brew your latte! It is a fun, futuristic, and incredibly fast way to grab excellent coffee while you walk to your gate.",
-      "duration_text": "15 Mins",
-      "duration_mins": 15
+      "description": "<strong>Location:</strong> Harvey Milk Terminal 1, near Gate C2  <br><br>Designed specifically for neurodivergent travelers who may feel overwhelmed by the bustling airport environment. This quiet, secure room offers a calming escape with specialized sensory features to decompress before boarding.",
+      "duration_text": "30 Mins",
+      "duration_mins": 30,
+      "hours": "Daily: 5:00 AM - 11:00 PM",
+      "action_link": "https://www.flysfo.com/passengers/services-amenities/accessibility/sensory-room",
+      "action_text": "Learn More ↗"
     },
     {
       "title": "Tony’s Pizza Napoletana",
       "category": "Dining",
       "type": ["food"],
       "food_type": ["American", "Italian"],
-      "terminal": "Terminal 3",
+      "terminal": "Terminal 1",
       "security": "post",
-      "description": "<strong>Location:</strong> Terminal 3 (Post-Security)<br><br>World-famous, award-winning pizza available by the slice right in the terminal. The perfect greasy comfort food to calm your travel nerves.",
+      "description": "<strong>Location:</strong> Harvey Milk Terminal 1, SF Eats Food Hall <br><br>World-famous, award-winning pizza by 13-time World Pizza Champion Tony Gemignani available right in the terminal. The perfect comfort food to calm your travel nerves.",
       "duration_text": "30 Mins",
-      "duration_mins": 30
+      "duration_mins": 30,
+      "action_link": "https://www.flysfo.com/passengers/shop-dine-relax/tonys-pizza-napoletana",
+      "action_text": "Learn More ↗",
+      "hours": "Daily: 6:00 AM - 11:00 PM",
+      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=621250"
     },
     {
       "title": "Equator Coffees",
       "category": "Dining",
       "type": ["food"],
       "food_type": ["Coffee/Cafe"],
-      "terminal": "Terminal 2",
+      "terminal": "Terminal 1",
       "security": "post",
-      "description": "<strong>Location:</strong> Terminal 2 (Post-Security)<br><br>A staple Bay Area roaster serving up fair-trade, high-quality craft coffee. A massive upgrade from the standard airport chains.",
+      "description": "<strong>Location:</strong> Harvey Milk Terminal 1, SF Eats Food Hall <br><br>A staple Bay Area roaster serving up fair-trade, high-quality craft coffee. A massive upgrade from the standard airport chains.",
       "duration_text": "15 Mins",
-      "duration_mins": 15
+      "duration_mins": 15,
+      "action_link": "https://www.flysfo.com/passengers/shop-dine-relax/equator-coffees",
+      "action_text": "Learn More ↗",
+      "hours": "Daily: 4:30 AM - 10:00 PM",
+      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=621248"
     },
     {
       "title": "Kona’s by Pacific Cocktail Haven",
@@ -465,9 +500,13 @@
       "food_type": ["Bar/Lounge"],
       "terminal": "Terminal 1",
       "security": "post",
-      "description": "<strong>Location:</strong> Harvey Milk Terminal 1 (Post-Security)<br><br>An outpost of the award-winning San Francisco bar, serving up incredible tropical-inspired craft cocktails. The best spot in the airport to grab a pre-flight drink.",
+      "description": "<strong>Location:</strong> Harvey Milk Terminal 1, SF Eats Food Hall <br><br>An outpost of the award-winning San Francisco bar, serving up incredible tropical-inspired craft cocktails. The best spot in the airport to grab a pre-flight drink. Ranked North America’s 50 Best Bars and the World’s 50 Best Bars in 2023 and 2024",
       "duration_text": "45 Mins",
-      "duration_mins": 45
+      "duration_mins": 45,
+      "action_link": "https://www.flysfo.com/passengers/shop-dine-relax/konas-pacific-cocktail-haven",
+      "action_text": "Learn More ↗",
+      "hours": "Daily: 7:00 AM - 11:00 PM",
+      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=621251"
     },
     {
       "title": "Boudin Bakery",
@@ -505,7 +544,7 @@
       "type": ["food"],
       "food_type": ["Asian", "Casual"],
       "terminal": "Terminal 1",
-      "security": "pre",
+      "security": "post",
       "description": "<strong>Location:</strong> Harvey Milk Terminal 1, near Gate B18 <br><br>A massive favorite for authentic Filipino food and regarded as some of the best value for your money at SFO. A casual, comforting staple to grab a warm bite before heading to your gate.",
       "duration_text": "45 Mins",
       "duration_mins": 45,
@@ -545,6 +584,22 @@
       "hours": "Daily: 5:00 AM - 10:00 PM"
     },
     {
+      "title": "Foggy Notion",
+      "category": "Sustainable Boutique",
+      "type": [
+        "shop"
+      ],
+      "terminal": "Terminal 3",
+      "security": "post",
+      "description": "<strong>Location:</strong> Terminal 3, Boarding Area F<br><br>An offshoot of the beloved Inner Richmond boutique, this charming, eco-conscious shop focuses exclusively on sustainable, handmade goods from local Bay Area artisans. It's the absolute best place in the airport to pick up unique apothecary items, organic skincare, and beautifully crafted small gifts.",
+      "duration_text": "15 Mins",
+      "duration_mins": 15,
+      "action_link": "https://www.foggy-notion.com/",
+      "action_text": "Website ↗",
+      "hours": "Daily: 7:00 AM - 11:00 PM",
+      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=563504"
+    },
+    {
       "title": "Starbird",
       "category": "Dining",
       "type": ["food"],
@@ -573,6 +628,21 @@
       "action_text": "Order Now ↗",
       "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=1739",
       "hours": "Daily: 10:00 AM - 10:00 PM"
+    },
+    {
+      "title": "Wakaba",
+      "category": "Dining",
+      "type": ["food"],
+      "food_type": ["Asian", "Casual"],
+      "terminal": "Terminal 2",
+      "security": "post",
+      "description": "<strong>Location:</strong> Terminal 2 <br><br>A highly recommended oasis in Terminal 2 praised by travelers for offering quality sushi, comforting ramen, and decent curries at remarkably fair and unexploitative prices compared to typical airport dining.",
+      "duration_text": "30 Mins",
+      "duration_mins": 30,
+      "action_link": "https://sankakuusa.com/static/pdf/wakaba-menu.pdf",
+      "action_text": "Menu ↗",
+      "hours": "Daily: 6:30 AM - 10:30 PM",
+      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=1758"
     },
     {
       "title": "Burger Joint",
@@ -618,6 +688,43 @@
       "action_text": "Explore More ↗",
       "hours": "Daily: 7:00 AM - 11:00 PM",
       "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=1742"
+    },
+    {
+      "title": "Post-Security Terminal Loop Walk",
+      "category": "Visuals & Exploring & Aviation",
+      "type": ["art", "explore", "aviation"],
+      "terminal": "All Terminals",
+      "security": "post",
+      "description": "<strong>Location:</strong> Airside pedestrian walkways throughout all terminals<br><br>Really bored on a long layover? Walk a lap around the airport! SFO is uniquely shaped like a massive circle, meaning you can walk a complete, continuous loop through every terminal (1, 2, 3, and International A & G) without ever leaving the secure area. It takes about 20 to 25 minutes, and you'll be surprised by the art, food, and views you find along the way. Besides, you need to move your legs after being on a plane for so long. <br><br><i>💡 <strong>Pro-Tip:</strong> Just follow the overhead signs for the other terminals, but be careful not to accidentally wander out the exits or down the escalators to baggage claim, or you'll have to go through TSA all over again!</i>",
+      "duration_text": "30 Mins",
+      "duration_mins": 30,
+      "action_link": "https://www.flysfo.com/maps",
+      "action_text": "View Map ↗",
+      "hours": "24:7"
+    },
+    {
+      "title": "Boarding Area B Observation Windows",
+      "category": "Plane Spotting",
+      "type": ["aviation"],
+      "terminal": "Terminal 1",
+      "security": "post",
+      "description": "<strong>Location:</strong> Harvey Milk Terminal 1, End of Boarding Area B<br><br>Head to the end of the concourse to experience a space that perfectly captures the spirit of the Bay Area. Set within the world's first LEED Platinum airport terminal, this calm and curated area is framed by high ceilings, comfortable furnishings, and abundant natural light—providing an exceptional, relaxing vantage point to track aircraft operations and watch approaches on the tarmac.",
+      "duration_text": "25 Mins",
+      "duration_mins": 25,
+      "hours": "24:7"
+    },
+    {
+      "title": "Connector Bridge Viewpoint",
+      "category": "Plane Spotting",
+      "type": [
+        "aviation"
+      ],
+      "terminal": "Terminal 2, Terminal 3",
+      "security": "post",
+      "description": "<strong>Location:</strong> Secure walkway connecting Terminal 2 and Terminal 3<br><br>Stroll through this 14,000-square-foot connector to enjoy unique views of the tarmac alongside three new displays of public art from the San Francisco Arts Commission, showcasing works by Kim Anno, Carter-Lynch (Stacey Carter/Derek Lynch), and Paul Madonna. The space also reintroduces the Kadish Gallery—named for Ruth Kadish, the first woman appointed to the San Francisco Airport Commission in 1977—which features rotating photography exhibitions curated by the SFO Museum.",
+      "duration_text": "20 Mins",
+      "duration_mins": 20,
+      "hours": "24:7"
     }
   ]
 }

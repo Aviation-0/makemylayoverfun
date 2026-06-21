@@ -5,8 +5,16 @@ document.addEventListener("DOMContentLoaded", () => {
     let activeTerminal = "All";
     let activeSecurity = "All"; 
     let activeFoodType = "All"; 
-    let activeDay = "All"; 
-    let activeTime = "All"; 
+    
+    // --- AUTO-DETECT LOCAL SYSTEM TIME ---
+    const now = new Date();
+    let activeDay = String(now.getDay()); // 0 = Sun, 1 = Mon...
+    
+    // Ensure hours and minutes format nicely as "HH:MM" (e.g. "09:05")
+    const currentHours = String(now.getHours()).padStart(2, '0');
+    const currentMinutes = String(now.getMinutes()).padStart(2, '0');
+    let activeTime = `${currentHours}:${currentMinutes}`;
+    // -------------------------------------
 
     const params = new URLSearchParams(window.location.search);
     const airportCode = params.get("code")?.toLowerCase();
@@ -71,6 +79,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 terminalDropdown.appendChild(opt);
             });
             
+            // --- INJECT TIME INTO THE UI ---
+            dayDropdown.value = activeDay;
+            timeDropdown.value = activeTime;
+            // -------------------------------
+
             terminalDropdown.style.display = "block";
             securityDropdown.style.display = "block";
             dayDropdown.style.display = "block";
@@ -156,7 +169,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const grid = document.getElementById("activities-grid");
         grid.innerHTML = ""; 
 
-        // UPDATED: Now supports the new "SHOPPING" tag
         const typeColors = { "art": "#8b5cf6", "aviation": "#0ea5e9", "food": "#f43f5e", "shop": "#f59e0b", "explore": "#10b981" };
         const typeLabels = { "art": "VISUALS", "aviation": "AVIATION", "food": "FOOD", "shop": "SHOPPING", "explore": "EXPLORING" };
 
@@ -177,7 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (selectedDay !== -1 || selectedTime !== -1) {
                 if (activity.specialty === "dropdown" && activity.dropdown_options) {
                     const anyOptionOpen = activity.dropdown_options.some(opt => {
-                        const hoursMatch = opt.details.match(/<strong>(Hours|Dates):<\/strong>([^<]+)/i);
+                        const hoursMatch = opt.details.match(/<strong>(Hours|Dates):<\/strong>\s*([^<]+)/i);
                         return isActivityOpen(hoursMatch ? hoursMatch[2] : "", selectedDay, selectedTime);
                     });
                     matchesSchedule = anyOptionOpen;
@@ -223,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 let validOptions = activity.dropdown_options;
                 if (selectedDay !== -1 || selectedTime !== -1) {
                     validOptions = validOptions.filter(opt => {
-                        const hoursMatch = opt.details.match(/<strong>(Hours|Dates):<\/strong>([^<]+)/i);
+                        const hoursMatch = opt.details.match(/<strong>(Hours|Dates):<\/strong>\s*([^<]+)/i);
                         return isActivityOpen(hoursMatch ? hoursMatch[2] : "", selectedDay, selectedTime);
                     });
                 }
@@ -231,7 +243,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 specialtyHTML = `
                     <p style="color: inherit;">${activity.description}</p>
                     <select class="specialty-dropdown">
-                        <option value="" disabled selected>Choose an Option to view details...</option>
+                        <option value="" disabled selected>Choose an Open Option to view details...</option>
                         ${validOptions.map(opt => `<option value="${activity.dropdown_options.indexOf(opt)}">${opt.name}</option>`).join('')}
                     </select>
                     <div class="specialty-details"></div>
@@ -243,6 +255,26 @@ document.addEventListener("DOMContentLoaded", () => {
             let secLabel = "";
             if (activity.security === "pre") secLabel = " • PRE-SECURITY";
             if (activity.security === "post") secLabel = " • POST-SECURITY";
+
+            // --- NEW MAP LOGIC IMPLEMENTATION ---
+            let mapButtonsHTML = '';
+            
+            // 1. Support legacy standard "map_link"
+            if (activity.map_link) {
+                mapButtonsHTML += `<a href="${activity.map_link}" target="_blank" class="map-btn">Map 📍</a>`;
+            }
+            
+            // 2. Support new "maps" array structure
+            if (activity.maps && Array.isArray(activity.maps)) {
+                activity.maps.forEach(mapObj => {
+                    if (mapObj.link) {
+                        // Default to 'Map 📍' if no text is provided
+                        const btnText = mapObj.text ? mapObj.text : "Map 📍";
+                        mapButtonsHTML += `<a href="${mapObj.link}" target="_blank" class="map-btn">${btnText}</a>`;
+                    }
+                });
+            }
+            // ------------------------------------
 
             card.innerHTML = `
                 ${activity.rank ? `<div class="rank-badge">#${activity.rank}</div>` : ''}
@@ -266,7 +298,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <span class="duration">⏱️ ${activity.duration_text}</span>
                     
                     <div class="button-group">
-                        ${activity.map_link ? `<a href="${activity.map_link}" target="_blank" class="map-btn">Map 📍</a>` : ''}
+                        ${mapButtonsHTML}
                         ${activity.action_link ? `<a href="${activity.action_link}" target="_blank" class="action-btn">${activity.action_text || 'View ↗'}</a>` : ''}
                     </div>
                 </div>
@@ -282,9 +314,24 @@ document.addEventListener("DOMContentLoaded", () => {
                     
                     let injectedHTML = `<div style="margin-bottom: 16px;">${optionData.details}</div>`;
                     injectedHTML += `<div class="button-group">`;
+                    
+                    // --- MAP LOGIC FOR DROPDOWN OPTIONS ---
+                    // Legacy support
                     if (optionData.map_link) {
                         injectedHTML += `<a href="${optionData.map_link}" target="_blank" class="map-btn" style="color:#111; background:#fff; border:none;">Map 📍</a>`;
                     }
+                    
+                    // New Array support
+                    if (optionData.maps && Array.isArray(optionData.maps)) {
+                        optionData.maps.forEach(mapObj => {
+                            if (mapObj.link) {
+                                const btnText = mapObj.text ? mapObj.text : "Map 📍";
+                                injectedHTML += `<a href="${mapObj.link}" target="_blank" class="map-btn" style="color:#111; background:#fff; border:none;">${btnText}</a>`;
+                            }
+                        });
+                    }
+                    // --------------------------------------
+
                     if (optionData.action_link) {
                         injectedHTML += `<a href="${optionData.action_link}" target="_blank" class="action-btn" style="background:rgba(255,255,255,0.25); color:#fff; border:1px solid rgba(255,255,255,0.4);">${optionData.action_text || 'View ↗'}</a>`;
                     }
