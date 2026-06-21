@@ -89,22 +89,8 @@ document.addEventListener("DOMContentLoaded", () => {
             dayDropdown.style.display = "block";
             timeDropdown.style.display = "block";
 
-            const foodTypeDropdown = document.getElementById("food-type-filter");
-            let allFoodTypes = [];
-            
-            allActivities.forEach(a => {
-                if (a.food_type && Array.isArray(a.food_type)) {
-                    a.food_type.forEach(ft => allFoodTypes.push(ft));
-                }
-            });
-            
-            const uniqueFoodTypes = [...new Set(allFoodTypes)].sort();
-            uniqueFoodTypes.forEach(ft => {
-                const opt = document.createElement("option");
-                opt.value = ft;
-                opt.innerText = ft.toUpperCase();
-                foodTypeDropdown.appendChild(opt);
-            });
+            // Initialize the dynamic food type dropdown
+            updateFoodTypeDropdown();
 
             renderGrid();
         })
@@ -114,6 +100,47 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("airport-city").innerText = "Module Unavailable";
             showError("We do not have layover modules compiled for this hub yet.");
         });
+
+    // --- DYNAMIC FOOD TYPE DROPDOWN LOGIC ---
+    function updateFoodTypeDropdown() {
+        const foodTypeDropdown = document.getElementById("food-type-filter");
+        let availableFoodTypes = new Set();
+
+        allActivities.forEach(a => {
+            // FIX: Treat "All Terminals" as a wildcard
+            const matchesTerminal = activeTerminal === "All" || (a.terminal && (a.terminal.includes(activeTerminal) || a.terminal.toLowerCase() === "all terminals"));
+            const matchesSecurity = activeSecurity === "All" || a.security === activeSecurity || a.security === "both";
+            const activityTypes = Array.isArray(a.type) ? a.type : [a.type];
+
+            if (matchesTerminal && matchesSecurity && activityTypes.includes("food")) {
+                if (a.food_type && Array.isArray(a.food_type)) {
+                    a.food_type.forEach(ft => availableFoodTypes.add(ft));
+                }
+            }
+        });
+
+        const sortedFoodTypes = [...availableFoodTypes].sort();
+        const currentSelection = activeFoodType;
+
+        foodTypeDropdown.innerHTML = '<option value="All">All Cuisines</option>';
+        let selectionStillValid = false;
+
+        sortedFoodTypes.forEach(ft => {
+            const opt = document.createElement("option");
+            opt.value = ft;
+            opt.innerText = ft.toUpperCase();
+            foodTypeDropdown.appendChild(opt);
+            if (ft === currentSelection) selectionStillValid = true;
+        });
+
+        if (selectionStillValid && currentSelection !== "All") {
+            foodTypeDropdown.value = currentSelection;
+        } else {
+            foodTypeDropdown.value = "All";
+            activeFoodType = "All";
+        }
+    }
+    // ----------------------------------------
 
     function isActivityOpen(hoursString, selectedDayIdx, selectedTimeMins) {
         if (!hoursString) return true; 
@@ -175,15 +202,22 @@ document.addEventListener("DOMContentLoaded", () => {
         const selectedDay = activeDay !== "All" ? parseInt(activeDay) : -1;
         const selectedTime = activeTime !== "All" && activeTime !== "" ? timeToMinutes(activeTime) : -1;
 
-        let filtered = allActivities.filter(activity => {
+        let filtered = [];
+        let currentlyClosedMatches = []; // Holds items that match categories/terminals but are closed
+
+        // Split activities into "Open & Matching" and "Closed but Matching"
+        allActivities.forEach(activity => {
             const activityTypes = Array.isArray(activity.type) ? activity.type : [activity.type];
             
             const matchesType = activeTypes.size === 0 || activityTypes.some(t => activeTypes.has(t));
-            const matchesTerminal = activeTerminal === "All" || (activity.terminal && activity.terminal.includes(activeTerminal));
+            // FIX: Treat "All Terminals" as a wildcard
+            const matchesTerminal = activeTerminal === "All" || (activity.terminal && (activity.terminal.includes(activeTerminal) || activity.terminal.toLowerCase() === "all terminals"));
             const matchesSecurity = activeSecurity === "All" || activity.security === activeSecurity || activity.security === "both";
             const matchesFoodType = activeFoodType === "All" || 
                                     (!activityTypes.includes("food")) || 
                                     (activityTypes.includes("food") && activity.food_type && activity.food_type.includes(activeFoodType));
+
+            const matchesCoreFilters = matchesType && matchesTerminal && matchesSecurity && matchesFoodType;
 
             let matchesSchedule = true;
             if (selectedDay !== -1 || selectedTime !== -1) {
@@ -198,7 +232,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
 
-            return matchesType && matchesTerminal && matchesSecurity && matchesFoodType && matchesSchedule;
+            if (matchesCoreFilters) {
+                if (matchesSchedule) {
+                    filtered.push(activity);
+                } else {
+                    currentlyClosedMatches.push(activity);
+                }
+            }
         });
 
         filtered.sort((a, b) => {
@@ -207,10 +247,45 @@ document.addEventListener("DOMContentLoaded", () => {
             return rankA - rankB;
         });
 
+        // --- NEW SMART EMPTY STATE LOGIC ---
         if (filtered.length === 0) {
-            grid.innerHTML = "<p style='grid-column: 1 / -1; text-align: center; padding: 40px; color: #71717a;'>No activities match your current filters.</p>";
+            let emptyStateMsg = "No activities match your current filters.";
+            
+            if (currentlyClosedMatches.length > 0) {
+                emptyStateMsg = `<div style="margin-bottom: 16px;"><strong>Everything matching your filters is currently closed.</strong><br>Here is what will open later:</div>`;
+                emptyStateMsg += `<div style="text-align: left; max-width: 450px; margin: 0 auto; background: #ffffff; padding: 16px 20px; border: 1px solid #d4d4d8; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; flex-direction: column; gap: 12px;">`;
+                
+                const listHTML = currentlyClosedMatches.map((item, index) => {
+                    let openTimeStr = "";
+                    if (item.specialty === "dropdown") {
+                         openTimeStr = "Check directory for specific hours.";
+                    } else if (item.hours) {
+                         // Uses Regex to extract just the opening time (e.g. "6:30 AM")
+                         const match = item.hours.match(/(\d{1,2}(?::\d{2})?\s*(?:AM|PM|am|pm))/i);
+                         openTimeStr = match ? `Opens at ${match[1].toUpperCase()}` : `Hours: ${item.hours}`;
+                    } else {
+                         openTimeStr = "Hours unavailable";
+                    }
+                    
+                    const borderStyle = index === currentlyClosedMatches.length - 1 ? "" : "border-bottom: 1px solid #f4f4f5; padding-bottom: 12px;";
+                    
+                    return `
+                        <div style="${borderStyle}">
+                            <strong style="color: #111111; font-size: 0.95rem;">${item.title}</strong>
+                            <div style="font-size: 0.8rem; color: #71717a; margin-top: 4px;">🕒 ${openTimeStr}</div>
+                        </div>`;
+                }).join("");
+                
+                emptyStateMsg += listHTML + `</div>`;
+                
+            } else if (selectedTime !== -1 || selectedDay !== -1) {
+                emptyStateMsg += "<br><br><em>💡 Tip: Try adjusting your selected time or resetting your filters.</em>";
+            }
+
+            grid.innerHTML = `<div style='grid-column: 1 / -1; text-align: center; padding: 40px 20px; color: #3f3f46; line-height: 1.6;'>${emptyStateMsg}</div>`;
             return;
         }
+        // -----------------------------------
 
         filtered.forEach(activity => {
             const card = document.createElement("div");
@@ -256,25 +331,20 @@ document.addEventListener("DOMContentLoaded", () => {
             if (activity.security === "pre") secLabel = " • PRE-SECURITY";
             if (activity.security === "post") secLabel = " • POST-SECURITY";
 
-            // --- NEW MAP LOGIC IMPLEMENTATION ---
             let mapButtonsHTML = '';
             
-            // 1. Support legacy standard "map_link"
             if (activity.map_link) {
                 mapButtonsHTML += `<a href="${activity.map_link}" target="_blank" class="map-btn">Map 📍</a>`;
             }
             
-            // 2. Support new "maps" array structure
             if (activity.maps && Array.isArray(activity.maps)) {
                 activity.maps.forEach(mapObj => {
                     if (mapObj.link) {
-                        // Default to 'Map 📍' if no text is provided
                         const btnText = mapObj.text ? mapObj.text : "Map 📍";
                         mapButtonsHTML += `<a href="${mapObj.link}" target="_blank" class="map-btn">${btnText}</a>`;
                     }
                 });
             }
-            // ------------------------------------
 
             card.innerHTML = `
                 ${activity.rank ? `<div class="rank-badge">#${activity.rank}</div>` : ''}
@@ -315,13 +385,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     let injectedHTML = `<div style="margin-bottom: 16px;">${optionData.details}</div>`;
                     injectedHTML += `<div class="button-group">`;
                     
-                    // --- MAP LOGIC FOR DROPDOWN OPTIONS ---
-                    // Legacy support
                     if (optionData.map_link) {
                         injectedHTML += `<a href="${optionData.map_link}" target="_blank" class="map-btn" style="color:#111; background:#fff; border:none;">Map 📍</a>`;
                     }
                     
-                    // New Array support
                     if (optionData.maps && Array.isArray(optionData.maps)) {
                         optionData.maps.forEach(mapObj => {
                             if (mapObj.link) {
@@ -330,7 +397,6 @@ document.addEventListener("DOMContentLoaded", () => {
                             }
                         });
                     }
-                    // --------------------------------------
 
                     if (optionData.action_link) {
                         injectedHTML += `<a href="${optionData.action_link}" target="_blank" class="action-btn" style="background:rgba(255,255,255,0.25); color:#fff; border:1px solid rgba(255,255,255,0.4);">${optionData.action_text || 'View ↗'}</a>`;
@@ -395,9 +461,30 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    document.getElementById("terminal-filter").addEventListener("change", (e) => { activeTerminal = e.target.value; renderGrid(); });
-    document.getElementById("security-filter").addEventListener("change", (e) => { activeSecurity = e.target.value; renderGrid(); });
-    document.getElementById("food-type-filter").addEventListener("change", (e) => { activeFoodType = e.target.value; renderGrid(); });
-    document.getElementById("day-filter").addEventListener("change", (e) => { activeDay = e.target.value; renderGrid(); });
-    document.getElementById("time-filter").addEventListener("change", (e) => { activeTime = e.target.value; renderGrid(); });
+    document.getElementById("terminal-filter").addEventListener("change", (e) => { 
+        activeTerminal = e.target.value; 
+        updateFoodTypeDropdown(); 
+        renderGrid(); 
+    });
+    
+    document.getElementById("security-filter").addEventListener("change", (e) => { 
+        activeSecurity = e.target.value; 
+        updateFoodTypeDropdown(); 
+        renderGrid(); 
+    });
+    
+    document.getElementById("food-type-filter").addEventListener("change", (e) => { 
+        activeFoodType = e.target.value; 
+        renderGrid(); 
+    });
+    
+    document.getElementById("day-filter").addEventListener("change", (e) => { 
+        activeDay = e.target.value; 
+        renderGrid(); 
+    });
+    
+    document.getElementById("time-filter").addEventListener("change", (e) => { 
+        activeTime = e.target.value; 
+        renderGrid(); 
+    });
 });
