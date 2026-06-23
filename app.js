@@ -1,34 +1,22 @@
 // =======================================================================
 // FILE: app.js
 // =======================================================================
-/**
- * @file app.js
- * @description Core client-side logic for rendering and filtering airport activities.
- * Handles data fetching, dynamic DOM generation, and multidimensional filtering (time, terminal, security, category).
- * @author Zhibang (Lucas) Pan
- * @project Make My Layover Fun
- */
-
 document.addEventListener("DOMContentLoaded", () => {
     
-    // --- Global Application State ---
     let allActivities = [];
     let activeTypes = new Set();
+    let activeProximity = "All"; 
     let activeTerminal = "All";
     let activeSecurity = "All"; 
     let activeFoodType = "All"; 
     
-    // --- AUTO-DETECT LOCAL SYSTEM TIME ---
     const now = new Date();
-    let activeDay = String(now.getDay()); // 0 = Sun, 1 = Mon...
+    let activeDay = String(now.getDay());
     
-    // Ensure hours and minutes format nicely as "HH:MM" (e.g. "09:05")
     const currentHours = String(now.getHours()).padStart(2, '0');
     const currentMinutes = String(now.getMinutes()).padStart(2, '0');
     let activeTime = `${currentHours}:${currentMinutes}`;
-    // -------------------------------------
 
-    // --- Initialization & URL Parsing ---
     const params = new URLSearchParams(window.location.search);
     const airportCode = params.get("code")?.toLowerCase();
     const timeLimit = parseInt(params.get("time")) || 999; 
@@ -38,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    // --- Data Fetching & UI Hydration ---
     fetch(`data/${airportCode}.json`)
         .then(response => {
             if (!response.ok) throw new Error("Data file not found.");
@@ -63,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 footer.style.display = "block";
             }
 
-            // Filter activities strictly by user's available layover duration
             allActivities = airport.activities.filter(activity => activity.duration_mins <= timeLimit);
 
             if (allActivities.length === 0) {
@@ -71,17 +57,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            // Populate Filter Dropdowns dynamically based on available data
             const terminalDropdown = document.getElementById("terminal-filter");
             const securityDropdown = document.getElementById("security-filter");
             const dayDropdown = document.getElementById("day-filter");
             const timeDropdown = document.getElementById("time-filter");
+            const proximityDropdown = document.getElementById("proximity-filter"); 
             
             let allLocationTags = [];
             allActivities.forEach(a => {
                 if (a.terminal) {
                     const primaryTerminal = a.terminal.split(',')[0].trim();
-                    if (primaryTerminal.toLowerCase() !== "all terminals" && primaryTerminal.length < 35) {
+                    const lowerTerm = primaryTerminal.toLowerCase();
+                    // Explicitly block "Outside Airport" from entering the Terminal dropdown
+                    if (lowerTerm !== "all terminals" && lowerTerm !== "outside airport" && primaryTerminal.length < 35) {
                         allLocationTags.push(primaryTerminal);
                     }
                 }
@@ -95,19 +83,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 terminalDropdown.appendChild(opt);
             });
             
-            // --- INJECT TIME INTO THE UI ---
             dayDropdown.value = activeDay;
             timeDropdown.value = activeTime;
-            // -------------------------------
 
             terminalDropdown.style.display = "block";
             securityDropdown.style.display = "block";
             dayDropdown.style.display = "block";
             timeDropdown.style.display = "block";
+            proximityDropdown.style.display = "block";
 
-            // Initialize the dynamic food type dropdown
             updateFoodTypeDropdown();
-
             renderGrid();
         })
         .catch(error => {
@@ -117,24 +102,20 @@ document.addEventListener("DOMContentLoaded", () => {
             showError("We do not have layover modules compiled for this hub yet.");
         });
 
-    // --- Filter Helper Functions ---
-
-    /**
-     * @description Dynamically updates the "Food Type" dropdown options based on the currently active Terminal and Security filters.
-     * Extracts unique `food_type` arrays from the remaining valid dataset.
-     * @returns {void} Mutates the DOM elements for the food-type-filter select box.
-     */
     function updateFoodTypeDropdown() {
         const foodTypeDropdown = document.getElementById("food-type-filter");
         let availableFoodTypes = new Set();
 
         allActivities.forEach(a => {
-            // FIX: Treat "All Terminals" as a wildcard
             const matchesTerminal = activeTerminal === "All" || (a.terminal && (a.terminal.includes(activeTerminal) || a.terminal.toLowerCase() === "all terminals"));
             const matchesSecurity = activeSecurity === "All" || a.security === activeSecurity || a.security === "both";
+            
+            const locType = a.location_type || "inside";
+            const matchesProximity = activeProximity === "All" || locType === activeProximity;
+
             const activityTypes = Array.isArray(a.type) ? a.type : [a.type];
 
-            if (matchesTerminal && matchesSecurity && activityTypes.includes("food")) {
+            if (matchesTerminal && matchesSecurity && matchesProximity && activityTypes.includes("food")) {
                 if (a.food_type && Array.isArray(a.food_type)) {
                     a.food_type.forEach(ft => availableFoodTypes.add(ft));
                 }
@@ -162,16 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
             activeFoodType = "All";
         }
     }
-    // ----------------------------------------
 
-    /**
-     * @description Determines if a specific location is currently open based on a complex string of operating hours.
-     * Evaluates against the user-selected Day index and Time (in minutes).
-     * @param {string} hoursString - The raw string detailing opening/closing times (e.g. "Daily: 5:00 AM - 11:30 PM").
-     * @param {number} selectedDayIdx - Integer representing the day of the week (0-6).
-     * @param {number} selectedTimeMins - Time of day converted into total minutes since midnight.
-     * @returns {boolean} True if the activity is open at the evaluated time, false otherwise.
-     */
     function isActivityOpen(hoursString, selectedDayIdx, selectedTimeMins) {
         if (!hoursString) return true; 
 
@@ -216,25 +188,12 @@ document.addEventListener("DOMContentLoaded", () => {
         return foundTimes ? isOpen : true; 
     }
 
-    /**
-     * @description Helper to convert a HH:MM time string to an integer of total minutes.
-     * @param {string} timeStr - The time formatted as "HH:MM".
-     * @returns {number} The time represented in minutes from midnight, or -1 if invalid.
-     */
     const timeToMinutes = (timeStr) => {
         if (!timeStr) return -1;
         const [hours, mins] = timeStr.split(':').map(Number);
         return hours * 60 + mins;
     };
 
-    // --- Core Render Logic ---
-
-    /**
-     * @description Core rendering loop for mapping filtered activities to the DOM grid.
-     * Evaluates all global filters (Terminal, Security, Category, Day, Time) and generates the HTML nodes.
-     * Contains fallback logic for generating a detailed "Empty State" if locations are currently closed.
-     * @returns {void} Modifies the innerHTML of the #activities-grid.
-     */
     function renderGrid() {
         const grid = document.getElementById("activities-grid");
         grid.innerHTML = ""; 
@@ -246,21 +205,23 @@ document.addEventListener("DOMContentLoaded", () => {
         const selectedTime = activeTime !== "All" && activeTime !== "" ? timeToMinutes(activeTime) : -1;
 
         let filtered = [];
-        let currentlyClosedMatches = []; // Holds items that match categories/terminals but are closed
+        let currentlyClosedMatches = []; 
 
-        // Split activities into "Open & Matching" and "Closed but Matching"
         allActivities.forEach(activity => {
             const activityTypes = Array.isArray(activity.type) ? activity.type : [activity.type];
             
             const matchesType = activeTypes.size === 0 || activityTypes.some(t => activeTypes.has(t));
-            // FIX: Treat "All Terminals" as a wildcard
             const matchesTerminal = activeTerminal === "All" || (activity.terminal && (activity.terminal.includes(activeTerminal) || activity.terminal.toLowerCase() === "all terminals"));
             const matchesSecurity = activeSecurity === "All" || activity.security === activeSecurity || activity.security === "both";
+            
+            const locType = activity.location_type || "inside";
+            const matchesProximity = activeProximity === "All" || locType === activeProximity;
+
             const matchesFoodType = activeFoodType === "All" || 
                                     (!activityTypes.includes("food")) || 
                                     (activityTypes.includes("food") && activity.food_type && activity.food_type.includes(activeFoodType));
 
-            const matchesCoreFilters = matchesType && matchesTerminal && matchesSecurity && matchesFoodType;
+            const matchesCoreFilters = matchesType && matchesTerminal && matchesSecurity && matchesFoodType && matchesProximity;
 
             let matchesSchedule = true;
             if (selectedDay !== -1 || selectedTime !== -1) {
@@ -290,7 +251,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return rankA - rankB;
         });
 
-        // --- NEW SMART EMPTY STATE LOGIC ---
         if (filtered.length === 0) {
             let emptyStateMsg = "No activities match your current filters.";
             
@@ -303,7 +263,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (item.specialty === "dropdown") {
                          openTimeStr = "Check directory for specific hours.";
                     } else if (item.hours) {
-                         // Uses Regex to extract just the opening time (e.g. "6:30 AM")
                          const match = item.hours.match(/(\d{1,2}(?::\d{2})?\s*(?:AM|PM|am|pm))/i);
                          openTimeStr = match ? `Opens at ${match[1].toUpperCase()}` : `Hours: ${item.hours}`;
                     } else {
@@ -328,7 +287,6 @@ document.addEventListener("DOMContentLoaded", () => {
             grid.innerHTML = `<div style='grid-column: 1 / -1; text-align: center; padding: 40px 20px; color: #3f3f46; line-height: 1.6;'>${emptyStateMsg}</div>`;
             return;
         }
-        // -----------------------------------
 
         filtered.forEach(activity => {
             const card = document.createElement("div");
@@ -347,6 +305,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 tagHTML = `<div class="card-tag" style="${gradientStyle}">${displayTagText}</div>`;
             }
             
+            let transitHTML = "";
+            if (activity.location_type === "outside" && activity.transit_instruction) {
+                transitHTML = `
+                    <div style="background-color: #f4f4f5; padding: 12px; margin-bottom: 16px; border-left: 3px solid #0ea5e9;">
+                        <div style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: #111111; margin-bottom: 4px;">🚆 Transit: ${activity.transit_time_mins} Mins Each Way</div>
+                        <div style="font-size: 0.85rem; color: #3f3f46; line-height: 1.4;">${activity.transit_instruction}</div>
+                    </div>
+                `;
+            }
+
             let specialtyHTML = "";
             if (activity.specialty === "dropdown" && activity.dropdown_options) {
                 
@@ -359,6 +327,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
                 specialtyHTML = `
+                    ${transitHTML}
                     <p style="color: inherit;">${activity.description}</p>
                     <select class="specialty-dropdown">
                         <option value="" disabled selected>Choose an Open Option to view details...</option>
@@ -367,7 +336,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="specialty-details"></div>
                 `;
             } else {
-                specialtyHTML = `<p>${activity.description}</p>`;
+                specialtyHTML = `
+                    ${transitHTML}
+                    <p>${activity.description}</p>
+                `;
             }
 
             let secLabel = "";
@@ -375,11 +347,9 @@ document.addEventListener("DOMContentLoaded", () => {
             if (activity.security === "post") secLabel = " • POST-SECURITY";
 
             let mapButtonsHTML = '';
-            
             if (activity.map_link) {
                 mapButtonsHTML += `<a href="${activity.map_link}" target="_blank" class="map-btn">Map 📍</a>`;
             }
-            
             if (activity.maps && Array.isArray(activity.maps)) {
                 activity.maps.forEach(mapObj => {
                     if (mapObj.link) {
@@ -475,17 +445,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /**
-     * @description Displays a fallback UI error state if the requested hub data is missing or corrupted.
-     * @param {string} msg - The text to be injected into the error element.
-     * @returns {void}
-     */
     function showError(msg) {
         document.getElementById("error-msg").innerText = msg;
         document.getElementById("error-state").style.display = "block";
     }
-
-    // --- DOM Event Listeners ---
 
     document.querySelectorAll(".filter-btn").forEach(btn => {
         btn.addEventListener("click", (e) => {
@@ -535,6 +498,25 @@ document.addEventListener("DOMContentLoaded", () => {
     
     document.getElementById("time-filter").addEventListener("change", (e) => { 
         activeTime = e.target.value; 
+        renderGrid(); 
+    });
+
+    // AUTO-DISABLE TERMINAL FILTER IF OUTSIDE SELECTED
+    document.getElementById("proximity-filter").addEventListener("change", (e) => { 
+        activeProximity = e.target.value; 
+        const terminalFilter = document.getElementById("terminal-filter");
+        
+        if (activeProximity === "outside") {
+            terminalFilter.value = "All";
+            activeTerminal = "All";
+            terminalFilter.disabled = true;
+            terminalFilter.style.opacity = "0.5";
+        } else {
+            terminalFilter.disabled = false;
+            terminalFilter.style.opacity = "1";
+        }
+        
+        updateFoodTypeDropdown();
         renderGrid(); 
     });
 });
