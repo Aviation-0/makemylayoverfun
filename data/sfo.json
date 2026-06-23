@@ -812,7 +812,7 @@
     {
       "title": "The Filbert Steps",
       "category": "Hiking & Views",
-      "type": ["explore"],
+      "type": ["explore", "art"],
       "location_type": "outside",
       "terminal": "Outside Airport",
       "security": "pre",
@@ -955,7 +955,7 @@
     {
       "title": "Bayfront Park Plane Spotting",
       "category": "Aviation Spotting",
-      "type": ["aviation", "explore"],
+      "type": ["aviation", "explore", "art"],
       "location_type": "outside",
       "terminal": "Outside Airport",
       "security": "pre",
@@ -1066,7 +1066,7 @@
     {
       "title": "Sneath Lane Trailhead (Sweeney Ridge)",
       "category": "Hiking & Views",
-      "type": ["explore"],
+      "type": ["explore", "art"],
       "location_type": "outside",
       "terminal": "Outside Airport",
       "security": "pre",
