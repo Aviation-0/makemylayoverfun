@@ -838,7 +838,7 @@
       "transit_time_mins": 50,
       "transit_instruction": "Take BART to Powell St, then ride the Powell-Hyde Cable Car. It drops you off directly at the top of the crooked street.",
       "image_path": "images/outside_lombard_street.jpg",
-      "map_link": "google.com/maps/place/Lombard+St,+San+Francisco,+CA/@37.8023949,-122.4083971,1197m/data=!3m1!1e3!4m6!3m5!1s0x808580ddab81ad97:0xc42f0b97ddc2b2ac!8m2!3d37.8020179!4d-122.4195579!16zL20vMDIzeDR5?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D",
+      "map_link": "https://www.google.com/maps/search/?api=1&query=Lombard+Street",
       "hours": "Daily: 24 Hours"
     },
     {
@@ -1125,8 +1125,8 @@
       "terminal": "Outside Airport",
       "security": "pre",
       "description": "<strong>Location:</strong> San Mateo, CA.<br><br>Offering sweeping, unobstructed Bay views, wide-open lawns, and direct access to the extensive, multi-use Bay Trail, this waterfront park is a favorite among local cyclists and walkers. It features a stunning, constructed hill climb that rewards you with an expansive, calming view of the water and the distant city skyline.",
-      "duration_text": "3 Hours",
-      "duration_mins": 180,
+      "duration_text": "3 Hours, 30 Mins",
+      "duration_mins": 210,
       "transit_time_mins": 15,
       "transit_instruction": "Take a 15-minute Uber or Lyft south along US-101. Account for TSA lines on your way back.",
       "image_path": "images/outside_seal_point.jpg",
