@@ -1,4 +1,9 @@
 {
+  "_meta": {
+    "description": "Airport data module for San Francisco International (SFO)",
+    "project": "Make My Layover Fun",
+    "author": "Zhibang (Lucas) Pan"
+  },
   "name": "San Francisco International",
   "city": "San Francisco, CA",
   "footer_citation": "This work is a derivative of <a href='https://commons.wikimedia.org/wiki/File:Outdoor_terrace_at_SFO_Airport_01.jpg' target='_blank' style='color: inherit;'>\"Outdoor terrace at SFO Airport 01\"</a> by Phoebe, used under CC BY-SA 4.0. The original image was cropped and resized by Zhibang Pan for makemylayoverfun. This derivative is licensed under CC BY-SA 4.0 by Zhibang Pan.",

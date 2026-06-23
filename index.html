@@ -1,16 +1,59 @@
+<!-- ======================================================================= -->
+<!-- FILE: index.html                                                        -->
+<!-- ======================================================================= -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- ==================== META & SEO ==================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make My Layover Fun</title>
+    <meta name="description" content="Make My Layover Fun: Turn your airport waiting time into an adventure. Discover the best food, lounges, art, and activities tailored to your layover duration.">
+    <meta name="author" content="Zhibang (Lucas) Pan">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://makemylayoverfun.com/">
+    <meta property="og:title" content="Make My Layover Fun">
+    <meta property="og:description" content="Optimize your airport layover. Find the best food, lounges, and activities for your layover time.">
+    <meta property="og:image" content="/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://makemylayoverfun.com/">
+    <meta property="twitter:title" content="Make My Layover Fun">
+    <meta property="twitter:description" content="Optimize your airport layover. Find the best food, lounges, and activities for your layover time.">
+    <meta property="twitter:image" content="/og-image.jpg">
+
+    <!-- ==================== ICONS & MANIFEST ==================== -->
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+    <meta name="apple-mobile-web-app-title" content="Make My Layover Fun" />
     <link rel="manifest" href="/site.webmanifest" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Make My Layover Fun</title>
+
+    <!-- ==================== JSON-LD SCHEMA ==================== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Make My Layover Fun",
+      "url": "https://makemylayoverfun.com",
+      "description": "An interactive web application designed to optimize passenger travel experiences by filtering airport activities, dining, and lounges based on layover duration.",
+      "applicationCategory": "TravelApplication",
+      "operatingSystem": "All",
+      "author": {
+        "@type": "Person",
+        "name": "Zhibang (Lucas) Pan"
+      }
+    }
+    </script>
+
+    <!-- ==================== STYLES ==================== -->
     <style>
+        /* --- Base Reset & Typography --- */
         body {
             margin: 0;
             padding: 0;
@@ -24,6 +67,8 @@
             height: 100vh;
             text-align: center;
         }
+
+        /* --- Layout Containers --- */
         .container {
             width: 100%;
             max-width: 550px;
@@ -37,6 +82,8 @@
             margin-bottom: 40px;
             color: #111111;
         }
+
+        /* --- Form Elements --- */
         .form-grid {
             display: grid;
             grid-template-columns: 2fr 1fr;
@@ -90,20 +137,22 @@
         input::-webkit-calendar-picker-indicator { opacity: 0; }
     </style>
 
+    <!-- ==================== ANALYTICS ==================== -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-93NPFQ6VTE"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-93NPFQ6VTE');
     </script>
 </head>
 <body>
 
+    <!-- ==================== MAIN CONTENT ==================== -->
     <div class="container">
         <h1>Make My Layover Fun</h1>
         
+        <!-- --- Search Form --- -->
         <form id="hub-form">
             <div class="form-grid">
                 <input type="text" id="airport-input" list="airports" placeholder="Search code (e.g., SFO)" required autocomplete="off">
@@ -120,6 +169,7 @@
                 </div>
             </div>
             
+            <!-- --- Airport Datalist --- -->
             <datalist id="airports">
                 <option value="ATL - Atlanta Hartsfield-Jackson">
                 <option value="AUS - Austin-Bergstrom">
@@ -177,7 +227,12 @@
         </form>
     </div>
 
+    <!-- ==================== EVENT HANDLERS ==================== -->
     <script>
+        /**
+         * @description Handles the form submission to route the user to the correct airport data page.
+         * Extracts the 3-letter IATA code and time limit, then dynamically constructs the URL parameters.
+         */
         document.getElementById('hub-form').addEventListener('submit', function(e) {
             e.preventDefault(); 
             const code = document.getElementById('airport-input').value.substring(0, 3).toUpperCase();

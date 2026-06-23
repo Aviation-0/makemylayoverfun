@@ -1,5 +1,17 @@
+// =======================================================================
+// FILE: app.js
+// =======================================================================
+/**
+ * @file app.js
+ * @description Core client-side logic for rendering and filtering airport activities.
+ * Handles data fetching, dynamic DOM generation, and multidimensional filtering (time, terminal, security, category).
+ * @author Zhibang (Lucas) Pan
+ * @project Make My Layover Fun
+ */
+
 document.addEventListener("DOMContentLoaded", () => {
     
+    // --- Global Application State ---
     let allActivities = [];
     let activeTypes = new Set();
     let activeTerminal = "All";
@@ -16,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let activeTime = `${currentHours}:${currentMinutes}`;
     // -------------------------------------
 
+    // --- Initialization & URL Parsing ---
     const params = new URLSearchParams(window.location.search);
     const airportCode = params.get("code")?.toLowerCase();
     const timeLimit = parseInt(params.get("time")) || 999; 
@@ -25,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
+    // --- Data Fetching & UI Hydration ---
     fetch(`data/${airportCode}.json`)
         .then(response => {
             if (!response.ok) throw new Error("Data file not found.");
@@ -49,6 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 footer.style.display = "block";
             }
 
+            // Filter activities strictly by user's available layover duration
             allActivities = airport.activities.filter(activity => activity.duration_mins <= timeLimit);
 
             if (allActivities.length === 0) {
@@ -56,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
+            // Populate Filter Dropdowns dynamically based on available data
             const terminalDropdown = document.getElementById("terminal-filter");
             const securityDropdown = document.getElementById("security-filter");
             const dayDropdown = document.getElementById("day-filter");
@@ -101,7 +117,13 @@ document.addEventListener("DOMContentLoaded", () => {
             showError("We do not have layover modules compiled for this hub yet.");
         });
 
-    // --- DYNAMIC FOOD TYPE DROPDOWN LOGIC ---
+    // --- Filter Helper Functions ---
+
+    /**
+     * @description Dynamically updates the "Food Type" dropdown options based on the currently active Terminal and Security filters.
+     * Extracts unique `food_type` arrays from the remaining valid dataset.
+     * @returns {void} Mutates the DOM elements for the food-type-filter select box.
+     */
     function updateFoodTypeDropdown() {
         const foodTypeDropdown = document.getElementById("food-type-filter");
         let availableFoodTypes = new Set();
@@ -142,6 +164,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     // ----------------------------------------
 
+    /**
+     * @description Determines if a specific location is currently open based on a complex string of operating hours.
+     * Evaluates against the user-selected Day index and Time (in minutes).
+     * @param {string} hoursString - The raw string detailing opening/closing times (e.g. "Daily: 5:00 AM - 11:30 PM").
+     * @param {number} selectedDayIdx - Integer representing the day of the week (0-6).
+     * @param {number} selectedTimeMins - Time of day converted into total minutes since midnight.
+     * @returns {boolean} True if the activity is open at the evaluated time, false otherwise.
+     */
     function isActivityOpen(hoursString, selectedDayIdx, selectedTimeMins) {
         if (!hoursString) return true; 
 
@@ -186,12 +216,25 @@ document.addEventListener("DOMContentLoaded", () => {
         return foundTimes ? isOpen : true; 
     }
 
+    /**
+     * @description Helper to convert a HH:MM time string to an integer of total minutes.
+     * @param {string} timeStr - The time formatted as "HH:MM".
+     * @returns {number} The time represented in minutes from midnight, or -1 if invalid.
+     */
     const timeToMinutes = (timeStr) => {
         if (!timeStr) return -1;
         const [hours, mins] = timeStr.split(':').map(Number);
         return hours * 60 + mins;
     };
 
+    // --- Core Render Logic ---
+
+    /**
+     * @description Core rendering loop for mapping filtered activities to the DOM grid.
+     * Evaluates all global filters (Terminal, Security, Category, Day, Time) and generates the HTML nodes.
+     * Contains fallback logic for generating a detailed "Empty State" if locations are currently closed.
+     * @returns {void} Modifies the innerHTML of the #activities-grid.
+     */
     function renderGrid() {
         const grid = document.getElementById("activities-grid");
         grid.innerHTML = ""; 
@@ -432,10 +475,17 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    /**
+     * @description Displays a fallback UI error state if the requested hub data is missing or corrupted.
+     * @param {string} msg - The text to be injected into the error element.
+     * @returns {void}
+     */
     function showError(msg) {
         document.getElementById("error-msg").innerText = msg;
         document.getElementById("error-state").style.display = "block";
     }
+
+    // --- DOM Event Listeners ---
 
     document.querySelectorAll(".filter-btn").forEach(btn => {
         btn.addEventListener("click", (e) => {
