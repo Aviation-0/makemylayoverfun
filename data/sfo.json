@@ -469,20 +469,6 @@
       "hours": "Daily: 7:00 AM - 11:00 PM"
     },
     {
-      "title": "Sensory Room",
-      "category": "Wellness & Relaxation",
-      "type": ["explore"],
-      "location_type": "inside",
-      "terminal": "Harvey Milk Terminal 1",
-      "security": "post",
-      "description": "<strong>Location:</strong> Harvey Milk Terminal 1, near Gate C2  <br><br>Designed specifically for neurodivergent travelers who may feel overwhelmed by the bustling airport environment. This quiet, secure room offers a calming escape with specialized sensory features to decompress before boarding.",
-      "duration_text": "30 Mins",
-      "duration_mins": 30,
-      "hours": "Daily: 5:00 AM - 11:00 PM",
-      "action_link": "https://www.flysfo.com/passengers/services-amenities/accessibility/sensory-room",
-      "action_text": "Learn More ↗"
-    },
-    {
       "title": "Tony’s Pizza Napoletana",
       "category": "Dining",
       "type": ["food"],
@@ -675,6 +661,20 @@
       "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=1758"
     },
     {
+      "title": "Sensory Room",
+      "category": "Wellness & Relaxation",
+      "type": ["explore"],
+      "location_type": "inside",
+      "terminal": "Harvey Milk Terminal 1",
+      "security": "post",
+      "description": "<strong>Location:</strong> Harvey Milk Terminal 1, near Gate C2  <br><br>Designed specifically for neurodivergent travelers who may feel overwhelmed by the bustling airport environment. This quiet, secure room offers a calming escape with specialized sensory features to decompress before boarding.",
+      "duration_text": "30 Mins",
+      "duration_mins": 30,
+      "hours": "Daily: 5:00 AM - 11:00 PM",
+      "action_link": "https://www.flysfo.com/passengers/services-amenities/accessibility/sensory-room",
+      "action_text": "Learn More ↗"
+    },
+    {
       "title": "Burger Joint",
       "category": "Dining",
       "type": ["food"],
@@ -696,15 +696,24 @@
       "type": ["food"],
       "food_type": ["Healthy & Vegan", "American"],
       "location_type": "inside",
-      "terminal": "Terminal 2",
+      "terminal": "Terminal 2, International Terminal G",
       "security": "post",
-      "description": "<strong>Location:</strong> Terminal 2, D gates, Retail Street <br><br>An airy, artisan market environment. It's fantastic for hot, fresh food made in the back kitchen, along with an impressive selection of local California cheeses, pastries, and flight snacks.",
+      "description": "<strong>Location:</strong> <br>• International Terminal G, near Gate G4 <br>• Terminal 2, D gates, Retail Street <br><br>An airy, artisan market environment. It's fantastic for hot, fresh food made in the back kitchen, along with an impressive selection of local California cheeses, pastries, and flight snacks.",
       "duration_text": "30 Mins",
       "duration_mins": 30,
       "action_link": "https://www.flysfo.com/passengers/shop-dine-relax/napa-farms-market",
       "action_text": "Explore More ↗",
-      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=1777",
-      "hours": "Daily: 4:30 AM - 11:00 PM"
+      "maps": [
+        {
+            "text": "Terminal 2 Map 📍",
+            "link": "https://www.flysfo.com/maps/interactive-maps?destination=1777"
+        },
+        {
+            "text": "International Terminal G Map 📍",
+            "link": "https://www.flysfo.com/maps/interactive-maps?destination=1734"
+        }
+              ],
+      "hours": "<br>• Terminal 2: Daily: 4:30 AM - 11:00 PM <br>• International Terminal G: Daily: 5:00 AM - 12:00 AM"
     },
     {
       "title": "Koi Palace Express",
@@ -721,6 +730,49 @@
       "action_text": "Explore More ↗",
       "hours": "Daily: 7:00 AM - 11:00 PM",
       "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=1742"
+    },
+    {
+      "title": "Mustards Bar & Grill",
+      "category": "Dining",
+      "type": ["food"],
+      "food_type": ["American", "Bar/Lounge"],
+      "location_type": "inside",
+      "terminal": "International Terminal G",
+      "security": "post",
+      "description": "<strong>Location:</strong> International Terminal G, near Gate G3 <br><br>An airport outpost of the legendary Napa Valley institution. Renowned for its elevated diner fare, fantastic wine list, and their famous Mongolian pork chop. It’s widely considered one of the best premium sit-down dining experiences at SFO if you want to treat yourself before a long international flight.",
+      "duration_text": "1 Hour, 15 Mins",
+      "duration_mins": 75,
+      "action_link": "https://www.flysfo.com/passengers/shop-dine-relax/mustards-bar-grill",
+      "action_text": "Learn More ↗",
+      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=55282",
+      "hours": "Daily: 7:00 AM - 11:00 PM"
+    },
+    {
+      "title": "The Little Chihuahua",
+      "category": "Dining",
+      "type": ["food"],
+      "food_type": ["Mexican", "Healthy & Vegan"],
+      "location_type": "inside",
+      "terminal": "Harvey Milk Terminal 1",
+      "security": "post",
+      "description": "<strong>Location:</strong> Harvey Milk Terminal 1, near Gate B3 <br><br>If you want a quintessential San Francisco Mission-style burrito, look no further. Highly praised for their al pastor, massive portions, and an excellent salsa bar. A perfect, incredibly filling option to grab before boarding a transcontinental flight.",
+      "duration_text": "30 Mins",
+      "duration_mins": 30,
+      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=91126",
+      "hours": "Daily: 5:00 AM - 11:30 PM"
+    },
+    {
+      "title": "The Bay Collection",
+      "category": "Local Shopping",
+      "type": ["shop"],
+      "location_type": "inside",
+      "terminal": "Harvey Milk Terminal 1",
+      "security": "post",
+      "description": "<strong>Location:</strong> Harvey Milk Terminal 1, near Gate B6 <br><br>Skip the generic souvenirs for a museum-inspired shopping experience celebrating San Francisco's premier cultural institutions. This sophisticated boutique features a beautifully curated selection of apparel, home decor, jewelry, and high-quality gifts sourced directly from the Asian Art Museum, the California Academy of Sciences, the Fine Arts Museums of San Francisco (de Young and Legion of Honor), and SFMOMA. It also showcases unique, sustainably crafted goods from local California artisans.",
+      "duration_text": "15 Mins",
+      "duration_mins": 15,
+      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=62464",
+      "hours": "Daily: 6:00 AM - 10:00 PM"
     },
     {
       "title": "Post-Security Terminal Loop Walk",
@@ -770,7 +822,7 @@
       "action_link": "https://www.goldengatebridgestore.org/",
       "action_text": "Bridge Info ↗",
       "map_link": "https://www.google.com/maps/place/Golden+Gate+Bridge+Welcome+Center/@37.8077973,-122.4774222,1197m/data=!3m2!1e3!4b1!4m6!3m5!1s0x80858690432c06e7:0xfac9601f983db5bd!8m2!3d37.8077973!4d-122.4748473!16s%2Fg%2F113g_h8cm?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D",
-      "hours": "Vister Center: Daily: 9:00 AM - 6:00 PM <br> Bridge: 24/7"
+      "hours": "<br>• Vister Center: Daily: 9:00 AM - 6:00 PM <br>• Bridge: 24/7"
     },
     {
       "title": "PIER 39",
@@ -1094,10 +1146,10 @@
       "transit_time_mins": 10,
       "transit_instruction": "Take a 10-minute Uber or Lyft up Crystal Springs Road. You must go back through TSA security after.",
       "image_path": "images/outside_junipero_serra.jpg",
-      "action_link": "https://www.smcgov.org/parks/junipero-serra-county-park",
+      "action_link": "https://www.smcgov.org/parks/junipero-serra-park",
       "action_text": "View Park Details ↗",
       "map_link": "https://www.google.com/maps/search/?api=1&query=Junipero+Serra+County+Park+San+Bruno",
-      "hours": "Daily: 8:00 AM - 7:30 PM"
+      "hours": "Daily: 8:00 AM - 5:00 PM"
     },
     {
       "title": "Sawyer Camp Trail",
@@ -1112,7 +1164,7 @@
       "transit_time_mins": 15,
       "transit_instruction": "Take a 15-minute Uber or Lyft to the southern trailhead. Only attempt if your layover easily clears 5+ hours.",
       "image_path": "images/outside_sawyer_camp.jpg",
-      "action_link": "https://www.smcgov.org/parks/sawyer-camp-segment-crystal-springs-regional-trail",
+      "action_link": "https://www.smcgov.org/parks/sawyer-camp-segment",
       "action_text": "View Trail Map ↗",
       "map_link": "https://www.google.com/maps/search/?api=1&query=Sawyer+Camp+Trail+South+Trailhead",
       "hours": "Daily: 6:00 AM - 8:00 PM"
@@ -1130,28 +1182,10 @@
       "transit_time_mins": 15,
       "transit_instruction": "Take a 15-minute Uber or Lyft south along US-101. Account for TSA lines on your way back.",
       "image_path": "images/outside_seal_point.jpg",
-      "action_link": "https://www.cityofsanmateo.org/3358/Seal-Point-Park",
+      "action_link": "https://www.cityofsanmateo.org/3384/Seal-Point-Park",
       "action_text": "View Park Details ↗",
       "map_link": "https://www.google.com/maps/search/?api=1&query=Seal+Point+Park+San+Mateo",
-      "hours": "Daily: 6:00 AM - 8:00 PM"
-    },
-    {
-      "title": "Mission District Murals (Balmy Alley)",
-      "category": "Art & Culture",
-      "type": ["art", "explore"],
-      "location_type": "outside",
-      "terminal": "Outside Airport",
-      "security": "pre",
-      "description": "<strong>Location:</strong> San Francisco (Mission District).<br><br>Step directly into the vibrant, beating cultural heart of San Francisco. Balmy Alley is a living, ever-changing urban canvas lined with dozens of profound murals that chronicle decades of social justice, activism, and local Chicano history, functioning as an incredible, immersive open-air gallery.",
-      "duration_text": "4 Hours",
-      "duration_mins": 240,
-      "transit_time_mins": 30,
-      "transit_instruction": "Take the BART Yellow Line directly to 24th St Mission Station. Budget 1+ hours for the return trip and TSA.",
-      "image_path": "images/outside_balmy_alley.jpg",
-      "action_link": "https://balmyalley.org/",
-      "action_text": "View Mural Map ↗",
-      "map_link": "https://www.google.com/maps/search/?api=1&query=Balmy+Alley+San+Francisco",
-      "hours": "Daily: 24 Hours"
+      "hours": "Daily: 7:00 AM - 7:00 PM"
     }
   ]
 }
