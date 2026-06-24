@@ -66,8 +66,14 @@ document.addEventListener("DOMContentLoaded", () => {
             let allLocationTags = [];
             allActivities.forEach(a => {
                 if (a.terminal) {
+                    // Normalize "Terminal 1" to "Harvey Milk Terminal 1" ensuring no duplicates
+                    a.terminal = a.terminal
+                        .replace(/\bTerminal 1\b/ig, "Harvey Milk Terminal 1")
+                        .replace(/Harvey Milk\s+Harvey Milk/ig, "Harvey Milk");
+
                     const primaryTerminal = a.terminal.split(',')[0].trim();
                     const lowerTerm = primaryTerminal.toLowerCase();
+                    
                     // Explicitly block "Outside Airport" from entering the Terminal dropdown
                     if (lowerTerm !== "all terminals" && lowerTerm !== "outside airport" && primaryTerminal.length < 35) {
                         allLocationTags.push(primaryTerminal);
@@ -75,7 +81,23 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
             
-            const uniqueTerminals = [...new Set(allLocationTags)].sort();
+            // Custom strict ordering for the dropdown
+            const desiredOrder = [
+                "international terminal a",
+                "international terminal g",
+                "harvey milk terminal 1",
+                "terminal 2",
+                "terminal 3"
+            ];
+
+            const uniqueTerminals = [...new Set(allLocationTags)].sort((a, b) => {
+                const idxA = desiredOrder.indexOf(a.toLowerCase());
+                const idxB = desiredOrder.indexOf(b.toLowerCase());
+                const rankA = idxA === -1 ? 999 : idxA;
+                const rankB = idxB === -1 ? 999 : idxB;
+                return rankA - rankB || a.localeCompare(b);
+            });
+
             uniqueTerminals.forEach(term => {
                 const opt = document.createElement("option");
                 opt.value = term;

@@ -42,7 +42,7 @@
       "category": "Museum & History",
       "type": ["aviation", "art"],
       "location_type": "inside",
-      "terminal": "International Terminal",
+      "terminal": "International Terminal A, International Terminal G",
       "security": "pre",
       "description": "<strong>Location:</strong> Departures Level <br><br>Located in a space modeled after the original 1930s passenger lobby, this incredible free museum is filled with commercial aviation artifacts and historical airline memorabilia. It’s the perfect place to geek out over the golden age of flying.",
       "duration_text": "45 Mins",
@@ -386,7 +386,7 @@
       "category": "Services",
       "type": ["explore"],
       "location_type": "inside",
-      "terminal": "International Terminal",
+      "terminal": "International Terminal A, International Terminal G",
       "security": "pre",
       "description": "<strong>Location:</strong> International Terminal, near the entrance to Gates G1 to G14 <br><br>Need to recharge? For a fee, Freshen Up! offers private nap rooms ($150 minimum), hot showers ($30), ironing facilities ($5), and travel necessities. It's the perfect sanctuary during an ultra-long layover.",
       "duration_text": "1 Hour",
@@ -441,7 +441,7 @@
       "category": "Visuals & Theater",
       "type": ["art"],
       "location_type": "inside",
-      "terminal": "International Terminal",
+      "terminal": "International Terminal A, International Terminal G",
       "security": "pre",
       "description": "<strong>Location:</strong> Departures Level<br><br>Sit back, relax, and watch a rotating selection of short films and documentaries curated by the SFO Museum. It's a great way to kill time and learn something new before heading through the TSA checkpoints.",
       "duration_text": "45 Mins",
@@ -770,7 +770,7 @@
       "action_link": "https://www.goldengatebridgestore.org/",
       "action_text": "Bridge Info ↗",
       "map_link": "https://www.google.com/maps/place/Golden+Gate+Bridge+Welcome+Center/@37.8077973,-122.4774222,1197m/data=!3m2!1e3!4b1!4m6!3m5!1s0x80858690432c06e7:0xfac9601f983db5bd!8m2!3d37.8077973!4d-122.4748473!16s%2Fg%2F113g_h8cm?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D",
-      "hours": "Daily: 9:00 AM - 6:00 PM"
+      "hours": "Vister Center: Daily: 9:00 AM - 6:00 PM <br> Bridge: 24/7"
     },
     {
       "title": "PIER 39",
