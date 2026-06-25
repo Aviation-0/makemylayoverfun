@@ -733,20 +733,6 @@
       "hours": "Daily: 7:00 AM - 11:00 PM"
     },
     {
-      "title": "The Little Chihuahua",
-      "category": "Dining",
-      "type": ["food"],
-      "food_type": ["Mexican", "Healthy & Vegan"],
-      "location_type": "inside",
-      "terminal": "Harvey Milk Terminal 1",
-      "security": "post",
-      "description": "<strong>Location:</strong> Harvey Milk Terminal 1, near Gate B3 <br><br>If you want a quintessential San Francisco Mission-style burrito, look no further. Highly praised for their al pastor, massive portions, and an excellent salsa bar. A perfect, incredibly filling option to grab before boarding a transcontinental flight.",
-      "duration_text": "30 Mins",
-      "duration_mins": 30,
-      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=91126",
-      "hours": "Daily: 5:00 AM - 11:30 PM"
-    },
-    {
       "title": "Sensory Room",
       "category": "Wellness & Relaxation",
       "type": ["explore"],
