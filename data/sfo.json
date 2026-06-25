@@ -332,6 +332,39 @@
       ]
     },
     {
+      "title": "SkyTerrace Observation Deck",
+      "category": "Plane Spotting",
+      "type": ["aviation"],
+      "location_type": "inside",
+      "terminal": "Terminal 2",
+      "security": "pre",
+      "description": "<strong>Location:</strong> Terminal 2, Level 4 <br><br>Head to the top of Terminal 2 to enjoy stunning 180-degree views of the busiest runways. It’s an incredible vantage point to watch heavies rotate and land.",
+      "duration_text": "1 Hour",
+      "duration_mins": 60,
+      "image_path": "images/sfo_skyterrace.jpg",
+      "action_link": "https://www.flysfo.com/skyterrace",
+      "action_text": "Explore More ↗",
+      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=586185",
+      "hours": "Fri-Mon 10:00 AM - 6:00 PM"
+    },
+    {
+      "title": "Freshen Up! (Nap Rooms & Showers)",
+      "category": "Services",
+      "type": ["explore"],
+      "location_type": "inside",
+      "terminal": "International Terminal A, International Terminal G",
+      "security": "pre",
+      "description": "<strong>Location:</strong> International Terminal, near the entrance to Gates G1 to G14 <br><br>Freshen Up! is an essential SFO sanctuary for those enduring long layovers. Whether you need a hot shower to wash away travel fatigue ($30) or a quiet place to recharge, this hidden gem offers private, comfortable nap room suites starting at $150. Beyond the basics, the facility is fully stocked with travel necessities—from toiletries to laundry and pressing services—ensuring you have everything required to reset. <strong>Be sure to set multiple alarms so you don't get too comfortable and accidentally sleep past your flight!<strong>",
+      "duration_text": "2 Hour",
+      "duration_mins": 120,
+      "hours": "24:7",
+      "image_path": "images/refresh.jpg",
+      "image_attribution": "Photo courtesy of FreshenUp, SFO",
+      "action_link": "https://www.airporttravelagency.org/freshen-up/",
+      "action_text": "Learn More ↗",
+      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=1998"
+    },
+    {
       "title": "Cafe X Robotic Coffee Bar",
       "category": "Dining & Tech",
       "type": ["food", "explore"],
@@ -353,66 +386,6 @@
          "link": "https://www.flysfo.com/maps/interactive-maps?destination=652007"}
       ],
       "hours": "24:7"
-    },
-    {
-      "title": "Permanent Public Art Trail",
-      "category": "Art Walk",
-      "type": ["art", "explore"],
-      "location_type": "inside",
-      "terminal": "All Terminals",
-      "security": "both",
-      "description": "<strong>Location:</strong> Throughout the airport<br><br>Stretch your legs and take a self-guided walking tour of SFO's world-class permanent public art collection, featuring massive murals, sculptures, and kinetic light installations scattered across every terminal. See if you can find all 165 pieces!",
-      "duration_text": "1 Hour",
-      "duration_mins": 60,
-      "action_link": "https://www.sfomuseum.org/public-art",
-      "action_text": "Learn More ↗",
-      "map_link": "https://www.sfomuseum.org/sites/default/files/sfo-maps/public-art-sfo-map-0526.pdf"
-    },
-    {
-      "title": "Kids' Play Areas",
-      "category": "Family & Kids",
-      "type": ["explore"],
-      "location_type": "inside",
-      "terminal": "Harvey Milk Terminal 1, Terminal 2",
-      "security": "post",
-      "description": "<strong>Locations:</strong><br>• Tree Town: Harvey Milk Terminal 1, Near Gate B18 <br>• Kids' Spot: Harvey Milk Terminal 1, Near Gate B2  <br>• Butterfly Wall: Terminal 2, Near Gate D15 <br>• San Francisco Bay Area Bird Encounters: Terminal 2, Near Gate D7 <br>• Kids' Spot: Terminal 3, Near Gate F17 <br>• Spirogyrate: Terminal 3, Near Gate E7 <br>• Kids' Spot: Terminal 3, Near Food Court <br><br>Traveling with kids? Let them burn off some energy before the flight at these beautifully designed, continuous interactive play structures.",
-      "duration_text": "30 Mins",
-      "duration_mins": 30,
-      "action_link": "https://www.flysfo.com/kids-spots",
-      "action_text": "Learn More ↗"
-    },
-    {
-      "title": "Freshen Up! (Nap Rooms & Showers)",
-      "category": "Services",
-      "type": ["explore"],
-      "location_type": "inside",
-      "terminal": "International Terminal A, International Terminal G",
-      "security": "pre",
-      "description": "<strong>Location:</strong> International Terminal, near the entrance to Gates G1 to G14 <br><br>Freshen Up! is an essential SFO sanctuary for those enduring long layovers. Whether you need a hot shower to wash away travel fatigue ($30) or a quiet place to recharge, this hidden gem offers private, comfortable nap room suites starting at $150. Beyond the basics, the facility is fully stocked with travel necessities—from toiletries to laundry and pressing services—ensuring you have everything required to reset. <strong>Be sure to set multiple alarms so you don't get too comfortable and accidentally sleep past your flight!<strong>",
-      "duration_text": "2 Hour",
-      "duration_mins": 120,
-      "hours": "24:7",
-      "image_path": "images/refresh.jpg",
-      "image_attribution": "Photo courtesy of FreshenUp, SFO",
-      "action_link": "https://www.airporttravelagency.org/freshen-up/",
-      "action_text": "Learn More ↗",
-      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=1998"
-    },
-    {
-      "title": "SkyTerrace Observation Deck",
-      "category": "Plane Spotting",
-      "type": ["aviation"],
-      "location_type": "inside",
-      "terminal": "Terminal 2",
-      "security": "pre",
-      "description": "<strong>Location:</strong> Terminal 2, Level 4 <br><br>Head to the top of Terminal 2 to enjoy stunning 180-degree views of the busiest runways. It’s an incredible vantage point to watch heavies rotate and land.",
-      "duration_text": "1 Hour",
-      "duration_mins": 60,
-      "image_path": "images/sfo_skyterrace.jpg",
-      "action_link": "https://www.flysfo.com/skyterrace",
-      "action_text": "Explore More ↗",
-      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=586185",
-      "hours": "Fri-Mon 10:00 AM - 6:00 PM"
     },
     {
       "title": "Tony’s Pizza Napoletana",
@@ -482,6 +455,20 @@
       "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=132050"
     },
     {
+      "title": "Permanent Public Art Trail",
+      "category": "Art Walk",
+      "type": ["art", "explore"],
+      "location_type": "inside",
+      "terminal": "All Terminals",
+      "security": "both",
+      "description": "<strong>Location:</strong> Throughout the airport<br><br>Stretch your legs and take a self-guided walking tour of SFO's world-class permanent public art collection, featuring massive murals, sculptures, and kinetic light installations scattered across every terminal. See if you can find all 165 pieces!",
+      "duration_text": "1 Hour",
+      "duration_mins": 60,
+      "action_link": "https://www.sfomuseum.org/public-art",
+      "action_text": "Learn More ↗",
+      "map_link": "https://www.sfomuseum.org/sites/default/files/sfo-maps/public-art-sfo-map-0526.pdf"
+    },
+    {
       "title": "The Bay Collection",
       "category": "Local Shopping",
       "type": ["shop"],
@@ -493,6 +480,19 @@
       "duration_mins": 15,
       "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=675017",
       "hours": "Daily: 6:00 AM - 10:00 PM"
+    },
+    {
+      "title": "Kids' Play Areas",
+      "category": "Family & Kids",
+      "type": ["explore"],
+      "location_type": "inside",
+      "terminal": "Harvey Milk Terminal 1, Terminal 2",
+      "security": "post",
+      "description": "<strong>Locations:</strong><br>• Tree Town: Harvey Milk Terminal 1, Near Gate B18 <br>• Kids' Spot: Harvey Milk Terminal 1, Near Gate B2  <br>• Butterfly Wall: Terminal 2, Near Gate D15 <br>• San Francisco Bay Area Bird Encounters: Terminal 2, Near Gate D7 <br>• Kids' Spot: Terminal 3, Near Gate F17 <br>• Spirogyrate: Terminal 3, Near Gate E7 <br>• Kids' Spot: Terminal 3, Near Food Court <br><br>Traveling with kids? Let them burn off some energy before the flight at these beautifully designed, continuous interactive play structures.",
+      "duration_text": "30 Mins",
+      "duration_mins": 30,
+      "action_link": "https://www.flysfo.com/kids-spots",
+      "action_text": "Learn More ↗"
     },
     {
       "title": "Bun Mee",
