@@ -485,22 +485,6 @@
       "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=621248"
     },
     {
-      "title": "Kona’s by Pacific Cocktail Haven",
-      "category": "Dining",
-      "type": ["food"],
-      "food_type": ["Bar/Lounge"],
-      "location_type": "inside",
-      "terminal": "Harvey Milk Terminal 1",
-      "security": "post",
-      "description": "<strong>Location:</strong> Harvey Milk Terminal 1, SF Eats Food Hall <br><br>An outpost of the award-winning San Francisco bar, serving up incredible tropical-inspired craft cocktails. The best spot in the airport to grab a pre-flight drink. Ranked North America’s 50 Best Bars and the World’s 50 Best Bars in 2023 and 2024",
-      "duration_text": "45 Mins",
-      "duration_mins": 45,
-      "action_link": "https://www.flysfo.com/passengers/shop-dine-relax/konas-pacific-cocktail-haven",
-      "action_text": "Learn More ↗",
-      "hours": "Daily: 7:00 AM - 11:00 PM",
-      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=621251"
-    },
-    {
       "title": "Boudin Bakery",
       "category": "Dining",
       "type": ["food"],
@@ -516,6 +500,24 @@
       "action_text": "Order Now ↗",
       "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=62456",
       "hours": "Daily: 5:30 AM - 11:30 PM"
+    },
+    {
+      "title": "Mama Go’s Filipino Cuisine",
+      "category": "Dining",
+      "type": ["food"],
+      "food_type": ["Asian", "Healthy & Vegan"],
+      "location_type": "inside",
+      "terminal": "Harvey Milk Terminal 1",
+      "security": "post",
+      "description": "<strong>Location:</strong> Harvey Milk Terminal 1, near Gate B18 <br><br>A massive favorite for authentic Filipino food and regarded as some of the best value for your money at SFO. A casual, comforting staple to grab a warm bite before heading to your gate. Also has vegan & gluten-free options",
+      "duration_text": "45 Mins",
+      "duration_mins": 45,
+      "action_link": "https://order.toasttab.com/online/mamagos-sfo-t1",
+      "action_text": "Order Now ↗",
+      "hours": "Daily: 3:30 AM - 11:30 PM",
+      "image_path": "images/mamago.jpg",
+      "image_attribution": "Photo courtesy of Mama Go's Filipino Cuisine",
+      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=132050"
     },
     {
       "title": "The Bay Collection",
@@ -547,22 +549,20 @@
       "hours": "Daily: 5:30 AM - 11:30 PM"
     },
     {
-      "title": "Mama Go’s Filipino Cuisine",
+      "title": "Kona’s by Pacific Cocktail Haven",
       "category": "Dining",
       "type": ["food"],
-      "food_type": ["Asian", "Healthy & Vegan"],
+      "food_type": ["Bar/Lounge"],
       "location_type": "inside",
       "terminal": "Harvey Milk Terminal 1",
       "security": "post",
-      "description": "<strong>Location:</strong> Harvey Milk Terminal 1, near Gate B18 <br><br>A massive favorite for authentic Filipino food and regarded as some of the best value for your money at SFO. A casual, comforting staple to grab a warm bite before heading to your gate. Also vegan & gluten-free options",
+      "description": "<strong>Location:</strong> Harvey Milk Terminal 1, SF Eats Food Hall <br><br>An outpost of the award-winning San Francisco bar, serving up incredible tropical-inspired craft cocktails. The best spot in the airport to grab a pre-flight drink. Ranked North America’s 50 Best Bars and the World’s 50 Best Bars in 2023 and 2024",
       "duration_text": "45 Mins",
       "duration_mins": 45,
-      "action_link": "https://order.toasttab.com/online/mamagos-sfo-t1",
-      "action_text": "Order Now ↗",
-      "hours": "Daily: 3:30 AM - 11:30 PM",
-      "image_path": "images/mamago.jpg",
-      "image_attribution": "Photo courtesy of Mama Go's Filipino Cuisine",
-      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=132050"
+      "action_link": "https://www.flysfo.com/passengers/shop-dine-relax/konas-pacific-cocktail-haven",
+      "action_text": "Learn More ↗",
+      "hours": "Daily: 7:00 AM - 11:00 PM",
+      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=621251"
     },
     {
       "title": "Tomokazu",
