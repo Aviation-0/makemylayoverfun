@@ -437,22 +437,6 @@
       "hours": "Daily: 6:00 AM - 10:00 PM"
     },
     {
-      "title": "Socola Chocolatier",
-      "category": "Sweets & Gifts",
-      "type": ["shop", "food"],
-      "food_type": ["Coffee & Sweets"],
-      "location_type": "inside",
-      "terminal": "Terminal 3",
-      "security": "post",
-      "description": "<strong>Location:</strong> Terminal 3, near Gate E6 <br><br>Pick up artisanal, handcrafted chocolates infused with unique, local flavors. An excellent stop to treat yourself or grab a premium gift.",
-      "duration_text": "15 Mins",
-      "duration_mins": 15,
-      "action_link": "https://www.socolachocolates.com/",
-      "action_text": "Website ↗",
-      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=563503",
-      "hours": "Daily: 7:00 AM - 11:00 PM"
-    },
-    {
       "title": "Tony’s Pizza Napoletana",
       "category": "Dining",
       "type": ["food"],
@@ -658,6 +642,22 @@
       "action_text": "Menu ↗",
       "hours": "Daily: 6:30 AM - 10:30 PM",
       "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=1758"
+    },
+    {
+      "title": "Socola Chocolatier",
+      "category": "Sweets & Gifts",
+      "type": ["shop", "food"],
+      "food_type": ["Coffee & Sweets"],
+      "location_type": "inside",
+      "terminal": "Terminal 3",
+      "security": "post",
+      "description": "<strong>Location:</strong> Terminal 3, near Gate E6 <br><br>Pick up artisanal, handcrafted chocolates infused with unique, local flavors. An excellent stop to treat yourself or grab a premium gift.",
+      "duration_text": "15 Mins",
+      "duration_mins": 15,
+      "action_link": "https://www.socolachocolates.com/",
+      "action_text": "Website ↗",
+      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=563503",
+      "hours": "Daily: 7:00 AM - 11:00 PM"
     },
     {
       "title": "Burger Joint",
