@@ -388,10 +388,12 @@
       "location_type": "inside",
       "terminal": "International Terminal A, International Terminal G",
       "security": "pre",
-      "description": "<strong>Location:</strong> International Terminal, near the entrance to Gates G1 to G14 <br><br>Need to recharge? For a fee, Freshen Up! offers private nap rooms ($150 minimum), hot showers ($30), ironing facilities ($5), and travel necessities. It's the perfect sanctuary during an ultra-long layover.",
-      "duration_text": "1 Hour",
-      "duration_mins": 60,
+      "description": "<strong>Location:</strong> International Terminal, near the entrance to Gates G1 to G14 <br><br>Freshen Up! is an essential SFO sanctuary for those enduring long layovers. Whether you need a hot shower to wash away travel fatigue ($30) or a quiet place to recharge, this hidden gem offers private, comfortable nap room suites starting at $150. Beyond the basics, the facility is fully stocked with travel necessities—from toiletries to laundry and pressing services—ensuring you have everything required to reset. <strong>Be sure to set multiple alarms so you don't get too comfortable and accidentally sleep past your flight!<strong>",
+      "duration_text": "2 Hour",
+      "duration_mins": 120,
       "hours": "24:7",
+      "image_path": "images/refresh.jpg",
+      "image_attribution": "Photo courtesy of FreshenUp, SFO",
       "action_link": "https://www.airporttravelagency.org/freshen-up/",
       "action_text": "Learn More ↗",
       "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=1998"
@@ -411,30 +413,6 @@
       "action_text": "Explore More ↗",
       "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=586185",
       "hours": "Fri-Mon 10:00 AM - 6:00 PM"
-    },
-    {
-      "title": "Compass Books",
-      "category": "Shopping",
-      "type": ["shop"],
-      "location_type": "inside",
-      "terminal": "Terminal 2, Terminal 3",
-      "security": "post",
-      "description": "<strong>Locations:</strong> <br>• Terminal 2 <br>• Terminal 3, near F1 Security Checkpoint <br><br>A highly celebrated, cozy staple of SFO. As the first independent bookstore in a major US airport, it feels like a neighborhood bookshop right at your gate. Browse a fantastic curation of bestsellers, deep-cut non-fiction, and local Bay Area authors instead of the typical, generic magazine racks.",
-      "duration_text": "20 Mins",
-      "duration_mins": 20,
-      "action_link": "https://www.booksinc.net/",
-      "action_text": "Website ↗",
-      "maps": [
-        {
-            "text": "Terminal 2 Map 📍",
-            "link": "https://www.flysfo.com/maps/interactive-maps?destination=2003"
-        },
-        {
-            "text": "Terminal 3 Map 📍",
-            "link": "https://www.flysfo.com/maps/interactive-maps?destination=1946"
-        }
-              ],
-      "hours": "Daily: 6:00 AM - 10:00 PM"
     },
     {
       "title": "Tony’s Pizza Napoletana",
@@ -658,6 +636,30 @@
       "action_text": "Website ↗",
       "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=563503",
       "hours": "Daily: 7:00 AM - 11:00 PM"
+    },
+    {
+      "title": "Compass Books",
+      "category": "Shopping",
+      "type": ["shop"],
+      "location_type": "inside",
+      "terminal": "Terminal 2, Terminal 3",
+      "security": "post",
+      "description": "<strong>Locations:</strong> <br>• Terminal 2 <br>• Terminal 3, near F1 Security Checkpoint <br><br>A highly celebrated, cozy staple of SFO. As the first independent bookstore in a major US airport, it feels like a neighborhood bookshop right at your gate. Browse a fantastic curation of bestsellers, deep-cut non-fiction, and local Bay Area authors instead of the typical, generic magazine racks.",
+      "duration_text": "20 Mins",
+      "duration_mins": 20,
+      "action_link": "https://www.booksinc.net/",
+      "action_text": "Website ↗",
+      "maps": [
+        {
+            "text": "Terminal 2 Map 📍",
+            "link": "https://www.flysfo.com/maps/interactive-maps?destination=2003"
+        },
+        {
+            "text": "Terminal 3 Map 📍",
+            "link": "https://www.flysfo.com/maps/interactive-maps?destination=1946"
+        }
+              ],
+      "hours": "Daily: 6:00 AM - 10:00 PM"
     },
     {
       "title": "Burger Joint",
