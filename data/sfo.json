@@ -437,22 +437,6 @@
       "hours": "Daily: 6:00 AM - 10:00 PM"
     },
     {
-      "title": "Video Arts Room",
-      "category": "Visuals & Theater",
-      "type": ["art"],
-      "location_type": "inside",
-      "terminal": "International Terminal A, International Terminal G",
-      "security": "pre",
-      "description": "<strong>Location:</strong> Departures Level<br><br>Sit back, relax, and watch a rotating selection of short films and documentaries curated by the SFO Museum. It's a great way to kill time and learn something new before heading through the TSA checkpoints.",
-      "duration_text": "45 Mins",
-      "duration_mins": 45,
-      "image_path": "images/sfo_videoarts.jpg",
-      "action_link": "https://www.flysfo.com/passengers/shop-dine-relax/video-arts",
-      "action_text": "Explore More ↗",
-      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=4897",
-      "hours": "Daily: 7:00 AM - 10:00 PM"
-    },
-    {
       "title": "Socola Chocolatier",
       "category": "Sweets & Gifts",
       "type": ["shop", "food"],
@@ -773,6 +757,22 @@
       "duration_mins": 30,
       "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=91126",
       "hours": "Daily: 5:00 AM - 11:30 PM"
+    },
+    {
+      "title": "Video Arts Room",
+      "category": "Visuals & Theater",
+      "type": ["art"],
+      "location_type": "inside",
+      "terminal": "International Terminal A, International Terminal G",
+      "security": "pre",
+      "description": "<strong>Location:</strong> Departures Level<br><br>Sit back, relax, and watch a rotating selection of short films and documentaries curated by the SFO Museum. It's a great way to kill time and learn something new before heading through the TSA checkpoints.",
+      "duration_text": "45 Mins",
+      "duration_mins": 45,
+      "image_path": "images/sfo_videoarts.jpg",
+      "action_link": "https://www.flysfo.com/passengers/shop-dine-relax/video-arts",
+      "action_text": "Explore More ↗",
+      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=4897",
+      "hours": "Daily: 7:00 AM - 10:00 PM"
     },
     {
       "title": "Post-Security Terminal Loop Walk",
