@@ -658,20 +658,6 @@
       "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=1758"
     },
     {
-      "title": "Sensory Room",
-      "category": "Wellness & Relaxation",
-      "type": ["explore"],
-      "location_type": "inside",
-      "terminal": "Harvey Milk Terminal 1",
-      "security": "post",
-      "description": "<strong>Location:</strong> Harvey Milk Terminal 1, near Gate C2  <br><br>Designed specifically for neurodivergent travelers who may feel overwhelmed by the bustling airport environment. This quiet, secure room offers a calming escape with specialized sensory features to decompress before boarding.",
-      "duration_text": "30 Mins",
-      "duration_mins": 30,
-      "hours": "Daily: 5:00 AM - 11:00 PM",
-      "action_link": "https://www.flysfo.com/passengers/services-amenities/accessibility/sensory-room",
-      "action_text": "Learn More ↗"
-    },
-    {
       "title": "Burger Joint",
       "category": "Dining",
       "type": ["food"],
@@ -757,6 +743,20 @@
       "duration_mins": 30,
       "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=91126",
       "hours": "Daily: 5:00 AM - 11:30 PM"
+    },
+    {
+      "title": "Sensory Room",
+      "category": "Wellness & Relaxation",
+      "type": ["explore"],
+      "location_type": "inside",
+      "terminal": "Harvey Milk Terminal 1",
+      "security": "post",
+      "description": "<strong>Location:</strong> Harvey Milk Terminal 1, near Gate C2  <br><br>Designed specifically for neurodivergent travelers who may feel overwhelmed by the bustling airport environment. This quiet, secure room offers a calming escape with specialized sensory features to decompress before boarding.",
+      "duration_text": "30 Mins",
+      "duration_mins": 30,
+      "hours": "Daily: 5:00 AM - 11:00 PM",
+      "action_link": "https://www.flysfo.com/passengers/services-amenities/accessibility/sensory-room",
+      "action_text": "Learn More ↗"
     },
     {
       "title": "Video Arts Room",
