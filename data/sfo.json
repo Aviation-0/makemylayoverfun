@@ -560,6 +560,8 @@
       "action_link": "https://order.toasttab.com/online/mamagos-sfo-t1",
       "action_text": "Order Now ↗",
       "hours": "Daily: 3:30 AM - 11:30 PM",
+      "image_path": "images/mamago.jpg",
+      "image_attribution": "Photo courtesy of Mama Go's Filipino Cuisine",
       "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=132050"
     },
     {
