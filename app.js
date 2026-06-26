@@ -35,14 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
             document.title = `${airportCode.toUpperCase()} | Make My Layover Fun`;
             document.getElementById("airport-name").innerText = airport.name;
             document.getElementById("airport-city").innerText = airport.city;
-            
-            if (airport.landmarks) {
-                document.getElementById("landmarks-container").style.display = "flex";
-                document.getElementById("landmark-airport-text").innerText = airport.landmarks.airport.name;
-                document.getElementById("landmark-city-text").innerText = airport.landmarks.city.name;
-                document.getElementById("art-airport").innerHTML = airport.landmarks.airport.svg || "";
-                document.getElementById("art-city").innerHTML = airport.landmarks.city.svg || "";
-            }
 
             if (airport.footer_citation) {
                 const footer = document.getElementById("site-footer");
