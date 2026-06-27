@@ -93,6 +93,7 @@
     .filter-btn.active .filter-color { border-color: transparent; box-shadow: none; }
     .filter-btn.active .filter-color::after { border-color: #ffffff; }
     
+    .filter-btn.active .bg-pilot { background-color: #2563eb; } /* New Blue for Crew */
     .filter-btn.active .bg-art { background-color: #8b5cf6; }
     .filter-btn.active .bg-aviation { background-color: #0ea5e9; }
     .filter-btn.active .bg-food { background-color: #f43f5e; }
@@ -109,6 +110,9 @@
     .specialty-card { background-color: #e4e4e7; border: 2px solid #a1a1aa; }
     .rank-badge { position: absolute; top: -12px; right: -12px; background: #111111; color: #ffffff; font-weight: 800; font-size: 1.1rem; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 50%; box-shadow: 0 4px 6px rgba(0,0,0,0.15); z-index: 10; border: 2px solid #ffffff; }
     
+    /* NEW PILOT CREDIT BADGE STYLING */
+    .pilot-credit-badge { position: absolute; top: 16px; right: 16px; background-color: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 8px; border-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); z-index: 5; text-align: right; max-width: 50%; }
+
     .card-tag { display: inline-block; color: #ffffff; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; padding: 4px 8px; margin-bottom: 12px; align-self: flex-start; }
     .card-image { width: 100%; height: 180px; object-fit: cover; object-position: center; border: 1px solid #e4e4e7; display: block; }
     .card-image.broken-image { display: none !important; }
@@ -162,6 +166,7 @@
 </header>
 
     <div class="filter-bar">
+        <button class="filter-btn" data-type="pilot"><div class="filter-color bg-pilot"></div> Crew Favs</button>
         <button class="filter-btn" data-type="art"><div class="filter-color bg-art"></div> Visuals</button>
         <button class="filter-btn" data-type="aviation"><div class="filter-color bg-aviation"></div> Aviation</button>
         <button class="filter-btn" data-type="food"><div class="filter-color bg-food"></div> Food</button>

@@ -348,6 +348,23 @@
       "hours": "Fri-Mon 10:00 AM - 6:00 PM"
     },
     {
+      "title": "Klein's Deli",
+      "category": "Dining",
+      "type": ["food", "pilot"],
+      "pilot_credit": "Recommended by Captain Curtis R.",
+      "food_type": ["American"],
+      "location_type": "inside",
+      "terminal": "Terminal 3",
+      "security": "post",
+      "description": "<strong>Location:</strong> Terminal 3 <br><br>A highly convenient and solid stop for frequent flyers. While considered a bit pricey, they serve fantastic, hearty deli sandwiches paired perfectly with their signature tomato bisque soup.",
+      "duration_text": "30 Mins",
+      "duration_mins": 30,
+      "action_link": "https://www.flysfo.com/passengers/shop-dine-relax/kleins-deli-and-coffee-bar-0",
+      "action_text": "Explore More ↗",
+      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=1751",
+      "hours": "Daily: 5:00 AM - 10:00 PM"
+    },
+    {
       "title": "Freshen Up! (Nap Rooms & Showers)",
       "category": "Services",
       "type": ["explore"],
@@ -541,22 +558,6 @@
       "action_link": "https://static1.squarespace.com/static/577a0021ebbd1a47dbe91c67/t/67610f5e12c65372c9cffbd2/1734414178101/2024+Tomokazu_Menu_24inchx36inch.pdf",
       "action_text": "View Menu ↗",
       "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=42813"
-    },
-    {
-      "title": "Klein's Deli",
-      "category": "Dining",
-      "type": ["food"],
-      "food_type": ["American"],
-      "location_type": "inside",
-      "terminal": "Terminal 3",
-      "security": "post",
-      "description": "<strong>Location:</strong> Terminal 3 <br><br>A highly convenient and solid stop for frequent flyers. While considered a bit pricey, they serve fantastic, hearty deli sandwiches paired perfectly with their signature tomato bisque soup.",
-      "duration_text": "30 Mins",
-      "duration_mins": 30,
-      "action_link": "https://www.flysfo.com/passengers/shop-dine-relax/kleins-deli-and-coffee-bar-0",
-      "action_text": "Explore More ↗",
-      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=1751",
-      "hours": "Daily: 5:00 AM - 10:00 PM"
     },
     {
       "title": "Foggy Notion",

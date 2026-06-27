@@ -307,16 +307,27 @@ document.addEventListener("DOMContentLoaded", () => {
             card.className = activity.specialty === "dropdown" ? "card specialty-card" : "card";
             
             const activityTypes = Array.isArray(activity.type) ? activity.type : [activity.type];
+            
+            // FILTER OUT "pilot" FROM THE VISUAL TAG RENDERING
+            const displayTypes = activityTypes.filter(t => t !== "pilot");
+            
             let tagHTML = "";
-            const displayTagText = activityTypes.map(t => typeLabels[t]).join(" & ");
+            if (displayTypes.length > 0) {
+                const displayTagText = displayTypes.map(t => typeLabels[t]).join(" & ");
+                if (displayTypes.length === 1) {
+                    tagHTML = `<div class="card-tag" style="background-color: ${typeColors[displayTypes[0]]};">${displayTagText}</div>`;
+                } else {
+                    const color1 = typeColors[displayTypes[0]] || "#111111";
+                    const color2 = typeColors[displayTypes[1]] || "#111111";
+                    const gradientStyle = `background: linear-gradient(135deg, ${color1}, ${color2});`;
+                    tagHTML = `<div class="card-tag" style="${gradientStyle}">${displayTagText}</div>`;
+                }
+            }
 
-            if (activityTypes.length === 1) {
-                tagHTML = `<div class="card-tag" style="background-color: ${typeColors[activityTypes[0]]};">${displayTagText}</div>`;
-            } else {
-                const color1 = typeColors[activityTypes[0]] || "#111111";
-                const color2 = typeColors[activityTypes[1]] || "#111111";
-                const gradientStyle = `background: linear-gradient(135deg, ${color1}, ${color2});`;
-                tagHTML = `<div class="card-tag" style="${gradientStyle}">${displayTagText}</div>`;
+            // ADD THE CREW CREDIT BADGE IF IT EXISTS
+            let crewCreditHTML = "";
+            if (activity.pilot_credit) {
+                crewCreditHTML = `<div class="pilot-credit-badge">✈️ ${activity.pilot_credit}</div>`;
             }
             
             let transitHTML = "";
@@ -374,6 +385,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             card.innerHTML = `
+                ${crewCreditHTML}
                 ${activity.rank ? `<div class="rank-badge">#${activity.rank}</div>` : ''}
                 ${tagHTML}
 
