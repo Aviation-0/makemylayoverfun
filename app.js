@@ -391,9 +391,12 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             card.innerHTML = `
-                ${crewCreditHTML}
                 ${activity.rank ? `<div class="rank-badge">#${activity.rank}</div>` : ''}
-                ${tagHTML}
+                
+                <div class="card-header-tags">
+                    ${tagHTML}
+                    ${crewCreditHTML}
+                </div>
 
                 ${activity.image_path ? `
                     <img class="card-image" style="margin-bottom: ${activity.image_attribution ? '4px' : '12px'};" src="${activity.image_path}" alt="${activity.title}" loading="lazy" onerror="this.style.display='none'; this.classList.add('broken-image')">
