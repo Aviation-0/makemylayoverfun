@@ -327,7 +327,13 @@ document.addEventListener("DOMContentLoaded", () => {
             // ADD THE CREW CREDIT BADGE IF IT EXISTS
             let crewCreditHTML = "";
             if (activity.pilot_credit) {
-                crewCreditHTML = `<div class="pilot-credit-badge">✈️ ${activity.pilot_credit}</div>`;
+                if (activity.pilot_link) {
+                    // Renders as a clickable link with an arrow if a URL is provided
+                    crewCreditHTML = `<a href="${activity.pilot_link}" target="_blank" class="pilot-credit-badge" style="text-decoration: none;">✈️ ${activity.pilot_credit} ↗</a>`;
+                } else {
+                    // Renders as a static text box if no URL is provided
+                    crewCreditHTML = `<div class="pilot-credit-badge">✈️ ${activity.pilot_credit}</div>`;
+                }
             }
             
             let transitHTML = "";
