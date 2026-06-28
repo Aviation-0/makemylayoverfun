@@ -361,9 +361,13 @@
       "duration_text": "30 Mins",
       "duration_mins": 30,
       "action_link": "https://www.flysfo.com/passengers/shop-dine-relax/kleins-deli-and-coffee-bar-0",
-      "action_text": "Explore More ↗",
-      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=1751",
-      "hours": "Daily: 5:00 AM - 10:00 PM"
+      "action_text": "Learn More ↗",
+      "maps": [
+        {"text": "Terminal 3, near Gate F14 Map 📍",
+         "link": "https://www.flysfo.com/maps/interactive-maps?destination=1751"},
+        {"text": "Terminal 3, near Gate E10 Map 📍",
+         "link": "https://www.flysfo.com/maps/interactive-maps?destination=1778"}],
+      "hours": "<br>• Gate F14 Daily: 5:00 AM - 10:00 PM <br>• Gate E10 Daily: 5:00 AM - 11:30 PM"
     },
     {
       "title": "Freshen Up! (Nap Rooms & Showers)",
