@@ -58,11 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
             let allLocationTags = [];
             allActivities.forEach(a => {
                 if (a.terminal) {
-                    // Normalize "Terminal 1" to "Harvey Milk Terminal 1" ensuring no duplicates
-                    a.terminal = a.terminal
-                        .replace(/\bTerminal 1\b/ig, "Harvey Milk Terminal 1")
-                        .replace(/Harvey Milk\s+Harvey Milk/ig, "Harvey Milk");
-
                     const primaryTerminal = a.terminal.split(',')[0].trim();
                     const lowerTerm = primaryTerminal.toLowerCase();
                     
@@ -73,21 +68,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
             
-            // Custom strict ordering for the dropdown
-            const desiredOrder = [
-                "international terminal a",
-                "international terminal g",
-                "harvey milk terminal 1",
-                "terminal 2",
-                "terminal 3"
-            ];
-
+            // Dynamically sort: International terminals first, then numerically/alphabetically
             const uniqueTerminals = [...new Set(allLocationTags)].sort((a, b) => {
-                const idxA = desiredOrder.indexOf(a.toLowerCase());
-                const idxB = desiredOrder.indexOf(b.toLowerCase());
-                const rankA = idxA === -1 ? 999 : idxA;
-                const rankB = idxB === -1 ? 999 : idxB;
-                return rankA - rankB || a.localeCompare(b);
+                const isIntA = a.toLowerCase().includes("international");
+                const isIntB = b.toLowerCase().includes("international");
+                
+                // If A is international and B is not, A goes first
+                if (isIntA && !isIntB) return -1;
+                // If B is international and A is not, B goes first
+                if (!isIntA && isIntB) return 1;
+                
+                // Otherwise, sort them normally (using numeric:true so Terminal 2 comes before Terminal 10)
+                return a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' });
             });
 
             uniqueTerminals.forEach(term => {
