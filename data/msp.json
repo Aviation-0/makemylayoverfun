@@ -1,0 +1,39 @@
+{
+  "_meta": {
+    "description": "Airport data module for Minneapolis-Saint Paul International (MSP)",
+    "project": "Make My Layover Fun",
+    "author": "Zhibang (Lucas) Pan"
+  },
+  "name": "Minneapolis-Saint Paul International",
+  "city": "Minneapolis, MN",
+  "footer_citation": "Data compiled for makemylayoverfun.",
+  "landmarks": {
+    "airport": {
+      "name": "MSP Tower",
+      "svg": "<svg viewBox='0 0 100 60' xmlns='http://www.w3.org/2000/svg'><rect x='45' y='20' width='10' height='40' fill='#a1a1aa'/><line x1='0' y1='58' x2='100' y2='58' stroke='#e4e4e7' stroke-width='2'/></svg>"
+    },
+    "city": {
+      "name": "Minneapolis Skyline",
+      "svg": "<svg viewBox='0 0 100 60' xmlns='http://www.w3.org/2000/svg'><rect x='40' y='25' width='20' height='35' fill='#3f3f46'/><line x1='0' y1='58' x2='100' y2='58' stroke='#e4e4e7' stroke-width='2'/></svg>"
+    }
+  },
+  "activities": [
+    {
+      "title": "Settebello Pizzeria Napoletana",
+      "category": "Dining",
+      "type": ["food", "pilot"],
+      "pilot_credit": "Recommended by Captain Curtis R.",
+      "pilot_link": "https://www.linkedin.com/in/curtis-rupeka-37956a197/",
+      "food_type": ["Italian", "Pizza", "Healthy & Vegan"],
+      "location_type": "inside",
+      "terminal": "Terminal 1",
+      "security": "post",
+      "description": "<strong>Location:</strong> Terminal 1, MSP Mall <br><br>Authentic Napoletana pizza right in the airport. Enjoy wood-fired pizzas with fresh ingredients, salads, charcuterie, and a full bar before boarding your flight. Also has vegantaian options.",
+      "duration_text": "45 Mins",
+      "duration_mins": 45,
+      "action_link": "https://www.mspairport.com/sites/default/files/attachments/SPN%20MSP%20QR%20Bar%20Menu_4.5x12_02.02.26%20V2.pdf",
+      "action_text": "Menu ↗",
+      "hours": "Daily: 6:00 AM - 9:00 PM"
+    }
+  ]
+}
