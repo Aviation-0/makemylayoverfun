@@ -1,0 +1,73 @@
+{
+  "_meta": {
+    "description": "Airport data module for Denver International Airport (DEN)",
+    "project": "Make My Layover Fun",
+    "author": "Zhibang (Lucas) Pan"
+  },
+  "name": "Denver International Airport",
+  "city": "Denver, CO",
+  "footer_citation": "Data compiled for makemylayoverfun.",
+  "landmarks": {
+    "airport": {
+      "name": "DEN Tent Roof",
+      "svg": "<svg viewBox='0 0 100 60' xmlns='http://www.w3.org/2000/svg'><path d='M 10 58 L 30 20 L 50 58 L 70 20 L 90 58 Z' fill='#e4e4e7' stroke='#a1a1aa' stroke-width='2'/><line x1='0' y1='58' x2='100' y2='58' stroke='#71717a' stroke-width='2'/></svg>"
+    },
+    "city": {
+      "name": "Denver Skyline",
+      "svg": "<svg viewBox='0 0 100 60' xmlns='http://www.w3.org/2000/svg'><rect x='40' y='25' width='20' height='35' fill='#3f3f46'/><line x1='0' y1='58' x2='100' y2='58' stroke='#e4e4e7' stroke-width='2'/></svg>"
+    }
+  },
+  "activities": [
+    {
+      "title": "Etai's Bakery Cafe",
+      "category": "Dining",
+      "type": ["food", "pilot"],
+      "pilot_credit": "Recommended by Captain Curtis R.",
+      "pilot_link": "https://www.linkedin.com/in/curtis-rupeka-37956a197/",
+      "food_type": ["Bakery", "Sandwiches"],
+      "location_type": "inside",
+      "terminal": "Concourse B",
+      "security": "post",
+      "description": "<strong>Location:</strong> Concourse B <br><br>Find a variety of fresh bread, pastries, sandwiches, soups, and more. A highly reliable spot for a high-quality sit-down meal or a fresh grab-and-go bite.",
+      "duration_text": "30 Mins",
+      "duration_mins": 30,
+      "action_link": "https://www.etaiscafe.com/locations/denver-airport/",
+      "action_text": "Menu ↗",
+      "hours": "Daily: 6:00 AM - 9:00 PM"
+    },
+    {
+      "title": "Steve's Snappin' Dogs",
+      "category": "Dining",
+      "type": ["food", "pilot"],
+      "pilot_credit": "Recommended by Captain Curtis R.",
+      "pilot_link": "https://www.linkedin.com/in/curtis-rupeka-37956a197/",
+      "food_type": ["American", "Hot Dogs"],
+      "location_type": "inside",
+      "terminal": "Concourse B",
+      "security": "post",
+      "description": "<strong>Location:</strong> Concourse B, near Gate B24 <br><br>Features award-winning, gourmet hot dogs direct from New Jersey. They also offer a full bar with an excellent selection of local Colorado craft beers on tap.",
+      "duration_text": "30 Mins",
+      "duration_mins": 30,
+      "action_link": "https://www.flydenver.com/dine/steves-snappin-dogs/",
+      "action_text": "Learn More ↗",
+      "hours": "Daily: 6:00 AM - 10:00 PM"
+    },
+    {
+      "title": "Modern Market Eatery",
+      "category": "Dining",
+      "type": ["food", "pilot"],
+      "pilot_credit": "Recommended by Captain Curtis R.",
+      "pilot_link": "https://www.linkedin.com/in/curtis-rupeka-37956a197/",
+      "food_type": ["Healthy", "American"],
+      "location_type": "inside",
+      "terminal": "Concourse C",
+      "security": "post",
+      "description": "<strong>Location:</strong> Concourse C, near Gate C28 <br><br>Offers freshly-made, healthy sandwiches, salads, and pizzas (including a great breakfast menu). Craft beer and wine are also available alongside fresh juices.",
+      "duration_text": "45 Mins",
+      "duration_mins": 45,
+      "action_link": "https://www.flydenver.com/dine/modern-market/",
+      "action_text": "Learn More ↗",
+      "hours": "Daily: 6:00 AM - 8:00 PM"
+    }
+  ]
+}
