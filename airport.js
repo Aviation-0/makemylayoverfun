@@ -3,6 +3,7 @@
 // =======================================================================
 document.addEventListener("DOMContentLoaded", () => {
 
+    const FORM_URL = "https://forms.gle/SNTCURVieqTGjWRBA";
     const placesEl = document.getElementById("places");
     const params = new URLSearchParams(window.location.search);
     const airportCode = (params.get("code") || "").trim().toUpperCase();
@@ -35,18 +36,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const list = el("ul", "places");
             airport.places.forEach(place => list.appendChild(renderPlace(place, crew)));
-            placesEl.replaceChildren(list);
+            placesEl.replaceChildren(list, renderCta(
+                `Fly through ${airportCode}?`,
+                "If you're crew and have a go-to spot here, send it in. Your name and LinkedIn go on the pick."
+            ));
         })
         .catch(error => {
             console.error(error);
             setPageInfo({ code: airportCode, name: "No guide yet", city: "" }, "");
             document.title = `${airportCode} | Make My Layover Fun`;
-            placesEl.innerHTML = `
-                <div class="status-msg">
-                    <p>We don't have any crew picks for ${airportCode} yet.</p>
-                    <a class="button" href="/">See all airports</a>
-                </div>`;
+            placesEl.replaceChildren(renderCta(
+                `No crew picks for ${airportCode} yet.`,
+                "If you fly through here for work, you could be the first. Your name and LinkedIn go on the pick."
+            ));
         });
+
+    function renderCta(heading, body) {
+        const cta = el("div", "cta");
+        cta.appendChild(el("h2", null, heading));
+        cta.appendChild(el("p", null, body));
+        cta.appendChild(externalLink(FORM_URL, "button", "Add a pick ↗"));
+        return cta;
+    }
 
     function setPageInfo(info, meta) {
         const title = `${info.code} Layover Guide: ${info.name} | Make My Layover Fun`;

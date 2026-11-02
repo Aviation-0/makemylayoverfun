@@ -8,6 +8,7 @@ Layover spots recommended by airline pilots and crew. A static site: plain HTML,
 | --- | --- |
 | `index.html` + `home.js` | Home page; lists every airport in `data/airports.json` |
 | `airport.html` + `airport.js` | One airport's guide, e.g. `airport.html?code=SFO` |
+| `crew.html` + `crew.js` | Crew page; lists everyone in `data/crew.json` who has at least one pick |
 | `about.html` | About, privacy policy, disclaimer |
 | `404.html` | Not-found page |
 | `styles.css` | Shared styles for every page |
@@ -23,6 +24,8 @@ Layover spots recommended by airline pilots and crew. A static site: plain HTML,
 3. Add `https://makemylayoverfun.com/airport.html?code=LGA` to `sitemap.xml`
 
 ## Adding a crew member
+
+New picks come in through the Google Form linked as "Add a pick" on every page: https://forms.gle/SNTCURVieqTGjWRBA. Only add someone's name and LinkedIn if they agreed to be credited.
 
 Add them to `data/crew.json` under a short id, then use that id in a place's `recommended_by`:
 

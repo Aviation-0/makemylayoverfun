@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ==================== META & SEO ==================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>The Crew | Make My Layover Fun</title>
+    <meta name="description" content="The airline pilots and crew behind the picks on Make My Layover Fun, and how to add your own.">
+    <meta name="author" content="Zhibang (Lucas) Pan">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="canonical" href="https://makemylayoverfun.com/crew.html">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Make My Layover Fun">
+    <meta property="og:url" content="https://makemylayoverfun.com/crew.html">
+    <meta property="og:title" content="The Crew | Make My Layover Fun">
+    <meta property="og:description" content="The airline pilots and crew behind the picks.">
+    <meta property="og:image" content="https://makemylayoverfun.com/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- ==================== ICONS & MANIFEST ==================== -->
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/crew.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <div class="wrap">
+            <a class="wordmark" href="/">Make My Layover Fun</a>
+            <nav class="site-nav" aria-label="Main">
+                <a href="/">Airports</a>
+                <a href="/crew.html" aria-current="page">Crew</a>
+                <a href="/about.html">About</a>
+                <a href="https://forms.gle/SNTCURVieqTGjWRBA" target="_blank" rel="noopener noreferrer">Add a pick ↗</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="wrap">
+        <div class="intro">
+            <h1>The crew.</h1>
+            <p>These pilots and crew members shared the places they go between flights. Each name links to their LinkedIn.</p>
+        </div>
+
+        <ul id="crew-list" class="crew-list" aria-live="polite">
+            <!-- Filled from data/crew.json and the airport files by crew.js -->
+        </ul>
+        <noscript><p class="status-msg">This site needs JavaScript turned on to load the crew list.</p></noscript>
+
+        <div class="cta">
+            <h2>Fly for a living?</h2>
+            <p>Tell us where you eat or kill time at an airport you pass through. If we add it, your name and LinkedIn go on the pick.</p>
+            <a class="button" href="https://forms.gle/SNTCURVieqTGjWRBA" target="_blank" rel="noopener noreferrer">Add a pick ↗</a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <p>Locations change. Check with the airport before you go.</p>
+            <p>&copy; 2026 Zhibang (Lucas) Pan. Not affiliated with any airport or airline. <a href="/about.html#privacy">Privacy</a></p>
+        </div>
+    </footer>
+</body>
+</html>

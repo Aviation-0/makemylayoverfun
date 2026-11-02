@@ -106,6 +106,27 @@ main { flex: 1; }
 }
 .button:hover { background-color: #3a3a3a; }
 
+/* --- Crew page --- */
+.crew-list { list-style: none; margin: 0; padding: 0; }
+.crew-row {
+    display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 32px;
+    padding: 32px 0; border-bottom: 1px solid var(--rule);
+}
+.crew-who h2 { font-size: 1.35rem; margin: 0 0 6px; line-height: 1.25; }
+.crew-who h2 a { text-decoration: none; border-bottom: 2px solid var(--link); }
+.crew-who h2 a:hover { color: var(--link); }
+.crew-who p { margin: 0; }
+.crew-picks { list-style: none; margin: 0; padding: 0; }
+.crew-picks li { display: flex; gap: 16px; align-items: baseline; padding: 6px 0; }
+.crew-pick-code { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; width: 40px; flex-shrink: 0; color: var(--muted); }
+.crew-picks a { text-decoration: none; }
+.crew-picks a:hover { text-decoration: underline; }
+
+/* --- "Add a pick" call to action --- */
+.cta { padding: 48px 0 64px; }
+.cta h2 { font-size: 1.6rem; margin: 0 0 8px; }
+.cta p { margin: 0 0 20px; max-width: 52ch; color: #333333; }
+
 .status-msg { padding: 64px 0; }
 .status-msg h2 { font-size: 1.6rem; margin: 0 0 8px; }
 .status-msg p { color: #333333; margin: 0 0 24px; }
@@ -132,6 +153,8 @@ main { flex: 1; }
     .place { grid-template-columns: minmax(0, 1fr); gap: 20px; padding: 32px 0; }
     .place-photo { order: -1; }
     .place h2 { font-size: 1.35rem; }
+    .site-nav { gap: 18px; flex-wrap: wrap; }
+    .crew-row { grid-template-columns: minmax(0, 1fr); gap: 12px; padding: 24px 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
