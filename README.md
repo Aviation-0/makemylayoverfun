@@ -32,21 +32,16 @@ Add them to `data/crew.json` under a short id, then use that id in a place's `re
 
 ## Adding a place
 
-Every place needs **either** a photo **or** a crew recommendation (with a LinkedIn link). Places without one of these don't belong on the site.
+Every place needs **either** a photo **or** a crew recommendation (with a LinkedIn link). Places without one of these don't belong on the site. Only places inside the airport are listed.
 
 ```json
 {
   "id": "kleins-deli",
   "name": "Klein's Deli",
-  "area": "inside",
-  "terminal": "Terminal 3",
-  "security": "post",
-  "location": "Terminal 3, near Gate F14",
+  "location": ["Terminal 3, near Gate F14", "Terminal 3, near Gate E10"],
   "description": "What makes it worth the walk. <strong>Simple HTML</strong> is allowed.",
-  "hours": "Daily: 5:00 AM - 10:00 PM",
   "recommended_by": "curtis-r",
   "photo": { "src": "images/kleins.jpg", "credit": "Photo courtesy of Klein's Deli" },
-  "maps": [{ "label": "Map", "url": "https://..." }],
   "link": { "label": "Menu", "url": "https://..." }
 }
 ```
@@ -55,19 +50,13 @@ Every place needs **either** a photo **or** a crew recommendation (with a Linked
 | --- | --- | --- |
 | `id` | yes | Unique, lowercase-with-dashes. Also works as a link anchor: `airport.html?code=SFO#kleins-deli` |
 | `name` | yes | |
-| `area` | yes | `"inside"` (in the airport) or `"outside"` (leave the airport) |
-| `terminal` | inside only | Short label shown above the name |
-| `security` | inside only | `"pre"` or `"post"` |
-| `location` | no | Text, or a list of strings for several locations |
+| `location` | yes | Text, or a list of strings for several locations |
 | `description` | yes | May contain simple HTML |
-| `getting_there` | outside only | How to get there from the airport |
-| `hours` | no | Text, or a list of strings |
 | `recommended_by` | one of these two | An id from `data/crew.json` |
 | `photo` | one of these two | `src` (path in `images/`), optional `credit` (HTML), optional `alt` |
-| `maps` | no | List of `{ label, url }` |
-| `link` | no | `{ label, url }` for the main "learn more" button |
+| `link` | no | `{ label, url }` for the button. Link to the place's own page or menu, not an airport homepage, and check it still works |
 
-Places show up in the order they're listed in the file, grouped into "In the airport" and "Outside the airport". If a photo needs a Creative Commons credit, also add it to the airport's `credits` field, which is shown in the page footer.
+Places show up in the order they're listed in the file. If a photo needs a Creative Commons credit, also add it to the airport's `credits` field, which is shown in the page footer.
 
 ## Running locally
 

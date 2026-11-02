@@ -4,17 +4,9 @@
     {
       "id": "folse-market",
       "name": "Folse Market",
-      "area": "inside",
-      "terminal": "Concourse C",
-      "security": "post",
       "location": "Concourse C, near Gate C10",
       "description": "A true New Orleans marketplace created by famed Chef John Folse. Features dedicated stations for local seafood, charcuterie, authentic po-boys, coffee, and wine.",
-      "hours": "Daily: 3:30 AM - 9:00 PM",
-      "recommended_by": "curtis-r",
-      "link": {
-        "label": "Learn More",
-        "url": "https://maps.flymsy.com/?poiId=1254"
-      }
+      "recommended_by": "curtis-r"
     }
   ]
 }

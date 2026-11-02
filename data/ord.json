@@ -5,59 +5,23 @@
     {
       "id": "the-skys-the-limit-neon-tunnel",
       "name": "\"The Sky's the Limit\" Neon Tunnel",
-      "area": "inside",
-      "terminal": "Terminal 1",
-      "security": "post",
       "location": "Terminal 1, Underground walkway between Concourses B and C",
       "description": "An absolute essential ORD experience. This 744-foot-long kinetic light installation by Michael Hayden features a mile of neon tubing that dances to a synthesized version of George Gershwin's 'Rhapsody in Blue'. It makes the walk between concourses feel like a retro-futuristic ride.",
-      "hours": "24/7",
       "photo": {
         "src": "images/ord_neon_tunnel.jpg",
         "credit": "Derivative of <a href='https://www.flickr.com/photos/pavdw/14248869210' target='_blank' rel='noopener noreferrer'>\"Disco Tunnel\"</a> by Paul VanDerWerf (CC BY 2.0)"
-      },
-      "maps": [
-        {
-          "label": "Map",
-          "url": "https://www.flychicago.com/ohare/map/pages/default.aspx"
-        }
-      ],
-      "link": {
-        "label": "Learn More",
-        "url": "https://www.flychicago.com/ohare/ServicesAmenities/services/Pages/art.aspx"
       }
     },
     {
       "id": "tortas-frontera-by-rick-bayless",
       "name": "Tortas Frontera by Rick Bayless",
-      "area": "inside",
-      "terminal": "Terminal 1, Terminal 3, Terminal 5",
-      "security": "post",
       "location": [
         "Terminal 1, near Gate B10",
         "Terminal 3, near Gate K4",
         "Terminal 5, near Gate M18"
       ],
       "description": "Ranked multiple times as the Top Ten Best Airport Restaurants in the United States. Tortas Frontera serves up incredible hand-crafted tortas (griddle-baked Mexican sandwiches), fresh guacamole, and margaritas using ingredients sourced from local Midwestern farms.",
-      "hours": [
-        "Terminal 1 Daily: 4:30 AM - 9:00 PM",
-        "Terminal 3 Daily 5:00 AM - 9:30 PM",
-        "Terminal 5 Daily 5:00 AM - 10:00 PM"
-      ],
       "recommended_by": "curtis-r",
-      "maps": [
-        {
-          "label": "Terminal 1 Map",
-          "url": "https://maps.ord.flychicago.com/su/KEULrMCO"
-        },
-        {
-          "label": "Terminal 3 Map",
-          "url": "https://maps.ord.flychicago.com/su/dpkE73Ym"
-        },
-        {
-          "label": "Terminal 5 Map",
-          "url": "https://maps.ord.flychicago.com/su/QGDed2hH"
-        }
-      ],
       "link": {
         "label": "Order Now",
         "url": "https://order.chownow.com/order/1819/locations"
@@ -66,19 +30,9 @@
     {
       "id": "berghoff-cafe",
       "name": "Berghoff Cafe",
-      "area": "inside",
-      "terminal": "Terminal 1",
-      "security": "post",
       "location": "Terminal 1, near Gate C26",
       "description": "An airport offshoot of the legendary Chicago institution that opened its doors in 1898. Grab an iconic hand-carved corned beef or Reuben sandwich, a warm soft pretzel, and a cold German-style root beer or draft beer while waiting for your flight.",
-      "hours": "Daily: 6:00 AM - 8:00 PM",
       "recommended_by": "curtis-r",
-      "maps": [
-        {
-          "label": "Map",
-          "url": "https://maps.ord.flychicago.com/su/AV9BihN6"
-        }
-      ],
       "link": {
         "label": "Menu",
         "url": "https://www.theberghoff.com/berghoff-cafe-at-ohare-menu/"
@@ -87,19 +41,9 @@
     {
       "id": "billy-goat-tavern-and-grill",
       "name": "Billy Goat Tavern and Grill",
-      "area": "inside",
-      "terminal": "Terminal 1",
-      "security": "post",
       "location": "Terminal 1, near Gate C19",
       "description": "Cheezborger, cheezborger, cheezborger! This legendary, no-frills Chicago tavern gained national fame from a classic Saturday Night Live sketch featuring John Belushi. Stop by for a classic, stacked thin-patty cheeseburger on a Kaiser roll for a quintessential, quick taste of the city.",
-      "hours": "Daily: 6:00 AM - 9:00 PM",
       "recommended_by": "curtis-r",
-      "maps": [
-        {
-          "label": "Map",
-          "url": "https://maps.ord.flychicago.com/su/BhNT4ruL"
-        }
-      ],
       "link": {
         "label": "Website",
         "url": "https://www.billygoattavern.com/locations/ohare/"
@@ -108,12 +52,8 @@
     {
       "id": "grumman-f4f-3-wildcat-butch-ohare",
       "name": "Grumman F4F-3 Wildcat (\"Butch O'Hare\")",
-      "area": "inside",
-      "terminal": "Terminal 2",
-      "security": "post",
       "location": "Terminal 2, directly past the security checkpoint",
       "description": "A miraculously salvaged WWII Navy fighter plane matching the exact livery of \"White F-15,\" flown by airport namesake and Medal of Honor recipient Edward \"Butch\" O'Hare.",
-      "hours": "24/7",
       "photo": {
         "src": "images/ord_f4f.jpg",
         "credit": "Derivative of <a href='https://commons.wikimedia.org/wiki/File:Grumman_F4F-3_Wildcat_-_Butch_O%27Hare_White_F-15_Replica_at_ORD_1.jpg' target='_blank' rel='noopener noreferrer'>\"Grumman F4F-3 Wildcat - Butch O'Hare White F-15 Replica at ORD 1\"</a> by Koyah7d (CC BY-SA 3.0)"

@@ -4,15 +4,8 @@
     {
       "id": "tias-pronto",
       "name": "Tia's Pronto",
-      "area": "inside",
-      "terminal": "Main Terminal",
-      "security": "post",
-      "location": "Post-Security Main Terminal",
+      "location": "Main Terminal",
       "description": "Get a final taste of authentic New Mexican flavors. Great stop for green chile and local staples before you board your flight.",
-      "hours": [
-        "Sun - Fri : 5:00 AM - 2:00 PM",
-        "Sat : 5:00 AM - 11:00 AM"
-      ],
       "recommended_by": "curtis-r",
       "link": {
         "label": "Learn More",

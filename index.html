@@ -53,29 +53,33 @@
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <main id="main">
-        <div class="hero">
-            <h1>Make My Layover Fun</h1>
-            <p class="tagline">Layover spots recommended by the people who fly the planes.</p>
+    <header class="site-header">
+        <div class="wrap">
+            <a class="wordmark" href="/">Make My Layover Fun</a>
+            <nav class="site-nav" aria-label="Main">
+                <a href="/" aria-current="page">Airports</a>
+                <a href="/about.html">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="wrap">
+        <div class="intro">
+            <h1>Where pilots eat and explore between flights.</h1>
+            <p>Every place here was picked by an airline pilot or crew member who flies through that airport, or photographed on the spot. Choose your airport.</p>
         </div>
 
-        <div class="container">
-            <h2 class="section-title" id="airports-heading">Pick your airport</h2>
-            <ul id="airport-list" class="airport-list" aria-labelledby="airports-heading">
-                <!-- Filled from data/airports.json by home.js -->
-            </ul>
-            <noscript><p class="status-msg">This site needs JavaScript turned on to load the airport guides.</p></noscript>
-        </div>
+        <ul id="airport-list" class="airport-list" aria-label="Airports">
+            <!-- Filled from data/airports.json by home.js -->
+        </ul>
+        <noscript><p class="status-msg">This site needs JavaScript turned on to load the airport guides.</p></noscript>
     </main>
 
     <footer class="site-footer">
-        <nav aria-label="Footer">
-            <a href="/">Home</a>
-            <a href="/about.html">About</a>
-            <a href="/about.html#privacy">Privacy</a>
-        </nav>
-        <p>Hours and locations change often. Check with the venue or airport before you go.</p>
-        <p>&copy; 2026 Zhibang (Lucas) Pan. Not affiliated with any airport or airline.</p>
+        <div class="wrap">
+            <p>Locations change. Check with the airport before you go.</p>
+            <p>&copy; 2026 Zhibang (Lucas) Pan. Not affiliated with any airport or airline. <a href="/about.html#privacy">Privacy</a></p>
+        </div>
     </footer>
 </body>
 </html>

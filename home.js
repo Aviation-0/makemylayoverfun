@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 .forEach(airport => {
                     const item = document.createElement("li");
                     const link = document.createElement("a");
-                    link.className = "airport-link";
+                    link.className = "airport-row";
                     link.href = `/airport.html?code=${encodeURIComponent(airport.code)}`;
 
                     [["airport-code", airport.code], ["airport-name", airport.name], ["airport-city", airport.city]]

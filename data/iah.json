@@ -4,17 +4,9 @@
     {
       "id": "pappasitos-cantina",
       "name": "Pappasito's Cantina",
-      "area": "inside",
-      "terminal": "Terminal E",
-      "security": "post",
       "location": "Terminal E Concourse",
       "description": "A legendary Houston staple. Offering solid Tex-Mex dishes including fajitas, nachos, and enchiladas, alongside famously strong and delicious margaritas.",
-      "hours": "Daily: 6:00 AM - 8:00 PM",
-      "recommended_by": "curtis-r",
-      "link": {
-        "label": "Menu",
-        "url": "https://pappasitos.com/location/iah-airport"
-      }
+      "recommended_by": "curtis-r"
     }
   ]
 }

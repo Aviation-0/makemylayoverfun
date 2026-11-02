@@ -3,7 +3,7 @@
 // =======================================================================
 document.addEventListener("DOMContentLoaded", () => {
 
-    const main = document.getElementById("main");
+    const placesEl = document.getElementById("places");
     const params = new URLSearchParams(window.location.search);
     const airportCode = (params.get("code") || "").trim().toUpperCase();
 
@@ -24,7 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ])
         .then(([airports, crew, airport]) => {
             const info = airports.find(a => a.code === airportCode) || { code: airportCode, name: airportCode, city: "" };
-            setPageInfo(info);
+            const count = airport.places.length;
+            setPageInfo(info, `${info.city} · ${count} ${count === 1 ? "pick" : "picks"}`);
 
             if (airport.credits) {
                 const credits = document.getElementById("credits");
@@ -32,147 +33,94 @@ document.addEventListener("DOMContentLoaded", () => {
                 credits.hidden = false;
             }
 
-            main.innerHTML = "";
-            const inside = airport.places.filter(p => p.area !== "outside");
-            const outside = airport.places.filter(p => p.area === "outside");
-
-            if (inside.length > 0) {
-                main.appendChild(renderSection("In the airport", null, inside, crew));
-            }
-            if (outside.length > 0) {
-                main.appendChild(renderSection(
-                    "Outside the airport",
-                    "For long layovers only. Leave plenty of time to get back and clear security again.",
-                    outside, crew
-                ));
-            }
+            const list = el("ul", "places");
+            airport.places.forEach(place => list.appendChild(renderPlace(place, crew)));
+            placesEl.replaceChildren(list);
         })
         .catch(error => {
             console.error(error);
-            document.getElementById("airport-name").textContent = airportCode;
-            document.getElementById("airport-city").textContent = "Guide not available";
+            setPageInfo({ code: airportCode, name: "No guide yet", city: "" }, "");
             document.title = `${airportCode} | Make My Layover Fun`;
-            main.innerHTML = `
+            placesEl.innerHTML = `
                 <div class="status-msg">
-                    <h2>No guide yet</h2>
-                    <p>We don't have crew picks for this airport yet.</p>
-                    <p><a class="button-link" href="/">See all airports</a></p>
+                    <p>We don't have any crew picks for ${airportCode} yet.</p>
+                    <a class="button" href="/">See all airports</a>
                 </div>`;
         });
 
-    function setPageInfo(info) {
+    function setPageInfo(info, meta) {
         const title = `${info.code} Layover Guide: ${info.name} | Make My Layover Fun`;
-        const description = `Pilot and crew recommended layover spots at ${info.name} (${info.code}) in ${info.city}.`;
         const url = `https://makemylayoverfun.com/airport.html?code=${info.code}`;
 
-        document.title = title;
+        document.getElementById("airport-code").textContent = info.code;
         document.getElementById("airport-name").textContent = info.name;
-        document.getElementById("airport-city").textContent = `${info.code} · ${info.city}`;
-        document.querySelector('meta[name="description"]').content = description;
+        document.getElementById("airport-meta").textContent = meta;
+
+        if (!info.city) return;
+        document.title = title;
+        document.querySelector('meta[name="description"]').content =
+            `Pilot and crew recommended places at ${info.name} (${info.code}) in ${info.city}.`;
         document.querySelector('link[rel="canonical"]').href = url;
         document.querySelector('meta[property="og:url"]').content = url;
         document.querySelector('meta[property="og:title"]').content = title;
         document.querySelector('meta[name="twitter:title"]').content = title;
     }
 
-    function renderSection(title, note, places, crew) {
-        const section = document.createElement("section");
-        section.className = "places-section";
-        const headingId = `section-${title.toLowerCase().replace(/\W+/g, "-")}`;
-        section.setAttribute("aria-labelledby", headingId);
+    function renderPlace(place, crew) {
+        const item = el("li", place.photo ? "place" : "place no-photo");
+        item.id = place.id;
 
-        const heading = el("h2", "section-title", title);
-        heading.id = headingId;
-        section.appendChild(heading);
-        if (note) section.appendChild(el("p", "section-note", note));
+        const text = el("div", "place-text");
 
-        const grid = el("div", "grid");
-        places.forEach(place => grid.appendChild(renderCard(place, crew)));
-        section.appendChild(grid);
-        return section;
-    }
-
-    function renderCard(place, crew) {
-        const card = el("article", "card");
-        card.id = place.id;
-
-        // Crew recommendation badge (links to their LinkedIn)
-        const person = place.recommended_by && crew[place.recommended_by];
-        if (person) {
-            const badge = person.linkedin
-                ? externalLink(person.linkedin, "crew-badge", `✈️ Recommended by ${person.name} ↗`)
-                : el("div", "crew-badge", `✈️ Recommended by ${person.name}`);
-            card.appendChild(badge);
+        if (place.location) {
+            const location = el("p", "place-location label");
+            [].concat(place.location).forEach(line => location.appendChild(el("span", null, line)));
+            text.appendChild(location);
         }
 
+        text.appendChild(el("h2", null, place.name));
+
+        const description = el("p", "place-description");
+        description.innerHTML = place.description;
+        text.appendChild(description);
+
+        const footer = el("div", "place-footer");
+        const person = place.recommended_by && crew[place.recommended_by];
+        if (person) {
+            const credit = el("p", "crew", "Recommended by ");
+            credit.appendChild(person.linkedin ? externalLink(person.linkedin, null, person.name) : el("span", null, person.name));
+            footer.appendChild(credit);
+        }
+        if (place.link) {
+            footer.appendChild(externalLink(place.link.url, "button", `${place.link.label} ↗`));
+        }
+        if (footer.children.length > 0) text.appendChild(footer);
+
+        item.appendChild(text);
+
         if (place.photo) {
+            const figure = el("figure", "place-photo");
             const img = document.createElement("img");
-            img.className = "card-image";
             img.src = `/${place.photo.src}`;
             img.alt = place.photo.alt || place.name;
             img.loading = "lazy";
             img.decoding = "async";
-            img.width = 600;
-            img.height = 360;
-            img.addEventListener("error", () => img.remove());
-            card.appendChild(img);
+            img.width = 680;
+            img.height = 510;
+            img.addEventListener("error", () => {
+                figure.remove();
+                item.classList.add("no-photo");
+            });
+            figure.appendChild(img);
             if (place.photo.credit) {
-                const credit = el("div", "image-attribution");
-                credit.innerHTML = place.photo.credit;
-                card.appendChild(credit);
+                const caption = document.createElement("figcaption");
+                caption.innerHTML = place.photo.credit;
+                figure.appendChild(caption);
             }
+            item.appendChild(figure);
         }
 
-        if (place.area !== "outside" && place.terminal) {
-            const security = { pre: " • Pre-security", post: " • Post-security" }[place.security] || "";
-            card.appendChild(el("div", "terminal-loc", place.terminal + security));
-        }
-
-        card.appendChild(el("h3", null, place.name));
-
-        if (place.location) {
-            card.appendChild(labeledList("card-location", "📍 ", place.location));
-        }
-
-        const description = el("p", "card-description");
-        description.innerHTML = place.description;
-        card.appendChild(description);
-
-        if (place.getting_there) {
-            const box = el("div", "getting-there");
-            box.appendChild(el("strong", null, "🚆 Getting there"));
-            box.appendChild(document.createTextNode(place.getting_there));
-            card.appendChild(box);
-        }
-
-        if (place.hours) {
-            card.appendChild(labeledList("card-hours", "🕒 ", place.hours));
-        }
-
-        const buttons = el("div", "button-group");
-        (place.maps || []).forEach(map => {
-            buttons.appendChild(externalLink(map.url, "map-btn", `${map.label} 📍`));
-        });
-        if (place.link) {
-            buttons.appendChild(externalLink(place.link.url, "action-btn", `${place.link.label} ↗`));
-        }
-        if (buttons.children.length > 0) card.appendChild(buttons);
-
-        return card;
-    }
-
-    // A string renders inline after the prefix; an array renders as a bullet list.
-    function labeledList(className, prefix, value) {
-        const wrap = el("div", className);
-        if (Array.isArray(value)) {
-            wrap.appendChild(document.createTextNode(prefix.trim()));
-            const list = document.createElement("ul");
-            value.forEach(line => list.appendChild(el("li", null, line)));
-            wrap.appendChild(list);
-        } else {
-            wrap.textContent = prefix + value;
-        }
-        return wrap;
+        return item;
     }
 
     function externalLink(href, className, text) {

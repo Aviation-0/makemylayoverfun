@@ -4,12 +4,8 @@
     {
       "id": "etais-bakery-cafe",
       "name": "Etai's Bakery Cafe",
-      "area": "inside",
-      "terminal": "Concourse B",
-      "security": "post",
       "location": "Concourse B",
       "description": "Find a variety of fresh bread, pastries, sandwiches, soups, and more. A highly reliable spot for a high-quality sit-down meal or a fresh grab-and-go bite.",
-      "hours": "Daily: 6:00 AM - 9:00 PM",
       "recommended_by": "curtis-r",
       "link": {
         "label": "Menu",
@@ -19,12 +15,8 @@
     {
       "id": "steves-snappin-dogs",
       "name": "Steve's Snappin' Dogs",
-      "area": "inside",
-      "terminal": "Concourse B",
-      "security": "post",
       "location": "Concourse B, near Gate B24",
       "description": "Features award-winning, gourmet hot dogs direct from New Jersey. They also offer a full bar with an excellent selection of local Colorado craft beers on tap.",
-      "hours": "Daily: 6:00 AM - 10:00 PM",
       "recommended_by": "curtis-r",
       "link": {
         "label": "Learn More",
@@ -34,12 +26,8 @@
     {
       "id": "modern-market-eatery",
       "name": "Modern Market Eatery",
-      "area": "inside",
-      "terminal": "Concourse C",
-      "security": "post",
       "location": "Concourse C, near Gate C28",
       "description": "Offers freshly-made, healthy sandwiches, salads, and pizzas (including a great breakfast menu). Craft beer and wine are also available alongside fresh juices.",
-      "hours": "Daily: 6:00 AM - 8:00 PM",
       "recommended_by": "curtis-r",
       "link": {
         "label": "Learn More",

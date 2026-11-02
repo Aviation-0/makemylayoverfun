@@ -5,22 +5,12 @@
     {
       "id": "international-outdoor-terrace",
       "name": "International Outdoor Terrace",
-      "area": "inside",
-      "terminal": "International Terminal G",
-      "security": "post",
       "location": "International Terminal G, End of Boarding Area G",
       "description": "An absolute must-visit. This stunning outdoor observation deck gets you out of the indoor air and puts you right on top of the heavy international jets. Grab a drink, enjoy the California sunshine, and watch the world fly by.",
-      "hours": "Daily: 7:00 AM - 11:30 PM",
       "photo": {
         "src": "images/sfo_outdoor_terrace.jpg",
         "credit": "Derivative of <a href='https://commons.wikimedia.org/wiki/File:Outdoor_terrace_at_SFO_Airport_01.jpg' target='_blank' rel='noopener noreferrer'>\"Outdoor terrace at SFO Airport 01\"</a> by Phoebe (CC BY-SA 4.0)"
       },
-      "maps": [
-        {
-          "label": "Map",
-          "url": "https://www.flysfo.com/maps/interactive-maps?destination=72810"
-        }
-      ],
       "link": {
         "label": "Explore More",
         "url": "https://www.flysfo.com/passengers/shop-dine-relax/outdoor-terrace"
@@ -29,50 +19,26 @@
     {
       "id": "kleins-deli",
       "name": "Klein's Deli",
-      "area": "inside",
-      "terminal": "Terminal 3",
-      "security": "post",
-      "location": "Terminal 3",
+      "location": [
+        "Terminal 3, near Gate F14",
+        "Terminal 3, near Gate E10"
+      ],
       "description": "A highly convenient and solid stop for frequent flyers. While considered a bit pricey, they serve fantastic, hearty deli sandwiches paired perfectly with their signature tomato bisque soup, house-made deli salads, or pastries, and easily grab snacks or cold bottled beverages for your flight.",
-      "hours": [
-        "Gate F14 Daily: 5:00 AM - 10:00 PM",
-        "Gate E10 Daily: 5:00 AM - 11:30 PM"
-      ],
       "recommended_by": "curtis-r",
-      "maps": [
-        {
-          "label": "Terminal 3, near Gate F14 Map",
-          "url": "https://www.flysfo.com/maps/interactive-maps?destination=1751"
-        },
-        {
-          "label": "Terminal 3, near Gate E10 Map",
-          "url": "https://www.flysfo.com/maps/interactive-maps?destination=1778"
-        }
-      ],
       "link": {
         "label": "Learn More",
-        "url": "https://www.flysfo.com/passengers/shop-dine-relax/kleins-deli-and-coffee-bar-0"
+        "url": "https://www.flysfo.com/passengers/shop-dine-relax/kleins-deli-and-coffee-bar-t3f"
       }
     },
     {
       "id": "freshen-up-nap-rooms-showers",
       "name": "Freshen Up! (Nap Rooms & Showers)",
-      "area": "inside",
-      "terminal": "International Terminal A, International Terminal G",
-      "security": "pre",
       "location": "International Terminal, near the entrance to Gates G1 to G14",
       "description": "Freshen Up! is an essential SFO sanctuary for those enduring long layovers. Whether you need a hot shower to wash away travel fatigue ($30) or a quiet place to recharge, this hidden gem offers private, comfortable nap room suites starting at $150. Beyond the basics, the facility is fully stocked with travel necessities—from toiletries to laundry and pressing services—ensuring you have everything required to reset. <strong>Be sure to set multiple alarms so you don't get too comfortable and accidentally sleep past your flight!</strong>",
-      "hours": "24/7",
       "photo": {
         "src": "images/refresh.jpg",
         "credit": "Photo courtesy of FreshenUp, SFO"
       },
-      "maps": [
-        {
-          "label": "Map",
-          "url": "https://www.flysfo.com/maps/interactive-maps?destination=1998"
-        }
-      ],
       "link": {
         "label": "Learn More",
         "url": "https://www.airporttravelagency.org/freshen-up/"
@@ -81,21 +47,11 @@
     {
       "id": "boudin-bakery",
       "name": "Boudin Bakery",
-      "area": "inside",
-      "terminal": "International Terminal A",
-      "security": "post",
       "location": "International Terminal A, Boarding Area A, near Gate A3",
       "description": "A true San Francisco institution. You cannot leave SFO without grabbing one of their world-famous, freshly baked sourdough bread bowls loaded with hot clam chowder.",
-      "hours": "Daily: 5:30 AM - 11:30 PM",
       "photo": {
         "src": "images/CC.jpg"
       },
-      "maps": [
-        {
-          "label": "Map",
-          "url": "https://www.flysfo.com/maps/interactive-maps?destination=62456"
-        }
-      ],
       "link": {
         "label": "Order Now",
         "url": "https://order.boudinbakery.com/menu/boudin-sf-sfo-international"
@@ -104,196 +60,15 @@
     {
       "id": "mama-gos-filipino-cuisine",
       "name": "Mama Go’s Filipino Cuisine",
-      "area": "inside",
-      "terminal": "Harvey Milk Terminal 1",
-      "security": "post",
       "location": "Harvey Milk Terminal 1, near Gate B18",
       "description": "A massive favorite for authentic Filipino food and regarded as some of the best value for your money at SFO. A casual, comforting staple to grab a warm bite before heading to your gate. Also has vegan and gluten-free options.",
-      "hours": "Daily: 3:30 AM - 11:30 PM",
       "photo": {
         "src": "images/mamago.jpg",
         "credit": "Photo courtesy of Mama Go's Filipino Cuisine"
       },
-      "maps": [
-        {
-          "label": "Map",
-          "url": "https://www.flysfo.com/maps/interactive-maps?destination=132050"
-        }
-      ],
       "link": {
         "label": "Order Now",
         "url": "https://order.toasttab.com/online/mamagos-sfo-t1"
-      }
-    },
-    {
-      "id": "golden-gate-park",
-      "name": "Golden Gate Park",
-      "area": "outside",
-      "location": "San Francisco (Richmond/Sunset Districts)",
-      "description": "A massive, 1,000-acre urban oasis right in the city. You could spend an entire day here exploring the Japanese Tea Garden, the Conservatory of Flowers, or the de Young Museum. It is a stunning, lush escape from the airport.",
-      "getting_there": "Take the BART Yellow/Red Line to Civic Center, then transfer to the N-Judah Muni line or take a 15-minute Uber. Budget massive buffer time for the return trip.",
-      "hours": "Daily: 24 Hours (Attraction hours vary)",
-      "photo": {
-        "src": "images/outside_golden_gate_park.jpg"
-      },
-      "maps": [
-        {
-          "label": "Map",
-          "url": "https://www.google.com/maps/place/Golden+Gate+Park/@37.7689203,-122.4855519,1198m/data=!3m2!1e3!4b1!4m6!3m5!1s0x808587726045f763:0x71be8b68ef3ba730!8m2!3d37.7689203!4d-122.482977!16zL20vMDI1cHNx?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
-        }
-      ],
-      "link": {
-        "label": "Explore the Park",
-        "url": "https://sfrecpark.org/770/Golden-Gate-Park/"
-      }
-    },
-    {
-      "id": "golden-gate-bridge-welcome-center",
-      "name": "Golden Gate Bridge Welcome Center",
-      "area": "outside",
-      "location": "San Francisco (Presidio)",
-      "description": "If you are blessed with an exceptionally long layover, seize the opportunity to see one of the modern wonders of the world. Start at the Welcome Center to grab a souvenir, learn about the bridge's history, and begin your walk across the 1.7-mile pedestrian span with unparalleled views of Alcatraz and the Pacific Ocean.",
-      "getting_there": "Take BART to Daly City, then transfer to an Uber/Lyft directly to the Welcome Center. You MUST budget heavy buffer time.",
-      "hours": [
-        "Visitor Center: Daily: 9:00 AM - 6:00 PM",
-        "Bridge: 24/7"
-      ],
-      "photo": {
-        "src": "images/outside_golden_gate_bridge.jpg"
-      },
-      "maps": [
-        {
-          "label": "Map",
-          "url": "https://www.google.com/maps/place/Golden+Gate+Bridge+Welcome+Center/@37.8077973,-122.4774222,1197m/data=!3m2!1e3!4b1!4m6!3m5!1s0x80858690432c06e7:0xfac9601f983db5bd!8m2!3d37.8077973!4d-122.4748473!16s%2Fg%2F113g_h8cm?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
-        }
-      ],
-      "link": {
-        "label": "Bridge Info",
-        "url": "https://www.goldengatebridgestore.org/"
-      }
-    },
-    {
-      "id": "pier-39",
-      "name": "PIER 39",
-      "area": "outside",
-      "location": "San Francisco (Embarcadero North / Fisherman's Wharf)",
-      "description": "Dive straight into San Francisco's most famous tourist hub. Grab a hot, crusty sourdough bread bowl overflowing with fresh clam chowder, watch the iconic sea lions sunbathing and barking on the docks, and enjoy the lively, bustling carnival atmosphere right on the water's edge.",
-      "getting_there": "Take BART to Embarcadero Station, then transfer to the historic F-Market Streetcar line heading north along the water.",
-      "hours": "Daily: 10:00 AM - 9:00 PM",
-      "photo": {
-        "src": "images/outside_pier_39.jpg"
-      },
-      "maps": [
-        {
-          "label": "Map",
-          "url": "https://www.google.com/maps/place/PIER+39/@37.808673,-122.4123959,1197m/data=!3m3!1e3!4b1!5s0x808580fcf0f30205:0x5ffb46df3d9551c0!4m6!3m5!1s0x808580fc8bb3211d:0xbaf631600de6b39e!8m2!3d37.808673!4d-122.409821!16zL20vMDU2cXB0?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
-        }
-      ],
-      "link": {
-        "label": "Explore Pier 39",
-        "url": "https://www.pier39.com/"
-      }
-    },
-    {
-      "id": "coit-tower",
-      "name": "Coit Tower",
-      "area": "outside",
-      "location": "San Francisco (Telegraph Hill)",
-      "description": "Rising from the top of Telegraph Hill, this iconic fluted tower offers breathtaking 360-degree observation deck views of the entire city and bay. The ground floor lobby is entirely covered in incredible, historically significant Depression-era fresco murals.",
-      "getting_there": "Take BART to Embarcadero, then take a short Uber to the summit, or prepare for a steep hike up the hill.",
-      "hours": "Daily: 10:00 AM - 5:00 PM",
-      "photo": {
-        "src": "images/outside_coit_tower.jpg"
-      },
-      "maps": [
-        {
-          "label": "Map",
-          "url": "https://www.google.com/maps/place/Coit+Tower/@37.8023949,-122.4083971,1197m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8085808c40000001:0xde85b80121f2dd44!8m2!3d37.8023949!4d-122.4058222!16zL20vMDIycTBu?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
-        }
-      ],
-      "link": {
-        "label": "Ticket Info",
-        "url": "https://sfrecpark.org/Facilities/Facility/Details/Coit-Tower-290"
-      }
-    },
-    {
-      "id": "the-filbert-steps",
-      "name": "The Filbert Steps",
-      "area": "outside",
-      "location": "San Francisco (Telegraph Hill)",
-      "description": "If you want to stretch your legs after a long flight, this is the ultimate urban hike. A steep, hidden wooden stairway that winds through lush, secret cliffside gardens and historic cottages leading up to Coit Tower. Keep your eyes and ears open for the famous flock of wild cherry-headed conure parrots that live in the trees!",
-      "getting_there": "Take BART to Embarcadero, walk north to Sansome St, and begin the steep, incredibly scenic stair climb.",
-      "hours": "Daily: 24 Hours",
-      "photo": {
-        "src": "images/outside_filbert_steps.jpg"
-      },
-      "maps": [
-        {
-          "label": "Map",
-          "url": "https://www.google.com/maps/place/Filbert+Steps/@37.8023949,-122.4083971,1197m/data=!3m2!1e3!5s0x808580f63d78eaf5:0xd997597b24a863c9!4m10!1m2!2m1!1sFilbert+Steps!3m6!1s0x808580f642581a5f:0x9360e323005a104f!8m2!3d37.8021035!4d-122.4033661!15sCg1GaWxiZXJ0IFN0ZXBzWg8iDWZpbGJlcnQgc3RlcHOSARJ0b3VyaXN0X2F0dHJhY3Rpb27gAQA!16s%2Fg%2F11c2mwqmkl?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
-        }
-      ]
-    },
-    {
-      "id": "lombard-street",
-      "name": "Lombard Street",
-      "area": "outside",
-      "location": "San Francisco (Russian Hill)",
-      "description": "Internationally famous as the 'crookedest street in the world.' This steep, one-block section consists of eight tight hairpin turns surrounded by beautifully manicured flowerbeds and stunning Victorian mansions. The view from the top looking down toward Coit Tower and the Bay Bridge is spectacular.",
-      "getting_there": "Take BART to Powell St, then ride the Powell-Hyde Cable Car. It drops you off directly at the top of the crooked street.",
-      "hours": "Daily: 24 Hours",
-      "photo": {
-        "src": "images/outside_lombard_street.jpg"
-      },
-      "maps": [
-        {
-          "label": "Map",
-          "url": "https://www.google.com/maps/search/?api=1&query=Lombard+Street"
-        }
-      ]
-    },
-    {
-      "id": "union-square-cable-cars",
-      "name": "Union Square & Cable Cars",
-      "area": "outside",
-      "location": "San Francisco (Downtown)",
-      "description": "Immerse yourself in the bustling commercial heart of the city. Shop world-class flagship department stores, grab a coffee in the plaza, and queue up at the Powell Street turnaround to ride one of the city's historic, manually operated cable cars up the steep, thrilling hills.",
-      "getting_there": "Take the BART Yellow/Red Line directly to Powell St. Station.",
-      "hours": "Daily: Most stores 10:00 AM - 8:00 PM",
-      "photo": {
-        "src": "images/Cablecars.jpg"
-      },
-      "maps": [
-        {
-          "label": "Map",
-          "url": "https://www.google.com/maps/place/Union+Square/@37.7892819,-122.4088108,1460m/data=!3m2!1e3!5s0x8085808d1dc815ef:0xf3b8a676bcb81040!4m15!1m8!3m7!1s0x8085808ed3fd40bb:0xfe41d9b5994cb6ba!2sUnion+Square,+San+Francisco,+CA!3b1!8m2!3d37.787552!4d-122.4066183!16s%2Fg%2F1yfjgvk_h!3m5!1s0x808580892df7905b:0xe36cf5789882dd6f!8m2!3d37.7879358!4d-122.4075139!16zL20vMDUwd3Fw?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
-        }
-      ],
-      "link": {
-        "label": "Explore Union Square",
-        "url": "https://visitunionsquaresf.com/"
-      }
-    },
-    {
-      "id": "bayfront-park-plane-spotting",
-      "name": "Bayfront Park Plane Spotting",
-      "area": "outside",
-      "location": "Millbrae, CA (Old Bayshore Hwy)",
-      "description": "A tranquil bayside oasis globally renowned among dedicated aviation enthusiasts for its unobstructed, dramatic views of heavy aircraft taking off and landing at SFO. Bring a camera or binoculars, sit on a waterfront bench, and watch the mesmerizing, thunderous choreography of international air traffic.",
-      "getting_there": "Take a 5-minute Uber or Lyft to Old Bayshore Highway. Keep a close eye on the clock for TSA re-entry.",
-      "hours": "Daily: 6:00 AM - 10:00 PM",
-      "photo": {
-        "src": "images/outside_bayfront_park.jpg"
-      },
-      "maps": [
-        {
-          "label": "Map",
-          "url": "https://www.google.com/maps/place/Bayfront+Park/@37.6053081,-122.3780359,1233m/data=!3m1!1e3!4m14!1m7!3m6!1s0x808f77c7d2538287:0x566116f7a53c4b45!2sBayfront+Park!8m2!3d37.6049946!4d-122.3764138!16s%2Fg%2F1wb8ty6f!3m5!1s0x808f77c7d2538287:0x566116f7a53c4b45!8m2!3d37.6049946!4d-122.3764138!16s%2Fg%2F1wb8ty6f?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
-        }
-      ],
-      "link": {
-        "label": "View Spotting Guide",
-        "url": "https://www.flysfo.com/about/community-noise/plane-spotting-sfo"
       }
     }
   ]

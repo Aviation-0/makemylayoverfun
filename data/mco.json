@@ -4,12 +4,8 @@
     {
       "id": "zaza-new-cuban-diner",
       "name": "Zaza New Cuban Diner",
-      "area": "inside",
-      "terminal": "Terminal B",
-      "security": "post",
       "location": "Airside A, Gates 30-59",
       "description": "Authentic Cuban coffee, sandwiches, and pastries. The perfect spot to grab a strong cafe con leche and a warm, pressed meal before heading to your gate.",
-      "hours": "Daily: 4:30 AM - 9:45 PM",
       "recommended_by": "curtis-r",
       "link": {
         "label": "Menu",

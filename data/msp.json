@@ -4,12 +4,8 @@
     {
       "id": "settebello-pizzeria-napoletana",
       "name": "Settebello Pizzeria Napoletana",
-      "area": "inside",
-      "terminal": "Terminal 1",
-      "security": "post",
       "location": "Terminal 1, MSP Mall",
       "description": "Authentic Napoletana pizza right in the airport. Enjoy wood-fired pizzas with fresh ingredients, salads, charcuterie, and a full bar before boarding your flight. Also has vegetarian and vegan options.",
-      "hours": "Daily: 6:00 AM - 9:00 PM",
       "recommended_by": "curtis-r",
       "link": {
         "label": "Menu",

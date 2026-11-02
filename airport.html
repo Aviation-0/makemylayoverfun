@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Airport Layover Guide | Make My Layover Fun</title>
-    <meta name="description" content="Pilot and crew recommended layover spots at this airport: where to eat, what to see, and how to get there.">
+    <meta name="description" content="Pilot and crew recommended places to eat and explore at this airport.">
     <meta name="author" content="Zhibang (Lucas) Pan">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#ffffff">
@@ -42,29 +42,34 @@
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header">
-        <div class="header-top">
-            <a href="/" class="back-btn">← All Airports</a>
-        </div>
-        <div class="title-block">
-            <h1 id="airport-name">Loading…</h1>
-            <div id="airport-city" class="city-label">&nbsp;</div>
+        <div class="wrap">
+            <a class="wordmark" href="/">Make My Layover Fun</a>
+            <nav class="site-nav" aria-label="Main">
+                <a href="/">Airports</a>
+                <a href="/about.html">About</a>
+            </nav>
         </div>
     </header>
 
-    <main id="main" class="container" aria-live="polite">
-        <!-- Filled from data/<code>.json by airport.js -->
-        <noscript><p class="status-msg">This site needs JavaScript turned on to load the airport guide.</p></noscript>
+    <main id="main" class="wrap">
+        <div class="airport-head">
+            <p id="airport-code" class="code">&nbsp;</p>
+            <h1 id="airport-name" class="name">Loading…</h1>
+            <p id="airport-meta" class="meta label">&nbsp;</p>
+        </div>
+
+        <div id="places" aria-live="polite">
+            <!-- Filled from data/<code>.json by airport.js -->
+            <noscript><p class="status-msg">This site needs JavaScript turned on to load the airport guide.</p></noscript>
+        </div>
     </main>
 
     <footer class="site-footer">
-        <nav aria-label="Footer">
-            <a href="/">Home</a>
-            <a href="/about.html">About</a>
-            <a href="/about.html#privacy">Privacy</a>
-        </nav>
-        <p>Hours and locations change often. Check with the venue or airport before you go.</p>
-        <p>&copy; 2026 Zhibang (Lucas) Pan. Not affiliated with any airport or airline.</p>
-        <p id="credits" class="credits" hidden></p>
+        <div class="wrap">
+            <p>Locations change. Check with the airport before you go.</p>
+            <p>&copy; 2026 Zhibang (Lucas) Pan. Not affiliated with any airport or airline. <a href="/about.html#privacy">Privacy</a></p>
+            <p id="credits" class="credits" hidden></p>
+        </div>
     </footer>
 </body>
 </html>

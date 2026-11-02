@@ -4,32 +4,16 @@
     {
       "id": "concourse-c-food-court",
       "name": "Concourse C Food Court",
-      "area": "inside",
-      "terminal": "Concourse C",
-      "security": "post",
       "location": "Concourse C Center",
       "description": "Features several quick-service options including Bantam + Biddy, Great Wraps, and Sweet Georgia's Juke Joint. A fantastic setup because it has TVs for sports games and plenty of normal tables to sit and eat comfortably.",
-      "hours": "Daily: 6:00 AM - 10:00 PM",
-      "recommended_by": "adam-s",
-      "link": {
-        "label": "Learn More",
-        "url": "https://www.atl.com/"
-      }
+      "recommended_by": "adam-s"
     },
     {
       "id": "concourse-f",
       "name": "Concourse F",
-      "area": "inside",
-      "terminal": "Concourse F",
-      "security": "post",
       "location": "Concourse F (International)",
       "description": "The newest and most spacious concourse at ATL. It acts as a phenomenal quiet spot to escape the usual hustle and bustle, especially when the international flights aren't going out.",
-      "hours": "24/7",
-      "recommended_by": "adam-s",
-      "link": {
-        "label": "Explore Concourse",
-        "url": "https://www.atl.com/"
-      }
+      "recommended_by": "adam-s"
     }
   ]
 }
