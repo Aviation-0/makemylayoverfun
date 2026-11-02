@@ -1,229 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- ==================== META & SEO ==================== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Make My Layover Fun</title>
-    <meta name="description" content="Discover filtered layover activities, food, and lounges at your airport. Maximize your layover with Make My Layover Fun.">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Airport Layover Guide | Make My Layover Fun</title>
+    <meta name="description" content="Pilot and crew recommended layover spots at this airport: where to eat, what to see, and how to get there.">
     <meta name="author" content="Zhibang (Lucas) Pan">
-    <meta name="robots" content="index, follow"> 
-    
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="canonical" href="https://makemylayoverfun.com/airport.html">
+
+    <!-- Open Graph / Twitter -->
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Make My Layover Fun">
     <meta property="og:url" content="https://makemylayoverfun.com/airport.html">
-    <meta property="og:title" content="Airport Layover Planner | Make My Layover Fun">
-    <meta property="og:description" content="Discover filtered layover activities, food, and lounges at your airport. Maximize your layover with Make My Layover Fun.">
-    <meta property="og:image" content="/og-image.jpg">
-    
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://makemylayoverfun.com/airport.html">
-    <meta property="twitter:title" content="Airport Layover Planner | Make My Layover Fun">
-    <meta property="twitter:description" content="Discover filtered layover activities, food, and lounges at your airport. Maximize your layover with Make My Layover Fun.">
-    <meta property="twitter:image" content="/og-image.jpg">
+    <meta property="og:title" content="Airport Layover Guide | Make My Layover Fun">
+    <meta property="og:description" content="Pilot and crew recommended layover spots at this airport.">
+    <meta property="og:image" content="https://makemylayoverfun.com/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Airport Layover Guide | Make My Layover Fun">
+    <meta name="twitter:description" content="Pilot and crew recommended layover spots at this airport.">
+    <meta name="twitter:image" content="https://makemylayoverfun.com/og-image.jpg">
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Airport Hub Data - Make My Layover Fun",
-      "url": "https://makemylayoverfun.com",
-      "applicationCategory": "TravelApplication",
-      "operatingSystem": "All",
-      "author": {
-        "@type": "Person",
-        "name": "Zhibang (Lucas) Pan"
-      },
-      "description": "Dynamic data view rendering airport-specific layover activities."
-    }
-    </script>
+    <!-- ==================== ICONS & MANIFEST ==================== -->
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="Make My Layover Fun">
+    <link rel="manifest" href="/site.webmanifest">
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-93NPFQ6VTE"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-93NPFQ6VTE');
-    </script>
-
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="Make My Layover Fun" />
-    <link rel="manifest" href="/site.webmanifest" />
-
-<style>
-    body { margin: 0; padding: 0; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; background-color: #f4f4f5; color: #111111; display: flex; flex-direction: column; min-height: 100vh; }
-    
-    header { background-color: #ffffff; border-bottom: 1px solid #d4d4d8; padding: 20px 20px 30px 20px; }
-    .header-top { display: flex; justify-content: flex-start; margin-bottom: 10px; }
-    .back-btn { color: #71717a; text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; transition: color 0.2s; }
-    .back-btn:hover { color: #111111; }
-    
-    .title-block { text-align: center; margin-bottom: 20px; }
-    h1 { font-weight: 400; font-size: 2rem; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 4px 0; }
-    .city-label { font-size: 0.85rem; color: #71717a; text-transform: uppercase; letter-spacing: 0.05em; }
-
-    .landmarks-block { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
-    .landmark-card { display: flex; flex-direction: column; align-items: center; gap: 8px; }
-    .landmark-art { width: 140px; height: 60px; display: flex; justify-content: center; align-items: flex-end; }
-    .landmark-art svg { width: 100%; height: 100%; overflow: visible; }
-    .landmark-title { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: #71717a; font-weight: 600; text-align: center; }
-    .landmark-title span { color: #111111; display: block; margin-top: 4px; font-size: 0.8rem;}
-
-    .filter-bar { background-color: #fafafa; border-bottom: 1px solid #e4e4e7; padding: 16px 20px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
-    
-    .filter-btn { 
-        display: flex; align-items: center; gap: 10px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; color: #71717a; 
-        background: #ffffff; border: 1px solid #d4d4d8; padding: 10px 18px; cursor: pointer; transition: all 0.2s; border-radius: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); 
-    }
-    .filter-btn:hover { border-color: #a1a1aa; color: #111111; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .filter-btn.active { background: #111111; color: #ffffff; border-color: #111111; }
-    
-    .filter-color { 
-        width: 16px; height: 16px; border: 2px solid #a1a1aa; border-radius: 3px; display: inline-block; position: relative; transition: all 0.2s; background-color: #ffffff; box-sizing: border-box; box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-    }
-    .filter-color::after { 
-        content: ''; position: absolute; top: 0px; left: 4px; width: 4px; height: 8px; 
-        border: solid #e4e4e7;
-        border-width: 0 2px 2px 0; transform: rotate(45deg); opacity: 1; transition: border-color 0.2s; 
-    }
-    
-    .filter-btn:hover .filter-color { border-color: #71717a; }
-    .filter-btn:hover .filter-color::after { border-color: #a1a1aa; }
-    .filter-btn.active .filter-color { border-color: transparent; box-shadow: none; }
-    .filter-btn.active .filter-color::after { border-color: #ffffff; }
-    
-    .filter-btn.active .bg-pilot { background-color: #2563eb; } /* New Blue for Crew */
-    .filter-btn.active .bg-art { background-color: #8b5cf6; }
-    .filter-btn.active .bg-aviation { background-color: #0ea5e9; }
-    .filter-btn.active .bg-food { background-color: #f43f5e; }
-    .filter-btn.active .bg-shop { background-color: #f59e0b; }
-    .filter-btn.active .bg-explore { background-color: #10b981; }
-
-    .utility-bar { max-width: 1100px; margin: 20px auto 0; padding: 0 20px; display: flex; justify-content: flex-end; gap: 12px; flex-wrap: wrap; }
-    select.utility-select, input.utility-select { padding: 8px 12px; font-family: inherit; font-size: 0.8rem; text-transform: uppercase; font-weight: 600; border: 1px solid #d4d4d8; background: #ffffff; outline: none; cursor: pointer; color: #111111; transition: all 0.3s ease; border-radius: 4px;}
-
-    .container { max-width: 1100px; margin: 20px auto 40px; padding: 0 20px; flex: 1; width: 100%; box-sizing: border-box; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-    .card { background-color: #ffffff; border: 1px solid #d4d4d8; padding: 24px; display: flex; flex-direction: column; position: relative; transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease; }
-    
-    .specialty-card { background-color: #e4e4e7; border: 2px solid #a1a1aa; }
-    .rank-badge { position: absolute; top: -12px; right: -12px; background: #111111; color: #ffffff; font-weight: 800; font-size: 1.1rem; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 50%; box-shadow: 0 4px 6px rgba(0,0,0,0.15); z-index: 10; border: 2px solid #ffffff; }
-    
-    /* NEW FLEX CONTAINER FOR TAGS & BADGES */
-    .card-header-tags { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; width: 100%; margin-bottom: 12px; gap: 8px; z-index: 5; }
-
-    /* UPDATED PILOT CREDIT BADGE STYLING */
-    .pilot-credit-badge { background-color: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 4px 8px; border-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); text-align: right; text-decoration: none; display: inline-block; }
-    
-    a.pilot-credit-badge:hover { background-color: #dbeafe; border-color: #93c5fd; color: #1e3a8a; cursor: pointer; transition: all 0.2s ease; }
-
-    /* UPDATED CATEGORY TAG */
-    .card-tag { display: inline-block; color: #ffffff; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; padding: 4px 8px; }
-
-    .card-image { width: 100%; height: 180px; object-fit: cover; object-position: center; border: 1px solid #e4e4e7; display: block; }
-    .card-image.broken-image { display: none !important; }
-    .image-attribution { font-size: 0.6rem; color: #71717a; text-align: right; margin-bottom: 12px; font-style: italic; }
-    .terminal-loc { font-size: 0.75rem; color: #71717a; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; transition: color 0.4s ease; }
-    .card h3 { font-weight: 600; font-size: 1.1rem; margin: 0 0 8px 0; line-height: 1.3; transition: color 0.4s ease; }
-    .card p { font-size: 0.9rem; color: inherit; line-height: 1.5; margin: 0 0 20px 0; flex-grow: 1; }
-    .card-hours { font-size: 0.8rem; color: inherit; opacity: 0.8; margin-bottom: 20px; font-weight: 500; letter-spacing: 0.02em; }
-    
-    .specialty-dropdown { width: 100%; padding: 10px; font-family: inherit; font-size: 0.9rem; border: 1px solid #d4d4d8; background: #ffffff; color: #111111; margin-bottom: 12px; outline: none; cursor: pointer; transition: all 0.4s ease; }
-    .specialty-dropdown option { background-color: #ffffff; color: #111111; }
-    .specialty-details { font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px; flex-grow: 1; transition: color 0.4s ease; }
-
-    .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; flex-wrap: wrap; gap: 12px;}
-    .duration { font-size: 0.75rem; font-weight: 600; background-color: #f4f4f5; padding: 6px 10px; border: 1px solid #e4e4e7; text-transform: uppercase; letter-spacing: 0.05em; transition: all 0.4s ease; color: #111111; }
-    
-    .button-group { display: flex; gap: 8px; flex-wrap: wrap; }
-    .action-btn { font-size: 0.75rem; font-weight: 600; color: #ffffff; background-color: #111111; padding: 6px 12px; text-decoration: none; text-transform: uppercase; letter-spacing: 0.05em; transition: background 0.2s;}
-    .action-btn:hover { background-color: #3f3f46; }
-    .map-btn { font-size: 0.75rem; font-weight: 600; color: #111111; background-color: #ffffff; padding: 6px 10px; text-decoration: none; border: 1px solid #d4d4d8; text-transform: uppercase; letter-spacing: 0.05em; transition: background 0.2s;}
-    .map-btn:hover { background-color: #e4e4e7; }
-
-    #error-state { display: none; text-align: center; padding: 60px 20px; }
-
-    .site-footer { text-align: center; padding: 24px 20px; font-size: 0.75rem; color: #a1a1aa; border-top: 1px solid #e4e4e7; background-color: #fafafa; margin-top: auto; line-height: 1.6; }
-
-    @media (max-width: 600px) {
-        h1 { font-size: 1.5rem; }
-        .landmarks-block { gap: 20px; }
-        .filter-bar { padding: 12px; gap: 8px; }
-        .filter-btn { flex-shrink: 0; padding: 8px 12px; font-size: 0.75rem; }
-        .utility-bar { justify-content: center; }
-        .grid { grid-template-columns: 1fr; gap: 16px; }
-        .card { padding: 16px; }
-        .card-image { height: 160px; }
-    }
-</style>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/airport.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-<header>
-    <div class="header-top">
-        <a href="index.html" class="back-btn">← New Search</a>
-    </div>
-
-    <div class="title-block">
-        <h1 id="airport-name">Loading...</h1>
-        <div id="airport-city" class="city-label">Standby for data</div>
-    </div>
-</header>
-
-    <div class="filter-bar">
-        <button class="filter-btn" data-type="pilot"><div class="filter-color bg-pilot"></div> Crew Favs</button>
-        <button class="filter-btn" data-type="art"><div class="filter-color bg-art"></div> Visuals</button>
-        <button class="filter-btn" data-type="aviation"><div class="filter-color bg-aviation"></div> Aviation</button>
-        <button class="filter-btn" data-type="food"><div class="filter-color bg-food"></div> Food</button>
-        <button class="filter-btn" data-type="shop"><div class="filter-color bg-shop"></div> Shopping</button>
-        <button class="filter-btn" data-type="explore"><div class="filter-color bg-explore"></div> Exploring</button>
-    </div>
-    
-    <div class="utility-bar">
-        <select id="proximity-filter" class="utility-select" style="display: none;">
-            <option value="All">At & Outside Airport</option>
-            <option value="inside">Inside Airport Only</option>
-            <option value="outside">Outside Excursions Only</option>
-        </select>
-        
-        <select id="terminal-filter" class="utility-select" style="display: none;">
-            <option value="All">All Terminals</option>
-        </select>
-        
-        <select id="security-filter" class="utility-select" style="display: none;">
-            <option value="All">Any Security</option>
-            <option value="pre">Pre-Security Only</option>
-            <option value="post">Post-Security Only</option>
-        </select>
-        
-        <select id="food-type-filter" class="utility-select" style="display: none; border-color: #f43f5e; color: #f43f5e;">
-            <option value="All">All Cuisines</option>
-        </select>
-
-        <select id="day-filter" class="utility-select" style="display: none; border-color: #0ea5e9; color: #0ea5e9;">
-            <option value="All">Any Day</option>
-            <option value="0">Sunday</option>
-            <option value="1">Monday</option>
-            <option value="2">Tuesday</option>
-            <option value="3">Wednesday</option>
-            <option value="4">Thursday</option>
-            <option value="5">Friday</option>
-            <option value="6">Saturday</option>
-        </select>
-        <input type="time" id="time-filter" class="utility-select" style="display: none; border-color: #0ea5e9; color: #0ea5e9;">
-    </div>
-
-    <div class="container">
-        <div id="activities-grid" class="grid"></div>
-        <div id="error-state">
-            <h2>Data Not Found</h2>
-            <p id="error-msg">We do not have layover modules compiled for this hub yet.</p>
+    <header class="site-header">
+        <div class="header-top">
+            <a href="/" class="back-btn">← All Airports</a>
         </div>
-    </div>
+        <div class="title-block">
+            <h1 id="airport-name">Loading…</h1>
+            <div id="airport-city" class="city-label">&nbsp;</div>
+        </div>
+    </header>
 
-    <footer id="site-footer" class="site-footer" style="display: none;"></footer>
+    <main id="main" class="container" aria-live="polite">
+        <!-- Filled from data/<code>.json by airport.js -->
+        <noscript><p class="status-msg">This site needs JavaScript turned on to load the airport guide.</p></noscript>
+    </main>
 
-    <script src="app.js"></script>
+    <footer class="site-footer">
+        <nav aria-label="Footer">
+            <a href="/">Home</a>
+            <a href="/about.html">About</a>
+            <a href="/about.html#privacy">Privacy</a>
+        </nav>
+        <p>Hours and locations change often. Check with the venue or airport before you go.</p>
+        <p>&copy; 2026 Zhibang (Lucas) Pan. Not affiliated with any airport or airline.</p>
+        <p id="credits" class="credits" hidden></p>
+    </footer>
 </body>
 </html>

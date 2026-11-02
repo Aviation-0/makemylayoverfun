@@ -1,39 +1,20 @@
 {
-  "_meta": {
-    "description": "Airport data module for Louis Armstrong New Orleans International (MSY)",
-    "project": "Make My Layover Fun",
-    "author": "Zhibang (Lucas) Pan"
-  },
-  "name": "Louis Armstrong New Orleans International",
-  "city": "New Orleans, LA",
-  "footer_citation": "Data compiled for makemylayoverfun.",
-  "landmarks": {
-    "airport": {
-      "name": "MSY Canopy",
-      "svg": "<svg viewBox='0 0 100 60' xmlns='http://www.w3.org/2000/svg'><path d='M 10 40 Q 50 10 90 40' fill='none' stroke='#a1a1aa' stroke-width='3'/><line x1='0' y1='58' x2='100' y2='58' stroke='#e4e4e7' stroke-width='2'/></svg>"
-    },
-    "city": {
-      "name": "New Orleans Skyline",
-      "svg": "<svg viewBox='0 0 100 60' xmlns='http://www.w3.org/2000/svg'><rect x='40' y='25' width='20' height='35' fill='#3f3f46'/><line x1='0' y1='58' x2='100' y2='58' stroke='#e4e4e7' stroke-width='2'/></svg>"
-    }
-  },
-  "activities": [
+  "code": "MSY",
+  "places": [
     {
-      "title": "Folse Market",
-      "category": "Dining",
-      "type": ["food", "pilot"],
-      "pilot_credit": "Recommended by Captain Curtis R.",
-      "pilot_link": "https://www.linkedin.com/in/curtis-rupeka-37956a197/",
-      "food_type": ["Cajun/Creole", "Seafood"],
-      "location_type": "inside",
+      "id": "folse-market",
+      "name": "Folse Market",
+      "area": "inside",
       "terminal": "Concourse C",
       "security": "post",
-      "description": "<strong>Location:</strong> Concourse C, near Gate C10 <br><br>A true New Orleans marketplace created by famed Chef John Folse. Features dedicated stations for local seafood, charcuterie, authentic po-boys, coffee, and wine.",
-      "duration_text": "45 Mins",
-      "duration_mins": 45,
-      "action_link": "https://maps.flymsy.com/?poiId=1254",
-      "action_text": "Learn More ↗",
-      "hours": "Daily: 3:30 AM - 9:00 PM"
+      "location": "Concourse C, near Gate C10",
+      "description": "A true New Orleans marketplace created by famed Chef John Folse. Features dedicated stations for local seafood, charcuterie, authentic po-boys, coffee, and wine.",
+      "hours": "Daily: 3:30 AM - 9:00 PM",
+      "recommended_by": "curtis-r",
+      "link": {
+        "label": "Learn More",
+        "url": "https://maps.flymsy.com/?poiId=1254"
+      }
     }
   ]
 }

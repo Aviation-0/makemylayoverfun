@@ -1,1187 +1,300 @@
 {
-  "_meta": {
-    "description": "Airport data module for San Francisco International (SFO)",
-    "project": "Make My Layover Fun",
-    "author": "Zhibang (Lucas) Pan"
-  },
-  "name": "San Francisco International",
-  "city": "San Francisco, CA",
-  "footer_citation": "This work is a derivative of <a href='https://commons.wikimedia.org/wiki/File:Outdoor_terrace_at_SFO_Airport_01.jpg' target='_blank' style='color: inherit;'>\"Outdoor terrace at SFO Airport 01\"</a> by Phoebe, used under CC BY-SA 4.0. The original image was cropped and resized by Zhibang Pan for makemylayoverfun. This derivative is licensed under CC BY-SA 4.0 by Zhibang Pan.",
-  "landmarks": {
-    "airport": {
-      "name": "SFO Control Tower",
-      "svg": "<svg viewBox='0 0 100 60' xmlns='http://www.w3.org/2000/svg'><line x1='0' y1='58' x2='100' y2='58' stroke='#e4e4e7' stroke-width='2'/><path d='M 38 58 C 45 42, 45 28, 30 18 L 42 18 C 50 28, 51 42, 48 58 Z' fill='#d4d4d8'/><path d='M 48 58 C 51 42, 50 28, 42 18 L 58 18 C 50 28, 49 42, 52 58 Z' fill='#7dd3fc'/><path d='M 46 45 L 50.5 45 M 44 32 L 51.5 32 M 43 23 L 55 23' stroke='#38bdf8' stroke-width='0.5'/><path d='M 52 58 C 49 42, 50 28, 58 18 L 70 18 C 55 28, 55 42, 62 58 Z' fill='#a1a1aa'/><path d='M 37 45 L 48 45 M 34 32 L 49 32 M 31 23 L 45 23' stroke='#a1a1aa' stroke-width='0.5' fill='none'/><path d='M 51 45 L 63 45 M 50 32 L 66 32 M 55 23 L 69 23' stroke='#71717a' stroke-width='0.5' fill='none'/><rect x='28' y='17' width='44' height='1' fill='#71717a'/><polygon points='28,17 72,17 68,12 32,12' fill='#a1a1aa'/><polygon points='31,12 69,12 65,7 35,7' fill='#3f3f46'/><line x1='40' y1='12' x2='40' y2='7' stroke='#71717a' stroke-width='0.5'/><line x1='50' y1='12' x2='50' y2='7' stroke='#71717a' stroke-width='0.5'/><line x1='60' y1='12' x2='60' y2='7' stroke='#71717a' stroke-width='0.5'/><polygon points='33,7 67,7 67,5 33,5' fill='#d4d4d8'/><line x1='40' y1='5' x2='40' y2='2' stroke='#a1a1aa' stroke-width='0.75'/><line x1='45' y1='5' x2='45' y2='1' stroke='#a1a1aa' stroke-width='0.75'/><line x1='50' y1='5' x2='50' y2='0' stroke='#f43f5e' stroke-width='1.5'/><line x1='55' y1='5' x2='55' y2='1' stroke='#a1a1aa' stroke-width='0.75'/><line x1='60' y1='5' x2='60' y2='2' stroke='#a1a1aa' stroke-width='0.75'/></svg>"
-    },
-    "city": {
-      "name": "Golden Gate Bridge",
-      "svg": "<svg viewBox='0 0 100 60' xmlns='http://www.w3.org/2000/svg'><rect x='22' y='10' width='6' height='40' fill='#f43f5e'/><rect x='72' y='10' width='6' height='40' fill='#f43f5e'/><rect x='22' y='25' width='6' height='3' fill='#f4f4f5'/><rect x='72' y='25' width='6' height='3' fill='#f4f4f5'/><rect x='22' y='38' width='6' height='3' fill='#f4f4f5'/><rect x='72' y='38' width='6' height='3' fill='#f4f4f5'/><path d='M -5 35 Q 25 45 25 10' fill='none' stroke='#f43f5e' stroke-width='1.5'/><path d='M 25 10 Q 50 55 75 10' fill='none' stroke='#f43f5e' stroke-width='1.5'/><path d='M 75 10 Q 75 45 105 35' fill='none' stroke='#f43f5e' stroke-width='1.5'/><line x1='0' y1='48' x2='100' y2='48' stroke='#3f3f46' stroke-width='3'/></svg>"
-    }
-  },
-  "activities": [
+  "code": "SFO",
+  "credits": "This work is a derivative of <a href='https://commons.wikimedia.org/wiki/File:Outdoor_terrace_at_SFO_Airport_01.jpg' target='_blank' rel='noopener noreferrer'>\"Outdoor terrace at SFO Airport 01\"</a> by Phoebe, used under CC BY-SA 4.0. The original image was cropped and resized by Zhibang Pan for makemylayoverfun. This derivative is licensed under CC BY-SA 4.0 by Zhibang Pan.",
+  "places": [
     {
-      "rank": 1,
-      "title": "International Outdoor Terrace",
-      "category": "Plane Spotting",
-      "type": ["aviation", "explore"],
-      "location_type": "inside",
+      "id": "international-outdoor-terrace",
+      "name": "International Outdoor Terrace",
+      "area": "inside",
       "terminal": "International Terminal G",
       "security": "post",
-      "description": "<strong>Location:</strong> International Terminal G, End of Boarding Area G <br><br>An absolute must-visit. This stunning outdoor observation deck gets you out of the indoor air and puts you right on top of the heavy international jets. Grab a drink, enjoy the California sunshine, and watch the world fly by.",
-      "duration_text": "1 Hour",
-      "duration_mins": 60,
-      "image_path": "images/sfo_outdoor_terrace.jpg",
-      "image_attribution": "Derivative of <a href='https://commons.wikimedia.org/wiki/File:Outdoor_terrace_at_SFO_Airport_01.jpg' target='_blank' style='color: inherit;'>\"Outdoor terrace at SFO Airport 01\"</a> by Phoebe (CC BY-SA 4.0)",
-      "action_link": "https://www.flysfo.com/passengers/shop-dine-relax/outdoor-terrace",
-      "action_text": "Explore More ↗",
-      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=72810",
-      "hours": "Daily: 7:00 AM - 11:30 PM"
-    },
-    {
-      "rank": 2,
-      "title": "Louis A. Turpen Aviation Museum",
-      "category": "Museum & History",
-      "type": ["aviation", "art"],
-      "location_type": "inside",
-      "terminal": "International Terminal A, International Terminal G",
-      "security": "pre",
-      "description": "<strong>Location:</strong> Departures Level <br><br>Located in a space modeled after the original 1930s passenger lobby, this incredible free museum is filled with commercial aviation artifacts and historical airline memorabilia. It’s the perfect place to geek out over the golden age of flying.",
-      "duration_text": "45 Mins",
-      "duration_mins": 45,
-      "image_path": "images/sfo_aviationmuseum.jpg",
-      "action_link": "https://www.sfomuseum.org/aviation-museum-library",
-      "action_text": "Explore Exhibits ↗",
-      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=1807",
-      "hours": "Daily: 10:00 AM - 4:30 PM"
-    },
-    {
-      "rank": 3,
-      "title": "SFO Yoga Rooms",
-      "category": "Wellness & Relaxation",
-      "type": ["explore"],
-      "location_type": "inside",
-      "terminal": "Harvey Milk Terminal 1, Terminal 2, Terminal 3",
-      "security": "post",
-      "description": "<strong>Locations:</strong><br>• Harvey Milk Terminal 1: Near Gate C2 <br>• Terminal 2: Between C and D Gates <br>• Terminal 3: Near Vending Machine Nook by Gate E6 <br><br>Find your zen in these quiet, dedicated spaces designed specifically for self-reflection and stretching between long flights. Complimentary to use and completely silent.",
-      "duration_text": "30 Mins",
-      "duration_mins": 30,
-      "image_path": "images/sfo_yogaroom.jpg",
-      "action_link": "https://www.flysfo.com/passengers/shop-dine-relax/yoga-room-1",
-      "action_text": "Yoga Room Info ↗",
-      "hours": "Daily: 4:00 AM - 11:00 PM"
-    },
-    {
-      "title": "SFO Premium Lounge Directory",
-      "category": "Premium Lounges",
-      "type": ["explore"],
-      "location_type": "inside",
-      "terminal": "All Terminals",
-      "security": "post",
-      "description": "Select a lounge below to view exact locations, hours, access requirements, and booking options.",
-      "duration_text": "2 Hours",
-      "duration_mins": 120,
-      "specialty": "dropdown",
-      "dropdown_options": [
-        {
-          "name": "Air Canada Maple Leaf Lounge",
-          "brand_color": "#E21836",
-          "details": "<strong>Alliance:</strong> Star Alliance<br><strong>Location:</strong> Terminal 2, Post-Security<br><strong>Hours:</strong> Sun-Sat 5:30 am - 7:15 pm",
-          "action_link": "https://www.aircanada.com/ca/en/aco/home/fly/premium-services/maple-leaf-lounges.html",
-          "action_text": "Official Details ↗",
-          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=452089"
-        },
-        {
-          "name": "Air France - KLM Lounge",
-          "brand_color": "#002157",
-          "details": "<strong>Alliance:</strong> SkyTeam<br><strong>Airlines:</strong> Air France, KLM, EVA AIR, Korean Air<br><strong>Location:</strong> Int'l Terminal A, Level 3 (Post-Security, turn left)<br><strong>Hours:</strong> Sun-Sat 9:30 am - 12:45 am",
-          "action_link": "https://wwws.airfrance.us/information/prepare/salons/sfo",
-          "action_text": "Official Details ↗",
-          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=2108"
-        },
-        {
-          "name": "Air India Maharaja Lounge",
-          "brand_color": "#F47920",
-          "details": "<strong>Alliance:</strong> Star Alliance<br><strong>Airlines:</strong> Air India, LOT Polish Airlines<br><strong>Location:</strong> Int'l Terminal A, Level 4 (Post-Security, turn left)<br><strong>Hours:</strong> Sun-Sat 6:00 am - 11:55 pm",
-          "action_link": "https://www.airindia.com/in/en/newsroom/customer-experience/the-maharaja-lounge.html",
-          "action_text": "Official Details ↗",
-          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=681122"
-        },
-        {
-          "name": "Alaska Lounge",
-          "brand_color": "#01426A",
-          "details": "<strong>Alliance:</strong> oneworld<br><strong>Airlines:</strong> Alaska, Hawaiian, STARLUX<br><strong>Location:</strong> Harvey Milk Terminal 1, Level 2, Post-Security<br><strong>Hours:</strong> Sun-Sat 5:00 am - 12:00 am",
-          "action_link": "https://www.alaskaair.com/content/airport-lounge/location-and-hours?srsltid=AfmBOorrJcXVbR_ZtzVHg1hSa-lEi3Nw9lLJ1rO5AIJ8nKLK5ZlQCFX9",
-          "action_text": "Official Details ↗",
-          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=264035"
-        },
-        {
-          "name": "American Airlines Admirals Club",
-          "brand_color": "#0078D2",
-          "details": "<strong>Alliance:</strong> oneworld<br><strong>Location:</strong> Harvey Milk Terminal 1, Near Gate B13, Level 2<br><strong>Hours:</strong> Sun-Sat 4:30 am - 11:30 pm",
-          "action_link": "https://www.aa.com/i18n/travelInformation/airportAmenities/sfo-club.jsp",
-          "action_text": "Official Details ↗",
-          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=2109"
-        },
-        {
-          "name": "American Express Centurion Lounge",
-          "brand_color": "#006FCF",
-          "details": "<strong>Location:</strong> Terminal 2, Level 2, Post-Security<br><strong>Access:</strong> Amex Platinum or Centurion cardholders only.<br><strong>Hours:</strong> Sun-Sat 5:00 am - 11:00 pm",
-          "action_link": "https://www.thecenturionlounge.com/locations/sfo/",
-          "action_text": "Official Details ↗",
-          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=2110"
-        },
-        {
-          "name": "British Airways Lounge",
-          "brand_color": "#01295C",
-          "details": "<strong>Alliance:</strong> oneworld<br><strong>Location:</strong> Int'l Terminal A, between Gates A5 and A9<br><strong>Hours:</strong> Sun-Sat 5:00 am - 11:30 am, 1:30 pm - 6:45 pm",
-          "action_link": "https://www.flysfo.com/passengers/flight-info/airlines-sfo/british-airways",
-          "action_text": "Official Details ↗",
-          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=2111"
-        },
-        {
-          "name": "Cathay Pacific Lounge",
-          "brand_color": "#006564",
-          "details": "<strong>Alliance:</strong> oneworld<br><strong>Location:</strong> Int'l Terminal A, Level 4 (Post-Security, turn left)<br><strong>Hours:</strong> Sun-Sat 9:00 am - 12:45 pm, 8:20 pm - 12:05 am",
-          "action_link": "https://www.cathaypacific.com/cx/en_US/destinations/lounges/san-francisco-sfo/cathay-pacific-lounge.html",
-          "action_text": "Official Details ↗",
-          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=2112"
-        },
-        {
-          "name": "China Airlines Lounge",
-          "brand_color": "#8B8992",
-          "details": "<strong>Alliance:</strong> SkyTeam<br><strong>Airlines:</strong> China Airlines, Vietnam Airlines, China Eastern, Condor<br><strong>Location:</strong> Int'l Terminal A, Level 4 <br><strong>Access:</strong> Priority Pass members welcome 8:30 am - 6:00 pm.<br><strong>Hours:</strong> Sun-Sat 9:30 am - 12:30 pm",
-          "action_link": "https://www.americanexpress.com/en-us/travel/lounges/the-platinum-card/SFO/china-airlines-dynasty-lounge-international-terminal-a-PSqSB42915/",
-          "action_text": "Official Details ↗",
-          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=2113"
-        },
-        {
-          "name": "Delta Sky Club",
-          "brand_color": "#E51420",
-          "details": "<strong>Alliance:</strong> SkyTeam<br><strong>Location:</strong> Harvey Milk Terminal 1, near Gate C3, Level 2<br><strong>Hours:</strong> Sun-Mon 4:30 am-10:30 pm | Tue-Fri 4:30 am-12:00 am | Sat 4:30 am-10:30 pm",
-          "action_link": "https://www.delta.com/us/en/airports/united-states/san-francisco-sky-club-airport-map",
-          "action_text": "Official Details ↗",
-          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=2114"
-        },
-        {
-          "name": "Emirates Lounge",
-          "brand_color": "#D71A21",
-          "details": "<strong>Location:</strong> Int'l Terminal A, between Gates A2 and A6, Level 3<br><strong>Hours:</strong> Sun-Sat 12:45 pm - 4:45 pm",
-          "action_link": "https://www.emirates.com/us/english/experience/our-lounges/worldwide/",
-          "action_text": "Official Details ↗",
-          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=2115"
-        },
-        {
-          "name": "Golden Gate Lounge",
-          "brand_color": "#4B5563",
-          "details": "<strong>Alliance:</strong> SkyTeam<br><strong>Airlines:</strong> Air France, KLM, AeroMexico, Philippine Airlines, Qatar Airways, SAS<br><strong>Location:</strong> Int'l Terminal A, Level 4, Post-Security<br><strong>Hours:</strong> Sun-Sat 7:00 am - 12:45 am",
-          "action_link": "https://www.prioritypass.com/en-GB/lounges/united-states-of-america/san-francisco-international/sfo11-golden-gate-lounge",
-          "action_text": "Website ↗",
-          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=2108"
-        },
-        {
-          "name": "The Club SFO",
-          "brand_color": "#18181B",
-          "details": "<strong>Location:</strong> Harvey Milk Terminal 1, Level 3, Post-Security<br><strong>Access:</strong> Accepts Priority Pass and Lounge Key.<br><strong>Hours:</strong> Sun-Sat 4:30 am - 11:30 pm",
-          "action_link": "https://theclubairportlounges.com/lounges/sfo-the-club-terminal-1",
-          "action_text": "Book Day Pass ↗",
-          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=544090"
-        },
-        {
-          "name": "United Club (Int'l Terminal G)",
-          "brand_color": "#005DA6",
-          "details": "<strong>Alliance:</strong> Star Alliance<br><strong>Location:</strong> Int'l Terminal G, between Gates G6 and G9, Level 3<br><strong>Hours:</strong> Sun-Sat 7:00 am - 1:15 am",
-          "action_link": "https://www.united.com/en/us/fly/travel/airport/lounge-access.html",
-          "action_text": "Official Details ↗",
-          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=2123"
-        },
-        {
-          "name": "United Club (Terminal 3, F Gates)",
-          "brand_color": "#005DA6",
-          "details": "<strong>Alliance:</strong> Star Alliance<br><strong>Location:</strong> Terminal 3, Rotunda of the F Gates, Level 3<br><strong>Hours:</strong> Sun-Sat 5:00 am - 12:00 am",
-          "action_link": "https://www.united.com/en/us/fly/travel/airport/lounge-access.html",
-          "action_text": "Official Details ↗",
-          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=2121"
-        },
-        {
-          "name": "United Club (Terminal 3, E Gates)",
-          "brand_color": "#005DA6",
-          "details": "<strong>Alliance:</strong> Star Alliance<br><strong>Location:</strong> Terminal 3, near Gate E4, Level 3<br><strong>Hours:</strong> Sun-Sat 5:00 am - 11:00 pm",
-          "action_link": "https://www.united.com/en/us/fly/travel/airport/lounge-access.html",
-          "action_text": "Official Details ↗",
-          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=2120"
-        },
-        {
-          "name": "United Polaris Lounge",
-          "brand_color": "#002244",
-          "details": "<strong>Alliance:</strong> Star Alliance<br><strong>Location:</strong> Int'l Terminal G, near Gate G1, Level 2<br><strong>Access:</strong> Polaris business class and outbound long-haul Star Alliance first/business class.<br><strong>Hours:</strong> Sun-Sat 5:00 am - 12:00 am",
-          "action_link": "https://www.united.com/en/us/fly/travel/airport/lounge-access.html",
-          "action_text": "Official Details ↗",
-          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=2120"
-        },
-        {
-          "name": "Virgin Atlantic Club House",
-          "brand_color": "#E20020",
-          "details": "<strong>Location:</strong> Int'l Terminal A, near Gate A1, Level 5<br><strong>Hours:</strong> Sun-Sat 9:00 am - 11:00 pm<br><strong>Priority Pass:</strong> Accepted daily 9:00am - 1:30pm & 5:30pm - 7:15pm",
-          "action_link": "https://www.virginatlantic.com/experience/upper-class/clubhouse-airport-lounges/san-francisco-clubhouse",
-          "action_text": "Official Details ↗",
-          "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=2124"
-        }
-      ]
-    },
-    {
-      "title": "SFO Museum Exhibitions",
-      "category": "Art & History",
-      "type": ["art"],
-      "location_type": "inside",
-      "terminal": "All Terminals",
-      "security": "both",
-      "description": "Select an exhibition below to view its location, security status, and runtime dates. SFO hosts incredible rotating art installations across the entire airport.",
-      "duration_text": "30 Mins",
-      "duration_mins": 30,
-      "specialty": "dropdown",
-      "dropdown_options": [
-        {
-          "name": "Lowrider Bikes",
-          "brand_color": "#8b5cf6",
-          "details": "<strong>Location:</strong> Int'l Terminal, Galleries 4B & 4C <br><strong>Dates:</strong> Apr 18, 2026 - Jul 11, 2027"
-        },
-        {
-          "name": "Indoor Eden",
-          "brand_color": "#8b5cf6",
-          "details": "<strong>Location:</strong> Int'l Terminal, Gallery 4D <br><strong>Dates:</strong> Feb 21, 2026 - Jan 09, 2028"
-        },
-        {
-          "name": "Nut Tree Aircraft Models",
-          "brand_color": "#0ea5e9",
-          "details": "<strong>Location:</strong> Int'l Terminal, Aviation Museum <br><strong>Dates:</strong> Oct 25, 2025 - Mar 28, 2027"
-        },
-        {
-          "name": "A Telephone Retrospective",
-          "brand_color": "#8b5cf6",
-          "details": "<strong>Location:</strong> Terminal 2, Gallery 2A <br><strong>Dates:</strong> Aug 30, 2025 - Aug 30, 2026"
-        },
-        {
-          "name": "Preston Singletary",
-          "brand_color": "#8b5cf6",
-          "details": "<strong>Location:</strong> Int'l Terminal, Gallery 4A <br><strong>Dates:</strong> Jun 21, 2025 - Jan 30, 2028"
-        },
-        {
-          "name": "Women of Afrofuturism",
-          "brand_color": "#8b5cf6",
-          "details": "<strong>Location:</strong> Harvey Milk Terminal 1, Gallery 1D <br><strong>Dates:</strong> May 17, 2025 - Oct 18, 2026"
-        },
-        {
-          "name": "Portable Craft",
-          "brand_color": "#8b5cf6",
-          "details": "<strong>Location:</strong> Harvey Milk Terminal 1, Gallery 1E <br><strong>Dates:</strong> Apr 19, 2025 - Jun 21, 2026"
-        },
-        {
-          "name": "Destination: S.F.",
-          "brand_color": "#8b5cf6",
-          "details": "<strong>Location:</strong> Int'l Terminal, Aviation Museum <br><strong>Dates:</strong> May 09, 2026 - Jan 10, 2027"
-        },
-        {
-          "name": "Eric Ruby",
-          "brand_color": "#8b5cf6",
-          "details": "<strong>Location:</strong> Terminal 3, Gallery 3A <br><strong>Dates:</strong> May 23, 2026 - Dec 06, 2026"
-        },
-        {
-          "name": "Airline Travel Posters",
-          "brand_color": "#0ea5e9",
-          "details": "<strong>Location:</strong> Int'l Terminal, Aviation Museum <br><strong>Dates:</strong> Apr 06, 2024 - Feb 07, 2027"
-        },
-        {
-          "name": "Wendel A. White",
-          "brand_color": "#8b5cf6",
-          "details": "<strong>Location:</strong> Terminal 2, Gallery 2E <br><strong>Dates:</strong> Nov 12, 2024 - Jul 26, 2026"
-        },
-        {
-          "name": "Flying on Display",
-          "brand_color": "#0ea5e9",
-          "details": "<strong>Location:</strong> Harvey Milk Terminal 1, Gallery 1G <br><strong>Dates:</strong> Jun 17, 2024 - Jul 26, 2026"
-        },
-        {
-          "name": "Going the Distance",
-          "brand_color": "#0ea5e9",
-          "details": "<strong>Location:</strong> Int'l Terminal, Aviation Museum <br><strong>Dates:</strong> May 21, 2022 - Apr 11, 2027"
-        },
-        {
-          "name": "Laney College Printmaking",
-          "brand_color": "#8b5cf6",
-          "details": "<strong>Location:</strong> Harvey Milk Terminal 1, Gallery 1A <br><strong>Dates:</strong> Apr 22, 2026 - Apr 25, 2027"
-        },
-        {
-          "name": "California College of the Arts Photography",
-          "brand_color": "#8b5cf6",
-          "details": "<strong>Location:</strong> Harvey Milk Terminal 1, Gallery 1H <br><strong>Dates:</strong> Apr 22, 2026 - Apr 25, 2027"
-        },
-        {
-          "name": "San Francisco Airport (History)",
-          "brand_color": "#8b5cf6",
-          "details": "<strong>Location:</strong> Terminal 2, Sky Terrace Gallery 2D <br><strong>Dates:</strong> Continuous"
-        },
-        {
-          "name": "Harvey Milk",
-          "brand_color": "#8b5cf6",
-          "details": "<strong>Location:</strong> Harvey Milk Terminal 1, Gallery HM1 <br><strong>Dates:</strong> Continuous"
-        },
-        {
-          "name": "The 1954 SFO Terminal",
-          "brand_color": "#8b5cf6",
-          "details": "<strong>Location:</strong> Terminal 2, Sky Terrace Gallery 2D <br><strong>Dates:</strong> Continuous"
-        }
-      ]
-    },
-    {
-      "title": "SkyTerrace Observation Deck",
-      "category": "Plane Spotting",
-      "type": ["aviation"],
-      "location_type": "inside",
-      "terminal": "Terminal 2",
-      "security": "pre",
-      "description": "<strong>Location:</strong> Terminal 2, Level 4 <br><br>Head to the top of Terminal 2 to enjoy stunning 180-degree views of the busiest runways. It’s an incredible vantage point to watch heavies rotate and land.",
-      "duration_text": "1 Hour",
-      "duration_mins": 60,
-      "image_path": "images/sfo_skyterrace.jpg",
-      "action_link": "https://www.flysfo.com/skyterrace",
-      "action_text": "Explore More ↗",
-      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=586185",
-      "hours": "Fri-Mon 10:00 AM - 6:00 PM"
-    },
-    {
-      "title": "Klein's Deli",
-      "category": "Dining",
-      "type": ["food", "pilot"],
-      "pilot_credit": "Recommended by Captain Curtis R.",
-      "pilot_link": "https://www.linkedin.com/in/curtis-rupeka-37956a197/",
-      "food_type": ["American"],
-      "location_type": "inside",
-      "terminal": "Terminal 3",
-      "security": "post",
-      "description": "<strong>Location:</strong> Terminal 3 <br><br>A highly convenient and solid stop for frequent flyers. While considered a bit pricey, they serve fantastic, hearty deli sandwiches paired perfectly with their signature tomato bisque soup, house-made deli salads, or pastries, and easily grab snacks or cold bottled beverages for your flight.",
-      "duration_text": "30 Mins",
-      "duration_mins": 30,
-      "action_link": "https://www.flysfo.com/passengers/shop-dine-relax/kleins-deli-and-coffee-bar-0",
-      "action_text": "Learn More ↗",
+      "location": "International Terminal G, End of Boarding Area G",
+      "description": "An absolute must-visit. This stunning outdoor observation deck gets you out of the indoor air and puts you right on top of the heavy international jets. Grab a drink, enjoy the California sunshine, and watch the world fly by.",
+      "hours": "Daily: 7:00 AM - 11:30 PM",
+      "photo": {
+        "src": "images/sfo_outdoor_terrace.jpg",
+        "credit": "Derivative of <a href='https://commons.wikimedia.org/wiki/File:Outdoor_terrace_at_SFO_Airport_01.jpg' target='_blank' rel='noopener noreferrer'>\"Outdoor terrace at SFO Airport 01\"</a> by Phoebe (CC BY-SA 4.0)"
+      },
       "maps": [
-        {"text": "Terminal 3, near Gate F14 Map 📍",
-         "link": "https://www.flysfo.com/maps/interactive-maps?destination=1751"},
-        {"text": "Terminal 3, near Gate E10 Map 📍",
-         "link": "https://www.flysfo.com/maps/interactive-maps?destination=1778"}],
-      "hours": "<br>• Gate F14 Daily: 5:00 AM - 10:00 PM <br>• Gate E10 Daily: 5:00 AM - 11:30 PM"
-    },
-    {
-      "title": "Freshen Up! (Nap Rooms & Showers)",
-      "category": "Services",
-      "type": ["explore"],
-      "location_type": "inside",
-      "terminal": "International Terminal A, International Terminal G",
-      "security": "pre",
-      "description": "<strong>Location:</strong> International Terminal, near the entrance to Gates G1 to G14 <br><br>Freshen Up! is an essential SFO sanctuary for those enduring long layovers. Whether you need a hot shower to wash away travel fatigue ($30) or a quiet place to recharge, this hidden gem offers private, comfortable nap room suites starting at $150. Beyond the basics, the facility is fully stocked with travel necessities—from toiletries to laundry and pressing services—ensuring you have everything required to reset. <strong>Be sure to set multiple alarms so you don't get too comfortable and accidentally sleep past your flight!<strong>",
-      "duration_text": "2 Hour",
-      "duration_mins": 120,
-      "hours": "24:7",
-      "image_path": "images/refresh.jpg",
-      "image_attribution": "Photo courtesy of FreshenUp, SFO",
-      "action_link": "https://www.airporttravelagency.org/freshen-up/",
-      "action_text": "Learn More ↗",
-      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=1998"
-    },
-    {
-      "title": "Cafe X Robotic Coffee Bar",
-      "category": "Dining & Tech",
-      "type": ["food", "explore"],
-      "food_type": ["Coffee & Sweets"],
-      "location_type": "inside",
-      "terminal": "Harvey Milk Terminal 1, Terminal 3",
-      "security": "post",
-      "description": "<strong>Locations:</strong> <br>• Harvey Milk Terminal 1, near Gate B2 <br>• Terminal 3 East, Departures <br>• Terminal 3 East, Arrivals <br><br>Watch a high-speed robotic arm precision-brew your latte! It is a fun, futuristic, and incredibly fast way to grab excellent coffee while you walk to your gate.",
-      "duration_text": "15 Mins",
-      "duration_mins": 15,
-      "action_link": "https://order.cafexapp.com/#/locations",
-      "action_text": "Order Now ↗",
-      "maps": [
-        {"text": "Terminal 1 Map 📍",
-         "link": "https://www.flysfo.com/maps/interactive-maps?destination=308505"},
-        {"text": "Terminal 3, Level 1 Arrival Map 📍",
-         "link": "https://www.flysfo.com/maps/interactive-maps?destination=664681"},
-        {"text": "Terminal 3, Level 2 Departure Map 📍",
-         "link": "https://www.flysfo.com/maps/interactive-maps?destination=652007"}
+        {
+          "label": "Map",
+          "url": "https://www.flysfo.com/maps/interactive-maps?destination=72810"
+        }
       ],
-      "hours": "24:7"
+      "link": {
+        "label": "Explore More",
+        "url": "https://www.flysfo.com/passengers/shop-dine-relax/outdoor-terrace"
+      }
     },
     {
-      "title": "Tony’s Pizza Napoletana",
-      "category": "Dining",
-      "type": ["food"],
-      "food_type": ["Italian & Pizza", "American"],
-      "location_type": "inside",
-      "terminal": "Harvey Milk Terminal 1",
-      "security": "post",
-      "description": "<strong>Location:</strong> Harvey Milk Terminal 1, SF Eats Food Hall <br><br>World-famous, award-winning pizza by 13-time World Pizza Champion Tony Gemignani is now available right in the terminal. As a state-of-the-art quick-service flagship, this location brings an authentic taste of Naples with a San Francisco twist to your travel experience. From foldable New York slices to hearty Sicilian and Detroit-style pan squares, the menu is crafted for travelers, featuring an array of premium, bold combinations. It is the perfect, elevated comfort food to calm your travel nerves.",
-      "duration_text": "30 Mins",
-      "duration_mins": 30,
-      "action_link": "https://tonyspizzanapoletana.com/",
-      "action_text": "Website ↗",
-      "hours": "Daily: 6:00 AM - 11:00 PM",
-      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=621250"
-    },
-    {
-      "title": "Equator Coffees",
-      "category": "Dining",
-      "type": ["food"],
-      "food_type": ["Coffee & Sweets"],
-      "location_type": "inside",
-      "terminal": "Harvey Milk Terminal 1",
-      "security": "post",
-      "description": "<strong>Location:</strong> Harvey Milk Terminal 1, SF Eats Food Hall <br><br>A staple Bay Area roaster serving up fair-trade, high-quality craft coffee. A massive upgrade from the standard airport chains.",
-      "duration_text": "15 Mins",
-      "duration_mins": 15,
-      "action_link": "https://www.flysfo.com/passengers/shop-dine-relax/equator-coffees",
-      "action_text": "Learn More ↗",
-      "hours": "Daily: 4:30 AM - 10:00 PM",
-      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=621248"
-    },
-    {
-      "title": "Boudin Bakery",
-      "category": "Dining",
-      "type": ["food"],
-      "food_type": ["American"],
-      "location_type": "inside",
-      "terminal": "International Terminal A",
-      "security": "post",
-      "description": "<strong>Locations:</strong> International Terminal A, Boarding Area A, near Gate A3 <br><br>A true San Francisco institution. You cannot leave SFO without grabbing one of their world-famous, freshly baked sourdough bread bowls loaded with hot clam chowder.",
-      "duration_text": "45 Mins",
-      "duration_mins": 45,
-      "image_path": "images/CC.jpg",
-      "action_link": "https://order.boudinbakery.com/menu/boudin-sf-sfo-international",
-      "action_text": "Order Now ↗",
-      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=62456",
-      "hours": "Daily: 5:30 AM - 11:30 PM"
-    },
-    {
-      "title": "Mama Go’s Filipino Cuisine",
-      "category": "Dining",
-      "type": ["food"],
-      "food_type": ["Asian", "Healthy & Vegan"],
-      "location_type": "inside",
-      "terminal": "Harvey Milk Terminal 1",
-      "security": "post",
-      "description": "<strong>Location:</strong> Harvey Milk Terminal 1, near Gate B18 <br><br>A massive favorite for authentic Filipino food and regarded as some of the best value for your money at SFO. A casual, comforting staple to grab a warm bite before heading to your gate. Also has vegan & gluten-free options",
-      "duration_text": "45 Mins",
-      "duration_mins": 45,
-      "action_link": "https://order.toasttab.com/online/mamagos-sfo-t1",
-      "action_text": "Order Now ↗",
-      "hours": "Daily: 3:30 AM - 11:30 PM",
-      "image_path": "images/mamago.jpg",
-      "image_attribution": "Photo courtesy of Mama Go's Filipino Cuisine",
-      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=132050"
-    },
-    {
-      "title": "Permanent Public Art Trail",
-      "category": "Art Walk",
-      "type": ["art", "explore"],
-      "location_type": "inside",
-      "terminal": "All Terminals",
-      "security": "both",
-      "description": "<strong>Location:</strong> Throughout the airport<br><br>Stretch your legs and take a self-guided walking tour of SFO's world-class permanent public art collection, featuring massive murals, sculptures, and kinetic light installations scattered across every terminal. See if you can find all 165 pieces!",
-      "duration_text": "1 Hour",
-      "duration_mins": 60,
-      "action_link": "https://www.sfomuseum.org/public-art",
-      "action_text": "Learn More ↗",
-      "map_link": "https://www.sfomuseum.org/sites/default/files/sfo-maps/public-art-sfo-map-0526.pdf"
-    },
-    {
-      "title": "The Bay Collection",
-      "category": "Local Shopping",
-      "type": ["shop"],
-      "location_type": "inside",
-      "terminal": "Harvey Milk Terminal 1",
-      "security": "post",
-      "description": "<strong>Location:</strong> Harvey Milk Terminal 1, near Gate B6 <br><br>Skip the generic souvenirs for a museum-inspired shopping experience celebrating San Francisco's premier cultural institutions. This sophisticated boutique features a beautifully curated selection of apparel, home decor, jewelry, and high-quality gifts sourced directly from the Asian Art Museum, the California Academy of Sciences, the Fine Arts Museums of San Francisco (de Young and Legion of Honor), and SFMOMA. It also showcases unique, sustainably crafted goods from local California artisans.",
-      "duration_text": "15 Mins",
-      "duration_mins": 15,
-      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=675017",
-      "hours": "Daily: 6:00 AM - 10:00 PM"
-    },
-    {
-      "title": "Kids' Play Areas",
-      "category": "Family & Kids",
-      "type": ["explore"],
-      "location_type": "inside",
-      "terminal": "Harvey Milk Terminal 1, Terminal 2",
-      "security": "post",
-      "description": "<strong>Locations:</strong><br>• Tree Town: Harvey Milk Terminal 1, Near Gate B18 <br>• Kids' Spot: Harvey Milk Terminal 1, Near Gate B2  <br>• Butterfly Wall: Terminal 2, Near Gate D15 <br>• San Francisco Bay Area Bird Encounters: Terminal 2, Near Gate D7 <br>• Kids' Spot: Terminal 3, Near Gate F17 <br>• Spirogyrate: Terminal 3, Near Gate E7 <br>• Kids' Spot: Terminal 3, Near Food Court <br><br>Traveling with kids? Let them burn off some energy before the flight at these beautifully designed, continuous interactive play structures.",
-      "duration_text": "30 Mins",
-      "duration_mins": 30,
-      "action_link": "https://www.flysfo.com/kids-spots",
-      "action_text": "Learn More ↗"
-    },
-    {
-      "title": "Bun Mee",
-      "category": "Dining",
-      "type": ["food"],
-      "food_type": ["Asian", "Healthy & Vegan"],
-      "location_type": "inside",
-      "terminal": "Harvey Milk Terminal 1",
-      "security": "post",
-      "description": "<strong>Locations:</strong> Harvey Milk Terminal 1, near Gate B3 <br><br>Widely considered the absolute best food option in the airport. Highly praised for being flavorful, fresh, filling, and reasonably priced. Grab banh mi sandwiches, rich pho, hearty rice bowls, or excellent breakfast items like the bulgogi bun. Also vegan-friendly.",
-      "duration_text": "45 Mins",
-      "duration_mins": 45,
-      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=91125",
-      "action_link": "https://bunmeeterminal1.hrpos.heartland.us/menu",
-      "action_text": "Order Now ↗",
-      "hours": "Daily: 5:30 AM - 11:30 PM"
-    },
-    {
-      "title": "Kona’s by Pacific Cocktail Haven",
-      "category": "Dining",
-      "type": ["food"],
-      "food_type": ["Bar/Lounge"],
-      "location_type": "inside",
-      "terminal": "Harvey Milk Terminal 1",
-      "security": "post",
-      "description": "<strong>Location:</strong> Harvey Milk Terminal 1, SF Eats Food Hall <br><br>An outpost of the award-winning San Francisco bar, serving up incredible tropical-inspired craft cocktails. The best spot in the airport to grab a pre-flight drink. Ranked North America’s 50 Best Bars and the World’s 50 Best Bars in 2023 and 2024",
-      "duration_text": "45 Mins",
-      "duration_mins": 45,
-      "action_link": "https://www.flysfo.com/passengers/shop-dine-relax/konas-pacific-cocktail-haven",
-      "action_text": "Learn More ↗",
-      "hours": "Daily: 7:00 AM - 11:00 PM",
-      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=621251"
-    },
-    {
-      "title": "Tomokazu",
-      "category": "Dining",
-      "type": ["food"],
-      "food_type": ["Asian"],
-      "location_type": "inside",
-      "terminal": "International Terminal G",
-      "security": "post",
-      "description": "<strong>Location:</strong> International Terminal G, between Gates G4 and G8 <br><br>A highly popular spot among airport employees. Known for excellent, comforting chicken or pork katsu rice bowls and rich vegetable curry. <i>Pro-tip: phone in your order ahead of time here - <strong>650.821.8899<strong></i>",
-      "duration_text": "45 Mins",
-      "duration_mins": 45,
-      "hours": "Daily: 8:00 AM - 12:00 AM",
-      "action_link": "https://static1.squarespace.com/static/577a0021ebbd1a47dbe91c67/t/67610f5e12c65372c9cffbd2/1734414178101/2024+Tomokazu_Menu_24inchx36inch.pdf",
-      "action_text": "View Menu ↗",
-      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=42813"
-    },
-    {
-      "title": "Foggy Notion",
-      "category": "Sustainable Boutique",
-      "type": ["shop"],
-      "location_type": "inside",
+      "id": "kleins-deli",
+      "name": "Klein's Deli",
+      "area": "inside",
       "terminal": "Terminal 3",
       "security": "post",
-      "description": "<strong>Location:</strong> Terminal 3, Boarding Area F<br><br>An offshoot of the beloved Inner Richmond boutique, this charming, eco-conscious shop focuses exclusively on sustainable, handmade goods from local Bay Area artisans. It's the absolute best place in the airport to pick up unique apothecary items, organic skincare, and beautifully crafted small gifts.",
-      "duration_text": "15 Mins",
-      "duration_mins": 15,
-      "action_link": "https://www.foggy-notion.com/",
-      "action_text": "Website ↗",
-      "hours": "Daily: 7:00 AM - 11:00 PM",
-      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=563504"
-    },
-    {
-      "title": "Starbird",
-      "category": "Dining",
-      "type": ["food"],
-      "food_type": ["American"],
-      "location_type": "inside",
-      "terminal": "Harvey Milk Terminal 1",
-      "security": "post",
-      "description": "<strong>Location:</strong> Harvey Milk Terminal 1, near Gate B13 <br><br>Fast, fresh, and incredibly satisfying. Starbird serves up elite, crispy chicken tenders alongside a highly praised lineup of signature dipping sauces.",
-      "duration_text": "30 Mins",
-      "duration_mins": 30,
-      "action_link": "https://order.toasttab.com/order-and-pay/tastes-on-the-fly-starbird/Take%20Out/",
-      "action_text": "Official Details ↗",
-      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=91131",
-      "hours": "Daily: 4:00 AM - 11:00 PM"
-    },
-    {
-      "title": "Gott's Roadside",
-      "category": "Dining",
-      "type": ["food"],
-      "food_type": ["American"],
-      "location_type": "inside",
-      "terminal": "International Terminal A",
-      "security": "post",
-      "description": "<strong>Location:</strong> International Terminal A, near Gate A14 <br><br>Since 1999, this James Beard Award-winning spot has brought modern, elevated American roadside classics to SFO. Enjoy crave-worthy favorites like the California Burger with a fried egg and Zoe's bacon, or fresh Ahi Poke Tacos. It’s the perfect, casual wine-country escape right in the terminal.",
-      "duration_text": "45 Mins",
-      "duration_mins": 45,
-      "action_link": "https://order.toasttab.com/online/gotts-hffsfo",
-      "action_text": "Order Now ↗",
-      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=1739",
-      "hours": "<br>• Sun to Fri: 11:00 AM – 9:00 PM <br>• Sat: 6:00 AM - 8:00 PM"
-    },
-    {
-      "title": "Wakaba",
-      "category": "Dining",
-      "type": ["food"],
-      "food_type": ["Asian"],
-      "location_type": "inside",
-      "terminal": "Terminal 2",
-      "security": "post",
-      "description": "<strong>Location:</strong> Terminal 2 <br><br>A highly recommended oasis in Terminal 2 praised by travelers for offering quality sushi, comforting ramen, and decent curries at remarkably fair and unexploitative prices compared to typical airport dining.",
-      "duration_text": "30 Mins",
-      "duration_mins": 30,
-      "action_link": "https://sankakuusa.com/static/pdf/wakaba-menu.pdf",
-      "action_text": "Menu ↗",
-      "hours": "Daily: 6:30 AM - 10:30 PM",
-      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=1758"
-    },
-    {
-      "title": "Socola Chocolatier",
-      "category": "Sweets & Gifts",
-      "type": ["shop", "food"],
-      "food_type": ["Coffee & Sweets"],
-      "location_type": "inside",
-      "terminal": "Terminal 3",
-      "security": "post",
-      "description": "<strong>Location:</strong> Terminal 3, near Gate E6 <br><br>Pick up artisanal, handcrafted chocolates infused with unique, local flavors. An excellent stop to treat yourself or grab a premium gift.",
-      "duration_text": "15 Mins",
-      "duration_mins": 15,
-      "action_link": "https://www.socolachocolates.com/",
-      "action_text": "Website ↗",
-      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=563503",
-      "hours": "Daily: 7:00 AM - 11:00 PM"
-    },
-    {
-      "title": "Compass Books",
-      "category": "Shopping",
-      "type": ["shop"],
-      "location_type": "inside",
-      "terminal": "Terminal 2, Terminal 3",
-      "security": "post",
-      "description": "<strong>Locations:</strong> <br>• Terminal 2 <br>• Terminal 3, near F1 Security Checkpoint <br><br>A highly celebrated, cozy staple of SFO. As the first independent bookstore in a major US airport, it feels like a neighborhood bookshop right at your gate. Browse a fantastic curation of bestsellers, deep-cut non-fiction, and local Bay Area authors instead of the typical, generic magazine racks.",
-      "duration_text": "20 Mins",
-      "duration_mins": 20,
-      "action_link": "https://www.booksinc.net/",
-      "action_text": "Website ↗",
+      "location": "Terminal 3",
+      "description": "A highly convenient and solid stop for frequent flyers. While considered a bit pricey, they serve fantastic, hearty deli sandwiches paired perfectly with their signature tomato bisque soup, house-made deli salads, or pastries, and easily grab snacks or cold bottled beverages for your flight.",
+      "hours": [
+        "Gate F14 Daily: 5:00 AM - 10:00 PM",
+        "Gate E10 Daily: 5:00 AM - 11:30 PM"
+      ],
+      "recommended_by": "curtis-r",
       "maps": [
         {
-            "text": "Terminal 2 Map 📍",
-            "link": "https://www.flysfo.com/maps/interactive-maps?destination=2003"
+          "label": "Terminal 3, near Gate F14 Map",
+          "url": "https://www.flysfo.com/maps/interactive-maps?destination=1751"
         },
         {
-            "text": "Terminal 3 Map 📍",
-            "link": "https://www.flysfo.com/maps/interactive-maps?destination=1946"
+          "label": "Terminal 3, near Gate E10 Map",
+          "url": "https://www.flysfo.com/maps/interactive-maps?destination=1778"
         }
-              ],
-      "hours": "Daily: 6:00 AM - 10:00 PM"
+      ],
+      "link": {
+        "label": "Learn More",
+        "url": "https://www.flysfo.com/passengers/shop-dine-relax/kleins-deli-and-coffee-bar-0"
+      }
     },
     {
-      "title": "Burger Joint",
-      "category": "Dining",
-      "type": ["food"],
-      "food_type": ["American"],
-      "location_type": "inside",
-      "terminal": "Terminal 2",
-      "security": "post",
-      "description": "<strong>Location:</strong> Terminal 2, near Gate D15 <br><br>A reliable stop for great backyard-cookout-style burgers and fantastic breakfast sandwiches if you're flying out early in the morning.",
-      "duration_text": "45 Mins",
-      "duration_mins": 45,
-      "action_link": "https://www.flysfo.com/passengers/shop-dine-relax/burger-joint",
-      "action_text": "Learn More ↗",
-      "hours": "Daily: 4:00 AM - 12:00 AM",
-      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=1786"
-    },
-    {
-      "title": "Napa Farms Market",
-      "category": "Dining",
-      "type": ["food"],
-      "food_type": ["Healthy & Vegan", "American"],
-      "location_type": "inside",
-      "terminal": "Terminal 2, International Terminal G",
-      "security": "post",
-      "description": "<strong>Location:</strong> <br>• International Terminal G, near Gate G4 <br>• Terminal 2, D gates, Retail Street <br><br>An airy, artisan market environment. It's fantastic for hot, fresh food made in the back kitchen, along with an impressive selection of local California cheeses, pastries, and flight snacks.",
-      "duration_text": "30 Mins",
-      "duration_mins": 30,
-      "action_link": "https://www.flysfo.com/passengers/shop-dine-relax/napa-farms-market",
-      "action_text": "Explore More ↗",
-      "maps": [
-        {
-            "text": "Terminal 2 Map 📍",
-            "link": "https://www.flysfo.com/maps/interactive-maps?destination=1777"
-        },
-        {
-            "text": "International Terminal G Map 📍",
-            "link": "https://www.flysfo.com/maps/interactive-maps?destination=1734"
-        }
-              ],
-      "hours": "<br>• Terminal 2: Daily: 4:30 AM - 11:00 PM <br>• International Terminal G: Daily: 5:00 AM - 12:00 AM"
-    },
-    {
-      "title": "Koi Palace Express",
-      "category": "Dining",
-      "type": ["food"],
-      "food_type": ["Asian"],
-      "location_type": "inside",
-      "terminal": "Terminal 3",
-      "security": "post",
-      "description": "<strong>Location:</strong> Terminal 3, Food Court near Gates F11 to F22 <br><br>An incredible express dim sum choice to grab before or after a flight. Perfect for a quick, casual bite of har gow, siu mai, or roast pork buns when you're craving authentic flavors on the go.",
-      "duration_text": "30 Mins",
-      "duration_mins": 30,
-      "action_link": "https://www.flysfo.com/passengers/shop-dine-relax/koi-palace-express",
-      "action_text": "Explore More ↗",
-      "hours": "Daily: 7:00 AM - 11:00 PM",
-      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=1742"
-    },
-    {
-      "title": "Mustards Bar & Grill",
-      "category": "Dining",
-      "type": ["food"],
-      "food_type": ["American", "Bar/Lounge"],
-      "location_type": "inside",
-      "terminal": "International Terminal G",
-      "security": "post",
-      "description": "<strong>Location:</strong> International Terminal G, near Gate G3 <br><br>An airport outpost of the legendary Napa Valley institution. Renowned for its elevated diner fare, fantastic wine list, and their famous Mongolian pork chop. It’s widely considered one of the best premium sit-down dining experiences at SFO if you want to treat yourself before a long international flight.",
-      "duration_text": "1 Hour, 15 Mins",
-      "duration_mins": 75,
-      "action_link": "https://www.flysfo.com/passengers/shop-dine-relax/mustards-bar-grill",
-      "action_text": "Learn More ↗",
-      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=55282",
-      "hours": "Daily: 7:00 AM - 11:00 PM"
-    },
-    {
-      "title": "Sensory Room",
-      "category": "Wellness & Relaxation",
-      "type": ["explore"],
-      "location_type": "inside",
-      "terminal": "Harvey Milk Terminal 1",
-      "security": "post",
-      "description": "<strong>Location:</strong> Harvey Milk Terminal 1, near Gate C2  <br><br>Designed specifically for neurodivergent travelers who may feel overwhelmed by the bustling airport environment. This quiet, secure room offers a calming escape with specialized sensory features to decompress before boarding.",
-      "duration_text": "30 Mins",
-      "duration_mins": 30,
-      "hours": "Daily: 5:00 AM - 11:00 PM",
-      "action_link": "https://www.flysfo.com/passengers/services-amenities/accessibility/sensory-room",
-      "action_text": "Learn More ↗"
-    },
-    {
-      "title": "Video Arts Room",
-      "category": "Visuals & Theater",
-      "type": ["art"],
-      "location_type": "inside",
+      "id": "freshen-up-nap-rooms-showers",
+      "name": "Freshen Up! (Nap Rooms & Showers)",
+      "area": "inside",
       "terminal": "International Terminal A, International Terminal G",
       "security": "pre",
-      "description": "<strong>Location:</strong> Departures Level<br><br>Sit back, relax, and watch a rotating selection of short films and documentaries curated by the SFO Museum. It's a great way to kill time and learn something new before heading through the TSA checkpoints.",
-      "duration_text": "45 Mins",
-      "duration_mins": 45,
-      "image_path": "images/sfo_videoarts.jpg",
-      "action_link": "https://www.flysfo.com/passengers/shop-dine-relax/video-arts",
-      "action_text": "Explore More ↗",
-      "map_link": "https://www.flysfo.com/maps/interactive-maps?destination=4897",
-      "hours": "Daily: 7:00 AM - 10:00 PM"
+      "location": "International Terminal, near the entrance to Gates G1 to G14",
+      "description": "Freshen Up! is an essential SFO sanctuary for those enduring long layovers. Whether you need a hot shower to wash away travel fatigue ($30) or a quiet place to recharge, this hidden gem offers private, comfortable nap room suites starting at $150. Beyond the basics, the facility is fully stocked with travel necessities—from toiletries to laundry and pressing services—ensuring you have everything required to reset. <strong>Be sure to set multiple alarms so you don't get too comfortable and accidentally sleep past your flight!</strong>",
+      "hours": "24/7",
+      "photo": {
+        "src": "images/refresh.jpg",
+        "credit": "Photo courtesy of FreshenUp, SFO"
+      },
+      "maps": [
+        {
+          "label": "Map",
+          "url": "https://www.flysfo.com/maps/interactive-maps?destination=1998"
+        }
+      ],
+      "link": {
+        "label": "Learn More",
+        "url": "https://www.airporttravelagency.org/freshen-up/"
+      }
     },
     {
-      "title": "Post-Security Terminal Loop Walk",
-      "category": "Visuals & Exploring & Aviation",
-      "type": ["art", "explore", "aviation"],
-      "location_type": "inside",
-      "terminal": "All Terminals",
+      "id": "boudin-bakery",
+      "name": "Boudin Bakery",
+      "area": "inside",
+      "terminal": "International Terminal A",
       "security": "post",
-      "description": "<strong>Location:</strong> Airside pedestrian walkways throughout all terminals<br><br>Really bored on a long layover? Walk a lap around the airport! SFO is uniquely shaped like a massive circle, meaning you can walk a complete, continuous loop through every terminal (1, 2, 3, and International A & G) without ever leaving the secure area. It takes about 20 to 25 minutes, and you'll be surprised by the art, food, and views you find along the way. Besides, you need to move your legs after being on a plane for so long. <br><br><i>💡 <strong>Pro-Tip:</strong> Just follow the overhead signs for the other terminals, but be careful not to accidentally wander out the exits or down the escalators to baggage claim, or you'll have to go through TSA all over again!</i>",
-      "duration_text": "30 Mins",
-      "duration_mins": 30,
-      "action_link": "https://www.flysfo.com/maps",
-      "action_text": "View Map ↗",
-      "hours": "24:7"
+      "location": "International Terminal A, Boarding Area A, near Gate A3",
+      "description": "A true San Francisco institution. You cannot leave SFO without grabbing one of their world-famous, freshly baked sourdough bread bowls loaded with hot clam chowder.",
+      "hours": "Daily: 5:30 AM - 11:30 PM",
+      "photo": {
+        "src": "images/CC.jpg"
+      },
+      "maps": [
+        {
+          "label": "Map",
+          "url": "https://www.flysfo.com/maps/interactive-maps?destination=62456"
+        }
+      ],
+      "link": {
+        "label": "Order Now",
+        "url": "https://order.boudinbakery.com/menu/boudin-sf-sfo-international"
+      }
     },
     {
-      "title": "Golden Gate Park",
-      "category": "Parks & Nature",
-      "type": ["explore", "art"],
-      "location_type": "outside",
-      "terminal": "Outside Airport",
-      "security": "pre",
-      "description": "<strong>Location:</strong> San Francisco (Richmond/Sunset Districts).<br><br>A massive, 1,000-acre urban oasis right in the city. You could spend an entire day here exploring the Japanese Tea Garden, the Conservatory of Flowers, or the de Young Museum. It is a stunning, lush escape from the airport.",
-      "duration_text": "6 Hours",
-      "duration_mins": 360,
-      "transit_time_mins": 60,
-      "transit_instruction": "Take the BART Yellow/Red Line to Civic Center, then transfer to the N-Judah Muni line or take a 15-minute Uber. Budget massive buffer time for the return trip.",
-      "image_path": "images/outside_golden_gate_park.jpg",
-      "action_link": "https://sfrecpark.org/770/Golden-Gate-Park/",
-      "action_text": "Explore the Park ↗",
-      "map_link": "https://www.google.com/maps/place/Golden+Gate+Park/@37.7689203,-122.4855519,1198m/data=!3m2!1e3!4b1!4m6!3m5!1s0x808587726045f763:0x71be8b68ef3ba730!8m2!3d37.7689203!4d-122.482977!16zL20vMDI1cHNx?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D",
-      "hours": "Daily: 24 Hours (Attraction hours vary)"
+      "id": "mama-gos-filipino-cuisine",
+      "name": "Mama Go’s Filipino Cuisine",
+      "area": "inside",
+      "terminal": "Harvey Milk Terminal 1",
+      "security": "post",
+      "location": "Harvey Milk Terminal 1, near Gate B18",
+      "description": "A massive favorite for authentic Filipino food and regarded as some of the best value for your money at SFO. A casual, comforting staple to grab a warm bite before heading to your gate. Also has vegan and gluten-free options.",
+      "hours": "Daily: 3:30 AM - 11:30 PM",
+      "photo": {
+        "src": "images/mamago.jpg",
+        "credit": "Photo courtesy of Mama Go's Filipino Cuisine"
+      },
+      "maps": [
+        {
+          "label": "Map",
+          "url": "https://www.flysfo.com/maps/interactive-maps?destination=132050"
+        }
+      ],
+      "link": {
+        "label": "Order Now",
+        "url": "https://order.toasttab.com/online/mamagos-sfo-t1"
+      }
     },
     {
-      "title": "Golden Gate Bridge Welcome Center",
-      "category": "Iconic Sightseeing",
-      "type": ["explore", "shop"],
-      "location_type": "outside",
-      "terminal": "Outside Airport",
-      "security": "pre",
-      "description": "<strong>Location:</strong> San Francisco (Presidio).<br><br>If you are blessed with an exceptionally long layover, seize the opportunity to see one of the modern wonders of the world. Start at the Welcome Center to grab a souvenir, learn about the bridge's history, and begin your walk across the 1.7-mile pedestrian span with unparalleled views of Alcatraz and the Pacific Ocean.",
-      "duration_text": "6 Hours",
-      "duration_mins": 360,
-      "transit_time_mins": 60,
-      "transit_instruction": "Take BART to Daly City, then transfer to an Uber/Lyft directly to the Welcome Center. You MUST budget heavy buffer time.",
-      "image_path": "images/outside_golden_gate_bridge.jpg",
-      "action_link": "https://www.goldengatebridgestore.org/",
-      "action_text": "Bridge Info ↗",
-      "map_link": "https://www.google.com/maps/place/Golden+Gate+Bridge+Welcome+Center/@37.8077973,-122.4774222,1197m/data=!3m2!1e3!4b1!4m6!3m5!1s0x80858690432c06e7:0xfac9601f983db5bd!8m2!3d37.8077973!4d-122.4748473!16s%2Fg%2F113g_h8cm?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D",
-      "hours": "<br>• Vister Center: Daily: 9:00 AM - 6:00 PM <br>• Bridge: 24/7"
+      "id": "golden-gate-park",
+      "name": "Golden Gate Park",
+      "area": "outside",
+      "location": "San Francisco (Richmond/Sunset Districts)",
+      "description": "A massive, 1,000-acre urban oasis right in the city. You could spend an entire day here exploring the Japanese Tea Garden, the Conservatory of Flowers, or the de Young Museum. It is a stunning, lush escape from the airport.",
+      "getting_there": "Take the BART Yellow/Red Line to Civic Center, then transfer to the N-Judah Muni line or take a 15-minute Uber. Budget massive buffer time for the return trip.",
+      "hours": "Daily: 24 Hours (Attraction hours vary)",
+      "photo": {
+        "src": "images/outside_golden_gate_park.jpg"
+      },
+      "maps": [
+        {
+          "label": "Map",
+          "url": "https://www.google.com/maps/place/Golden+Gate+Park/@37.7689203,-122.4855519,1198m/data=!3m2!1e3!4b1!4m6!3m5!1s0x808587726045f763:0x71be8b68ef3ba730!8m2!3d37.7689203!4d-122.482977!16zL20vMDI1cHNx?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
+        }
+      ],
+      "link": {
+        "label": "Explore the Park",
+        "url": "https://sfrecpark.org/770/Golden-Gate-Park/"
+      }
     },
     {
-      "title": "PIER 39",
-      "category": "Food & Shopping",
-      "type": ["food", "shop", "explore"],
-      "food_type": ["Seafood", "American", "Sweets"],
-      "location_type": "outside",
-      "terminal": "Outside Airport",
-      "security": "pre",
-      "description": "<strong>Location:</strong> San Francisco (Embarcadero North / Fisherman's Wharf).<br><br>Dive straight into San Francisco's most famous tourist hub. Grab a hot, crusty sourdough bread bowl overflowing with fresh clam chowder, watch the iconic sea lions sunbathing and barking on the docks, and enjoy the lively, bustling carnival atmosphere right on the water's edge.",
-      "duration_text": "5 Hours",
-      "duration_mins": 300,
-      "transit_time_mins": 50,
-      "transit_instruction": "Take BART to Embarcadero Station, then transfer to the historic F-Market Streetcar line heading north along the water.",
-      "image_path": "images/outside_pier_39.jpg",
-      "action_link": "https://www.pier39.com/",
-      "action_text": "Explore Pier 39 ↗",
-      "map_link": "https://www.google.com/maps/place/PIER+39/@37.808673,-122.4123959,1197m/data=!3m3!1e3!4b1!5s0x808580fcf0f30205:0x5ffb46df3d9551c0!4m6!3m5!1s0x808580fc8bb3211d:0xbaf631600de6b39e!8m2!3d37.808673!4d-122.409821!16zL20vMDU2cXB0?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D",
-      "hours": "Daily: 10:00 AM - 9:00 PM"
+      "id": "golden-gate-bridge-welcome-center",
+      "name": "Golden Gate Bridge Welcome Center",
+      "area": "outside",
+      "location": "San Francisco (Presidio)",
+      "description": "If you are blessed with an exceptionally long layover, seize the opportunity to see one of the modern wonders of the world. Start at the Welcome Center to grab a souvenir, learn about the bridge's history, and begin your walk across the 1.7-mile pedestrian span with unparalleled views of Alcatraz and the Pacific Ocean.",
+      "getting_there": "Take BART to Daly City, then transfer to an Uber/Lyft directly to the Welcome Center. You MUST budget heavy buffer time.",
+      "hours": [
+        "Visitor Center: Daily: 9:00 AM - 6:00 PM",
+        "Bridge: 24/7"
+      ],
+      "photo": {
+        "src": "images/outside_golden_gate_bridge.jpg"
+      },
+      "maps": [
+        {
+          "label": "Map",
+          "url": "https://www.google.com/maps/place/Golden+Gate+Bridge+Welcome+Center/@37.8077973,-122.4774222,1197m/data=!3m2!1e3!4b1!4m6!3m5!1s0x80858690432c06e7:0xfac9601f983db5bd!8m2!3d37.8077973!4d-122.4748473!16s%2Fg%2F113g_h8cm?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
+        }
+      ],
+      "link": {
+        "label": "Bridge Info",
+        "url": "https://www.goldengatebridgestore.org/"
+      }
     },
     {
-      "title": "Coit Tower",
-      "category": "Landmarks & Views",
-      "type": ["explore", "art"],
-      "location_type": "outside",
-      "terminal": "Outside Airport",
-      "security": "pre",
-      "description": "<strong>Location:</strong> San Francisco (Telegraph Hill).<br><br>Rising from the top of Telegraph Hill, this iconic fluted tower offers breathtaking 360-degree observation deck views of the entire city and bay. The ground floor lobby is entirely covered in incredible, historically significant Depression-era fresco murals.",
-      "duration_text": "5 Hours",
-      "duration_mins": 300,
-      "transit_time_mins": 50,
-      "transit_instruction": "Take BART to Embarcadero, then take a short Uber to the summit, or prepare for a steep hike up the hill.",
-      "image_path": "images/outside_coit_tower.jpg",
-      "action_link": "https://sfrecpark.org/Facilities/Facility/Details/Coit-Tower-290",
-      "action_text": "Ticket Info ↗",
-      "map_link": "https://www.google.com/maps/place/Coit+Tower/@37.8023949,-122.4083971,1197m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8085808c40000001:0xde85b80121f2dd44!8m2!3d37.8023949!4d-122.4058222!16zL20vMDIycTBu?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D",
-      "hours": "Daily: 10:00 AM - 5:00 PM"
+      "id": "pier-39",
+      "name": "PIER 39",
+      "area": "outside",
+      "location": "San Francisco (Embarcadero North / Fisherman's Wharf)",
+      "description": "Dive straight into San Francisco's most famous tourist hub. Grab a hot, crusty sourdough bread bowl overflowing with fresh clam chowder, watch the iconic sea lions sunbathing and barking on the docks, and enjoy the lively, bustling carnival atmosphere right on the water's edge.",
+      "getting_there": "Take BART to Embarcadero Station, then transfer to the historic F-Market Streetcar line heading north along the water.",
+      "hours": "Daily: 10:00 AM - 9:00 PM",
+      "photo": {
+        "src": "images/outside_pier_39.jpg"
+      },
+      "maps": [
+        {
+          "label": "Map",
+          "url": "https://www.google.com/maps/place/PIER+39/@37.808673,-122.4123959,1197m/data=!3m3!1e3!4b1!5s0x808580fcf0f30205:0x5ffb46df3d9551c0!4m6!3m5!1s0x808580fc8bb3211d:0xbaf631600de6b39e!8m2!3d37.808673!4d-122.409821!16zL20vMDU2cXB0?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
+        }
+      ],
+      "link": {
+        "label": "Explore Pier 39",
+        "url": "https://www.pier39.com/"
+      }
     },
     {
-      "title": "The Filbert Steps",
-      "category": "Hiking & Views",
-      "type": ["explore", "art"],
-      "location_type": "outside",
-      "terminal": "Outside Airport",
-      "security": "pre",
-      "description": "<strong>Location:</strong> San Francisco (Telegraph Hill).<br><br>If you want to stretch your legs after a long flight, this is the ultimate urban hike. A steep, hidden wooden stairway that winds through lush, secret cliffside gardens and historic cottages leading up to Coit Tower. Keep your eyes and ears open for the famous flock of wild cherry-headed conure parrots that live in the trees!",
-      "duration_text": "5 Hours",
-      "duration_mins": 300,
-      "transit_time_mins": 50,
-      "transit_instruction": "Take BART to Embarcadero, walk north to Sansome St, and begin the steep, incredibly scenic stair climb.",
-      "image_path": "images/outside_filbert_steps.jpg",
-      "map_link": "https://www.google.com/maps/place/Filbert+Steps/@37.8023949,-122.4083971,1197m/data=!3m2!1e3!5s0x808580f63d78eaf5:0xd997597b24a863c9!4m10!1m2!2m1!1sFilbert+Steps!3m6!1s0x808580f642581a5f:0x9360e323005a104f!8m2!3d37.8021035!4d-122.4033661!15sCg1GaWxiZXJ0IFN0ZXBzWg8iDWZpbGJlcnQgc3RlcHOSARJ0b3VyaXN0X2F0dHJhY3Rpb27gAQA!16s%2Fg%2F11c2mwqmkl?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D",
-      "hours": "Daily: 24 Hours"
+      "id": "coit-tower",
+      "name": "Coit Tower",
+      "area": "outside",
+      "location": "San Francisco (Telegraph Hill)",
+      "description": "Rising from the top of Telegraph Hill, this iconic fluted tower offers breathtaking 360-degree observation deck views of the entire city and bay. The ground floor lobby is entirely covered in incredible, historically significant Depression-era fresco murals.",
+      "getting_there": "Take BART to Embarcadero, then take a short Uber to the summit, or prepare for a steep hike up the hill.",
+      "hours": "Daily: 10:00 AM - 5:00 PM",
+      "photo": {
+        "src": "images/outside_coit_tower.jpg"
+      },
+      "maps": [
+        {
+          "label": "Map",
+          "url": "https://www.google.com/maps/place/Coit+Tower/@37.8023949,-122.4083971,1197m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8085808c40000001:0xde85b80121f2dd44!8m2!3d37.8023949!4d-122.4058222!16zL20vMDIycTBu?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
+        }
+      ],
+      "link": {
+        "label": "Ticket Info",
+        "url": "https://sfrecpark.org/Facilities/Facility/Details/Coit-Tower-290"
+      }
     },
     {
-      "title": "Lombard Street",
-      "category": "Iconic Sightseeing",
-      "type": ["explore"],
-      "location_type": "outside",
-      "terminal": "Outside Airport",
-      "security": "pre",
-      "description": "<strong>Location:</strong> San Francisco (Russian Hill).<br><br>Internationally famous as the 'crookedest street in the world.' This steep, one-block section consists of eight tight hairpin turns surrounded by beautifully manicured flowerbeds and stunning Victorian mansions. The view from the top looking down toward Coit Tower and the Bay Bridge is spectacular.",
-      "duration_text": "5 Hours",
-      "duration_mins": 300,
-      "transit_time_mins": 50,
-      "transit_instruction": "Take BART to Powell St, then ride the Powell-Hyde Cable Car. It drops you off directly at the top of the crooked street.",
-      "image_path": "images/outside_lombard_street.jpg",
-      "map_link": "https://www.google.com/maps/search/?api=1&query=Lombard+Street",
-      "hours": "Daily: 24 Hours"
+      "id": "the-filbert-steps",
+      "name": "The Filbert Steps",
+      "area": "outside",
+      "location": "San Francisco (Telegraph Hill)",
+      "description": "If you want to stretch your legs after a long flight, this is the ultimate urban hike. A steep, hidden wooden stairway that winds through lush, secret cliffside gardens and historic cottages leading up to Coit Tower. Keep your eyes and ears open for the famous flock of wild cherry-headed conure parrots that live in the trees!",
+      "getting_there": "Take BART to Embarcadero, walk north to Sansome St, and begin the steep, incredibly scenic stair climb.",
+      "hours": "Daily: 24 Hours",
+      "photo": {
+        "src": "images/outside_filbert_steps.jpg"
+      },
+      "maps": [
+        {
+          "label": "Map",
+          "url": "https://www.google.com/maps/place/Filbert+Steps/@37.8023949,-122.4083971,1197m/data=!3m2!1e3!5s0x808580f63d78eaf5:0xd997597b24a863c9!4m10!1m2!2m1!1sFilbert+Steps!3m6!1s0x808580f642581a5f:0x9360e323005a104f!8m2!3d37.8021035!4d-122.4033661!15sCg1GaWxiZXJ0IFN0ZXBzWg8iDWZpbGJlcnQgc3RlcHOSARJ0b3VyaXN0X2F0dHJhY3Rpb27gAQA!16s%2Fg%2F11c2mwqmkl?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
+        }
+      ]
     },
     {
-      "title": "Ferry Building Marketplace",
-      "category": "Food & Shopping",
-      "type": ["food", "shop", "explore"],
-      "food_type": ["Artisanal", "Cafe", "Seafood"],
-      "location_type": "outside",
-      "terminal": "Outside Airport",
-      "security": "pre",
-      "description": "<strong>Location:</strong> San Francisco (Embarcadero).<br><br>Serving proudly as the epicenter of Northern California's artisanal food movement, this historic waterfront terminal is packed with elite purveyors of fresh oysters, sourdough, and local wines. It offers an incredibly dense, rewarding culinary exploration set against stunning, iconic views of the Bay Bridge.",
-      "duration_text": "4 Hours, 30 Mins",
-      "duration_mins": 270,
-      "transit_time_mins": 35,
-      "transit_instruction": "Take the BART Yellow/Red Line directly to Embarcadero Station. Do not attempt on a tight layover.",
-      "image_path": "images/outside_ferry_building.jpg",
-      "action_link": "https://www.ferrybuildingmarketplace.com/",
-      "action_text": "View Merchants ↗",
-      "map_link": "https://www.google.com/maps/place/Ferry+Building/@37.7954425,-122.3981197,1197m/data=!3m2!1e3!5s0x80858066b5ce8885:0x6466737455f48376!4m10!1m2!2m1!1sFerry+Building+Marketplace!3m6!1s0x808580668e8f3159:0x6cf7a313d6a53ec7!8m2!3d37.7954425!4d-122.3936136!15sChpGZXJyeSBCdWlsZGluZyBNYXJrZXRwbGFjZVocIhpmZXJyeSBidWlsZGluZyBtYXJrZXRwbGFjZZIBE2hpc3RvcmljYWxfbGFuZG1hcmuaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVUmxPSFF0U1ZGbkVBReABAPoBBAggEEs!16zL20vMDV2dnds?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D",
-      "hours": "Daily: 7:00 AM - 8:00 PM"
+      "id": "lombard-street",
+      "name": "Lombard Street",
+      "area": "outside",
+      "location": "San Francisco (Russian Hill)",
+      "description": "Internationally famous as the 'crookedest street in the world.' This steep, one-block section consists of eight tight hairpin turns surrounded by beautifully manicured flowerbeds and stunning Victorian mansions. The view from the top looking down toward Coit Tower and the Bay Bridge is spectacular.",
+      "getting_there": "Take BART to Powell St, then ride the Powell-Hyde Cable Car. It drops you off directly at the top of the crooked street.",
+      "hours": "Daily: 24 Hours",
+      "photo": {
+        "src": "images/outside_lombard_street.jpg"
+      },
+      "maps": [
+        {
+          "label": "Map",
+          "url": "https://www.google.com/maps/search/?api=1&query=Lombard+Street"
+        }
+      ]
     },
     {
-      "title": "San Francisco Museum of Modern Art (SFMOMA)",
-      "category": "Art & Culture",
-      "type": ["art", "explore"],
-      "location_type": "outside",
-      "terminal": "Outside Airport",
-      "security": "pre",
-      "description": "<strong>Location:</strong> San Francisco (SoMa District).<br><br>Lose yourself in one of the largest and most breathtaking contemporary art museums in the United States. Spanning seven massive floors of modern painting, sculpture, and photography, it offers a sophisticated, deeply enriching cultural escape just steps from the transit line. Tickets are $30, however, kids 18 and under are free!",
-      "duration_text": "4 Hours, 30 Mins",
-      "duration_mins": 270,
-      "transit_time_mins": 35,
-      "transit_instruction": "Take the BART Yellow/Red Line directly to Montgomery St. Station, then walk two blocks south.",
-      "action_link": "https://www.sfmoma.org/",
-      "action_text": "Website ↗",
-      "map_link": "https://www.google.com/maps/place/San+Francisco+Museum+of+Modern+Art/@37.7857182,-122.4036257,1197m/data=!3m1!1e3!4m14!1m7!3m6!1s0x8085807d623572e7:0xc87ca0dcbc7559fd!2sSan+Francisco+Museum+of+Modern+Art!8m2!3d37.7857182!4d-122.4010508!16zL20vMDEyXzF0!3m5!1s0x8085807d623572e7:0xc87ca0dcbc7559fd!8m2!3d37.7857182!4d-122.4010508!16zL20vMDEyXzF0?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D",
-      "hours": "Fri-Tue: 10:00 AM - 5:00 PM, Thu: 1:00 PM - 8:00 PM"
+      "id": "union-square-cable-cars",
+      "name": "Union Square & Cable Cars",
+      "area": "outside",
+      "location": "San Francisco (Downtown)",
+      "description": "Immerse yourself in the bustling commercial heart of the city. Shop world-class flagship department stores, grab a coffee in the plaza, and queue up at the Powell Street turnaround to ride one of the city's historic, manually operated cable cars up the steep, thrilling hills.",
+      "getting_there": "Take the BART Yellow/Red Line directly to Powell St. Station.",
+      "hours": "Daily: Most stores 10:00 AM - 8:00 PM",
+      "photo": {
+        "src": "images/Cablecars.jpg"
+      },
+      "maps": [
+        {
+          "label": "Map",
+          "url": "https://www.google.com/maps/place/Union+Square/@37.7892819,-122.4088108,1460m/data=!3m2!1e3!5s0x8085808d1dc815ef:0xf3b8a676bcb81040!4m15!1m8!3m7!1s0x8085808ed3fd40bb:0xfe41d9b5994cb6ba!2sUnion+Square,+San+Francisco,+CA!3b1!8m2!3d37.787552!4d-122.4066183!16s%2Fg%2F1yfjgvk_h!3m5!1s0x808580892df7905b:0xe36cf5789882dd6f!8m2!3d37.7879358!4d-122.4075139!16zL20vMDUwd3Fw?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
+        }
+      ],
+      "link": {
+        "label": "Explore Union Square",
+        "url": "https://visitunionsquaresf.com/"
+      }
     },
     {
-      "title": "Union Square & Cable Cars",
-      "category": "Shopping & Exploring",
-      "type": ["shop", "explore"],
-      "location_type": "outside",
-      "terminal": "Outside Airport",
-      "security": "pre",
-      "description": "<strong>Location:</strong> San Francisco (Downtown).<br><br>Immerse yourself in the bustling commercial heart of the city. Shop world-class flagship department stores, grab a coffee in the plaza, and queue up at the Powell Street turnaround to ride one of the city's historic, manually operated cable cars up the steep, thrilling hills.",
-      "duration_text": "4 Hours",
-      "duration_mins": 240,
-      "transit_time_mins": 35,
-      "transit_instruction": "Take the BART Yellow/Red Line directly to Powell St. Station.",
-      "action_link": "https://visitunionsquaresf.com/",
-      "image_path": "images/Cablecars.jpg",
-      "action_text": "Explore Union Square ↗",
-      "map_link": "https://www.google.com/maps/place/Union+Square/@37.7892819,-122.4088108,1460m/data=!3m2!1e3!5s0x8085808d1dc815ef:0xf3b8a676bcb81040!4m15!1m8!3m7!1s0x8085808ed3fd40bb:0xfe41d9b5994cb6ba!2sUnion+Square,+San+Francisco,+CA!3b1!8m2!3d37.787552!4d-122.4066183!16s%2Fg%2F1yfjgvk_h!3m5!1s0x808580892df7905b:0xe36cf5789882dd6f!8m2!3d37.7879358!4d-122.4075139!16zL20vMDUwd3Fw?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D",
-      "hours": "Daily: Most stores 10:00 AM - 8:00 PM"
-    },
-    {
-      "title": "In-N-Out Burger (Millbrae location)",
-      "category": "Local Dining",
-      "type": ["food"],
-      "food_type": ["American", "Fast Food", "Burgers"],
-      "location_type": "outside",
-      "terminal": "Outside Airport",
-      "security": "pre",
-      "description": "<strong>Location:</strong> Millbrae, CA (just west of US-101).<br><br>No trip to California is entirely complete without consuming a classic Double-Double and Animal Style fries. Located just minutes from the airport, this iconic fast-food institution offers a rapid, highly satisfying culinary excursion that delivers a quintessential West Coast experience.",
-      "duration_text": "2 Hours, 30 Mins",
-      "duration_mins": 150,
-      "transit_time_mins": 10,
-      "transit_instruction": "Take a 10-minute Uber or Lyft directly to the Millbrae location. Expect to re-clear TSA upon return.",
-      "image_path": "images/outside_in_n_out.jpg",
-      "action_link": "https://locations.in-n-out.com/190",
-      "action_text": "Website ↗",
-      "map_link": "https://www.google.com/maps/place/In-N-Out+Burger/@37.6023635,-122.3865555,1198m/data=!3m1!1e3!4m14!1m7!3m6!1s0x80dbf48d644ded3b:0xf3ed3f741a1bd3e6!2sIn-N-Out+Burger!8m2!3d37.6008236!4d-122.3824555!16s%2Fg%2F1tf5dzrx!3m5!1s0x80dbf48d644ded3b:0xf3ed3f741a1bd3e6!8m2!3d37.6008236!4d-122.3824555!16s%2Fg%2F1tf5dzrx?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D",
-      "hours": "Daily: 10:30 AM - 1:00 AM"
-    },
-    {
-      "title": "New England Lobster Market & Eatery",
-      "category": "Local Dining",
-      "type": ["food"],
-      "food_type": ["Seafood", "American"],
-      "location_type": "outside",
-      "terminal": "Outside Airport",
-      "security": "pre",
-      "description": "<strong>Location:</strong> Burlingame, CA (Industrial Park area).<br><br>Escape the confines of the terminal for massive, freshly prepared lobster rolls, Dungeness crab sandwiches, and rich clam chowder served in a casual, industrial-chic setting. With highly efficient counter service and outdoor picnic tables, it represents a brilliant logistical maneuver to enjoy premium coastal seafood just five minutes from the runway.",
-      "duration_text": "2 Hours, 30 Mins",
-      "duration_mins": 150,
-      "transit_time_mins": 5,
-      "transit_instruction": "Take a 5-minute Uber or Lyft to Cowan Road in Burlingame. Leave time for TSA re-entry.",
-      "image_path": "images/outside_ne_lobster.jpg",
-      "action_link": "https://places.singleplatform.com/new-england-lobster-market--eatery/menu?ref=google#menu_1315782",
-      "action_text": "View Menu ↗",
-      "map_link": "https://www.google.com/maps/place/New+England+Lobster+Market+%26+Eatery/@37.6026874,-122.3773067,1200m/data=!3m2!1e3!4b1!4m6!3m5!1s0x808f784b554174b1:0xb287da28e38eca55!8m2!3d37.6026874!4d-122.3747318!16s%2Fg%2F11_syq580?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D",
-      "hours": "Daily: 11:00 AM - 9:00 PM"
-    },
-    {
-      "title": "Ghirardelli Chocolate Experience",
-      "category": "Sweets & Sightseeing",
-      "type": ["food", "shop", "explore"],
-      "food_type": ["Dessert", "Coffee & Sweets"],
-      "location_type": "outside",
-      "terminal": "Outside Airport",
-      "security": "pre",
-      "description": "<strong>Location:</strong> San Francisco (Ghirardelli Square).<br><br>A paradise for anyone with a sweet tooth. Visit the historic brick chocolate factory at the edge of the bay to watch chocolate being made and consume a massive, world-famous hot fudge sundae with stunning views of Alcatraz.",
-      "duration_text": "5 Hours",
-      "duration_mins": 300,
-      "transit_time_mins": 55,
-      "transit_instruction": "Take BART to Powell St, then ride the iconic Powell-Hyde Cable Car over the hills to the very end of the line at Fisherman's Wharf.",
-      "image_path": "images/outside_ghirardelli.jpg",
-      "action_link": "https://www.ghirardelli.com/stores/sf-experience",
-      "action_text": "Website ↗",
-      "map_link": "https://www.google.com/maps/place/Ghirardelli+Chocolate+Experience/@37.8059329,-122.4258338,1197m/data=!3m3!1e3!4b1!5s0x808580e0941b4d6b:0x7edf0a3aeca12e60!4m6!3m5!1s0x808580e0c17679bd:0xd77cc13a87672c8d!8m2!3d37.8059329!4d-122.4232589!16zL20vMDU4aDJs?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D",
-      "hours": "Daily: 9:00 AM - 10:00 PM"
-    },
-    {
-      "title": "Bayfront Park Plane Spotting",
-      "category": "Aviation Spotting",
-      "type": ["aviation", "explore", "art"],
-      "location_type": "outside",
-      "terminal": "Outside Airport",
-      "security": "pre",
-      "description": "<strong>Location:</strong> Millbrae, CA (Old Bayshore Hwy).<br><br>A tranquil bayside oasis globally renowned among dedicated aviation enthusiasts for its unobstructed, dramatic views of heavy aircraft taking off and landing at SFO. Bring a camera or binoculars, sit on a waterfront bench, and watch the mesmerizing, thunderous choreography of international air traffic.",
-      "duration_text": "2 Hours, 30 Mins",
-      "duration_mins": 150,
-      "transit_time_mins": 5,
-      "transit_instruction": "Take a 5-minute Uber or Lyft to Old Bayshore Highway. Keep a close eye on the clock for TSA re-entry.",
-      "image_path": "images/outside_bayfront_park.jpg",
-      "action_link": "https://www.flysfo.com/about/community-noise/plane-spotting-sfo",
-      "action_text": "View Spotting Guide ↗",
-      "map_link": "https://www.google.com/maps/place/Bayfront+Park/@37.6053081,-122.3780359,1233m/data=!3m1!1e3!4m14!1m7!3m6!1s0x808f77c7d2538287:0x566116f7a53c4b45!2sBayfront+Park!8m2!3d37.6049946!4d-122.3764138!16s%2Fg%2F1wb8ty6f!3m5!1s0x808f77c7d2538287:0x566116f7a53c4b45!8m2!3d37.6049946!4d-122.3764138!16s%2Fg%2F1wb8ty6f?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D",
-      "hours": "Daily: 6:00 AM - 10:00 PM"
-    },
-    {
-      "title": "Downtown Burlingame Avenue",
-      "category": "Shopping & Dining",
-      "type": ["shop", "explore", "food"],
-      "food_type": ["Cafe", "American", "Italian"],
-      "location_type": "outside",
-      "terminal": "Outside Airport",
-      "security": "pre",
-      "description": "<strong>Location:</strong> Burlingame, CA.<br><br>Stretch your legs and decelerate your pace along a picturesque, tree-lined main street filled with boutique shops, artisan bakeries, and excellent outdoor dining parklets. This dense commercial corridor provides a charming, relaxed neighborhood atmosphere that feels an entire world away from the sterile hustle of the airport terminals.",
-      "duration_text": "3 Hours",
-      "duration_mins": 180,
-      "transit_time_mins": 10,
-      "transit_instruction": "Take a 10-minute Uber or Lyft to Burlingame Avenue. Remember to buffer 45+ mins for TSA when returning.",
-      "image_path": "images/outside_burlingame_ave.jpg",
-      "action_link": "https://www.burlingamedowntown.org/",
-      "action_text": "Explore Downtown ↗",
-      "map_link": "https://www.google.com/maps/place/Burlingame+Ave,+Burlingame,+CA+94010/@37.5808538,-122.3464061,1201m/data=!3m1!1e3!4m15!1m8!3m7!1s0x808f9dede1c56921:0xe2d972a3ea556a81!2sBurlingame+Ave,+Burlingame,+CA+94010!3b1!8m2!3d37.5808538!4d-122.3438312!16s%2Fg%2F1tqty398!3m5!1s0x808f9dede1c56921:0xe2d972a3ea556a81!8m2!3d37.5808538!4d-122.3438312!16s%2Fg%2F1tqty398?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D",
-      "hours": "Daily: 9:00 AM - 8:00 PM"
-    },
-    {
-      "title": "Millbrae Pancake House",
-      "category": "Local Dining",
-      "type": ["food"],
-      "food_type": ["American", "Breakfast & Brunch", "Diner"],
-      "location_type": "outside",
-      "terminal": "Outside Airport",
-      "security": "pre",
-      "description": "<strong>Location:</strong> Millbrae, CA.<br><br>A deeply beloved local institution famous for its made-from-scratch pancakes, waffles, and hearty breakfasts. Whether arriving on an exhausting early morning red-eye or simply craving classic American diner comfort food, this nostalgic establishment offers a warm, satisfying culinary retreat just moments from the airport perimeter.",
-      "duration_text": "2 Hours, 30 Mins",
-      "duration_mins": 150,
-      "transit_time_mins": 5,
-      "transit_instruction": "Take a 5-minute Uber or Lyft to El Camino Real in Millbrae. Leave time for TSA re-entry.",
-      "image_path": "images/outside_millbrae_pancake.jpg",
-      "action_link": "https://www.millbraepancake.com/",
-      "action_text": "Website ↗",
-      "map_link": "https://www.google.com/maps/place/Millbrae+Pancake+House/@37.6084271,-122.4028878,1200m/data=!3m1!1e3!4m14!1m7!3m6!1s0x808f779fcb767af1:0x98742526d7b2ff32!2sMillbrae+Pancake+House!8m2!3d37.6084271!4d-122.4003129!16s%2Fg%2F1tdmkqhd!3m5!1s0x808f779fcb767af1:0x98742526d7b2ff32!8m2!3d37.6084271!4d-122.4003129!16s%2Fg%2F1tdmkqhd?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D",
-      "hours": "Daily: 7:00 AM - 3:00 PM"
-    },
-    {
-      "title": "Wonderful",
-      "category": "Local Dining",
-      "type": ["food"],
-      "food_type": ["Chinese", "Asian"],
-      "location_type": "outside",
-      "terminal": "Outside Airport",
-      "security": "pre",
-      "description": "<strong>Location:</strong> Millbrae, CA.<br><br>Highly regarded by the local population for its authentic, complex, and flavorful Chinese cuisine, this unpretentious eatery is perfect for travelers craving high-quality Asian fare. Its incredibly close proximity to the SFO campus makes it a zero-stress culinary detour for a fast, profoundly delicious meal.",
-      "duration_text": "2 Hours, 30 Mins",
-      "duration_mins": 150,
-      "transit_time_mins": 5,
-      "transit_instruction": "Take a 5-minute Uber or Lyft into downtown Millbrae. Budget time for TSA lines on your return.",
-      "image_path": "images/outside_wonderful_millbrae.jpg",
-      "action_link": "http://wonderful.restaurant/",
-      "action_text": "Website ↗",
-      "map_link": "https://www.google.com/maps/search/?api=1&query=Wonderful+Restaurant+Millbrae",
-      "hours": "Wed-Mon: 11:00 AM - 2:30 PM, 5:00 PM - 9:30 PM"
-    },
-    {
-      "title": "Coyote Point Recreation Area",
-      "category": "Parks & Nature",
-      "type": ["explore"],
-      "location_type": "outside",
-      "terminal": "Outside Airport",
-      "security": "pre",
-      "description": "<strong>Location:</strong> San Mateo, CA (along the San Francisco Bay).<br><br>Trade the sterile, recycled terminal air for refreshing coastal breezes at this expansive bayside park. Featuring lush, aromatic eucalyptus groves, winding waterfront promenades, and excellent plane-spotting vantage points, it represents the ultimate location to physiologically decompress and reconnect with nature during a long layover.",
-      "duration_text": "3 Hours, 30 Mins",
-      "duration_mins": 210,
-      "transit_time_mins": 15,
-      "transit_instruction": "Take a 15-minute Uber or Lyft south along US-101. Warning: Allow 1+ hours to re-clear TSA.",
-      "image_path": "images/outside_coyote_point.jpg",
-      "action_link": "https://www.smcgov.org/parks/coyote-point-recreation-area",
-      "action_text": "View Park Details ↗",
-      "map_link": "https://www.google.com/maps/place/Coyote+Point+Recreation+Area/@37.5872676,-122.3216761,1201m/data=!3m2!1e3!4b1!4m6!3m5!1s0x808f9dced8ddd96b:0xb1a7e13562043240!8m2!3d37.5872676!4d-122.3191012!16zL20vMDUzbjJo?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D",
-      "hours": "Daily: 8:00 AM - 7:00 PM"
-    },
-    {
-      "title": "San Bruno Mountain State & County Park",
-      "category": "Hiking & Views",
-      "type": ["explore"],
-      "location_type": "outside",
-      "terminal": "Outside Airport",
-      "security": "pre",
-      "description": "<strong>Location:</strong> Brisbane, CA.<br><br>For active travelers demanding a rigorous physical reset, this fiercely protected mountain habitat offers secluded hiking trails with massive elevation gains. The strenuous push to the summit rewards hikers with unparalleled, sweeping 360-degree views of the entire Bay Area, providing a stunning, open-air contrast to the claustrophobia of commercial air travel. Entry is $6.",
-      "duration_text": "4 Hours, 30 Mins",
-      "duration_mins": 270,
-      "transit_time_mins": 12,
-      "transit_instruction": "Take a 12-minute Uber or Lyft to the main park entrance. Do not attempt unless you have a massive layover buffer.",
-      "image_path": "images/outside_san_bruno_mountain.jpg",
-      "action_link": "https://www.smcgov.org/parks/san-bruno-mountain-state-county-park",
-      "action_text": "View Trail Map ↗",
-      "map_link": "https://www.google.com/maps/place/San+Bruno+Mountain+State+Park/@37.6958292,-122.442281,3593m/data=!3m1!1e3!4m14!1m7!3m6!1s0x808f793845e4eebd:0xca4225f59f66fdd8!2sSan+Bruno+Mountain+State+Park!8m2!3d37.6968729!4d-122.4339347!16zL20vMDhrMm4x!3m5!1s0x808f793845e4eebd:0xca4225f59f66fdd8!8m2!3d37.6968729!4d-122.4339347!16zL20vMDhrMm4x?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D",
-      "hours": "Daily: 8:00 AM - 5:00 PM"
-    },
-    {
-      "title": "Sneath Lane Trailhead (Sweeney Ridge)",
-      "category": "Hiking & Views",
-      "type": ["explore", "art"],
-      "location_type": "outside",
-      "terminal": "Outside Airport",
-      "security": "pre",
-      "description": "<strong>Location:</strong> San Bruno, CA.<br><br>Access the spectacular, historically significant Sweeney Ridge via a paved, gradually inclining path that cuts deeply through aromatic coastal scrub. At the ridge line, hikers are treated to dramatic, simultaneous panoramic views of the Pacific Ocean and the San Francisco Bay—a brilliant way to aggressively pump blood before enduring a long-haul flight.",
-      "duration_text": "4 Hours, 30 Mins",
-      "duration_mins": 270,
-      "transit_time_mins": 10,
-      "transit_instruction": "Take a 10-minute Uber or Lyft to the end of Sneath Lane. Leave a 1+ hour buffer to re-clear TSA upon return.",
-      "image_path": "images/outside_sneath_lane.jpg",
-      "action_link": "https://www.nps.gov/goga/planyourvisit/sneath-lane-trail.htm",
-      "action_text": "View Trail Info ↗",
-      "map_link": "https://www.google.com/maps/place/Sneath+Lane+Trail+Parking/@37.6104572,-122.4908646,8844m/data=!3m1!1e3!4m10!1m2!2m1!1sSneath+Lane+Trailhead+!3m6!1s0x808f7b8da94c9233:0xced23b48dd123cc!8m2!3d37.6196494!4d-122.4541527!15sChVTbmVhdGggTGFuZSBUcmFpbGhlYWSSAQtwYXJraW5nX2xvdOABAA!16s%2Fg%2F11jzx6hsvh?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D",
-      "hours": "Daily: 6:00 AM - 8:00 PM"
-    },
-    {
-      "title": "Junipero Serra County Park",
-      "category": "Parks & Nature",
-      "type": ["explore"],
-      "location_type": "outside",
-      "terminal": "Outside Airport",
-      "security": "pre",
-      "description": "<strong>Location:</strong> San Bruno, CA.<br><br>Tucked quietly into the coastal hills just north of the airport infrastructure, this 108-acre park features easy, shaded nature trails, lush picnic areas, and panoramic lookouts directed toward SFO and Mount Diablo. It operates as an incredibly peaceful, under-the-radar environmental escape requiring minimal transit time to reach.",
-      "duration_text": "3 Hours",
-      "duration_mins": 180,
-      "transit_time_mins": 10,
-      "transit_instruction": "Take a 10-minute Uber or Lyft up Crystal Springs Road. You must go back through TSA security after.",
-      "image_path": "images/outside_junipero_serra.jpg",
-      "action_link": "https://www.smcgov.org/parks/junipero-serra-park",
-      "action_text": "View Park Details ↗",
-      "map_link": "https://www.google.com/maps/search/?api=1&query=Junipero+Serra+County+Park+San+Bruno",
-      "hours": "Daily: 8:00 AM - 5:00 PM"
-    },
-    {
-      "title": "Sawyer Camp Trail",
-      "category": "Hiking & Views",
-      "type": ["explore"],
-      "location_type": "outside",
-      "terminal": "Outside Airport",
-      "security": "pre",
-      "description": "<strong>Location:</strong> San Mateo, CA (Crystal Springs Reservoir).<br><br>Walk, jog, or cycle along this beautifully paved, wildly popular six-mile segment of the Crystal Springs Regional Trail. Bordering the pristine, protected reservoir waters and heavily sheltered by mature trees, it provides one of the most scenic and safest outdoor cardiovascular workouts on the entire Peninsula.",
-      "duration_text": "4 Hours",
-      "duration_mins": 240,
-      "transit_time_mins": 15,
-      "transit_instruction": "Take a 15-minute Uber or Lyft to the southern trailhead. Only attempt if your layover easily clears 5+ hours.",
-      "image_path": "images/outside_sawyer_camp.jpg",
-      "action_link": "https://www.smcgov.org/parks/sawyer-camp-segment",
-      "action_text": "View Trail Map ↗",
-      "map_link": "https://www.google.com/maps/search/?api=1&query=Sawyer+Camp+Trail+South+Trailhead",
-      "hours": "Daily: 6:00 AM - 8:00 PM"
-    },
-    {
-      "title": "Seal Point Park",
-      "category": "Parks & Nature",
-      "type": ["explore"],
-      "location_type": "outside",
-      "terminal": "Outside Airport",
-      "security": "pre",
-      "description": "<strong>Location:</strong> San Mateo, CA.<br><br>Offering sweeping, unobstructed Bay views, wide-open lawns, and direct access to the extensive, multi-use Bay Trail, this waterfront park is a favorite among local cyclists and walkers. It features a stunning, constructed hill climb that rewards you with an expansive, calming view of the water and the distant city skyline.",
-      "duration_text": "3 Hours, 30 Mins",
-      "duration_mins": 210,
-      "transit_time_mins": 15,
-      "transit_instruction": "Take a 15-minute Uber or Lyft south along US-101. Account for TSA lines on your way back.",
-      "image_path": "images/outside_seal_point.jpg",
-      "action_link": "https://www.cityofsanmateo.org/3384/Seal-Point-Park",
-      "action_text": "View Park Details ↗",
-      "map_link": "https://www.google.com/maps/search/?api=1&query=Seal+Point+Park+San+Mateo",
-      "hours": "Daily: 7:00 AM - 7:00 PM"
+      "id": "bayfront-park-plane-spotting",
+      "name": "Bayfront Park Plane Spotting",
+      "area": "outside",
+      "location": "Millbrae, CA (Old Bayshore Hwy)",
+      "description": "A tranquil bayside oasis globally renowned among dedicated aviation enthusiasts for its unobstructed, dramatic views of heavy aircraft taking off and landing at SFO. Bring a camera or binoculars, sit on a waterfront bench, and watch the mesmerizing, thunderous choreography of international air traffic.",
+      "getting_there": "Take a 5-minute Uber or Lyft to Old Bayshore Highway. Keep a close eye on the clock for TSA re-entry.",
+      "hours": "Daily: 6:00 AM - 10:00 PM",
+      "photo": {
+        "src": "images/outside_bayfront_park.jpg"
+      },
+      "maps": [
+        {
+          "label": "Map",
+          "url": "https://www.google.com/maps/place/Bayfront+Park/@37.6053081,-122.3780359,1233m/data=!3m1!1e3!4m14!1m7!3m6!1s0x808f77c7d2538287:0x566116f7a53c4b45!2sBayfront+Park!8m2!3d37.6049946!4d-122.3764138!16s%2Fg%2F1wb8ty6f!3m5!1s0x808f77c7d2538287:0x566116f7a53c4b45!8m2!3d37.6049946!4d-122.3764138!16s%2Fg%2F1wb8ty6f?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D"
+        }
+      ],
+      "link": {
+        "label": "View Spotting Guide",
+        "url": "https://www.flysfo.com/about/community-noise/plane-spotting-sfo"
+      }
     }
   ]
 }

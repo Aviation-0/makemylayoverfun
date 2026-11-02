@@ -1,0 +1,150 @@
+/* =======================================================================
+   FILE: styles.css — shared by every page
+   ======================================================================= */
+
+/* --- Base --- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #f4f4f5;
+    color: #111111;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.5;
+}
+img { max-width: 100%; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }
+
+.skip-link {
+    position: absolute; left: 8px; top: -48px;
+    background: #111111; color: #ffffff; padding: 8px 12px; z-index: 100;
+    text-decoration: none; font-size: 0.85rem;
+}
+.skip-link:focus { top: 8px; }
+
+.visually-hidden {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+/* --- Header --- */
+.site-header { background-color: #ffffff; border-bottom: 1px solid #d4d4d8; padding: 20px 20px 30px; }
+.header-top { display: flex; justify-content: flex-start; margin-bottom: 10px; }
+.back-btn {
+    color: #71717a; text-decoration: none; font-size: 0.8rem;
+    text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; transition: color 0.2s;
+}
+.back-btn:hover { color: #111111; }
+.title-block { text-align: center; }
+h1 { font-weight: 400; font-size: 2rem; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 4px; }
+.city-label { font-size: 0.85rem; color: #71717a; text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* --- Layout --- */
+main { flex: 1; width: 100%; }
+.container { max-width: 1100px; margin: 30px auto 40px; padding: 0 20px; width: 100%; }
+.narrow { max-width: 680px; }
+
+/* --- Home --- */
+.hero { text-align: center; padding: 72px 20px 40px; }
+.hero h1 { font-size: 1.75rem; letter-spacing: 0.15em; margin-bottom: 12px; }
+.tagline { color: #52525b; max-width: 460px; margin: 0 auto; font-size: 1rem; }
+.airport-list {
+    list-style: none; padding: 0; margin: 0;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px;
+}
+.airport-link {
+    display: block; background: #ffffff; border: 1px solid #d4d4d8; padding: 18px 20px;
+    text-decoration: none; transition: border-color 0.2s, box-shadow 0.2s;
+}
+.airport-link:hover { border-color: #111111; box-shadow: 0 2px 6px rgba(0,0,0,0.06); }
+.airport-code { display: block; font-size: 1.5rem; font-weight: 600; letter-spacing: 0.08em; }
+.airport-name { display: block; font-size: 0.85rem; color: #3f3f46; margin-top: 2px; }
+.airport-city { display: block; font-size: 0.7rem; color: #71717a; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 6px; }
+
+/* --- Sections on the airport page --- */
+.section-title {
+    font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em;
+    color: #52525b; margin: 0 0 6px;
+}
+.section-note { font-size: 0.85rem; color: #71717a; margin: 0 0 16px; }
+.places-section + .places-section { margin-top: 48px; }
+
+/* --- Cards --- */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+.card { background-color: #ffffff; border: 1px solid #d4d4d8; padding: 24px; display: flex; flex-direction: column; }
+
+.crew-badge {
+    align-self: flex-start; background-color: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe;
+    font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+    padding: 4px 8px; border-radius: 4px; text-decoration: none; margin-bottom: 12px;
+}
+a.crew-badge:hover { background-color: #dbeafe; border-color: #93c5fd; color: #1e3a8a; }
+
+.card-image {
+    width: 100%; height: 180px; object-fit: cover; object-position: center;
+    border: 1px solid #e4e4e7; display: block; margin-bottom: 12px; background: #e4e4e7;
+}
+.image-attribution { font-size: 0.6rem; color: #71717a; text-align: right; margin: -8px 0 12px; font-style: italic; }
+.terminal-loc { font-size: 0.75rem; color: #71717a; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
+.card h3 { font-weight: 600; font-size: 1.1rem; margin: 0 0 8px; line-height: 1.3; }
+.card-location { font-size: 0.85rem; color: #3f3f46; margin: 0 0 12px; }
+.card-location ul, .card-hours ul { margin: 4px 0 0; padding-left: 18px; }
+.card-description { font-size: 0.9rem; margin: 0 0 16px; flex-grow: 1; }
+.getting-there {
+    background-color: #f4f4f5; padding: 12px; margin-bottom: 16px; border-left: 3px solid #0ea5e9;
+    font-size: 0.85rem; color: #3f3f46; line-height: 1.4;
+}
+.getting-there strong {
+    display: block; font-size: 0.75rem; text-transform: uppercase; color: #111111; margin-bottom: 4px;
+}
+.card-hours { font-size: 0.8rem; color: #3f3f46; margin-bottom: 20px; font-weight: 500; }
+
+.button-group { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; }
+.action-btn, .map-btn {
+    font-size: 0.75rem; font-weight: 600; padding: 6px 12px; text-decoration: none;
+    text-transform: uppercase; letter-spacing: 0.05em; transition: background 0.2s;
+}
+.action-btn { color: #ffffff; background-color: #111111; border: 1px solid #111111; }
+.action-btn:hover { background-color: #3f3f46; }
+.map-btn { color: #111111; background-color: #ffffff; border: 1px solid #d4d4d8; }
+.map-btn:hover { background-color: #e4e4e7; }
+
+.status-msg { text-align: center; padding: 60px 20px; color: #3f3f46; }
+.status-msg h2 { font-weight: 400; text-transform: uppercase; letter-spacing: 0.08em; }
+
+/* --- Prose pages (about / 404) --- */
+.prose h2 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.08em; margin: 32px 0 8px; }
+.prose p, .prose li { color: #3f3f46; }
+.button-link {
+    display: inline-block; padding: 14px 24px; background: #111111; color: #ffffff; text-decoration: none;
+    font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.9rem;
+}
+.button-link:hover { background: #3f3f46; }
+
+/* --- Footer --- */
+.site-footer {
+    text-align: center; padding: 24px 20px; font-size: 0.75rem; color: #71717a;
+    border-top: 1px solid #e4e4e7; background-color: #fafafa; line-height: 1.6;
+}
+.site-footer nav { display: flex; justify-content: center; gap: 16px; margin-bottom: 8px; flex-wrap: wrap; }
+.site-footer nav a { text-decoration: none; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+.site-footer nav a:hover { color: #111111; }
+.site-footer p { margin: 4px auto; max-width: 760px; }
+.credits { margin-top: 12px; }
+
+@media (max-width: 600px) {
+    h1 { font-size: 1.5rem; }
+    .hero { padding: 48px 16px 28px; }
+    .container { padding: 0 16px; }
+    .grid { grid-template-columns: 1fr; gap: 16px; }
+    .card { padding: 16px; }
+    .card-image { height: 160px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+}

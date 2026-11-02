@@ -1,39 +1,23 @@
 {
-  "_meta": {
-    "description": "Airport data module for Albuquerque International Sunport (ABQ)",
-    "project": "Make My Layover Fun",
-    "author": "Zhibang (Lucas) Pan"
-  },
-  "name": "Albuquerque International Sunport",
-  "city": "Albuquerque, NM",
-  "footer_citation": "Data compiled for makemylayoverfun.",
-  "landmarks": {
-    "airport": {
-      "name": "ABQ Tower",
-      "svg": "<svg viewBox='0 0 100 60' xmlns='http://www.w3.org/2000/svg'><rect x='45' y='20' width='10' height='40' fill='#a1a1aa'/><line x1='0' y1='58' x2='100' y2='58' stroke='#e4e4e7' stroke-width='2'/></svg>"
-    },
-    "city": {
-      "name": "ABQ Skyline",
-      "svg": "<svg viewBox='0 0 100 60' xmlns='http://www.w3.org/2000/svg'><rect x='40' y='25' width='20' height='35' fill='#3f3f46'/><line x1='0' y1='58' x2='100' y2='58' stroke='#e4e4e7' stroke-width='2'/></svg>"
-    }
-  },
-  "activities": [
+  "code": "ABQ",
+  "places": [
     {
-      "title": "Tia's Pronto",
-      "category": "Dining",
-      "type": ["food", "pilot"],
-      "pilot_credit": "Recommended by Captain Curtis R.",
-      "pilot_link": "https://www.linkedin.com/in/curtis-rupeka-37956a197/",
-      "food_type": ["Mexican", "Southwestern"],
-      "location_type": "inside",
+      "id": "tias-pronto",
+      "name": "Tia's Pronto",
+      "area": "inside",
       "terminal": "Main Terminal",
       "security": "post",
-      "description": "<strong>Location:</strong> Post-Security Main Terminal <br><br>Get a final taste of authentic New Mexican flavors. Great stop for green chile and local staples before you board your flight.",
-      "duration_text": "30 Mins",
-      "duration_mins": 30,
-      "action_link": "https://fresquezcompanies.com/brand/tias-authentic-abq/",
-      "action_text": "Learn More ↗",
-      "hours": "<br>•Sun - Fri : 5:00 AM - 2:00 PM <br> •Sat : 5:00 AM - 11:00 AM"
+      "location": "Post-Security Main Terminal",
+      "description": "Get a final taste of authentic New Mexican flavors. Great stop for green chile and local staples before you board your flight.",
+      "hours": [
+        "Sun - Fri : 5:00 AM - 2:00 PM",
+        "Sat : 5:00 AM - 11:00 AM"
+      ],
+      "recommended_by": "curtis-r",
+      "link": {
+        "label": "Learn More",
+        "url": "https://fresquezcompanies.com/brand/tias-authentic-abq/"
+      }
     }
   ]
 }

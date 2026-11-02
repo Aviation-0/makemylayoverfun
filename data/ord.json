@@ -1,560 +1,127 @@
 {
-  "_meta": {
-    "description": "Airport data module for Chicago O'Hare International (ORD)",
-    "project": "Make My Layover Fun",
-    "author": "Zhibang (Lucas) Pan"
-  },
-  "name": "Chicago O'Hare International",
-  "city": "Chicago, IL",
-  "footer_citation": "This work includes derivatives of <a href='https://www.flickr.com/photos/pavdw/14248869210' target='_blank' style='color: inherit;'>\"Disco Tunnel\"</a> by Paul VanDerWerf and <a href='https://commons.wikimedia.org/wiki/File:Grumman_F4F-3_Wildcat_-_Butch_O%27Hare_White_F-15_Replica_at_ORD_1.jpg' target='_blank' style='color: inherit;'>\"Grumman F4F-3 Wildcat - Butch O'Hare White F-15 Replica at ORD 1\"</a> by Koyah7d, used under Creative Commons licenses. The original images were desaturated, resized, and compressed by Zhibang Pan for makemylayoverfun. This derivative is licensed under CC BY-SA 4.0 by Zhibang Pan.",
-  "landmarks": {
-    "airport": {
-      "name": "O'Hare Control Tower",
-      "svg": "<svg viewBox='0 0 100 60' xmlns='http://www.w3.org/2000/svg'><rect x='45' y='20' width='10' height='40' fill='#a1a1aa'/><polygon points='40,20 60,20 55,10 45,10' fill='#3f3f46'/><polygon points='43,18 57,18 53,12 47,12' fill='#7dd3fc'/><line x1='50' y1='10' x2='50' y2='2' stroke='#f43f5e' stroke-width='1.5'/><line x1='0' y1='58' x2='100' y2='58' stroke='#e4e4e7' stroke-width='2'/></svg>"
-    },
-    "city": {
-      "name": "Willis Tower",
-      "svg": "<svg viewBox='0 0 100 60' xmlns='http://www.w3.org/2000/svg'><rect x='40' y='30' width='20' height='30' fill='#3f3f46'/><rect x='44' y='15' width='12' height='15' fill='#3f3f46'/><rect x='47' y='5' width='6' height='10' fill='#3f3f46'/><line x1='48' y1='5' x2='48' y2='0' stroke='#a1a1aa' stroke-width='1'/><line x1='52' y1='5' x2='52' y2='0' stroke='#a1a1aa' stroke-width='1'/><line x1='0' y1='58' x2='100' y2='58' stroke='#e4e4e7' stroke-width='2'/></svg>"
-    }
-  },
-  "activities": [
+  "code": "ORD",
+  "credits": "This work includes derivatives of <a href='https://www.flickr.com/photos/pavdw/14248869210' target='_blank' rel='noopener noreferrer'>\"Disco Tunnel\"</a> by Paul VanDerWerf and <a href='https://commons.wikimedia.org/wiki/File:Grumman_F4F-3_Wildcat_-_Butch_O%27Hare_White_F-15_Replica_at_ORD_1.jpg' target='_blank' rel='noopener noreferrer'>\"Grumman F4F-3 Wildcat - Butch O'Hare White F-15 Replica at ORD 1\"</a> by Koyah7d, used under Creative Commons licenses. The original images were desaturated, resized, and compressed by Zhibang Pan for makemylayoverfun. This derivative is licensed under CC BY-SA 4.0 by Zhibang Pan.",
+  "places": [
     {
-      "rank": 1,
-      "title": "\"The Sky's the Limit\" Neon Tunnel",
-      "category": "Art & Culture",
-      "type": ["art", "explore"],
-      "location_type": "inside",
+      "id": "the-skys-the-limit-neon-tunnel",
+      "name": "\"The Sky's the Limit\" Neon Tunnel",
+      "area": "inside",
       "terminal": "Terminal 1",
       "security": "post",
-      "description": "<strong>Location:</strong> Terminal 1, Underground walkway between Concourses B and C <br><br>An absolute essential ORD experience. This 744-foot-long kinetic light installation by Michael Hayden features a mile of neon tubing that dances to a synthesized version of George Gershwin's 'Rhapsody in Blue'. It makes the walk between concourses feel like a retro-futuristic ride.",
-      "duration_text": "15 Mins",
-      "duration_mins": 15,
-      "image_attribution": "Derivative of <a href='https://www.flickr.com/photos/pavdw/14248869210' target='_blank' style='color: inherit;'>\"Disco Tunnel\"</a> by Paul VanDerWerf (CC BY 2.0)",
-      "image_path": "images/ord_neon_tunnel.jpg",
-      "action_link": "https://www.flychicago.com/ohare/ServicesAmenities/services/Pages/art.aspx",
-      "action_text": "Learn More ↗",
-      "map_link": "https://www.flychicago.com/ohare/map/pages/default.aspx",
-      "hours": "24/7"
+      "location": "Terminal 1, Underground walkway between Concourses B and C",
+      "description": "An absolute essential ORD experience. This 744-foot-long kinetic light installation by Michael Hayden features a mile of neon tubing that dances to a synthesized version of George Gershwin's 'Rhapsody in Blue'. It makes the walk between concourses feel like a retro-futuristic ride.",
+      "hours": "24/7",
+      "photo": {
+        "src": "images/ord_neon_tunnel.jpg",
+        "credit": "Derivative of <a href='https://www.flickr.com/photos/pavdw/14248869210' target='_blank' rel='noopener noreferrer'>\"Disco Tunnel\"</a> by Paul VanDerWerf (CC BY 2.0)"
+      },
+      "maps": [
+        {
+          "label": "Map",
+          "url": "https://www.flychicago.com/ohare/map/pages/default.aspx"
+        }
+      ],
+      "link": {
+        "label": "Learn More",
+        "url": "https://www.flychicago.com/ohare/ServicesAmenities/services/Pages/art.aspx"
+      }
     },
     {
-      "rank": 2,
-      "title": "Tortas Frontera by Rick Bayless",
-      "category": "Dining",
-      "type": ["food", "pilot"],
-      "pilot_credit": "Recommended by Captain Curtis R.",
-      "pilot_link": "https://www.linkedin.com/in/curtis-rupeka-37956a197/",
-      "food_type": ["Mexican"],
-      "location_type": "inside",
+      "id": "tortas-frontera-by-rick-bayless",
+      "name": "Tortas Frontera by Rick Bayless",
+      "area": "inside",
       "terminal": "Terminal 1, Terminal 3, Terminal 5",
       "security": "post",
-      "description": "<strong>Locations:</strong><br>• Terminal 1, near Gate B10<br>• Terminal 3, near Gate K4<br>• Terminal 5, near Gate M18<br><br>Ranked multiple times as the Top Ten Best Airport Restaurants in the United States. Tortas Frontera serves up incredible hand-crafted tortas (griddle-baked Mexican sandwiches), fresh guacamole, and margaritas using ingredients sourced from local Midwestern farms.",
-      "duration_text": "45 Mins",
-      "duration_mins": 45,
-      "image_path": "images/ord_tortas.jpg",
-      "action_link": "https://order.chownow.com/order/1819/locations",
-      "action_text": "Order Now ↗",
-      "maps": [
-        {"text": "Terminal 1 Map 📍", "link": "https://maps.ord.flychicago.com/su/KEULrMCO"},
-        {"text": "Terminal 3 Map 📍", "link": "https://maps.ord.flychicago.com/su/dpkE73Ym"},
-        {"text": "Terminal 5 Map 📍", "link": "https://maps.ord.flychicago.com/su/QGDed2hH"}
+      "location": [
+        "Terminal 1, near Gate B10",
+        "Terminal 3, near Gate K4",
+        "Terminal 5, near Gate M18"
       ],
-      "hours": "<br>• Terminal 1 Daily: 4:30 AM - 9:00 PM <br>• Terminal 3 Daily 5:00 AM - 9:30 PM <br>• Terminal 5 Daily 5:00 AM - 10:00 PM"
-    },
-    {
-      "title": "ORD Premium Lounge Directory",
-      "category": "Premium Lounges",
-      "type": ["explore"],
-      "location_type": "inside",
-      "terminal": "All Terminals",
-      "security": "post",
-      "description": "Select a lounge below to view exact locations, hours, access requirements, and booking options.",
-      "duration_text": "2 Hours",
-      "duration_mins": 120,
-      "specialty": "dropdown",
-      "dropdown_options": [
+      "description": "Ranked multiple times as the Top Ten Best Airport Restaurants in the United States. Tortas Frontera serves up incredible hand-crafted tortas (griddle-baked Mexican sandwiches), fresh guacamole, and margaritas using ingredients sourced from local Midwestern farms.",
+      "hours": [
+        "Terminal 1 Daily: 4:30 AM - 9:00 PM",
+        "Terminal 3 Daily 5:00 AM - 9:30 PM",
+        "Terminal 5 Daily 5:00 AM - 10:00 PM"
+      ],
+      "recommended_by": "curtis-r",
+      "maps": [
         {
-    "name": "United Polaris Lounge",
-    "brand_color": "#002244",
-    "details": "<strong>Alliance:</strong> Star Alliance<br><strong>Location:</strong> Terminal 1, Concourse C, near Gate C18<br><strong>Access:</strong> Polaris business class and outbound long-haul Star Alliance first/business class.<br><strong>Hours:</strong> Daily: 6:00 am - 9:00 pm",
-    "action_link": "https://www.united.com/en/us/fly/travel/airport/lounge-access.html",
-    "action_text": "Official Details ↗"
-  },
-  {
-    "name": "United Club (Terminal 1, Gate B6)",
-    "brand_color": "#005DAA",
-    "details": "<strong>Alliance:</strong> Star Alliance<br><strong>Location:</strong> Terminal 1, Concourse B, near Gate B6<br><strong>Access:</strong> United Club members, Star Alliance Gold.<br><strong>Hours:</strong> Daily: 5:00 am - 9:00 pm",
-    "action_link": "https://www.united.com/en/us/fly/travel/airport/lounge-access.html",
-    "action_text": "Official Details ↗"
-  },
-  {
-    "name": "United Club (Terminal 1, Gate B18)",
-    "brand_color": "#005DAA",
-    "details": "<strong>Alliance:</strong> Star Alliance<br><strong>Location:</strong> Terminal 1, Concourse B, near Gate B18<br><strong>Access:</strong> United Club members, Star Alliance Gold.<br><strong>Hours:</strong> Daily: 5:00 am - 10:00 pm",
-    "action_link": "https://www.united.com/en/us/fly/travel/airport/lounge-access.html",
-    "action_text": "Official Details ↗"
-  },
-  {
-    "name": "United Club (Terminal 1, Gate C10)",
-    "brand_color": "#005DAA",
-    "details": "<strong>Alliance:</strong> Star Alliance<br><strong>Location:</strong> Terminal 1, Concourse C, near Gate C10<br><strong>Access:</strong> United Club members, Star Alliance Gold.<br><strong>Hours:</strong> Daily: 5:00 am - 9:00 pm",
-    "action_link": "https://www.united.com/en/us/fly/travel/airport/lounge-access.html",
-    "action_text": "Official Details ↗"
-  },
-  {
-    "name": "United Club (Terminal 2, Gate E7)",
-    "brand_color": "#005DAA",
-    "details": "<strong>Alliance:</strong> Star Alliance<br><strong>Location:</strong> Terminal 2, Concourse E, near Gate E7<br><strong>Access:</strong> United Club members, Star Alliance Gold.<br><strong>Hours:</strong> Daily: 7:30 am - 7:30 pm",
-    "action_link": "https://www.united.com/en/us/fly/travel/airport/lounge-access.html",
-    "action_text": "Official Details ↗"
-  },
-  {
-    "name": "United Club (Terminal 2, Gate F9)",
-    "brand_color": "#005DAA",
-    "details": "<strong>Alliance:</strong> Star Alliance<br><strong>Location:</strong> Terminal 2, Concourse F, across from Gate F9<br><strong>Access:</strong> United Club members, Star Alliance Gold.<br><strong>Hours:</strong> Daily: 5:00 am - 9:00 pm",
-    "action_link": "https://www.united.com/en/us/fly/travel/airport/lounge-access.html",
-    "action_text": "Official Details ↗"
-  },
-  {
-    "name": "American Airlines Flagship Lounge",
-    "brand_color": "#0078D2",
-    "details": "<strong>Alliance:</strong> oneworld<br><strong>Location:</strong> Terminal 3, Concourse H/K Crosswalk<br><strong>Access:</strong> First/Business Class on qualifying international/transcontinental flights, oneworld Emerald/Sapphire.<br><strong>Hours:</strong> Daily: 5:00 am - 10:00 pm",
-    "action_link": "https://www.aa.com/i18n/travel-info/clubs/flagship-lounge.jsp",
-    "action_text": "Official Details ↗"
-  },
-  {
-    "name": "American Airlines Admirals Club (Terminal 3, Gate G8)",
-    "brand_color": "#0078D2",
-    "details": "<strong>Alliance:</strong> oneworld<br><strong>Location:</strong> Terminal 3, Concourse G, across from Gate G8<br><strong>Access:</strong> Admirals Club members, qualifying First/Business class.<br><strong>Hours:</strong> Daily: 6:15 am - 9:45 pm",
-    "action_link": "https://www.aa.com/i18n/travelInformation/airportAmenities/ord-club.jsp",
-    "action_text": "Official Details ↗"
-  },
-  {
-    "name": "American Airlines Admirals Club (Terminal 3, Gate L1)",
-    "brand_color": "#0078D2",
-    "details": "<strong>Alliance:</strong> oneworld<br><strong>Location:</strong> Terminal 3, Concourse L, before Gate L1<br><strong>Access:</strong> Admirals Club members, qualifying First/Business class.<br><strong>Hours:</strong> Daily: 5:00 am - 9:45 pm",
-    "action_link": "https://www.aa.com/i18n/travelInformation/airportAmenities/ord-club.jsp",
-    "action_text": "Official Details ↗"
-  },
-  {
-    "name": "American Airlines Admirals Club (Terminal 3, Gate H6/K6)",
-    "brand_color": "#0078D2",
-    "details": "<strong>Alliance:</strong> oneworld<br><strong>Location:</strong> Terminal 3, Crosswalk between Gates H6 and K6<br><strong>Access:</strong> Admirals Club members, qualifying First/Business class.<br><strong>Hours:</strong> Daily: 5:00 am - 11:00 pm",
-    "action_link": "https://www.aa.com/i18n/travelInformation/airportAmenities/ord-club.jsp",
-    "action_text": "Official Details ↗"
-  },
-  {
-    "name": "Delta Sky Club",
-    "brand_color": "#E3132C",
-    "details": "<strong>Alliance:</strong> SkyTeam<br><strong>Location:</strong> Terminal 5, Concourse M, between Gates M11 and M14<br><strong>Access:</strong> Sky Club members, Delta One passengers, eligible Amex cardholders.<br><strong>Hours:</strong> Sun-Fri 4:30 am - 8:00 pm, Sat 4:30 am - 6:30 pm",
-    "action_link": "https://www.americanexpress.com/en-us/travel/lounges/the-platinum-card/ORD/Delta-Sky-Club-Terminal-5-Concourse-M-jhwaOAEJ5P/",
-    "action_text": "Official Details ↗"
-  },
-  {
-    "name": "Air France Lounge",
-    "brand_color": "#002157",
-    "details": "<strong>Alliance:</strong> SkyTeam<br><strong>Location:</strong> Terminal 5, Concourse M, near Gate M17<br><strong>Access:</strong> SkyTeam Elite Plus, eligible Premium passengers.<br><strong>Hours:</strong> Daily: 5:30 am - 11:30 pm",
-    "action_link": "https://www.airfrance.us/US/en/common/guidevoyageur/aeroport/salons-air-france.htm",
-    "action_text": "Official Details ↗"
-  },
-  {
-    "name": "LOT Polish Business Class Lounge",
-    "brand_color": "#002664",
-    "details": "<strong>Alliance:</strong> Star Alliance<br><strong>Location:</strong> Terminal 5, Concourse M, near Gate M18<br><strong>Access:</strong> LOT Polish & Star Alliance premium class, Star Alliance Gold.<br><strong>Hours:</strong> Adjusted to LOT Polish Airlines flight schedule",
-    "action_link": "https://www.lot.com/us/en/journey/additional-services/executive-lounges/lot-business-lounge-in-chicago",
-    "action_text": "Official Details ↗"
-  },
-  {
-    "name": "Swissport Lounge",
-    "brand_color": "#D00000",
-    "details": "<strong>Location:</strong> Terminal 5, Concourse M, near Gate M13<br><strong>Access:</strong> Priority Pass, certain international airlines.<br><strong>Hours:</strong> Daily: 7:00 am - 9:00 pm",
-    "action_link": "https://www.prioritypass.com/en-GB/lounges/united-states-of-america/ohare-international/ord10-swissport-lounge",
-    "action_text": "Official Details ↗"
-  },
-  {
-    "name": "Wingtips Lounge",
-    "brand_color": "#0099CC",
-    "details": "<strong>Location:</strong> Terminal 5, Concourse M, near Gate M19<br><strong>Access:</strong> Priority Pass, eligible international partner airlines.<br><strong>Hours:</strong> Varies with flight schedules",
-    "action_link": "https://www.prioritypass.com/en-GB/lounges/united-states-of-america/ohare-international/ord12-wingtips-lounge-chicago",
-    "action_text": "Official Details ↗"
-  },
-  {
-    "name": "USO Lounge (Terminal 2)",
-    "brand_color": "#002F6C",
-    "details": "<strong>Location:</strong> Terminal 2, Mezzanine Level, pre-security<br><strong>Access:</strong> Active duty military personnel and their dependents.<br><strong>Hours:</strong> Daily: 9:00 am - 9:00 pm",
-    "action_link": "https://www.flychicago.com/ohare/ServicesAmenities/services/Pages/USO.aspx",
-    "action_text": "Official Details ↗"
-  },
-  {
-    "name": "USO Lounge (Terminal 3)",
-    "brand_color": "#002F6C",
-    "details": "<strong>Location:</strong> Terminal 3, Mezzanine Level of the Rotunda, G Concourse, post-security<br><strong>Access:</strong> Active duty military personnel and their dependents.<br><strong>Hours:</strong> Daily: 9:00 am - 5:00 pm",
-    "action_link": "https://www.flychicago.com/ohare/ServicesAmenities/services/Pages/USO.aspx",
-    "action_text": "Official Details ↗"
-  }
-      ]
+          "label": "Terminal 1 Map",
+          "url": "https://maps.ord.flychicago.com/su/KEULrMCO"
+        },
+        {
+          "label": "Terminal 3 Map",
+          "url": "https://maps.ord.flychicago.com/su/dpkE73Ym"
+        },
+        {
+          "label": "Terminal 5 Map",
+          "url": "https://maps.ord.flychicago.com/su/QGDed2hH"
+        }
+      ],
+      "link": {
+        "label": "Order Now",
+        "url": "https://order.chownow.com/order/1819/locations"
+      }
     },
     {
-      "title": "Berghoff Cafe",
-      "category": "Dining",
-      "type": ["food", "pilot"],
-      "pilot_credit": "Recommended by Captain Curtis R.",
-      "pilot_link": "https://www.linkedin.com/in/curtis-rupeka-37956a197/",
-      "food_type": ["American", "German"],
-      "location_type": "inside",
+      "id": "berghoff-cafe",
+      "name": "Berghoff Cafe",
+      "area": "inside",
       "terminal": "Terminal 1",
       "security": "post",
-      "description": "<strong>Location:</strong> Terminal 1, near Gate C26 <br><br>An airport offshoot of the legendary Chicago institution that opened its doors in 1898. Grab an iconic hand-carved corned beef or Reuben sandwich, a warm soft pretzel, and a cold German-style root beer or draft beer while waiting for your flight.",
-      "duration_text": "45 Mins",
-      "duration_mins": 45,
-      "action_link": "https://www.theberghoff.com/berghoff-cafe-at-ohare-menu/",
-      "action_text": "Menu ↗",
-      "map_link": "https://maps.ord.flychicago.com/su/AV9BihN6",
-      "hours": "Daily: 6:00 AM - 8:00 PM"
+      "location": "Terminal 1, near Gate C26",
+      "description": "An airport offshoot of the legendary Chicago institution that opened its doors in 1898. Grab an iconic hand-carved corned beef or Reuben sandwich, a warm soft pretzel, and a cold German-style root beer or draft beer while waiting for your flight.",
+      "hours": "Daily: 6:00 AM - 8:00 PM",
+      "recommended_by": "curtis-r",
+      "maps": [
+        {
+          "label": "Map",
+          "url": "https://maps.ord.flychicago.com/su/AV9BihN6"
+        }
+      ],
+      "link": {
+        "label": "Menu",
+        "url": "https://www.theberghoff.com/berghoff-cafe-at-ohare-menu/"
+      }
     },
     {
-      "title": "Billy Goat Tavern and Grill",
-      "category": "Dining",
-      "type": ["food", "pilot"],
-      "pilot_credit": "Recommended by Captain Curtis R.",
-      "pilot_link": "https://www.linkedin.com/in/curtis-rupeka-37956a197/",
-      "food_type": ["American", "Burgers"],
-      "location_type": "inside",
+      "id": "billy-goat-tavern-and-grill",
+      "name": "Billy Goat Tavern and Grill",
+      "area": "inside",
       "terminal": "Terminal 1",
       "security": "post",
-      "description": "<strong>Location:</strong> Terminal 1, near Gate C19 <br><br>Cheezborger, cheezborger, cheezborger! This legendary, no-frills Chicago tavern gained national fame from a classic Saturday Night Live sketch featuring John Belushi. Stop by for a classic, stacked thin-patty cheeseburger on a Kaiser roll for a quintessential, quick taste of the city.",
-      "duration_text": "30 Mins",
-      "duration_mins": 30,
-      "action_link": "https://www.billygoattavern.com/locations/ohare/",
-      "action_text": "Website ↗",
-      "map_link": "https://maps.ord.flychicago.com/su/BhNT4ruL",
-      "hours": "Daily: 6:00 AM - 9:00 PM"
+      "location": "Terminal 1, near Gate C19",
+      "description": "Cheezborger, cheezborger, cheezborger! This legendary, no-frills Chicago tavern gained national fame from a classic Saturday Night Live sketch featuring John Belushi. Stop by for a classic, stacked thin-patty cheeseburger on a Kaiser roll for a quintessential, quick taste of the city.",
+      "hours": "Daily: 6:00 AM - 9:00 PM",
+      "recommended_by": "curtis-r",
+      "maps": [
+        {
+          "label": "Map",
+          "url": "https://maps.ord.flychicago.com/su/BhNT4ruL"
+        }
+      ],
+      "link": {
+        "label": "Website",
+        "url": "https://www.billygoattavern.com/locations/ohare/"
+      }
     },
     {
-      "title": "Millennium Park & The Bean",
-      "category": "Iconic Sightseeing",
-      "type": ["explore", "art"],
-      "location_type": "outside",
-      "terminal": "Outside Airport",
-      "security": "pre",
-      "description": "<strong>Location:</strong> Downtown Chicago (The Loop).<br><br>If you have a layover of 6+ hours, jump on the CTA Blue Line and head straight downtown. Walk around Millennium Park, take a reflection selfie at Cloud Gate (The Bean), and grab a slice of deep-dish pizza. It's a direct train ride right out of the airport.",
-      "duration_text": "5 Hours",
-      "duration_mins": 300,
-      "transit_time_mins": 55,
-      "transit_instruction": "Follow signs for 'Trains to City' in the airport and take the CTA Blue Line to Washington/Dearborn. Budget heavy buffer time for TSA re-entry.",
-      "image_path": "images/outside_millennium_park.jpg",
-      "action_link": "https://www.chicago.gov/city/en/depts/dca/supp_info/millennium_park.html",
-      "action_text": "Park Info ↗",
-      "hours": "Daily: 6:00 AM - 11:00 PM"
-    },
-    {
-  "title": "Chicago Public Art & Exhibit Program",
-  "category": "Art & History",
-  "type": [
-    "art",
-    "explore"
-  ],
-  "location_type": "inside",
-  "terminal": "All Terminals & MMF",
-  "security": "both",
-  "description": "Together with the Department of Cultural Affairs and Special Events, O'Hare maintains a massive public art collection featuring over 70 permanent art pieces and rotating exhibitions from international, national, and local artists. Select an installation below to view its location and artist.",
-  "duration_text": "45 Mins",
-  "duration_mins": 45,
-  "specialty": "dropdown",
-  "dropdown_options": [
-    {
-      "name": "Sky’s the Limit",
-      "brand_color": "#8b5cf6",
-      "details": "<strong>Location:</strong> Terminal 1, B/C Connector Tunnel <br><strong>Artist:</strong> Michael Hayden"
-    },
-    {
-      "name": "City Windows",
-      "brand_color": "#8b5cf6",
-      "details": "<strong>Location:</strong> Terminal 1, Gate B20 <br><strong>Artist:</strong> Qiao Xiaoguang"
-    },
-    {
-      "name": "Brachiosaurus Dinosaur",
-      "brand_color": "#0ea5e9",
-      "details": "<strong>Location:</strong> Terminal 1 <br><strong>Provider:</strong> Field Museum"
-    },
-    {
-      "name": "Jet Trails",
-      "brand_color": "#8b5cf6",
-      "details": "<strong>Location:</strong> Terminal 1 <br><strong>Artist:</strong> Guy Kemper"
-    },
-    {
-      "name": "Butch O’Hare Exhibit",
-      "brand_color": "#0ea5e9",
-      "details": "<strong>Location:</strong> Terminal 2 <br><strong>Provider:</strong> National Naval Aviation Museum"
-    },
-    {
-      "name": "Bessie Coleman Exhibit",
-      "brand_color": "#0ea5e9",
-      "details": "<strong>Location:</strong> Terminal 2 <br><strong>Type:</strong> Historical Exhibit"
-    },
-    {
-      "name": "American Heroes: Portraits of Service",
-      "brand_color": "#0ea5e9",
-      "details": "<strong>Location:</strong> Terminal 2 <br><strong>Artist:</strong> Thomas Sanders"
-    },
-    {
-      "name": "Chicago: Home of House",
-      "brand_color": "#8b5cf6",
-      "details": "<strong>Location:</strong> Terminal 3 <br><strong>Provider:</strong> Design Museum of Chicago"
-    },
-    {
-      "name": "On the Wings of Water",
-      "brand_color": "#8b5cf6",
-      "details": "<strong>Location:</strong> Terminal 3 <br><strong>Artist:</strong> Ginny Sykes with Maria Gaspar"
-    },
-    {
-      "name": "...a murmuration",
-      "brand_color": "#8b5cf6",
-      "details": "<strong>Location:</strong> Terminal 5 <br><strong>Artist:</strong> jina valentine"
-    },
-    {
-      "name": "Shinsekai Yori | From the New World",
-      "brand_color": "#8b5cf6",
-      "details": "<strong>Location:</strong> Terminal 5 <br><strong>Artist:</strong> Mayumi Lake"
-    },
-    {
-      "name": "Immigrant Owned",
-      "brand_color": "#8b5cf6",
-      "details": "<strong>Location:</strong> Terminal 5 <br><strong>Artist:</strong> Jonathan Michael Castillo"
-    },
-    {
-      "name": "Tropicalamerican",
-      "brand_color": "#8b5cf6",
-      "details": "<strong>Location:</strong> Terminal 5 <br><strong>Artist:</strong> Edra Soto"
-    },
-    {
-      "name": "Palimpsest",
-      "brand_color": "#8b5cf6",
-      "details": "<strong>Location:</strong> Multi-Modal Facility (MMF) <br><strong>Artist:</strong> Nick Cave"
-    },
-    {
-      "name": "REACH",
-      "brand_color": "#8b5cf6",
-      "details": "<strong>Location:</strong> Multi-Modal Facility (MMF) <br><strong>Artist:</strong> Hank Willis Thomas"
-    },
-    {
-      "name": "Field Lines",
-      "brand_color": "#8b5cf6",
-      "details": "<strong>Location:</strong> Multi-Modal Facility (MMF) <br><strong>Artist:</strong> Rob Ley"
-    },
-    {
-      "name": "Youth in the Loop",
-      "brand_color": "#8b5cf6",
-      "details": "<strong>Location:</strong> Airport Campus, CTA Pedway <br><strong>Artist:</strong> After School Matters"
-    },
-    {
-      "name": "The Runners",
-      "brand_color": "#8b5cf6",
-      "details": "<strong>Location:</strong> Airport Campus <br><strong>Artist:</strong> Theodoros Papagiannis"
-    }
-  ]
-},
-  {
-    "title": "Grumman F4F-3 Wildcat (\"Butch O'Hare\")",
-    "category": "Aviation History",
-    "type": [
-      "explore",
-      "history"
-    ],
-    "location_type": "inside",
-    "terminal": "Terminal 2",
-    "security": "post",
-    "description": "<strong>Location:</strong> Terminal 2, directly past the security checkpoint<br><br>A miraculously salvaged WWII Navy fighter plane matching the exact livery of \"White F-15,\" flown by airport namesake and Medal of Honor recipient Edward \"Butch\" O'Hare.",
-    "duration_text": "15 Mins",
-    "duration_mins": 15,
-    "image_path": "images/ord_f4f.jpg",
-    "image_attribution": "Derivative of <a href='https://commons.wikimedia.org/wiki/File:Grumman_F4F-3_Wildcat_-_Butch_O%27Hare_White_F-15_Replica_at_ORD_1.jpg' target='_blank' style='color: inherit;'>\"Grumman F4F-3 Wildcat - Butch O'Hare White F-15 Replica at ORD 1\"</a> by Koyah7d (CC BY-SA 3.0)",
-    "action_link": "https://www.history.navy.mil/content/history/museums/nnam/explore/collections/aircraft/f/f4f-3-wildcat.html",
-    "action_text": "Historical Details ↗",
-    "hours": "24/7"
-  },
-  {
-    "title": "Brachiosaurus Skeleton Cast (\"Ernestine\")",
-    "category": "Exploring",
-    "type": [
-      "explore",
-      "history"
-    ],
-    "location_type": "inside",
-    "terminal": "Terminal 1",
-    "security": "post",
-    "description": "<strong>Location:</strong> Terminal 1, Concourse B, near Gate B8 <br><br>A massive, four-story (72 feet high) fiberglass cast of a Brachiosaurus on loan from the Field Museum. It creates a stunning juxtaposition against modern jets.",
-    "duration_text": "10 Mins",
-    "duration_mins": 10,
-    "action_link": "https://www.fieldmuseum.org/",
-    "action_text": "Field Museum ↗",
-    "hours": "24/7"
-  },
-  {
-    "title": "Tortas Frontera by Rick Bayless",
-    "category": "Dining",
-    "type": [
-      "food"
-    ],
-    "food_type": [
-      "Mexican"
-    ],
-    "location_type": "inside",
-    "terminal": "Terminal 1, 3, 5",
-    "security": "post",
-    "description": "<strong>Location:</strong> Terminal 1 (Gate B11), Terminal 3 (Gate K4), Terminal 5 (Gate M18) <br><br>Outstanding Mexican street food curated by celebrity chef Rick Bayless. Famous for griddle-baked tortas layered with high-quality proteins and fresh produce sourced directly from ORD's Aeroponic Garden.",
-    "duration_text": "45 Mins",
-    "duration_mins": 45,
-    "action_link": "https://tortasfrontera.com/",
-    "action_text": "Official Menu ↗",
-    "hours": "T1/T3: 5:00 AM - 9:00 PM, T5: 6:00 AM - 9:00 PM"
-  },
-  {
-    "title": "Publican Tavern",
-    "category": "Dining",
-    "type": [
-      "food"
-    ],
-    "food_type": [
-      "American",
-      "Gastropub"
-    ],
-    "location_type": "inside",
-    "terminal": "Terminal 3",
-    "security": "post",
-    "description": "<strong>Location:</strong> Terminal 3, near Gate K1 <br><br>A high-end spin-off of the Fulton Market institution. Offers a European beer hall aesthetic, local craft beers, and a phenomenal Double Burger made with heritage beef from Slagel Family Farm.",
-    "duration_text": "60 Mins",
-    "duration_mins": 60,
-    "action_link": "https://www.thepublicanrestaurant.com/location/the-publican/",
-    "action_text": "Official Site ↗",
-    "hours": "Daily: 5:30 AM - 9:00 PM"
-  },
-  {
-    "title": "ChiBoys",
-    "category": "Shopping",
-    "type": [
-      "shop"
-    ],
-    "location_type": "inside",
-    "terminal": "Terminal 3",
-    "security": "post",
-    "description": "<strong>Location:</strong> Terminal 3, near Gate H5 <br><br>Premium, independent Chicago streetwear that tells the city's story through innovative neighborhood-centric designs, avoiding standard sports team clichés.",
-    "duration_text": "20 Mins",
-    "duration_mins": 20,
-    "action_link": "https://www.chiboys.com/",
-    "action_text": "Shop Online ↗",
-    "hours": "Daily: 6:00 AM - 8:00 PM"
-  },
-  {
-    "title": "Vosges Haut-Chocolat",
-    "category": "Shopping",
-    "type": [
-      "shop",
-      "food"
-    ],
-    "location_type": "inside",
-    "terminal": "Terminal 1, 3",
-    "security": "post",
-    "description": "<strong>Location:</strong> Terminal 1 (Gate B6) and Terminal 3 (Gate H4/K3) <br><br>Avant-garde flavor laboratory built like a luxury jewelry boutique. Sells provocative, gourmet truffles mixing premium chocolate with exotic spices like Naga chilies and Bulgarian rose water.",
-    "duration_text": "15 Mins",
-    "duration_mins": 15,
-    "action_link": "https://www.vosgeschocolate.com/",
-    "action_text": "Shop Online ↗",
-    "hours": "Daily: 6:30 AM - 8:30 PM"
-  },
-  {
-    "title": "Garrett Popcorn Shops",
-    "category": "Shopping",
-    "type": [
-      "shop",
-      "food"
-    ],
-    "location_type": "inside",
-    "terminal": "Terminal 1, 3",
-    "security": "post",
-    "description": "<strong>Location:</strong> Terminal 1 (Gates B8, B14) and Terminal 3 (Gate H2) <br><br>A Chicago tradition since 1949. Pick up a tightly sealed tin of the iconic \"Garrett Mix\" (sweet CaramelCrisp and savory CheeseCorn) crafted in copper kettles.",
-    "duration_text": "15 Mins",
-    "duration_mins": 15,
-    "action_link": "https://www.garrettpopcorn.com/",
-    "action_text": "Shop Online ↗",
-    "hours": "Daily: 6:00 AM - 9:00 PM"
-  },
-  {
-    "title": "The Field Museum Store",
-    "category": "Shopping",
-    "type": [
-      "shop"
-    ],
-    "location_type": "inside",
-    "terminal": "Terminal 1",
-    "security": "post",
-    "description": "<strong>Location:</strong> Terminal 1, Concourse B, near Gate B8 <br><br>Located adjacent to the Brachiosaurus skeleton, offering highly engaging, museum-quality educational toys, paleontology gifts, and complex science books.",
-    "duration_text": "20 Mins",
-    "duration_mins": 20,
-    "action_link": "https://store.fieldmuseum.org/",
-    "action_text": "Shop Online ↗",
-    "hours": "Daily: 8:00 AM - 8:00 PM"
-  },
-  {
-    "title": "O'Hare Yoga Room",
-    "category": "Wellness & Relaxation",
-    "type": [
-      "explore"
-    ],
-    "location_type": "inside",
-    "terminal": "Terminal 3",
-    "security": "post",
-    "description": "<strong>Location:</strong> Terminal 3, Mezzanine Level of the Rotunda Building <br><br>A private, shoe-free sanctuary designed for physical decompression. Features bamboo floors, frosted windows, exercise mats, and video-guided stretching techniques.",
-    "duration_text": "30 Mins",
-    "duration_mins": 30,
-    "action_link": "https://www.flychicago.com/ohare/ServicesAmenities/services/Pages/yoga.aspx",
-    "action_text": "Learn More ↗",
-    "hours": "Daily: 6:00 AM - 10:00 PM"
-  },
-  {
-    "title": "Hilton Chicago O'Hare Health Club",
-    "category": "Wellness & Relaxation",
-    "type": [
-      "explore"
-    ],
-    "location_type": "inside",
-    "terminal": "Hilton Hotel",
-    "security": "pre",
-    "description": "<strong>Location:</strong> Hilton Chicago O'Hare Airport Hotel, Arcade Level (accessible via underground walkways) <br><br>A massive fitness ecosystem perfect for long layovers. Offers day passes granting access to an Olympic-sized indoor lap pool, steam rooms, saunas, running tracks, and full locker room shower services.",
-    "duration_text": "2 Hours",
-    "duration_mins": 120,
-    "action_link": "https://www.hilton.com/en/hotels/chordhh-hilton-chicago-ohare-airport/amenities/",
-    "action_text": "Explore Amenities ↗",
-    "hours": "Mon-Fri: 5:00 AM - 10:00 PM, Sun: 6:00 AM - 10:00 PM"
-  },
-  {
-    "title": "Terminal Getaway Spa",
-    "category": "Wellness & Relaxation",
-    "type": [
-      "explore"
-    ],
-    "location_type": "inside",
-    "terminal": "Terminal 1, 3",
-    "security": "post",
-    "description": "<strong>Location:</strong> Terminal 1 (Gate B12) and Terminal 3 (Gate H1) <br><br>A legitimate, high-end wellness clinic operating at the gate. Features private treatment rooms for rapid 10-minute chair massages or full 90-minute deep-tissue Swedish massages.",
-    "duration_text": "45 Mins",
-    "duration_mins": 45,
-    "action_link": "https://terminalgetaway.com/",
-    "action_text": "View Treatments ↗",
-    "hours": "Daily: 10:00 AM - 6:00 PM"
-  },
-   {
-      "title": "O'Hare Aeroponic Garden",
-      "category": "Wellness & Relaxation",
-      "type": ["explore"],
-      "location_type": "inside",
-      "terminal": "Terminal 3",
+      "id": "grumman-f4f-3-wildcat-butch-ohare",
+      "name": "Grumman F4F-3 Wildcat (\"Butch O'Hare\")",
+      "area": "inside",
+      "terminal": "Terminal 2",
       "security": "post",
-      "description": "<strong>Location:</strong> Terminal 3, Rotunda Building (Mezzanine Level)<br><br>Escape the terminal noise in the world's first aeroponic garden inside an airport. This lush, green space grows fresh herbs and produce used by several of the airport's restaurants (like Tortas Frontera). It's a fantastic, quiet spot to relax, breathe some fresh air, and recharge.",
-      "duration_text": "30 Mins",
-      "duration_mins": 30,
-      "action_link": "https://www.flychicago.com/ohare/ServicesAmenities/services/Pages/aeroponic.aspx",
-      "action_text": "Learn More ↗",
-      "hours": "24/7"
+      "location": "Terminal 2, directly past the security checkpoint",
+      "description": "A miraculously salvaged WWII Navy fighter plane matching the exact livery of \"White F-15,\" flown by airport namesake and Medal of Honor recipient Edward \"Butch\" O'Hare.",
+      "hours": "24/7",
+      "photo": {
+        "src": "images/ord_f4f.jpg",
+        "credit": "Derivative of <a href='https://commons.wikimedia.org/wiki/File:Grumman_F4F-3_Wildcat_-_Butch_O%27Hare_White_F-15_Replica_at_ORD_1.jpg' target='_blank' rel='noopener noreferrer'>\"Grumman F4F-3 Wildcat - Butch O'Hare White F-15 Replica at ORD 1\"</a> by Koyah7d (CC BY-SA 3.0)"
+      },
+      "link": {
+        "label": "Historical Details",
+        "url": "https://www.history.navy.mil/content/history/museums/nnam/explore/collections/aircraft/f/f4f-3-wildcat.html"
+      }
     }
   ]
 }

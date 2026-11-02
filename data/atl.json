@@ -1,55 +1,35 @@
 {
-  "_meta": {
-    "description": "Airport data module for Atlanta Hartsfield-Jackson International (ATL)",
-    "project": "Make My Layover Fun",
-    "author": "Zhibang (Lucas) Pan"
-  },
-  "name": "Atlanta Hartsfield-Jackson International",
-  "city": "Atlanta, GA",
-  "footer_citation": "Data compiled for makemylayoverfun.",
-  "landmarks": {
-    "airport": {
-      "name": "ATL Tower",
-      "svg": "<svg viewBox='0 0 100 60' xmlns='http://www.w3.org/2000/svg'><rect x='45' y='20' width='10' height='40' fill='#a1a1aa'/><polygon points='40,20 60,20 55,10 45,10' fill='#3f3f46'/><line x1='0' y1='58' x2='100' y2='58' stroke='#e4e4e7' stroke-width='2'/></svg>"
-    },
-    "city": {
-      "name": "Atlanta Skyline",
-      "svg": "<svg viewBox='0 0 100 60' xmlns='http://www.w3.org/2000/svg'><rect x='40' y='25' width='20' height='35' fill='#3f3f46'/><line x1='0' y1='58' x2='100' y2='58' stroke='#e4e4e7' stroke-width='2'/></svg>"
-    }
-  },
-  "activities": [
+  "code": "ATL",
+  "places": [
     {
-      "title": "Concourse C Food Court",
-      "category": "Dining",
-      "type": ["food", "pilot"],
-      "pilot_credit": "Recommended by First Officer Adam S.",
-      "pilot_link": "https://www.linkedin.com/in/adam-sitzmann/",
-      "food_type": ["American", "Mixed"],
-      "location_type": "inside",
+      "id": "concourse-c-food-court",
+      "name": "Concourse C Food Court",
+      "area": "inside",
       "terminal": "Concourse C",
       "security": "post",
-      "description": "<strong>Location:</strong> Concourse C Center <br><br>Features several quick-service options including Bantam + Biddy, Great Wraps, and Sweet Georgia's Juke Joint. A fantastic setup because it has TVs for sports games and plenty of normal tables to sit and eat comfortably.",
-      "duration_text": "45 Mins",
-      "duration_mins": 45,
-      "action_link": "https://www.atl.com/",
-      "action_text": "Learn More ↗",
-      "hours": "Daily: 6:00 AM - 10:00 PM"
+      "location": "Concourse C Center",
+      "description": "Features several quick-service options including Bantam + Biddy, Great Wraps, and Sweet Georgia's Juke Joint. A fantastic setup because it has TVs for sports games and plenty of normal tables to sit and eat comfortably.",
+      "hours": "Daily: 6:00 AM - 10:00 PM",
+      "recommended_by": "adam-s",
+      "link": {
+        "label": "Learn More",
+        "url": "https://www.atl.com/"
+      }
     },
     {
-      "title": "Concourse F",
-      "category": "Exploring",
-      "type": ["explore", "pilot"],
-      "pilot_credit": "Recommended by First Officer Adam S.",
-      "pilot_link": "https://www.linkedin.com/in/adam-sitzmann/",
-      "location_type": "inside",
+      "id": "concourse-f",
+      "name": "Concourse F",
+      "area": "inside",
       "terminal": "Concourse F",
       "security": "post",
-      "description": "<strong>Location:</strong> Concourse F (International) <br><br>The newest and most spacious concourse at ATL. It acts as a phenomenal quiet spot to escape the usual hustle and bustle, especially when the international flights aren't going out.",
-      "duration_text": "1 Hour",
-      "duration_mins": 60,
-      "action_link": "https://www.atl.com/",
-      "action_text": "Explore Concourse ↗",
-      "hours": "24/7"
+      "location": "Concourse F (International)",
+      "description": "The newest and most spacious concourse at ATL. It acts as a phenomenal quiet spot to escape the usual hustle and bustle, especially when the international flights aren't going out.",
+      "hours": "24/7",
+      "recommended_by": "adam-s",
+      "link": {
+        "label": "Explore Concourse",
+        "url": "https://www.atl.com/"
+      }
     }
   ]
 }

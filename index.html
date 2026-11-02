@@ -1,250 +1,81 @@
-<!-- ======================================================================= -->
-<!-- FILE: index.html                                                        -->
-<!-- ======================================================================= -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- ==================== META & SEO ==================== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Make My Layover Fun</title>
-    <meta name="description" content="Make My Layover Fun: Turn your airport waiting time into an adventure. Discover the best food, lounges, art, and activities tailored to your layover duration.">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Make My Layover Fun | Pilot-Recommended Airport Layover Spots</title>
+    <meta name="description" content="Layover spots recommended by airline pilots and crew: the food, sights, and hidden corners worth your time at airports across the US.">
     <meta name="author" content="Zhibang (Lucas) Pan">
     <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph / Facebook -->
+    <meta name="theme-color" content="#ffffff">
+    <link rel="canonical" href="https://makemylayoverfun.com/">
+
+    <!-- Open Graph / Twitter -->
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Make My Layover Fun">
     <meta property="og:url" content="https://makemylayoverfun.com/">
     <meta property="og:title" content="Make My Layover Fun">
-    <meta property="og:description" content="Optimize your airport layover. Find the best food, lounges, and activities for your layover time.">
-    <meta property="og:image" content="/og-image.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://makemylayoverfun.com/">
-    <meta property="twitter:title" content="Make My Layover Fun">
-    <meta property="twitter:description" content="Optimize your airport layover. Find the best food, lounges, and activities for your layover time.">
-    <meta property="twitter:image" content="/og-image.jpg">
+    <meta property="og:description" content="Layover spots recommended by airline pilots and crew.">
+    <meta property="og:image" content="https://makemylayoverfun.com/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Make My Layover Fun">
+    <meta name="twitter:description" content="Layover spots recommended by airline pilots and crew.">
+    <meta name="twitter:image" content="https://makemylayoverfun.com/og-image.jpg">
 
     <!-- ==================== ICONS & MANIFEST ==================== -->
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="Make My Layover Fun" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="Make My Layover Fun">
+    <link rel="manifest" href="/site.webmanifest">
 
     <!-- ==================== JSON-LD SCHEMA ==================== -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebApplication",
+      "@type": "WebSite",
       "name": "Make My Layover Fun",
-      "url": "https://makemylayoverfun.com",
-      "description": "An interactive web application designed to optimize passenger travel experiences by filtering airport activities, dining, and lounges based on layover duration.",
-      "applicationCategory": "TravelApplication",
-      "operatingSystem": "All",
-      "author": {
-        "@type": "Person",
-        "name": "Zhibang (Lucas) Pan"
-      }
+      "url": "https://makemylayoverfun.com/",
+      "description": "Layover spots recommended by airline pilots and crew.",
+      "author": { "@type": "Person", "name": "Zhibang (Lucas) Pan" }
     }
     </script>
 
-    <!-- ==================== STYLES ==================== -->
-    <style>
-        /* --- Base Reset & Typography --- */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            background-color: #f4f4f5;
-            color: #111111;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-        }
-
-        /* --- Layout Containers --- */
-        .container {
-            width: 100%;
-            max-width: 550px;
-            padding: 20px;
-        }
-        h1 {
-            font-weight: 400;
-            font-size: 1.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            margin-bottom: 40px;
-            color: #111111;
-        }
-
-        /* --- Form Elements --- */
-        .form-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 12px;
-            margin-bottom: 12px;
-        }
-        input[type="text"], select {
-            width: 100%;
-            padding: 16px;
-            font-size: 1rem;
-            font-family: inherit;
-            background-color: #ffffff;
-            color: #111111;
-            border: 1px solid #d4d4d8;
-            border-radius: 0;
-            box-sizing: border-box;
-            outline: none;
-            appearance: none;
-            -webkit-appearance: none;
-        }
-        .select-wrapper {
-            position: relative;
-        }
-        .select-wrapper::after {
-            content: "▼";
-            font-size: 0.7rem;
-            position: absolute;
-            right: 16px;
-            top: 50%;
-            transform: translateY(-50%);
-            pointer-events: none;
-        }
-        input[type="text"]:focus, select:focus {
-            border: 1px solid #111111;
-        }
-        button {
-            width: 100%;
-            padding: 16px;
-            font-size: 1rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            background-color: #111111;
-            color: #ffffff;
-            border: none;
-            border-radius: 0;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-        button:hover { background-color: #3f3f46; }
-        input::-webkit-calendar-picker-indicator { opacity: 0; }
-    </style>
-
-    <!-- ==================== ANALYTICS ==================== -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-93NPFQ6VTE"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-93NPFQ6VTE');
-    </script>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/home.js" defer></script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- ==================== MAIN CONTENT ==================== -->
-    <div class="container">
-        <h1>Make My Layover Fun</h1>
-        
-        <!-- --- Search Form --- -->
-        <form id="hub-form">
-            <div class="form-grid">
-                <input type="text" id="airport-input" list="airports" placeholder="Search code (e.g., SFO)" required autocomplete="off">
-                <div class="select-wrapper">
-                    <select id="time-input" required>
-                        <option value="" disabled selected>Time limit</option>
-                        <option value="30">30 Mins</option>
-                        <option value="60">1 Hour</option>
-                        <option value="120">2 Hours</option>
-                        <option value="180">3 Hours</option>
-                        <option value="240">4 Hours</option>
-                        <option value="999">6+ Hours</option>
-                    </select>
-                </div>
-            </div>
-            
-            <!-- --- Airport Datalist --- -->
-            <datalist id="airports">
-                <option value="ATL - Atlanta Hartsfield-Jackson">
-                <option value="AUS - Austin-Bergstrom">
-                <option value="BNA - Nashville">
-                <option value="BOS - Boston Logan">
-                <option value="BWI - Baltimore/Washington">
-                <option value="CLE - Cleveland Hopkins">
-                <option value="CLT - Charlotte Douglas">
-                <option value="CMH - John Glenn Columbus">
-                <option value="CVG - Cincinnati/Northern Kentucky">
-                <option value="DCA - Washington Reagan National">
-                <option value="DEN - Denver International">
-                <option value="DFW - Dallas/Fort Worth">
-                <option value="DTW - Detroit Metropolitan">
-                <option value="EWR - Newark Liberty">
-                <option value="FLL - Fort Lauderdale-Hollywood">
-                <option value="HNL - Honolulu">
-                <option value="IAD - Washington Dulles">
-                <option value="IAH - Houston George Bush">
-                <option value="IND - Indianapolis">
-                <option value="JAX - Jacksonville">
-                <option value="JFK - New York John F. Kennedy">
-                <option value="LAS - Las Vegas Harry Reid">
-                <option value="LAX - Los Angeles">
-                <option value="LGA - New York LaGuardia">
-                <option value="MCI - Kansas City">
-                <option value="MCO - Orlando">
-                <option value="MDW - Chicago Midway">
-                <option value="MIA - Miami">
-                <option value="MKE - Milwaukee Mitchell">
-                <option value="MSP - Minneapolis-St. Paul">
-                <option value="MSY - New Orleans Louis Armstrong">
-                <option value="OAK - Oakland">
-                <option value="ORD - Chicago O'Hare">
-                <option value="PBI - Palm Beach">
-                <option value="PDX - Portland">
-                <option value="PHL - Philadelphia">
-                <option value="PHX - Phoenix Sky Harbor">
-                <option value="PIT - Pittsburgh">
-                <option value="RDU - Raleigh-Durham">
-                <option value="RSW - Southwest Florida (Fort Myers)">
-                <option value="SAN - San Diego">
-                <option value="SAT - San Antonio">
-                <option value="SEA - Seattle-Tacoma">
-                <option value="SFO - San Francisco">
-                <option value="SJU - San Juan Luis Muñoz Marín">
-                <option value="SLC - Salt Lake City">
-                <option value="SMF - Sacramento">
-                <option value="SNA - John Wayne (Orange County)">
-                <option value="STL - St. Louis Lambert">
-                <option value="TPA - Tampa">
-            </datalist>
+    <main id="main">
+        <div class="hero">
+            <h1>Make My Layover Fun</h1>
+            <p class="tagline">Layover spots recommended by the people who fly the planes.</p>
+        </div>
 
-            <button type="submit">Explore</button>
-        </form>
-    </div>
+        <div class="container">
+            <h2 class="section-title" id="airports-heading">Pick your airport</h2>
+            <ul id="airport-list" class="airport-list" aria-labelledby="airports-heading">
+                <!-- Filled from data/airports.json by home.js -->
+            </ul>
+            <noscript><p class="status-msg">This site needs JavaScript turned on to load the airport guides.</p></noscript>
+        </div>
+    </main>
 
-    <!-- ==================== EVENT HANDLERS ==================== -->
-    <script>
-        /**
-         * @description Handles the form submission to route the user to the correct airport data page.
-         * Extracts the 3-letter IATA code and time limit, then dynamically constructs the URL parameters.
-         */
-        document.getElementById('hub-form').addEventListener('submit', function(e) {
-            e.preventDefault(); 
-            const code = document.getElementById('airport-input').value.substring(0, 3).toUpperCase();
-            const time = document.getElementById('time-input').value;
-            
-            if(code.length === 3 && time) {
-                window.location.href = `airport.html?code=${code}&time=${time}`;
-            } else {
-                alert("Please select an airport and a time limit.");
-            }
-        });
-    </script>
-
+    <footer class="site-footer">
+        <nav aria-label="Footer">
+            <a href="/">Home</a>
+            <a href="/about.html">About</a>
+            <a href="/about.html#privacy">Privacy</a>
+        </nav>
+        <p>Hours and locations change often. Check with the venue or airport before you go.</p>
+        <p>&copy; 2026 Zhibang (Lucas) Pan. Not affiliated with any airport or airline.</p>
+    </footer>
 </body>
 </html>

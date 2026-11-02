@@ -1,0 +1,47 @@
+[
+  {
+    "code": "ABQ",
+    "name": "Albuquerque International Sunport",
+    "city": "Albuquerque, NM"
+  },
+  {
+    "code": "ATL",
+    "name": "Atlanta Hartsfield-Jackson International",
+    "city": "Atlanta, GA"
+  },
+  {
+    "code": "DEN",
+    "name": "Denver International Airport",
+    "city": "Denver, CO"
+  },
+  {
+    "code": "IAH",
+    "name": "George Bush Intercontinental Airport",
+    "city": "Houston, TX"
+  },
+  {
+    "code": "MCO",
+    "name": "Orlando International Airport",
+    "city": "Orlando, FL"
+  },
+  {
+    "code": "MSP",
+    "name": "Minneapolis-Saint Paul International",
+    "city": "Minneapolis, MN"
+  },
+  {
+    "code": "MSY",
+    "name": "Louis Armstrong New Orleans International",
+    "city": "New Orleans, LA"
+  },
+  {
+    "code": "ORD",
+    "name": "Chicago O'Hare International",
+    "city": "Chicago, IL"
+  },
+  {
+    "code": "SFO",
+    "name": "San Francisco International",
+    "city": "San Francisco, CA"
+  }
+]
